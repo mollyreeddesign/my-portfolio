@@ -31,6 +31,12 @@ body {
   color: var(--foreground);
 }
 
+/* Global h1 styles - all h1 elements use Americana font */
+h1 {
+  font-family: 'Americana Std Roman', serif;
+  font-weight: 400;
+}
+
 .custom-h1 {
   font-family: 'Americana Std Roman', serif;
   font-weight: 400;

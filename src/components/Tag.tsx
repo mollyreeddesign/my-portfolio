@@ -19,7 +19,7 @@ export default function Tag({ tag, titile, role, type, className }: TagProps) {
     "bg-[#2C2C2C]",
     "text-[#F5F5F5]",
     "font-medium",
-    "text-[12px]",
+    "text-[14px]",
     "md:text-[16px]",
   ].join(" ");
 
