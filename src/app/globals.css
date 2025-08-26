@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Americana Std Roman';
+  src: url('/americana-std-roman.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,8 +16,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-work-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +29,171 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+.custom-h1 {
+  font-family: 'Americana Std Roman', serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+@media (min-width: 768px) {
+  .custom-h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+.font-americana {
+  font-family: 'Americana Std Roman', serif;
+  font-weight: 400;
+}
+
+.custom-h2 {
+  font-family: var(--font-work-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@media (min-width: 768px) {
+  .custom-h2 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+
+.custom-h3 {
+  font-family: var(--font-work-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.custom-h4 {
+  font-family: var(--font-work-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  .custom-h4 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+/* Main paragraph: default for all <p>, and utility class .p (alias .custom-p for compatibility) */
+p,
+.p,
+.custom-p {
+  font-family: var(--font-work-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  p,
+  .p,
+  .custom-p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+/* Secondary paragraph: utility class with shorter name; keep alias for compatibility */
+.p-secondary,
+.custom-p-secondary {
+  font-family: var(--font-work-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #767676;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@media (min-width: 768px) {
+  .p-secondary,
+  .custom-p-secondary {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+
+@keyframes glisten {
+  0% {
+    transform: translateX(-220%) skewX(-20deg) rotate(15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  28% {
+    transform: translateX(320%) skewX(-20deg) rotate(15deg);
+    opacity: 0.05;
+  }
+  100% {
+    transform: translateX(320%) skewX(-20deg) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+/* Global button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 15px 35px;
+  border-radius: 6px;
+  font-family: var(--font-work-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500; /* Medium */
+  font-size: 16px; /* match main paragraph on mobile */
+  line-height: 24px;
+  border-width: 1px;
+  border-style: solid;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 200ms ease;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    font-size: 18px; /* match main paragraph on desktop */
+    line-height: 26px;
+  }
+}
+
+.btn--primary {
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+  border-color: #2C2C2C; /* 1px stroke color */
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: #2C2C2C;
+  border-color: #2C2C2C; /* 1px stroke color */
+}
+
+/* Ensure icons size and inherit color */
+.btn svg,
+.btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.btn svg {
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 2px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+

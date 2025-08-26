@@ -1,103 +1,133 @@
-import Image from "next/image";
+import Link from "next/link";
+import Tag from "@/components/Tag";
+import PageContainer from "@/components/PageContainer";
+import FullWidthSection from "@/components/FullWidthSection";
+import Card from "@/components/Card";
+import Metric from "@/components/Metric";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="py-16 sm:py-24">
+      <PageContainer>
+      <section className="text-center sm:text-left">
+        <h1 className="custom-h1 tracking-tight">
+          Hello, I'm Molly — designer & developer
+        </h1>
+        <p className="mt-4 text-base/7 text-foreground/80 max-w-2xl">
+          I build thoughtful digital experiences. Explore selected work, a bit about me,
+          and some art experiments.
+        </p>
+        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <Link href="/case-studies" className="btn btn--primary">
+            View case studies
+          </Link>
+          <Link href="/about" className="btn btn--secondary">
+            About me
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <div className="mt-8 flex flex-wrap gap-2 justify-center sm:justify-start">
+          <Tag tag="Product" titile="Product Design" role="designer" type="discipline" />
+          <Tag tag="UX" titile="User Experience" role="designer" type="discipline" />
+          <Tag tag="React" titile="React" role="developer" type="tech" />
+          <Tag tag="Next.js" titile="Next.js" role="developer" type="tech" />
+        </div>
+        <div className="mt-6 flex flex-wrap gap-3 justify-center sm:justify-start">
+          <Metric metric="Uptime" measure="99.98%" success />
+          <Metric metric="Monthly Users" measure="24k" />
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="text-xl font-medium mb-4">Quick links</h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <li>
+            <Link href="/case-studies/case-1" className="block rounded-lg p-4 border border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition">
+              Case Study 1
+            </Link>
+          </li>
+          <li>
+            <Link href="/case-studies/case-2" className="block rounded-lg p-4 border border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition">
+              Case Study 2
+            </Link>
+          </li>
+          <li>
+            <Link href="/case-studies/case-3" className="block rounded-lg p-4 border border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition">
+              Case Study 3
+            </Link>
+          </li>
+          <li>
+            <Link href="/art" className="block rounded-lg p-4 border border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition">
+              Art
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="text-xl font-medium mb-4">Buttons</h2>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button className="btn btn--primary">
+            <span>Primary</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+          <button className="btn btn--secondary">
+            <span>Secondary</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </section>
+      
+      <section className="mt-16">
+        <h2 className="text-xl font-medium mb-4">Featured work</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-4">
+          <Card
+            href="/case-studies/case-1"
+            image="/window.svg"
+            title="Case Study 1"
+            description="High-level overview of project one."
+            tags={[{ tag: "Product" }, { tag: "Next.js" }]}
+            className="lg:col-span-5"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <Card
+            href="/case-studies/case-2"
+            image="/file.svg"
+            title="Case Study 2"
+            description="High-level overview of project two."
+            tags={[{ tag: "UX" }, { tag: "React" }]}
+            className="lg:col-span-3"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <Card
+            href="/case-studies/case-3"
+            image="/window.svg"
+            title="Case Study 3"
+            description="High-level overview of project three."
+            tags={[{ tag: "Design" }, { tag: "Frontend" }]}
+            className="lg:col-span-3"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <Card
+            href="/art"
+            image="/globe.svg"
+            title="Art Showcase"
+            description="Selected artwork and experiments."
+            tags={[{ tag: "Art" }, { tag: "Visual" }]}
+            className="lg:col-span-5"
+          />
+        </div>
+      </section>
+      </PageContainer>
+      <FullWidthSection backgroundImage="/globe.svg" backgroundColor="#0b0b0b">
+        <div className="text-center sm:text-left">
+          <h2 className="custom-h2 text-white">Full-width demo section</h2>
+          <p className="mt-2 text-base/7 text-white/80">
+            This band spans the full viewport width, while its content follows the
+            same margins as the rest of the page.
+          </p>
+        </div>
+      </FullWidthSection>
+    </main>
   );
 }
