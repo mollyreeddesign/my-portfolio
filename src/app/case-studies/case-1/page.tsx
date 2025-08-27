@@ -192,13 +192,13 @@ export default function CaseStudyOnePage() {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-6 md:gap-8">
                 {/* Left column with text content */}
                 <div>
                   <h2 className="custom-h2">I advocated for
                   accessibility</h2>
                   <p className="p mb-4">
-                  I collaborated closely with Hilton’s accessibility team during these updates to ensure I was up to date with the latest WCAG standards. Color contrast, Focus Indicators and translations adaptability were key elements I made sure to advocate for.
+                  I collaborated closely with Hilton's accessibility team during these updates to ensure I was up to date with the latest WCAG standards. Color contrast, Focus Indicators and translations adaptability were key elements I made sure to advocate for.
                   </p>
                   
                 </div>
@@ -234,8 +234,8 @@ export default function CaseStudyOnePage() {
               </p>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-14">
-                {/* Left column with square placeholder image */}
-                <div>
+                {/* Mobile: Order 2 (image second), Desktop: Left column (image first) */}
+                <div className="order-2 lg:order-1">
                   <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
                     <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
                       Placeholder Image Box<br/>(Square - 1:1 aspect ratio)
@@ -243,8 +243,8 @@ export default function CaseStudyOnePage() {
                   </div>
                 </div>
                 
-                {/* Right column with text content */}
-                <div>
+                {/* Mobile: Order 1 (text first), Desktop: Right column (text second) */}
+                <div className="order-1 lg:order-2">
                   <h2 className="custom-h2">I created custom iconography</h2>
                   <p className="p mb-4">
                   A teammate and I created a library of over 100 proprietary icons for Hilton. We used a keyline grid and a comprehensive icon creation guide to keep the library consistent.

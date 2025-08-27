@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { MoveRight } from "lucide-react";
 
 type ProcessOverviewProps = {
   steps: string[];
@@ -27,8 +28,8 @@ export default function ProcessOverview({ steps }: ProcessOverviewProps) {
                 {step}
               </div>
               {!isLast && (
-                <div className="flex-none h-[60px] sm:h-[80px] w-[50px] sm:w-[65px] flex items-center justify-center select-none text-gray-500 text-lg sm:text-xl md:text-2xl" aria-hidden>
-                  →
+                <div className="flex-none h-[60px] sm:h-[80px] w-[30px] sm:w-[40px] flex items-center justify-center select-none text-gray-500 transition-colors duration-150 ease-out hover:text-gray-700" aria-hidden>
+                  <MoveRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
                 </div>
               )}
             </React.Fragment>
