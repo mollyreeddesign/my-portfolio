@@ -8,15 +8,16 @@ import FullWidthSection from "@/components/FullWidthSection";
 import StickyNavigation from "@/components/StickyNavigation";
 import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
+import { ArrowRight, Download } from "lucide-react";
 
 export default function CaseStudyOnePage() {
   const sections = [
     { id: "theproblem", label: "The Problem" },
     { id: "businessgoal", label: "Business Goal" },
     { id: "design", label: "Process Overview" },
-    { id: "prototyping", label: "Prototyping" },
-    { id: "testing", label: "Testing & Iteration" },
-    { id: "results", label: "Results & Impact" }
+    { id: "insights", label: "Insights" },
+    { id: "whatidid", label: "What I did" },
+    { id: "results", label: "Results" }
   ];
 
   return (
@@ -82,9 +83,9 @@ export default function CaseStudyOnePage() {
           </div>
 
           {/* Main Content - full width on mobile, 3/4 width on lg+ */}
-          <div className="w-full lg:w-3/4 space-y-12">
+          <div className="w-full lg:w-3/4 space-y-16">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
-              <h2 className="custom-h2 mb-3">
+              <h2 className="custom-h2">
                 Hilton's Property pages were poor-performing areas of the site.
               </h2>
               
@@ -99,9 +100,9 @@ export default function CaseStudyOnePage() {
                 </div>
               </div>
               
-              <h4 className="p-secondary mb-6 text-center">
+              <p className="p-secondary mb-6 text-center">
                 DoubleTree by Hilton Denver Cherry Creek original Property page.
-              </h4>
+              </p>
             </CaseSection>
 
             <CaseSection id="businessgoal" title="Business Goal" headingLevel="h4">
@@ -113,77 +114,185 @@ export default function CaseStudyOnePage() {
             </CaseSection>
 
             <CaseSection id="design" title="Process Overview">
-              <p className="p mb-4">
-                The design process followed a user-centered approach, starting with wireframes and progressing through 
-                high-fidelity mockups and interactive prototypes.
-              </p>
-              
-              <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                <h3 className="custom-h3 mb-3">Key Design Decisions</h3>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Prioritized visual hierarchy for property information</li>
-                  <li>Implemented responsive design patterns</li>
-                  <li>Enhanced accessibility features</li>
-                  <li>Optimized for mobile-first experience</li>
-                </ul>
-              </div>
-              
-              <h3 className="custom-h3 mb-4">Process Steps</h3>
-              <ProcessOverview
+            <ProcessOverview
                 steps={[
                   "Look at past tests",
-                  "Make + test prototypes",
+                  "Gather insights",
+                  "Identify opportunities",
                   "Design new components",
-                  "Monorepo Merge",
                   "Launch new components"
                 ]}
               />
+              
+              
+          
             </CaseSection>
 
-            <CaseSection id="prototyping" title="Prototyping & Development">
+            <CaseSection id="insights" title="Insights + Opportunities" headingLevel="h4">
+            <h2 className="custom-h2">
+            Gaining valuable information with user testing
+                </h2>
               <p className="p mb-4">
-                We built interactive prototypes to test user flows and gather feedback before moving into development. 
-                The development phase focused on creating a robust, scalable solution.
-              </p>
-              
-              <p className="p">
-                The final implementation included a design system that could be easily maintained and extended 
-                across different property types and markets.
-              </p>
-            </CaseSection>
+              A UX designer, a content strategist and I reviewed previous user testing results to investigate prior user pain points and opportunities for page improvement. We also requested fresh user screen recordings where users could verbalize their experience on the page.
 
-            <CaseSection id="testing" title="Testing & Iteration">
-              <p className="p mb-4">
-                Continuous testing and iteration were key to our success. We conducted A/B tests, usability studies, 
-                and gathered quantitative data to validate our design decisions.
+
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600">32%</div>
-                  <div className="text-sm text-gray-600">Increase in page visits</div>
-                </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <div className="text-2xl font-bold text-green-600">11%</div>
-                  <div className="text-sm text-gray-600">Increase in bookings</div>
-                </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <div className="text-2xl font-bold text-purple-600">25%</div>
-                  <div className="text-sm text-gray-600">Reduction in bounce rate</div>
+              <p className="p mb-4">
+              Hearing users articulate their thoughts out loud gave us clarity on which page elements were working and which ones were causing frustration. These insights combined with Hilton’s business goals shaped where we concentrated our design and content updates.
+
+              </p>
+              {/* Placeholder Box - 3:2 aspect ratio */}
+              <div className="w-full bg-gray-100 rounded-lg mb-2" style={{ aspectRatio: '3/2' }}>
+                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
+                  Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-            </CaseSection>
+              <p className="p-secondary mb-6 text-center">
+              User testing showed 75% of participants preferred the carousel film strip hero over the gallery grid hero.
 
-            <CaseSection id="results" title="Results & Impact">
+              </p>
               <p className="p mb-4">
-                The redesigned property pages delivered significant improvements across all key metrics, 
-                validating our user-centered design approach and research findings.
+              One of the challenges we had with Hilton’s property pages was that they lacked high- quality imagery. Pictures of the rooms, particularly in budget brands like DoubleTree and Hampton Inn, were not attractive or high resolution. This meant it was important for product design to carry the experience. We had to surface business value without turning to the easy answer of premium photography. One example where we achieved this was with room tiles.
+              </p>
+              {/* Placeholder Box - 3:2 aspect ratio */}
+              <div className="w-full bg-gray-100 rounded-lg mb-2" style={{ aspectRatio: '3/2' }}>
+                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
+                  Placeholder Box (3:2 aspect ratio)
+                </div>
+              </div>
+              <p className="p-secondary mb-6 text-center">
+              User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2
+
               </p>
               
-              <p className="p">
-                Beyond the immediate metrics, the project established a foundation for future improvements 
-                and demonstrated the value of systematic user research and iterative design.
+              
+            </CaseSection>
+
+            <CaseSection id="whatidid" title="What I did" headingLevel="h4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-6">
+                {/* Left column with text content */}
+                <div>
+                  <h2 className="custom-h2">I designed impactful components</h2>
+                  <p className="p mb-4">
+                  We created new components based on business goals and user testing insights.
+                  </p>
+                  <p className="p mb-4">
+                  We also surfaced essential information in pre-existing components like Hotel phone numbers, emails, room prices and check-in/check-out times.
+                  </p>
+                </div>
+                
+                {/* Right column with placeholder image box */}
+                <div>
+                <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '3/2' }}>
+                    <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
+                      Placeholder Image Box<br/>(3:2 aspect ratio)
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-6">
+                {/* Left column with text content */}
+                <div>
+                  <h2 className="custom-h2">I advocated for
+                  accessibility</h2>
+                  <p className="p mb-4">
+                  I collaborated closely with Hilton’s accessibility team during these updates to ensure I was up to date with the latest WCAG standards. Color contrast, Focus Indicators and translations adaptability were key elements I made sure to advocate for.
+                  </p>
+                  
+                </div>
+                
+                {/* Right column with placeholder image box */}
+                <div>
+                  <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '3/2' }}>
+                    <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
+                      Placeholder Image Box<br/>(3:2 aspect ratio)
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 className="custom-h2">I brought key branded elements into Property pages like
+              buttons, colors, icons and font.</h2>
+              <p className="p mb-4">
+              I knew from my experience on Brand, Booking, Search, and Honors teams that Property pages were missing key branded elements: color, typography, buttons, and iconography. These might seem like minor design details, but they were crucial for signaling to users that they were still within the Hilton experience.
               </p>
+              <p className="p mb-4">
+              User testing confirmed this. We heard in recorded verbal tests that visitors felt like they had navigated to a different hotel website when entering a Property page.
+              </p>
+              <p className="p mb-4">
+              To address this, I advocated for merging the Property pages into Hilton’s monorepo, a major tech debt initiative at the time, so we could use Hilton’s main codebase styles and create a more cohesive, on-brand experience.
+              </p>
+              {/* Placeholder Box - 3:2 aspect ratio */}
+              <div className="w-full bg-gray-100 rounded-lg mb-3" style={{ aspectRatio: '3/2' }}>
+                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
+                  Placeholder Box (3:2 aspect ratio)
+                </div>
+              </div>
+              <p className="p-secondary mb-14 text-center">
+              After merging into the monorepo, Hilton components could inherit color, font, and button styles based on the brand site they appeared on.
+              </p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-14">
+                {/* Left column with square placeholder image */}
+                <div>
+                  <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
+                    <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
+                      Placeholder Image Box<br/>(Square - 1:1 aspect ratio)
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Right column with text content */}
+                <div>
+                  <h2 className="custom-h2">I created custom iconography</h2>
+                  <p className="p mb-4">
+                  A teammate and I created a library of over 100 proprietary icons for Hilton. We used a keyline grid and a comprehensive icon creation guide to keep the library consistent.
+
+The icons were published company- wide using the Hilton shared codebase. They were adopted across the entire Hilton website, the Hilton app, Marketing, Legal, and Hotel signage.
+                  </p>
+                </div>
+              </div>
+              <h2 className="custom-h2">I built and maintained Hilton's web design system</h2>
+              <p className="p mb-4">
+              An advantage I brought to the Property page redesign was my deep involvement in Hilton's Figma web design system. I had developed a strong familiarity with Hilton's design language across the site from spending significant time creating, maintaining, and improving the system.
+              </p>
+              <p className="p mb-4">
+I regularly spoke at Hilton's monthly Figma showcases, managed library permissions, and supported teams in adopting the system. This experience directly improved the Property page update because of my foundational knowledge in Hilton's web styles.
+              </p>
+              <div className="w-full bg-gray-100 rounded-lg mb-3" style={{ aspectRatio: '3/2' }}>
+                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
+                  Placeholder Box (3:2 aspect ratio)
+                </div>
+              </div>
+              <p className="p-secondary mb-14 text-center">
+              Views of the Hilton Design system I built and maintained in Figma.
+              </p>
+            </CaseSection>
+
+            <CaseSection id="results" title="Results">
+              <div className="grid grid-cols-2 gap-8">
+                <div className="col-span-1">
+                  <p className="p mb-4">
+                  This redesign directly drove higher engagement and reservations in Hilton property pages. In addition, it addressed significant tech debt by pushing the team's transition into Hilton's main codebase. This made the product far more sustainable. Updates became quicker to implement, design system changes could be adopted seamlessly, and site improvements no longer required band-aid fixes over an old system.
+                  </p>
+                </div>
+                                <div className="col-span-1 space-y-3">
+                 
+               <Metric metric="32% increase in property page visits" />
+               <Metric metric="11% increase in reservations from property pages" />
+               <Metric metric="Reduced product team tech debt" />
+             
+               <div className="space-y-3 pt-4">
+                 <button className="btn btn--primary w-full">
+                   <span>View Case Study</span>
+                   <ArrowRight size={20} />
+                 </button>
+                 <button className="btn btn--secondary w-full">
+                   <span>Download PDF</span>
+                   <Download size={20} />
+                 </button>
+               </div>
+                  </div>
+              </div>
             </CaseSection>
           </div>
         </div>
@@ -200,9 +309,9 @@ export default function CaseStudyOnePage() {
             steps={[
               "Discovery",
               "User Research",
-              "Ideation",
+              "Insights",
+              "Opportunities",
               "Design",
-              "Prototype",
               "Test & Iterate",
               "Launch",
             ]}

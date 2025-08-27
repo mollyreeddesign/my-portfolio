@@ -4,6 +4,7 @@ import PageContainer from "@/components/PageContainer";
 import FullWidthSection from "@/components/FullWidthSection";
 import Card from "@/components/Card";
 import Metric from "@/components/Metric";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -68,15 +69,11 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-3">
           <button className="btn btn--primary">
             <span>Primary</span>
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
+            <ArrowRight size={20} />
           </button>
           <button className="btn btn--secondary">
             <span>Secondary</span>
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
+            <ArrowRight size={20} />
           </button>
         </div>
       </section>

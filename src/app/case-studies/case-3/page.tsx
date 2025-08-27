@@ -83,7 +83,7 @@ export default function CaseStudyThreePage() {
           </div>
 
           {/* Main Content - full width on mobile, 3/4 width on lg+ */}
-          <div className="w-full lg:w-3/4 space-y-12">
+          <div className="w-full lg:w-3/4 space-y-16">
             <CaseSection id="theproblem" title="The Problem">
               <p className="p mb-4">
                 This case study explores the redesign of hotel property pages to improve user engagement and conversion rates. 
