@@ -76,12 +76,14 @@ export default function CaseStudyThreePage() {
 
       <PageContainer>
         {/* Sticky Side Menu Layout */}
-        <div className="flex gap-8 mt-2">
-          {/* Sticky Sidebar - 2/7 width */}
-          <StickyNavigation sections={sections} />
+        <div className="flex flex-col lg:flex-row gap-8 mt-2">
+          {/* Sticky Sidebar - hidden on mobile, 1/4 width on lg+ */}
+          <div className="hidden lg:block lg:w-1/4 lg:sticky lg:top-20 lg:self-start">
+            <StickyNavigation sections={sections} />
+          </div>
 
-          {/* Main Content - 5/7 width */}
-          <div className="w-5/7 space-y-12">
+          {/* Main Content - full width on mobile, 3/4 width on lg+ */}
+          <div className="w-full lg:w-3/4 space-y-12">
             <CaseSection id="theproblem" title="The Problem">
               <p className="p mb-4">
                 This case study explores the redesign of hotel property pages to improve user engagement and conversion rates. 

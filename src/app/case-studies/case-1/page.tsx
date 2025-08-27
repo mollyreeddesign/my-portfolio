@@ -75,14 +75,14 @@ export default function CaseStudyOnePage() {
 
       <PageContainer>
         {/* Sticky Side Menu Layout */}
-        <div className="flex gap-8 mt-2">
-          {/* Sticky Sidebar - 2/7 width - Hidden on mobile */}
-          <div className="hidden md:block">
+        <div className="flex flex-col lg:flex-row gap-8 mt-2">
+          {/* Sticky Sidebar - hidden on mobile, 1/4 width on lg+ */}
+          <div className="hidden lg:block lg:w-1/4 lg:sticky lg:top-20 lg:self-start">
             <StickyNavigation sections={sections} />
           </div>
 
-          {/* Main Content - Full width on mobile, 5/7 on desktop */}
-          <div className="w-full md:w-5/7 space-y-12">
+          {/* Main Content - full width on mobile, 3/4 width on lg+ */}
+          <div className="w-full lg:w-3/4 space-y-12">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2 mb-3">
                 Hilton's Property pages were poor-performing areas of the site.
@@ -118,7 +118,7 @@ export default function CaseStudyOnePage() {
                 high-fidelity mockups and interactive prototypes.
               </p>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg mb-6">
                 <h3 className="custom-h3 mb-3">Key Design Decisions</h3>
                 <ul className="list-disc list-inside space-y-2">
                   <li>Prioritized visual hierarchy for property information</li>
@@ -127,6 +127,17 @@ export default function CaseStudyOnePage() {
                   <li>Optimized for mobile-first experience</li>
                 </ul>
               </div>
+              
+              <h3 className="custom-h3 mb-4">Process Steps</h3>
+              <ProcessOverview
+                steps={[
+                  "Look at past tests",
+                  "Make + test prototypes",
+                  "Design new components",
+                  "Monorepo Merge",
+                  "Launch new components"
+                ]}
+              />
             </CaseSection>
 
             <CaseSection id="prototyping" title="Prototyping & Development">

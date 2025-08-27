@@ -36,26 +36,24 @@ export default function StickyNavigation({ sections }: StickyNavigationProps) {
   const isActive = (sectionId: string) => activeSection === sectionId;
 
   return (
-    <div className="w-2/7">
-      <div className="sticky top-18 space-y-2">
-        <nav className="space-y-2">
-          {sections.map((section) => (
-            <a
-              key={section.id}
-              href={`#${section.id}`}
-              className={`block py-2 px-3 rounded-lg transition-all duration-100 ease-in-out text-[16px] md:text-[18px] leading-[26px] ${
-                isActive(section.id)
-                  ? "bg-gray-50 font-semibold text-gray-800"
-                  : "bg-transparent font-normal text-gray-800 hover:bg-gray-100"
-              }`}
-              data-active={isActive(section.id)}
-              data-section={section.id}
-            >
-              {section.label}
-            </a>
-          ))}
-        </nav>
-      </div>
+    <div className="w-full">
+      <nav className="sticky top-20 space-y-2" style={{ position: 'sticky', top: '80px' }}>
+        {sections.map((section) => (
+          <a
+            key={section.id}
+            href={`#${section.id}`}
+            className={`block py-2 px-3 rounded-lg transition-all duration-100 ease-in-out text-[16px] md:text-[18px] leading-[26px] ${
+              isActive(section.id)
+                ? "bg-gray-50 font-semibold text-gray-800"
+                : "bg-transparent font-normal text-gray-800 hover:bg-gray-100"
+            }`}
+            data-active={isActive(section.id)}
+            data-section={section.id}
+          >
+            {section.label}
+          </a>
+        ))}
+      </nav>
     </div>
   );
 }
