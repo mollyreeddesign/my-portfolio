@@ -5,41 +5,41 @@ import ProcessOverview from "@/components/ProcessOverview";
 import Tag from "@/components/Tag";
 import Metric from "@/components/Metric";
 import FullWidthSection from "@/components/FullWidthSection";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function CaseStudyOnePage() {
   const [activeSection, setActiveSection] = useState("theproblem");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        "theproblem",
-        "research", 
-        "design",
-        "prototyping",
-        "testing",
-        "results"
-      ];
-      
-      const scrollPosition = window.scrollY + 100; // Offset for better detection
-      
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
-        }
+  const handleScroll = useCallback(() => {
+    const sections = [
+      "theproblem",
+      "research", 
+      "design",
+      "prototyping",
+      "testing",
+      "results"
+    ];
+    
+    const scrollPosition = window.scrollY + 100;
+    
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = document.getElementById(sections[i]);
+      if (section && section.offsetTop <= scrollPosition) {
+        setActiveSection(sections[i]);
+        break;
       }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   const isActive = (sectionId: string) => activeSection === sectionId;
 
   return (
-    <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] py-8 sm:py-12 bg-white text-[#2c2c2c]">
+    <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] py-8 sm:py-12 bg-white text-gray-800">
       <PageContainer>
       <h1 className="custom-h1 mb-6">
         Increased conversion and engagement
@@ -60,9 +60,9 @@ export default function CaseStudyOnePage() {
             <div className="space-y-2 mb-6">
           <h2 className="custom-h2">My role</h2>
           <ul className="list-disc list-inside space-y-1">
-            <li>Designed testable prototypes</li>
-            <li>Built and maintained a design system</li>
-            <li>Advocated for accessibility and sustainability</li>
+            <li className="p">Designed testable prototypes</li>
+            <li className="p">Built and maintained a design system</li>
+            <li className="p">Advocated for accessibility and sustainability</li>
           </ul>
           </div>
           <div className="space-y-2">
@@ -82,17 +82,12 @@ export default function CaseStudyOnePage() {
             <Metric metric="Reduced product team tech debt" />
           </div>
         </div>
-        
-        
-        
-        
       </div>
       </PageContainer>
 
       <FullWidthSection backgroundColor="#f5f5f5">
         <div className="text-center">
           <h2 className="custom-h2 mb-4">Image here</h2>
-          
         </div>
       </FullWidthSection>
 
@@ -102,64 +97,63 @@ export default function CaseStudyOnePage() {
           {/* Sticky Sidebar - 2/7 width */}
           <div className="w-2/7">
             <div className="sticky top-10 space-y-2">
-              
               <nav className="space-y-2">
                 <a 
                   href="#theproblem" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 ${
+                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
                     isActive("theproblem") 
-                      ? "bg-gray-100 font-semibold text-[#2c2c2c]" 
-                      : "hover:bg-gray-100 text-[#2c2c2c] hover:text-[#2c2c2c]"
+                      ? "bg-gray-100 !font-semibold text-gray-800" 
+                      : "hover:bg-gray-100 text-gray-800"
                   }`}
                 >
                   The Problem
                 </a>
                 <a 
                   href="#research" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 ${
+                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
                     isActive("research") 
-                      ? "bg-gray-100 font-semibold text-[#2c2c2c]" 
-                      : "hover:bg-gray-100 text-[#2c2c2c] hover:text-[#2c2c2c]"
+                      ? "bg-gray-100 !font-semibold text-gray-800" 
+                      : "hover:bg-gray-100 text-gray-800"
                   }`}
                 >
                   Research & Discovery
                 </a>
                 <a 
                   href="#design" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 ${
+                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
                     isActive("design") 
-                      ? "bg-gray-100 font-semibold text-[#2c2c2c]" 
-                      : "hover:bg-gray-100 text-[#2c2c2c] hover:text-[#2c2c2c]"
+                      ? "bg-gray-100 !font-semibold text-gray-800" 
+                      : "hover:bg-gray-100 text-gray-800"
                   }`}
                 >
                   Design Process
                 </a>
                 <a 
                   href="#prototyping" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 ${
+                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
                     isActive("prototyping") 
-                      ? "bg-gray-100 font-semibold text-[#2c2c2c]" 
-                      : "hover:bg-gray-100 text-[#2c2c2c] hover:text-[#2c2c2c]"
+                      ? "bg-gray-100 !font-semibold text-gray-800" 
+                      : "hover:bg-gray-100 text-gray-800"
                   }`}
                 >
                   Prototyping
                 </a>
                 <a 
                   href="#testing" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 ${
+                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
                     isActive("testing") 
-                      ? "bg-gray-100 font-semibold text-[#2c2c2c]" 
-                      : "hover:bg-gray-100 text-[#2c2c2c] hover:text-[#2c2c2c]"
+                      ? "bg-gray-100 !font-semibold text-gray-800" 
+                      : "hover:bg-gray-100 text-gray-800"
                   }`}
                 >
                   Testing & Iteration
                 </a>
                 <a 
                   href="#results" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 ${
+                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
                     isActive("results") 
-                      ? "bg-gray-100 font-semibold text-[#2c2c2c]" 
-                      : "hover:bg-gray-100 text-[#2c2c2c] hover:text-[#2c2c2c]"
+                      ? "bg-gray-100 !font-semibold text-gray-800" 
+                      : "hover:bg-gray-100 text-gray-800"
                   }`}
                 >
                   Results & Impact
@@ -256,7 +250,7 @@ export default function CaseStudyOnePage() {
                   <div className="text-2xl font-bold text-purple-600">25%</div>
                   <div className="text-sm text-gray-600">Reduction in bounce rate</div>
                 </div>
-                </div>
+              </div>
             </section>
 
             <section id="results">

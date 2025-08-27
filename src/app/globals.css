@@ -41,7 +41,7 @@ h1 {
   font-family: 'Americana Std Roman', serif;
   font-weight: 400;
   font-size: 24px;
-  line-height: 29px;
+  line-height: 32px;
 }
 
 @media (min-width: 768px) {
@@ -82,13 +82,17 @@ h1 {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  color: #767676;
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
   .custom-h4 {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
+    color: #767676;
+    text-transform: uppercase;
   }
 }
 
@@ -99,7 +103,7 @@ p,
   font-family: var(--font-work-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 @media (min-width: 768px) {
@@ -126,25 +130,6 @@ p,
   .custom-p-secondary {
     font-size: 16px;
     line-height: 24px;
-  }
-}
-
-
-@keyframes glisten {
-  0% {
-    transform: translateX(-220%) skewX(-20deg) rotate(15deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.9;
-  }
-  28% {
-    transform: translateX(320%) skewX(-20deg) rotate(15deg);
-    opacity: 0.05;
-  }
-  100% {
-    transform: translateX(320%) skewX(-20deg) rotate(15deg);
-    opacity: 0;
   }
 }
 

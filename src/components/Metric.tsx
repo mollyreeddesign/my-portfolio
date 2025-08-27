@@ -10,33 +10,11 @@ export type MetricProps = {
 export default function Metric({ metric, measure, success, className }: MetricProps) {
   return (
     <div
-      className={[
-        "relative",
-        "overflow-hidden",
-        "group",
-        "inline-flex",
-        "items-center",
-        "gap-[10px]",
-        "border",
-        "border-[#E3E3E3]",
-        "bg-[#F9F9F9]",
-        "rounded-[4px]",
-        "px-[12px]",
-        "py-[6px]",
-        "text-[#2C2C2C]",
-      ].join(" ") + (className ? ` ${className}` : "")}
+      className={`relative overflow-hidden group inline-flex items-center gap-2.5 border border-gray-200 bg-gray-100 rounded px-3 py-1.5 text-gray-800 ${className || ""}`}
       data-success={success}
       role="group"
       aria-label={measure ? `${metric} ${measure}` : metric}
     >
-      {/* glisten overlay */}
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-[-20%] left-[-50%] w-[60%] bg-gradient-to-r from-transparent via-[#ffffffcc] to-transparent"
-        style={{
-          animation: "glisten 5s ease-out infinite",
-        }}
-      />
       <svg
         width="24"
         height="24"
@@ -51,7 +29,7 @@ export default function Metric({ metric, measure, success, className }: MetricPr
       </svg>
       <div className="flex items-baseline gap-2">
         <span className="p">{metric}</span>
-        {measure ? <span className="p text-[#2C2C2C]/70">{measure}</span> : null}
+        {measure ? <span className="p text-gray-600">{measure}</span> : null}
       </div>
     </div>
   );
