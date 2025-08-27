@@ -55,7 +55,7 @@ export default function Nav() {
       isActive: (p) => p === "/",
     },
     {
-      label: "Case Studies",
+      label: "Cases",
       href: "/case-studies",
       isActive: (p) => p === "/case-studies" || p.startsWith("/case-studies/"),
     },
@@ -82,7 +82,7 @@ export default function Nav() {
         (isHidden ? " -translate-y-full" : " translate-y-0")
       }
     >
-      <div className="font-americana text-[24px] mx-auto max-w-6xl px-4 md:px-8 lg:px-16 py-2 flex items-center justify-between">
+      <div className="font-americana text-[18px] md:text-[24px] mx-auto max-w-6xl px-4 md:px-8 lg:px-16 py-2 flex items-center justify-between">
       {/* Left: Brand (no active underline) */}
       <Link href="/" className="tracking-tight hover:opacity-80">
         molly reed

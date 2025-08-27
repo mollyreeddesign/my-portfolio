@@ -15,6 +15,7 @@ export default function Metric({ metric, measure, success, className }: MetricPr
       role="group"
       aria-label={measure ? `${metric} ${measure}` : metric}
     >
+      <span className="glisten-overlay" aria-hidden="true" />
       <svg
         width="24"
         height="24"

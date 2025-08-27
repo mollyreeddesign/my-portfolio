@@ -90,6 +90,11 @@ h1 {
   text-transform: uppercase;
 }
 
+/* Custom scroll margin top for case study sections */
+.scroll-mt-18 {
+  scroll-margin-top: 4.5rem; /* 72px */
+}
+
 @media (min-width: 768px) {
   .custom-h4 {
     font-weight: 600;
@@ -115,7 +120,7 @@ p,
   .p,
   .custom-p {
     font-size: 18px;
-    line-height: 26px;
+    line-height: 28px;
   }
 }
 
@@ -190,5 +195,48 @@ p,
 
 .btn:hover {
   opacity: 0.9;
+}
+
+/* Metric glisten animation */
+.glisten-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0) 30%,
+    rgba(255,255,255,0.5) 40%,
+    rgba(255,255,255,0.5) 60%,
+    rgba(255,255,255,0) 70%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: translateX(-150%);
+  animation: glisten-sweep 8s ease-in-out infinite;
+}
+
+@keyframes glisten-sweep {
+  0% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glisten-overlay {
+    animation: none;
+    opacity: 0;
+  }
 }
 
