@@ -6,6 +6,7 @@ import Tag from "@/components/Tag";
 import Metric from "@/components/Metric";
 import FullWidthSection from "@/components/FullWidthSection";
 import StickyNavigation from "@/components/StickyNavigation";
+import CaseSection from "@/components/case-studies/CaseSection";
 
 export default function CaseStudyOnePage() {
   const sections = [
@@ -78,8 +79,7 @@ export default function CaseStudyOnePage() {
 
           {/* Main Content - 5/7 width */}
           <div className="w-5/7 space-y-12">
-            <section id="theproblem" className="scroll-mt-18">
-              <h2 className="custom-h2 mb-6">The Problem</h2>
+            <CaseSection id="theproblem" title="The Problem">
               <p className="p mb-4">
                 This case study explores the redesign of hotel property pages to improve user engagement and conversion rates. 
                 The project involved extensive user research, iterative design, and comprehensive testing across multiple markets.
@@ -88,10 +88,9 @@ export default function CaseStudyOnePage() {
                 Through systematic improvements to information architecture, visual hierarchy, and user experience, 
                 we achieved significant improvements in key metrics while maintaining the brand's visual identity.
               </p>
-            </section>
+            </CaseSection>
 
-            <section id="research" className="scroll-mt-18">
-              <h2 className="custom-h2 mb-6">Research & Discovery</h2>
+            <CaseSection id="research" title="Research & Discovery">
               <p className="p mb-4">
                 Our research phase involved analyzing user behavior data, conducting usability studies, and gathering 
                 feedback from hotel partners and customers across different markets.
@@ -114,10 +113,9 @@ export default function CaseStudyOnePage() {
                   </ul>
                 </div>
               </div>
-            </section>
+            </CaseSection>
 
-            <section id="design" className="scroll-mt-18">
-              <h2 className="custom-h2 mb-6">Design Process</h2>
+            <CaseSection id="design" title="Design Process">
               <p className="p mb-4">
                 The design process followed a user-centered approach, starting with wireframes and progressing through 
                 high-fidelity mockups and interactive prototypes.
@@ -131,10 +129,9 @@ export default function CaseStudyOnePage() {
                   <li>Optimized for mobile-first experience</li>
                 </ul>
               </div>
-            </section>
+            </CaseSection>
 
-            <section id="prototyping" className="scroll-mt-18">
-              <h2 className="custom-h2 mb-6">Prototyping & Development</h2>
+            <CaseSection id="prototyping" title="Prototyping & Development">
               <p className="p mb-4">
                 We built interactive prototypes to test user flows and gather feedback before moving into development. 
                 The development phase focused on creating a robust, scalable solution.
@@ -143,10 +140,9 @@ export default function CaseStudyOnePage() {
                 The final implementation included a design system that could be easily maintained and extended 
                 across different property types and markets.
               </p>
-            </section>
+            </CaseSection>
 
-            <section id="testing" className="scroll-mt-18">
-              <h2 className="custom-h2 mb-6">Testing & Iteration</h2>
+            <CaseSection id="testing" title="Testing & Iteration">
               <p className="p mb-4">
                 Continuous testing and iteration were key to our success. We conducted A/B tests, usability studies, 
                 and gathered quantitative data to validate our design decisions.
@@ -165,10 +161,9 @@ export default function CaseStudyOnePage() {
                   <div className="text-sm text-gray-600">Reduction in bounce rate</div>
                 </div>
               </div>
-            </section>
+            </CaseSection>
 
-            <section id="results" className="scroll-mt-18">
-              <h2 className="custom-h2 mb-6">Results & Impact</h2>
+            <CaseSection id="results" title="Results & Impact">
               <p className="p mb-4">
                 The redesigned property pages delivered significant improvements across all key metrics, 
                 validating our user-centered design approach and research findings.
@@ -177,7 +172,7 @@ export default function CaseStudyOnePage() {
                 Beyond the immediate metrics, the project established a foundation for future improvements 
                 and demonstrated the value of systematic user research and iterative design.
               </p>
-            </section>
+            </CaseSection>
           </div>
         </div>
       </PageContainer>
