@@ -17,7 +17,8 @@ export default function CaseStudyOnePage() {
     { id: "design", label: "Process Overview" },
     { id: "insights", label: "Insights" },
     { id: "whatidid", label: "What I did" },
-    { id: "results", label: "Results" }
+    { id: "results", label: "Results" },
+    { id: "otherhiltonwork", label: "Other Hilton Work" }
   ];
 
   return (
@@ -60,9 +61,9 @@ export default function CaseStudyOnePage() {
           <div className="space-y-2">
             <h2 className="custom-h2">Result</h2>
             <div className="space-y-3">
-              <Metric metric="32% increase in property page visits" />
-              <Metric metric="11% increase in reservations from property pages" />
-              <Metric metric="Reduced product team tech debt" />
+              <Metric metric="32% increase in property page visits" icon="arrow-up-right" />
+              <Metric metric="11% increase in reservations from property pages" icon="arrow-up-right" />
+              <Metric metric="Reduced product team tech debt" icon="arrow-down-right" />
             </div>
           </div>
         </div>
@@ -170,7 +171,7 @@ export default function CaseStudyOnePage() {
             </CaseSection>
 
             <CaseSection id="whatidid" title="What I did" headingLevel="h4">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-6 md:gap-8">
                 {/* Left column with text content */}
                 <div>
                   <h2 className="custom-h2">I designed impactful components</h2>
@@ -231,6 +232,7 @@ export default function CaseStudyOnePage() {
               <p className="p-secondary mb-14 text-center">
               After merging into the monorepo, Hilton components could inherit color, font, and button styles based on the brand site they appeared on.
               </p>
+              
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-14">
                 {/* Left column with square placeholder image */}
                 <div>
@@ -269,55 +271,85 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
             </CaseSection>
 
             <CaseSection id="results" title="Results">
-              <div className="grid grid-cols-2 gap-8">
-                <div className="col-span-1">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Mobile: Order 2, Desktop: Left column */}
+                <div className="order-2 md:order-1 col-span-1">
                   <p className="p mb-4">
                   This redesign directly drove higher engagement and reservations in Hilton property pages. In addition, it addressed significant tech debt by pushing the team's transition into Hilton's main codebase. This made the product far more sustainable. Updates became quicker to implement, design system changes could be adopted seamlessly, and site improvements no longer required band-aid fixes over an old system.
                   </p>
-                </div>
-                                <div className="col-span-1 space-y-3">
-                 
-               <Metric metric="32% increase in property page visits" />
-               <Metric metric="11% increase in reservations from property pages" />
-               <Metric metric="Reduced product team tech debt" />
-             
-               <div className="space-y-3 pt-4">
-                 <button className="btn btn--primary w-full">
-                   <span>View Case Study</span>
-                   <ArrowRight size={20} />
-                 </button>
-                 <button className="btn btn--secondary w-full">
-                   <span>Download PDF</span>
-                   <Download size={20} />
-                 </button>
-               </div>
+                  
+                  {/* Mobile: Buttons below paragraph */}
+                  <div className="md:hidden space-y-3 pt-4">
+                    <button className="btn btn--primary w-full">
+                      <span>View Case Study</span>
+                      <ArrowRight size={20} />
+                    </button>
+                    <button className="btn btn--secondary w-full">
+                      <span>Download PDF</span>
+                      <Download size={20} />
+                    </button>
                   </div>
+                </div>
+                
+                {/* Mobile: Order 1, Desktop: Right column */}
+                <div className="order-1 md:order-2 col-span-1 space-y-3">
+                  <Metric metric="32% increase in property page visits" icon="arrow-up-right" />
+                  <Metric metric="11% increase in reservations from property pages" icon="arrow-up-right" />
+                  <Metric metric="Reduced product team tech debt" icon="arrow-down-right" />
+                  
+                  {/* Desktop: Buttons below metrics */}
+                  <div className="hidden md:block space-y-3 pt-4">
+                    <button className="btn btn--primary w-full">
+                      <span>View Case Study</span>
+                      <ArrowRight size={20} />
+                    </button>
+                    <button className="btn btn--secondary w-full">
+                      <span>Download PDF</span>
+                      <Download size={20} />
+                    </button>
+                  </div>
+                </div>
               </div>
             </CaseSection>
-          </div>
+
+            <CaseSection id="otherhiltonwork" title="Other Hilton Work" headingLevel="h4">
+              <h2 className="custom-h2">Personal Information</h2>
+              <div className="w-full bg-gray-100 rounded-lg mb-3" style={{ aspectRatio: '3/2' }}>
+                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
+                  Placeholder Box (3:2 aspect ratio)
+                </div>
+              </div>
+              <p className="p-secondary mb-14 text-center">
+              Two other designers and I were tasked to give users a more focused view of their personal information. I brought new iconography, accessibility considerations, clear typographic hierarchy and an improved user experience.
+              </p>
+              <h2 className="custom-h2">Navigation</h2>
+              <div className="w-full bg-gray-100 rounded-lg mb-3" style={{ aspectRatio: '3/2' }}>
+                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
+                  Placeholder Box (3:2 aspect ratio)
+                </div>
+              </div>
+              <p className="p-secondary !mb-14 text-center">
+              A UX designer and I modernized Hilton’s site navigation across desktop, tablet and mobile. I brought accessible focus indicators, optical alignment, typography changes and improved the information architecture.
+              </p>
+                          </CaseSection>
+              
+              {/* Back to Top Button */}
+              <div className="flex justify-center mt-16 mb-8">
+                <button 
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  className="btn btn--primary"
+                >
+                  <span>Back to Top</span>
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m18 15-6-6-6 6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
         </div>
       </PageContainer>
 
-      <PageContainer>
-        <p className="p-secondary mt-4">
-          This is a secondary paragraph using Work Sans in #767676.
-        </p>
-        
-        <div className="mt-8">
-          <h2 className="custom-h3 mb-3">Process overview</h2>
-          <ProcessOverview
-            steps={[
-              "Discovery",
-              "User Research",
-              "Insights",
-              "Opportunities",
-              "Design",
-              "Test & Iterate",
-              "Launch",
-            ]}
-          />
-        </div>
-      </PageContainer>
+      
     </main>
   );
 }
