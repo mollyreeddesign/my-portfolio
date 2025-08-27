@@ -82,10 +82,10 @@ export default function Nav() {
         (isHidden ? " -translate-y-full" : " translate-y-0")
       }
     >
-      <div className="font-americana text-[20px] md:text-[28px] mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
+      <div className="font-americana text-[24px] mx-auto max-w-6xl px-4 md:px-8 lg:px-16 py-2 flex items-center justify-between">
       {/* Left: Brand (no active underline) */}
-      <Link href="/" className="font-semibold tracking-tight hover:opacity-80">
-        Portfolio
+      <Link href="/" className="tracking-tight hover:opacity-80">
+        molly reed
       </Link>
 
       {/* Right: Links with active underline indicator */}
@@ -96,17 +96,14 @@ export default function Nav() {
             <li key={item.href} className="relative">
               <Link
                 href={item.href}
-                className="relative inline-block group focus:outline-none"
+                className={`relative inline-block focus:outline-none px-3 py-1 rounded-md border transition-all duration-200 ${
+                  active 
+                    ? (isCaseStudiesPage ? "border-[#2C2C2C]" : "border-foreground")
+                    : "border-transparent hover:border-gray-300"
+                }`}
                 aria-current={active ? "page" : undefined}
               >
                 {item.label}
-                <span
-                  className={
-                    `pointer-events-none absolute left-0 right-0 -bottom-[10px] h-px ` +
-                    (isCaseStudiesPage ? "bg-[#2C2C2C]" : "bg-foreground") +
-                    (active ? " block" : " hidden group-hover:block group-focus:block group-focus-visible:block")
-                  }
-                />
               </Link>
             </li>
           );

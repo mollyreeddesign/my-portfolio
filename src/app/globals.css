@@ -31,6 +31,10 @@ body {
   color: var(--foreground);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Global h1 styles - all h1 elements use Americana font */
 h1 {
   font-family: 'Americana Std Roman', serif;

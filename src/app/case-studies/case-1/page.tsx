@@ -5,38 +5,17 @@ import ProcessOverview from "@/components/ProcessOverview";
 import Tag from "@/components/Tag";
 import Metric from "@/components/Metric";
 import FullWidthSection from "@/components/FullWidthSection";
-import { useState, useEffect, useCallback } from "react";
+import StickyNavigation from "@/components/StickyNavigation";
 
 export default function CaseStudyOnePage() {
-  const [activeSection, setActiveSection] = useState("theproblem");
-
-  const handleScroll = useCallback(() => {
-    const sections = [
-      "theproblem",
-      "research", 
-      "design",
-      "prototyping",
-      "testing",
-      "results"
-    ];
-    
-    const scrollPosition = window.scrollY + 100;
-    
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const section = document.getElementById(sections[i]);
-      if (section && section.offsetTop <= scrollPosition) {
-        setActiveSection(sections[i]);
-        break;
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
-
-  const isActive = (sectionId: string) => activeSection === sectionId;
+  const sections = [
+    { id: "theproblem", label: "The Problem" },
+    { id: "research", label: "Research & Discovery" },
+    { id: "design", label: "Design Process" },
+    { id: "prototyping", label: "Prototyping" },
+    { id: "testing", label: "Testing & Iteration" },
+    { id: "results", label: "Results & Impact" }
+  ];
 
   return (
     <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] py-8 sm:py-12 bg-white text-gray-800">
@@ -95,76 +74,11 @@ export default function CaseStudyOnePage() {
         {/* Sticky Side Menu Layout */}
         <div className="flex gap-8 mt-2">
           {/* Sticky Sidebar - 2/7 width */}
-          <div className="w-2/7">
-            <div className="sticky top-10 space-y-2">
-              <nav className="space-y-2">
-                <a 
-                  href="#theproblem" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
-                    isActive("theproblem") 
-                      ? "bg-gray-100 !font-semibold text-gray-800" 
-                      : "hover:bg-gray-100 text-gray-800"
-                  }`}
-                >
-                  The Problem
-                </a>
-                <a 
-                  href="#research" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
-                    isActive("research") 
-                      ? "bg-gray-100 !font-semibold text-gray-800" 
-                      : "hover:bg-gray-100 text-gray-800"
-                  }`}
-                >
-                  Research & Discovery
-                </a>
-                <a 
-                  href="#design" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
-                    isActive("design") 
-                      ? "bg-gray-100 !font-semibold text-gray-800" 
-                      : "hover:bg-gray-100 text-gray-800"
-                  }`}
-                >
-                  Design Process
-                </a>
-                <a 
-                  href="#prototyping" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
-                    isActive("prototyping") 
-                      ? "bg-gray-100 !font-semibold text-gray-800" 
-                      : "hover:bg-gray-100 text-gray-800"
-                  }`}
-                >
-                  Prototyping
-                </a>
-                <a 
-                  href="#testing" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
-                    isActive("testing") 
-                      ? "bg-gray-100 !font-semibold text-gray-800" 
-                      : "hover:bg-gray-100 text-gray-800"
-                  }`}
-                >
-                  Testing & Iteration
-                </a>
-                <a 
-                  href="#results" 
-                  className={`block py-2 px-3 rounded-lg transition-all duration-200 p ${
-                    isActive("results") 
-                      ? "bg-gray-100 !font-semibold text-gray-800" 
-                      : "hover:bg-gray-100 text-gray-800"
-                  }`}
-                >
-                  Results & Impact
-                </a>
-              </nav>
-            </div>
-          </div>
+          <StickyNavigation sections={sections} />
 
           {/* Main Content - 5/7 width */}
           <div className="w-5/7 space-y-12">
-            <section id="theproblem">
+            <section id="theproblem" className="scroll-mt-18">
               <h2 className="custom-h2 mb-6">The Problem</h2>
               <p className="p mb-4">
                 This case study explores the redesign of hotel property pages to improve user engagement and conversion rates. 
@@ -176,14 +90,14 @@ export default function CaseStudyOnePage() {
               </p>
             </section>
 
-            <section id="research">
+            <section id="research" className="scroll-mt-18">
               <h2 className="custom-h2 mb-6">Research & Discovery</h2>
               <p className="p mb-4">
                 Our research phase involved analyzing user behavior data, conducting usability studies, and gathering 
                 feedback from hotel partners and customers across different markets.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="bg-gray-100 p-6 rounded-lg">
                   <h3 className="custom-h3 mb-3">User Insights</h3>
                   <ul className="list-disc list-inside space-y-2 text-sm">
                     <li>Users struggled to find booking information</li>
@@ -202,7 +116,7 @@ export default function CaseStudyOnePage() {
               </div>
             </section>
 
-            <section id="design">
+            <section id="design" className="scroll-mt-18">
               <h2 className="custom-h2 mb-6">Design Process</h2>
               <p className="p mb-4">
                 The design process followed a user-centered approach, starting with wireframes and progressing through 
@@ -219,7 +133,7 @@ export default function CaseStudyOnePage() {
               </div>
             </section>
 
-            <section id="prototyping">
+            <section id="prototyping" className="scroll-mt-18">
               <h2 className="custom-h2 mb-6">Prototyping & Development</h2>
               <p className="p mb-4">
                 We built interactive prototypes to test user flows and gather feedback before moving into development. 
@@ -231,7 +145,7 @@ export default function CaseStudyOnePage() {
               </p>
             </section>
 
-            <section id="testing">
+            <section id="testing" className="scroll-mt-18">
               <h2 className="custom-h2 mb-6">Testing & Iteration</h2>
               <p className="p mb-4">
                 Continuous testing and iteration were key to our success. We conducted A/B tests, usability studies, 
@@ -253,7 +167,7 @@ export default function CaseStudyOnePage() {
               </div>
             </section>
 
-            <section id="results">
+            <section id="results" className="scroll-mt-18">
               <h2 className="custom-h2 mb-6">Results & Impact</h2>
               <p className="p mb-4">
                 The redesigned property pages delivered significant improvements across all key metrics, 
