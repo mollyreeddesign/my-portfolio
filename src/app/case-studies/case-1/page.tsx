@@ -9,8 +9,26 @@ import StickyNavigation from "@/components/StickyNavigation";
 import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
 import { ArrowRight, Download } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function CaseStudyOnePage() {
+  const [scrollY, setScrollY] = useState(0);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrollingDown(currentScrollY > scrollY);
+      setPrevScrollY(scrollY);
+      setScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrollY]);
+
   const sections = [
     { id: "theproblem", label: "The Problem" },
     { id: "businessgoal", label: "Business Goal" },
@@ -69,11 +87,47 @@ export default function CaseStudyOnePage() {
         </div>
       </PageContainer>
 
-      <FullWidthSection backgroundColor="#f5f5f5">
-        <div className="text-center">
-          <h2 className="custom-h2 mb-4">Image here</h2>
+      {/* Custom Full Width Section - bypasses PageContainer */}
+      <section className="w-full py-8 sm:py-12 bg-[#f5f5f5]">
+        <div className="relative">
+          {/* Background images positioned behind */}
+          <div className="absolute inset-0 flex justify-center items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 opacity-90 w-full px-8 sm:px-12 md:px-16 lg:px-30">
+              <Image 
+                src="/images/hilton-hamptoninn.webp"
+                alt="Hampton by Hilton Hotel"
+                width={600}
+                height={450}
+                className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out hidden md:block"
+                style={{
+                  transform: `translateX(-${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
+                }}
+              />
+              <Image 
+                src="/images/hilton-embassysuites.webp"
+                alt="Embassy Suites by Hilton Hotel"
+                width={600}
+                height={450}
+                className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out hidden md:block"
+                style={{
+                  transform: `translateX(${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
+                }}
+              />
+            </div>
+          </div>
+          
+          {/* Front image positioned on top */}
+          <div className="relative z-10 flex justify-center">
+            <Image 
+              src="/images/hilton-doubletree.webp"
+              alt="DoubleTree Resort by Hilton Hotel"
+              width={700}
+              height={525}
+              className="w-full h-auto rounded-lg border border-[#D9D9D9] max-w-3xl"
+            />
+          </div>
         </div>
-      </FullWidthSection>
+      </section>
 
       <PageContainer>
         {/* Sticky Side Menu Layout */}
@@ -118,9 +172,9 @@ export default function CaseStudyOnePage() {
             <ProcessOverview
                 steps={[
                   "Look at past tests",
-                  "Gather insights",
-                  "Identify opportunities",
+                  "Make + test prototypes",
                   "Design new components",
+                  "Monorepo Merge",
                   "Launch new components"
                 ]}
               />
@@ -229,11 +283,11 @@ export default function CaseStudyOnePage() {
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="p-secondary mb-14 text-center">
+              <p className="p-secondary !mb-14 text-center">
               After merging into the monorepo, Hilton components could inherit color, font, and button styles based on the brand site they appeared on.
               </p>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-14">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-14 md:gap-8">
                 {/* Mobile: Order 2 (image second), Desktop: Left column (image first) */}
                 <div className="order-2 lg:order-1">
                   <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
