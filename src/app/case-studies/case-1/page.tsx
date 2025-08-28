@@ -94,7 +94,7 @@ export default function CaseStudyOnePage() {
           <div className="absolute inset-0 flex justify-center items-center">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 opacity-90 w-full px-8 sm:px-12 md:px-16 lg:px-30">
               <Image 
-                src="/images/hilton-hamptoninn.webp"
+                src="/images/hilton-hamptoninn.png"
                 alt="Hampton by Hilton Hotel"
                 width={600}
                 height={450}
@@ -104,7 +104,7 @@ export default function CaseStudyOnePage() {
                 }}
               />
               <Image 
-                src="/images/hilton-embassysuites.webp"
+                src="/images/hilton-embassysuites.png"
                 alt="Embassy Suites by Hilton Hotel"
                 width={600}
                 height={450}
@@ -119,7 +119,7 @@ export default function CaseStudyOnePage() {
           {/* Front image positioned on top */}
           <div className="relative z-10 flex justify-center">
             <Image 
-              src="/images/hilton-doubletree.webp"
+              src="/images/hilton-doubletree.png"
               alt="DoubleTree Resort by Hilton Hotel"
               width={700}
               height={525}
@@ -148,11 +148,15 @@ export default function CaseStudyOnePage() {
                 Hilton's UX Research team found through testing that users toggled between Property pages more than any other page during the booking flow. Despite their high traffic, the pages' design didn't reflect their importance. The pages had little brand presence, usability issues, and poor information architecture that weakened the user experience.
               </p>
               
-              {/* Placeholder Box - 3:2 aspect ratio */}
-              <div className="w-full bg-gray-100 rounded-lg mb-2" style={{ aspectRatio: '3/2' }}>
-                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
-                  Placeholder Box (3:2 aspect ratio)
-                </div>
+              {/* Original Hilton Property page screens */}
+              <div className="w-full rounded-lg mb-2 overflow-hidden">
+                <Image 
+                  src="/images/hilton-originalscreens.png"
+                  alt="Original Hilton Property page screens"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain rounded-lg"
+                />
               </div>
               
               <p className="p-secondary mb-6 text-center">
@@ -197,11 +201,15 @@ export default function CaseStudyOnePage() {
               Hearing users articulate their thoughts out loud gave us clarity on which page elements were working and which ones were causing frustration. These insights combined with Hilton’s business goals shaped where we concentrated our design and content updates.
 
               </p>
-              {/* Placeholder Box - 3:2 aspect ratio */}
-              <div className="w-full bg-gray-100 rounded-lg mb-2" style={{ aspectRatio: '3/2' }}>
-                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
-                  Placeholder Box (3:2 aspect ratio)
-                </div>
+              {/* Hilton Hero Test Results */}
+              <div className="w-full rounded-lg mb-2 overflow-hidden">
+                <Image 
+                  src="/images/hilton-herotest.png"
+                  alt="Hilton Hero Test Results"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain rounded-lg"
+                />
               </div>
               <p className="p-secondary mb-6 text-center">
               User testing showed 75% of participants preferred the carousel film strip hero over the gallery grid hero.
@@ -210,11 +218,15 @@ export default function CaseStudyOnePage() {
               <p className="p mb-4">
               One of the challenges we had with Hilton’s property pages was that they lacked high- quality imagery. Pictures of the rooms, particularly in budget brands like DoubleTree and Hampton Inn, were not attractive or high resolution. This meant it was important for product design to carry the experience. We had to surface business value without turning to the easy answer of premium photography. One example where we achieved this was with room tiles.
               </p>
-              {/* Placeholder Box - 3:2 aspect ratio */}
-              <div className="w-full bg-gray-100 rounded-lg mb-2" style={{ aspectRatio: '3/2' }}>
-                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
-                  Placeholder Box (3:2 aspect ratio)
-                </div>
+              {/* Hilton Room Crop Comparison */}
+              <div className="w-full rounded-lg mb-2 overflow-hidden">
+                <Image 
+                  src="/images/hilton-roomcrop.png"
+                  alt="Hilton Room Crop Comparison"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain rounded-lg"
+                />
               </div>
               <p className="p-secondary mb-6 text-center">
               User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2
