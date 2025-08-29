@@ -88,31 +88,35 @@ export default function CaseStudyOnePage() {
       </PageContainer>
 
       {/* Custom Full Width Section - bypasses PageContainer */}
-      <section className="w-full py-8 sm:py-12 bg-[#f5f5f5]">
-        <div className="relative">
+      <section className="w-full py-8 sm:py-12 bg-[#f5f5f5] overflow-hidden">
+        <div className="relative overflow-hidden">
           {/* Background images positioned behind */}
-          <div className="absolute inset-0 flex justify-center items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 opacity-90 w-full px-8 sm:px-12 md:px-16 lg:px-30">
-              <Image 
-                src="/images/hilton-hamptoninn.png"
-                alt="Hampton by Hilton Hotel"
-                width={600}
-                height={450}
-                className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out hidden md:block"
-                style={{
-                  transform: `translateX(-${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
-                }}
-              />
-              <Image 
-                src="/images/hilton-embassysuites.png"
-                alt="Embassy Suites by Hilton Hotel"
-                width={600}
-                height={450}
-                className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out hidden md:block"
-                style={{
-                  transform: `translateX(${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
-                }}
-              />
+          <div className="absolute inset-0 flex justify-center items-center overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 opacity-90 w-full px-8 sm:px-12 md:px-16 lg:px-30 overflow-hidden">
+              <div className="relative overflow-hidden" style={{ width: 'calc(100% + 140px)', marginLeft: '-70px' }}>
+                <Image 
+                  src="/images/hilton-hamptoninn.png"
+                  alt="Hampton by Hilton Hotel"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out hidden md:block"
+                  style={{
+                    transform: `translateX(-${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
+                  }}
+                />
+              </div>
+              <div className="relative overflow-hidden" style={{ width: 'calc(100% + 140px)', marginRight: '-70px' }}>
+                <Image 
+                  src="/images/hilton-embassysuites.png"
+                  alt="Embassy Suites by Hilton Hotel"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out hidden md:block"
+                  style={{
+                    transform: `translateX(${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
+                  }}
+                />
+              </div>
             </div>
           </div>
           
@@ -138,18 +142,18 @@ export default function CaseStudyOnePage() {
           </div>
 
           {/* Main Content - full width on mobile, 3/4 width on lg+ */}
-          <div className="w-full lg:w-3/4 space-y-16">
+          <div className="w-full lg:w-3/4 space-y-16 lg:space-y-20">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2">
                 Hilton's Property pages were poor-performing areas of the site.
               </h2>
               
-              <p className="p mb-4">
+              <p className="p mb-6">
                 Hilton's UX Research team found through testing that users toggled between Property pages more than any other page during the booking flow. Despite their high traffic, the pages' design didn't reflect their importance. The pages had little brand presence, usability issues, and poor information architecture that weakened the user experience.
               </p>
               
               {/* Original Hilton Property page screens */}
-              <div className="w-full rounded-lg mb-2 overflow-hidden">
+              <div className="w-full rounded-lg mb-4 overflow-hidden">
                 <Image 
                   src="/images/hilton-originalscreens.png"
                   alt="Original Hilton Property page screens"
@@ -159,7 +163,7 @@ export default function CaseStudyOnePage() {
                 />
               </div>
               
-              <p className="p-secondary mb-6 text-center">
+              <p className="caption mb-8 text-center">
                 DoubleTree by Hilton Denver Cherry Creek original Property page.
               </p>
             </CaseSection>
@@ -202,7 +206,7 @@ export default function CaseStudyOnePage() {
 
               </p>
               {/* Hilton Hero Test Results */}
-              <div className="w-full rounded-lg mb-2 overflow-hidden">
+              <div className="w-full rounded-lg mb-4 overflow-hidden">
                 <Image 
                   src="/images/hilton-herotest.png"
                   alt="Hilton Hero Test Results"
@@ -211,7 +215,7 @@ export default function CaseStudyOnePage() {
                   className="w-full h-auto object-contain rounded-lg"
                 />
               </div>
-              <p className="p-secondary mb-6 text-center">
+              <p className="caption mb-8 text-center">
               User testing showed 75% of participants preferred the carousel film strip hero over the gallery grid hero.
 
               </p>
@@ -219,7 +223,7 @@ export default function CaseStudyOnePage() {
               One of the challenges we had with Hilton’s property pages was that they lacked high- quality imagery. Pictures of the rooms, particularly in budget brands like DoubleTree and Hampton Inn, were not attractive or high resolution. This meant it was important for product design to carry the experience. We had to surface business value without turning to the easy answer of premium photography. One example where we achieved this was with room tiles.
               </p>
               {/* Hilton Room Crop Comparison */}
-              <div className="w-full rounded-lg mb-2 overflow-hidden">
+              <div className="w-full rounded-lg mb-4 overflow-hidden">
                 <Image 
                   src="/images/hilton-roomcrop.png"
                   alt="Hilton Room Crop Comparison"
@@ -228,7 +232,7 @@ export default function CaseStudyOnePage() {
                   className="w-full h-auto object-contain rounded-lg"
                 />
               </div>
-              <p className="p-secondary mb-6 text-center">
+              <p className="caption mb-8 text-center">
               User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2
 
               </p>
@@ -237,7 +241,7 @@ export default function CaseStudyOnePage() {
             </CaseSection>
 
             <CaseSection id="whatidid" title="What I did" headingLevel="h4">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-6 md:gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-4 md:gap-8">
                 {/* Left column with text content */}
                 <div>
                   <h2 className="custom-h2">I designed impactful components</h2>
@@ -258,7 +262,7 @@ export default function CaseStudyOnePage() {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-6 md:gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-4 md:gap-8">
                 {/* Left column with text content */}
                 <div>
                   <h2 className="custom-h2">I advocated for
@@ -290,16 +294,16 @@ export default function CaseStudyOnePage() {
               To address this, I advocated for merging the Property pages into Hilton’s monorepo, a major tech debt initiative at the time, so we could use Hilton’s main codebase styles and create a more cohesive, on-brand experience.
               </p>
               {/* Placeholder Box - 3:2 aspect ratio */}
-              <div className="w-full bg-gray-100 rounded-lg mb-3" style={{ aspectRatio: '3/2' }}>
+              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                 <div className="flex items-center justify-center h-full text-gray-500 text-sm">
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="p-secondary !mb-14 text-center">
+              <p className="caption mb-8 text-center">
               After merging into the monorepo, Hilton components could inherit color, font, and button styles based on the brand site they appeared on.
               </p>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-14 md:gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-12 md:gap-8">
                 {/* Mobile: Order 2 (image second), Desktop: Left column (image first) */}
                 <div className="order-2 lg:order-1">
                   <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
@@ -326,12 +330,12 @@ The icons were published company- wide using the Hilton shared codebase. They we
               <p className="p mb-4">
 I regularly spoke at Hilton's monthly Figma showcases, managed library permissions, and supported teams in adopting the system. This experience directly improved the Property page update because of my foundational knowledge in Hilton's web styles.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-3" style={{ aspectRatio: '3/2' }}>
+              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                 <div className="flex items-center justify-center h-full text-gray-500 text-sm">
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="p-secondary mb-14 text-center">
+              <p className="caption mb-8 text-center">
               Views of the Hilton Design system I built and maintained in Figma.
               </p>
             </CaseSection>
@@ -380,22 +384,22 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
 
             <CaseSection id="otherhiltonwork" title="Other Hilton Work" headingLevel="h4">
               <h2 className="custom-h2">Personal Information</h2>
-              <div className="w-full bg-gray-100 rounded-lg mb-3" style={{ aspectRatio: '3/2' }}>
+              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                 <div className="flex items-center justify-center h-full text-gray-500 text-sm">
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="p-secondary mb-14 text-center">
+              <p className="caption mb-8 text-center">
               Two other designers and I were tasked to give users a more focused view of their personal information. I brought new iconography, accessibility considerations, clear typographic hierarchy and an improved user experience.
               </p>
               <h2 className="custom-h2">Navigation</h2>
-              <div className="w-full bg-gray-100 rounded-lg mb-3" style={{ aspectRatio: '3/2' }}>
+              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                 <div className="flex items-center justify-center h-full text-gray-500 text-sm">
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="p-secondary !mb-14 text-center">
-              A UX designer and I modernized Hilton’s site navigation across desktop, tablet and mobile. I brought accessible focus indicators, optical alignment, typography changes and improved the information architecture.
+              <p className="caption text-center">
+              A UX designer and I modernized Hilton's site navigation across desktop, tablet and mobile. I brought accessible focus indicators, optical alignment, typography changes and improved the information architecture.
               </p>
                           </CaseSection>
               
