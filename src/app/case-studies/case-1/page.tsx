@@ -93,7 +93,7 @@ export default function CaseStudyOnePage() {
           {/* Background images positioned behind */}
           <div className="absolute inset-0 flex justify-center items-center overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 opacity-90 w-full px-8 sm:px-12 md:px-16 lg:px-30 overflow-hidden">
-              <div className="relative overflow-hidden" style={{ width: 'calc(100% + 140px)', marginLeft: '-70px' }}>
+              <div className="relative overflow-hidden" style={{ width: 'calc(100% + 140px)', marginLeft: '-140px' }}>
                 <Image 
                   src="/images/hilton-hamptoninn.png"
                   alt="Hampton by Hilton Hotel"
