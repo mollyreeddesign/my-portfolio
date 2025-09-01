@@ -6,6 +6,7 @@ import Metric from "@/components/Metric";
 import FullWidthSection from "@/components/FullWidthSection";
 import StickyNavigation from "@/components/StickyNavigation";
 import CaseSection from "@/components/case-studies/CaseSection";
+import Statement from "@/components/Statement";
 
 export const metadata: Metadata = {
   title: "Case Study 4 | Portfolio",
@@ -15,9 +16,9 @@ export const metadata: Metadata = {
 export default function CaseStudyFourPage() {
   const sections = [
     { id: "theproblem", label: "The Problem" },
-    { id: "research", label: "Research & Discovery" },
-    { id: "design", label: "Design Process" },
-    { id: "prototyping", label: "Prototyping" },
+    { id: "howmightwe", label: "How might we" },
+    { id: "processoverview", label: "Process overview" },
+    { id: "settinggoals", label: "Setting goals" },
     { id: "testing", label: "Testing & Iteration" },
     { id: "results", label: "Results & Impact" }
   ];
@@ -25,16 +26,14 @@ export default function CaseStudyFourPage() {
     <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] py-8 sm:py-12 bg-white text-gray-800">
       <PageContainer>
         <h1 className="custom-h1 mb-6">
-          Increased conversion and engagement
+        Brought 7x more contact form conversions
           <span className="hidden md:inline"><br /></span>
-          on 7,000+ hotel property pages
+          to a high-end botanical designer
         </h1>
         <div className="flex flex-wrap gap-2 mb-8">
-          <Tag tag="User Testing" />
-          <Tag tag="Accessibility" />
-          <Tag tag="Prototyping" />
-          <Tag tag="Design Systems" />
-          <Tag tag="Templating" />
+          <Tag tag="Responsive Web" />
+          <Tag tag="Lead Generation" />
+          <Tag tag="Branding" />
         </div>
 
         {/* Responsive Grid Container */}
@@ -43,16 +42,15 @@ export default function CaseStudyFourPage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Designed testable prototypes</li>
-                <li className="p">Built and maintained a design system</li>
-                <li className="p">Advocated for accessibility and sustainability</li>
+                <li className="p">Designed and built responsive business site</li>
+                <li className="p">Conducted market research</li>
+                <li className="p">Built business/customer user flows</li>
               </ul>
             </div>
             <div className="space-y-2">
               <h2 className="custom-h2">Team</h2>
               <p className="p">
-                UX Design  •  Content Design <br />
-                Product  •  Software Engineering
+              Founders • Marketing • Finance
               </p>
             </div>
           </div>
@@ -60,9 +58,9 @@ export default function CaseStudyFourPage() {
           <div className="space-y-2">
             <h2 className="custom-h2">Result</h2>
             <div className="space-y-3">
-              <Metric metric="32% increase in property page visits" />
-              <Metric metric="11% increase in reservations from property pages" />
-              <Metric metric="Reduced product team tech debt" />
+              <Metric metric="72% increase in site engagement" />
+              <Metric metric="7x more contact form conversions" />
+              <Metric metric="92% reduction in site costs" />
             </div>
           </div>
         </div>
@@ -84,66 +82,84 @@ export default function CaseStudyFourPage() {
 
           {/* Main Content - full width on mobile, 3/4 width on lg+ */}
           <div className="w-full lg:w-3/4 space-y-16">
-            <CaseSection id="theproblem" title="The Problem">
+            <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
+              <h2 className="custom-h2">Valerie Jurado needed a product that converted visitors into qualified leads while reflecting her high-end, avant- garde aesthetic.</h2>
               <p className="p mb-4">
-                This case study explores the redesign of hotel property pages to improve user engagement and conversion rates. 
-                The project involved extensive user research, iterative design, and comprehensive testing across multiple markets.
+              Valerie Jurado, a Los Angeles–based botanical designer, needed a new website that could better serve her business goals.
               </p>
-              <p className="p">
-                Through systematic improvements to information architecture, visual hierarchy, and user experience, 
-                we achieved significant improvements in key metrics while maintaining the brand's visual identity.
+              <p className="p mb-4">
+              Valerie's original site was built in Squarespace in 2018. It was expensive, had low visual impact and was hard to update. Her business goals and clientele had changed. The site's contact form wasn't capturing viable leads and the photography didn't reflect the artistry in her work.
               </p>
+              <p className="p mb-4">
+              In May 2024, Valerie came to me to redesign and rebuild a website that showcased her brand's value, captured high-quality leads and supported her new business direction.
+              </p>
+              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
+                        Placeholder Image Box<br/>(3:2 aspect ratio)
+                      </div>
+                    </div>
+                    <p className="caption mb-8 text-center">
+                    Valerie's original site and contact page.
+                    </p>
             </CaseSection>
 
-            <CaseSection id="research" title="Research & Discovery">
-              <p className="p mb-4">
-                Our research phase involved analyzing user behavior data, conducting usability studies, and gathering 
-                feedback from hotel partners and customers across different markets.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-gray-100 p-6 rounded-lg">
-                  <h3 className="custom-h3 mb-3">User Insights</h3>
-                  <ul className="list-disc list-inside space-y-2 text-sm">
-                    <li>Users struggled to find booking information</li>
-                    <li>Property photos were not prominently displayed</li>
-                    <li>Mobile experience was significantly lacking</li>
-                  </ul>
-                </div>
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="custom-h3 mb-3">Business Goals</h3>
-                  <ul className="list-disc list-inside space-y-2 text-sm">
-                    <li>Increase property page engagement</li>
-                    <li>Improve conversion to booking</li>
-                    <li>Reduce bounce rate</li>
-                  </ul>
-                </div>
-              </div>
+            <CaseSection id="howmightwe" title="How might we" headingLevel="h4">
+              <Statement><h2 className="custom-h2">How might we create a sustainable digital experience that converts visitors into leads and showcases business value?</h2></Statement>
+              
             </CaseSection>
 
-            <CaseSection id="design" title="Design Process">
-              <p className="p mb-4">
-                The design process followed a user-centered approach, starting with wireframes and progressing through 
-                high-fidelity mockups and interactive prototypes.
-              </p>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="custom-h3 mb-3">Key Design Decisions</h3>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Prioritized visual hierarchy for property information</li>
-                  <li>Implemented responsive design patterns</li>
-                  <li>Enhanced accessibility features</li>
-                  <li>Optimized for mobile-first experience</li>
-                </ul>
-              </div>
+            <CaseSection id="processoverview" title="Process overview" headingLevel="h4">
+              <ProcessOverview
+                steps={[
+                  "Inital goal setting",
+                  "Research + roadmap",
+                  "Sitemap + contact form",
+                  "Build with Prismic",
+                  "Site Launch + measure"
+                ]}
+              />
             </CaseSection>
 
-            <CaseSection id="prototyping" title="Prototyping & Development">
+            <CaseSection id="settinggoals" title="Setting goals" headingLevel="h4">
+              <h2 className="custom-h2">Aligning on Valerie's business goals</h2>
               <p className="p mb-4">
-                We built interactive prototypes to test user flows and gather feedback before moving into development. 
-                The development phase focused on creating a robust, scalable solution.
+              I met with Valerie and her business partner, Allan, to define the goals and values guiding the website refresh. From that conversation, a few priorities emerged:
               </p>
-              <p className="p">
-                The final implementation included a design system that could be easily maintained and extended 
-                across different property types and markets.
+              <ul className="list-disc list-inside space-y-1 mb-4">
+                <li className="p">The few leads from her existing site weren’t the right type of clientele.</li>
+                <li className="p">She wanted an easy way to direct people to her site, where they could quickly contact her or sign up for email newsletters.</li>
+                <li className="p">She wanted the brand to emphasize uniqueness and bespoke botanical experiences, rather than just weddings or events.</li>
+              </ul>
+              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
+                        Placeholder Image Box<br/>(3:2 aspect ratio)
+                      </div>
+                    </div>
+                    <p className="caption mb-8 text-center">
+                    Valerie, Allan and I's Figjam brainstorm.
+                    </p>
+                    <h2 className="custom-h2">Roadmap and scope</h2>
+              <p className="p mb-4">
+              After the brainstorm, I created a rough Now–Next–Later roadmap to define scope and keep the project on track.
+              </p>
+              <p className="p mb-4">
+              I set the goal to launch the refreshed site within the year, with a plan to add new content quarterly and complete additional enhancements by the end of 2024/early 2025.
+              </p>
+              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
+                        Placeholder Image Box<br/>(3:2 aspect ratio)
+                      </div>
+                    </div>
+                    <p className="caption mb-8 text-center">
+                    Valerie, Allan and I's Figjam brainstorm.
+                    </p>
+                    <h2 className="custom-h2">Competitive research and identifying business values</h2>
+              <p className="p mb-4">
+              A key part of this project was analyzing competitors in the high-end florist and botanical designer market. We observed that many luxury florists didn’t reference flowers or plants in their logo. The brand sounded more editorial and high fashion when we just used a name. We simplified Valerie’s logo by removing ‘Botanical Design’ and using just ‘Valerie Jurado’.
+              </p>
+              <p className="p mb-4">
+              Valerie’s favorite designers emphasized minimal UI with large, striking photography. I knew her work photography was a major brand strength, so I designed the site with minimal typography, buttons and text. This let her work take center stage.
+
               </p>
             </CaseSection>
 
