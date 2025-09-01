@@ -25,16 +25,16 @@ export default function CaseStudyThreePage() {
     <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] py-8 sm:py-12 bg-white text-gray-800">
       <PageContainer>
         <h1 className="custom-h1 mb-6">
-          Increased conversion and engagement
+        Lightened the load on stressed parents
           <span className="hidden md:inline"><br /></span>
-          on 7,000+ hotel property pages
+          with a responsive family calendar
         </h1>
         <div className="flex flex-wrap gap-2 mb-8">
-          <Tag tag="User Testing" />
-          <Tag tag="Accessibility" />
-          <Tag tag="Prototyping" />
-          <Tag tag="Design Systems" />
-          <Tag tag="Templating" />
+          <Tag tag="SaaS" />
+          <Tag tag="High Fi Mockups" />
+          <Tag tag="Complex User Flows" />
+          <Tag tag="Dashboard" />
+          <Tag tag="User Personas" />
         </div>
 
         {/* Responsive Grid Container */}
@@ -43,16 +43,17 @@ export default function CaseStudyThreePage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Designed testable prototypes</li>
-                <li className="p">Built and maintained a design system</li>
-                <li className="p">Advocated for accessibility and sustainability</li>
+                <li className="p">Designed High Fi responsive screens
+                </li>
+                <li className="p">Built complex user flows
+                </li>
+                <li className="p">Created a dashboard for kids and adults</li>
               </ul>
             </div>
             <div className="space-y-2">
               <h2 className="custom-h2">Team</h2>
               <p className="p">
-                UX Design  •  Content Design <br />
-                Product  •  Software Engineering
+                Founders
               </p>
             </div>
           </div>
@@ -60,9 +61,9 @@ export default function CaseStudyThreePage() {
           <div className="space-y-2">
             <h2 className="custom-h2">Result</h2>
             <div className="space-y-3">
-              <Metric metric="32% increase in property page visits" />
-              <Metric metric="11% increase in reservations from property pages" />
-              <Metric metric="Reduced product team tech debt" />
+              <Metric metric="5K+ downloads on Google Play" />
+              <Metric metric="Created 400+ High Fi mockup screens" />
+              <Metric metric="Designed 5 complex user flows" />
             </div>
           </div>
         </div>
@@ -84,7 +85,8 @@ export default function CaseStudyThreePage() {
 
           {/* Main Content - full width on mobile, 3/4 width on lg+ */}
           <div className="w-full lg:w-3/4 space-y-16">
-            <CaseSection id="theproblem" title="The Problem">
+            <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
+              <h2 className="custom-h2">“Nearly half of American parents—48%—report feeling completely and overwhelmingly stressed on most days...”</h2>
               <p className="p mb-4">
                 This case study explores the redesign of hotel property pages to improve user engagement and conversion rates. 
                 The project involved extensive user research, iterative design, and comprehensive testing across multiple markets.

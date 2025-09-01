@@ -44,7 +44,7 @@ export default function StickyNavigation({ sections }: StickyNavigationProps) {
             href={`#${section.id}`}
             className={`block py-2 px-3 rounded-lg transition-all duration-100 ease-in-out text-[16px] md:text-[18px] leading-[26px] ${
               isActive(section.id)
-                ? "bg-gray-50 font-semibold text-gray-800"
+                ? "bg-gray-100 font-semibold text-gray-800"
                 : "bg-transparent font-normal text-gray-800 hover:bg-gray-100"
             }`}
             data-active={isActive(section.id)}
