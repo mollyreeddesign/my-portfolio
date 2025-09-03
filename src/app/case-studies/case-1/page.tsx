@@ -142,13 +142,13 @@ export default function CaseStudyOnePage() {
           </div>
 
           {/* Main Content - full width on mobile, 3/4 width on lg+ */}
-          <div className="w-full lg:w-3/4 space-y-16 lg:space-y-20">
+          <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2">
                 Hilton's Property pages were poor-performing areas of the site.
               </h2>
               
-              <p className="p mb-6">
+              <p className="p mb-6 md:mb-12">
                 Hilton's UX Research team found through testing that users toggled between Property pages more than any other page during the booking flow. Despite their high traffic, the pages' design didn't reflect their importance. The pages had little brand presence, usability issues, and poor information architecture that weakened the user experience.
               </p>
               
@@ -163,7 +163,7 @@ export default function CaseStudyOnePage() {
                 />
               </div>
               
-              <p className="caption mb-8 text-center">
+              <p className="caption mb-8 md:mb-12 text-center">
                 DoubleTree by Hilton Denver Cherry Creek original Property page.
               </p>
             </CaseSection>
@@ -201,7 +201,7 @@ export default function CaseStudyOnePage() {
 
               </p>
               
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
               Hearing users articulate their thoughts out loud gave us clarity on which page elements were working and which ones were causing frustration. These insights combined with Hilton’s business goals shaped where we concentrated our design and content updates.
 
               </p>
@@ -215,11 +215,11 @@ export default function CaseStudyOnePage() {
                   className="w-full h-auto object-contain rounded-lg"
                 />
               </div>
-              <p className="caption mb-8 text-center">
+              <p className="caption mb-8 md:mb-12 text-center">
               User testing showed 75% of participants preferred the carousel film strip hero over the gallery grid hero.
 
               </p>
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
               One of the challenges we had with Hilton’s property pages was that they lacked high- quality imagery. Pictures of the rooms, particularly in budget brands like DoubleTree and Hampton Inn, were not attractive or high resolution. This meant it was important for product design to carry the experience. We had to surface business value without turning to the easy answer of premium photography. One example where we achieved this was with room tiles.
               </p>
               {/* Hilton Room Crop Comparison */}
@@ -232,7 +232,7 @@ export default function CaseStudyOnePage() {
                   className="w-full h-auto object-contain rounded-lg"
                 />
               </div>
-              <p className="caption mb-8 text-center">
+              <p className="caption mb-8 md:mb-12 text-center">
               User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2
 
               </p>
@@ -241,7 +241,7 @@ export default function CaseStudyOnePage() {
             </CaseSection>
 
             <CaseSection id="whatidid" title="What I did" headingLevel="h4">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-4 md:gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-4 md:gap-8 md:mb-12">
                 {/* Left column with text content */}
                 <div>
                   <h2 className="custom-h2">I designed impactful components</h2>
@@ -267,7 +267,7 @@ export default function CaseStudyOnePage() {
                 <div>
                   <h2 className="custom-h2">I advocated for
                   accessibility</h2>
-                  <p className="p mb-4">
+                  <p className="p mb-4 md:mb-12">
                   I collaborated closely with Hilton's accessibility team during these updates to ensure I was up to date with the latest WCAG standards. Color contrast, Focus Indicators and translations adaptability were key elements I made sure to advocate for.
                   </p>
                   
@@ -290,7 +290,7 @@ export default function CaseStudyOnePage() {
               <p className="p mb-4">
               User testing confirmed this. We heard in recorded verbal tests that visitors felt like they had navigated to a different hotel website when entering a Property page.
               </p>
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
               To address this, I advocated for merging the Property pages into Hilton’s monorepo, a major tech debt initiative at the time, so we could use Hilton’s main codebase styles and create a more cohesive, on-brand experience.
               </p>
               {/* Placeholder Box - 3:2 aspect ratio */}
@@ -299,7 +299,7 @@ export default function CaseStudyOnePage() {
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="caption mb-8 text-center">
+              <p className="caption mb-8 md:mb-12 text-center">
               After merging into the monorepo, Hilton components could inherit color, font, and button styles based on the brand site they appeared on.
               </p>
               
@@ -327,7 +327,7 @@ The icons were published company- wide using the Hilton shared codebase. They we
               <p className="p mb-4">
               An advantage I brought to the Property page redesign was my deep involvement in Hilton's Figma web design system. I had developed a strong familiarity with Hilton's design language across the site from spending significant time creating, maintaining, and improving the system.
               </p>
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
 I regularly spoke at Hilton's monthly Figma showcases, managed library permissions, and supported teams in adopting the system. This experience directly improved the Property page update because of my foundational knowledge in Hilton's web styles.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -335,7 +335,7 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="caption mb-8 text-center">
+              <p className="caption mb-8 md:mb-12 text-center">
               Views of the Hilton Design system I built and maintained in Figma.
               </p>
             </CaseSection>
@@ -389,7 +389,7 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="caption mb-8 text-center">
+              <p className="caption mb-8 md:mb-12 text-center">
               Two other designers and I were tasked to give users a more focused view of their personal information. I brought new iconography, accessibility considerations, clear typographic hierarchy and an improved user experience.
               </p>
               <h2 className="custom-h2">Navigation</h2>
@@ -398,7 +398,7 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="caption text-center">
+              <p className="caption mb-8 md:mb-12 text-center">
               A UX designer and I modernized Hilton's site navigation across desktop, tablet and mobile. I brought accessible focus indicators, optical alignment, typography changes and improved the information architecture.
               </p>
                           </CaseSection>

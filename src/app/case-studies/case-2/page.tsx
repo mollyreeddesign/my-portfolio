@@ -99,16 +99,16 @@ export default function CaseStudyTwoPage() {
           </div>
 
           {/* Main Content - full width on mobile, 3/4 width on lg+ */}
-          <div className="w-full lg:w-3/4 space-y-16 lg:space-y-20">
+          <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2">
-              The default software for Urban Outfitters’ upcoming self- checkout system had a poor user experience and confusing information architecture that didn’t align with the brand.
+              The default software for Urban Outfitters' upcoming self- checkout system had a poor user experience and confusing information architecture that didn’t align with the brand.
               </h2>
               
               <p className="p mb-4">
               In 2018, Urban Outfitters planned to initiate a pilot self-checkout program at its flagship store in Herald Square, New York City. The aim was to stay competitive with other retailers testing self checkout and cater to their younger tech-savvy audience with new touchscreen kiosks.
               </p>
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
               The Point of sale 'Elo' kiosks came with a default software that had a poor user experience and confusing information architecture that did not reflect the Urban Outfitters brand.
               </p>
               
@@ -120,7 +120,7 @@ export default function CaseStudyTwoPage() {
                   </div>
                 </div>
               
-              <p className="caption mb-8 text-center">
+              <p className="caption mb-8 md:mb-12 text-center">
               Original view of the default checkout software
               </p>
               <p className="p mb-4">
@@ -149,7 +149,7 @@ export default function CaseStudyTwoPage() {
                 </div>
                 
                 {/* Right column - text content */}
-                <div className="order-1 lg:order-2">
+                <div className="order-1 lg:order-2 mb-8 md:mb-12">
                   <h4 className="custom-h4">What I did</h4>
                 <h2 className="custom-h2">I designed the self checkout screens</h2>
                   
@@ -163,7 +163,7 @@ export default function CaseStudyTwoPage() {
                 </div>
               </div>
               <h2 className="custom-h2">I oversaw development and launch</h2>
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
               I oversaw the development process, performing several rounds of VQA with software engineering before the test product was launched in August, 2018.
                   </p>
                   <div>
@@ -174,7 +174,7 @@ export default function CaseStudyTwoPage() {
                   </div>
                 </div>
               
-                             <p className="caption mb-8 text-center">
+                             <p className="caption mb-8 md:mb-12 text-center">
                Final UI of self checkout screens
                </p>
             </CaseSection>
@@ -203,7 +203,7 @@ export default function CaseStudyTwoPage() {
                    </div>
                  </div>
                </div>
-                              <p className="caption mb-8 text-center">
+                              <p className="caption mb-8 md:mb-12 text-center">
                 Customers interacting with the new self checkout screens in Herald Square, New York City.
                 </p>
                 
@@ -227,7 +227,7 @@ export default function CaseStudyTwoPage() {
                         Placeholder Image Box<br/>(2:3 portrait)
                       </div>
                     </div>
-                    <p className="caption mt-4 text-center">
+                    <p className="caption mt-4 md:mb-12 text-center">
                       A Tiktok video from 2023 with the UI I designed in 2018.
                     </p>
                   </div>
@@ -242,7 +242,8 @@ export default function CaseStudyTwoPage() {
                 {/* Mobile: Order 2, Desktop: Left column */}
                 <div className="order-2 md:order-1 col-span-1">
                   <p className="p mb-4">
-                  A month after the kiosks were rolled out with the newly designed interface, the results came back that self checkout had been highly favored by the UO Customer. <a href="https://www.forbes.com/sites/greatspeculations/2018/11/16/urban-outfitters-to-benefit-from-improved-all-round-growth-in-the-third-quarter/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 underline inline-flex items-center gap-1"><b>Forbes published an article</b> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a> stating Urban Outfitters had been among the top performing companies in the retail sector that year, with Self checkout being one of the reasons for its 9% revenue growth and 50%+ earnings growth.
+                  A month after the kiosks were rolled out with the newly designed interface, the results came back that self checkout had been highly favored by the UO Customer. </p> 
+                  <p className="p mb-4"><a href="https://www.forbes.com/sites/greatspeculations/2018/11/16/urban-outfitters-to-benefit-from-improved-all-round-growth-in-the-third-quarter/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 underline inline-flex items-center gap-1"><b>Forbes published an article</b> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a> stating Urban Outfitters had been among the top performing companies in the retail sector that year, with Self checkout being one of the reasons for its 9% revenue growth and 50%+ earnings growth.
                   </p>
                   
                                     {/* Mobile: Buttons below paragraph */}
@@ -288,7 +289,7 @@ export default function CaseStudyTwoPage() {
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="caption mb-8 text-center">
+              <p className="caption mb-8 md:mb-12 text-center">
               I redesigned the typography and information architecture for 20 Help + Info pages, breaking up dense text with iconography, photography, and clear type hierarchy.
 
               </p>
@@ -298,7 +299,7 @@ export default function CaseStudyTwoPage() {
                   Placeholder Box (3:2 aspect ratio)
                 </div>
               </div>
-              <p className="caption text-center">
+              <p className="caption mb-8 md:mb-12 text-center">
               I redesigned the Urban Outfitters blog to create a more engaging experience. I introduced clear typographic hierarchy, integrated video content, quiz layout ideas and shoppable product rails.
               </p>
                           </CaseSection>

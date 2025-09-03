@@ -87,7 +87,7 @@ export default function CaseStudyThreePage() {
           </div>
 
           {/* Main Content - full width on mobile, 3/4 width on lg+ */}
-          <div className="w-full lg:w-3/4 space-y-20">
+          <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2">“Nearly half of American parents—48%—report feeling completely and overwhelmingly stressed on most days...”
                 <a href="https://www.psychologytoday.com/us/blog/parenting-translator/202409/parent-stress-is-a-serious-public-health-concern?utm_" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 underline inline-flex items-center gap-1 ml-5 align-baseline whitespace-nowrap text-sm"><b>pyschologytoday.com</b> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -95,7 +95,7 @@ export default function CaseStudyThreePage() {
               <p className="p mb-4">
               Former colleagues Jessica Etting and Amanda Roessler approached me with the idea for Jam, a family calendar app designed to ease the mental load of burnt-out parents. The concept was to bring together all the logistics of running a household into one shared, accessible app for the entire family.
               </p>
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
               My role was to design the app at high fidelity for a future developer, define complex responsive user flows and explore the brand’s overall look and feel.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -103,7 +103,7 @@ export default function CaseStudyThreePage() {
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>
                     </div>
-                    <p className="caption mb-8 text-center">
+                    <p className="caption mb-8 md:mb-12 text-center">
                     A page of Jam's pitch deck illustrating the problem of the mental load on parents.
                     </p>
             </CaseSection>
@@ -134,7 +134,7 @@ export default function CaseStudyThreePage() {
               Starting with rough wireframes and a few pages of documentation, I conducted competitive research to understand the existing market.
 I looked at shared calendar setups from Apple and Google, along with task management tools like Trello and Google Tasks.
               </p>
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
               Throughout the design process, I referenced familiar patterns and interactions from these products. I wanted to shape a product experience that felt intuitive to users, yet was still differentiated for Jam's audience.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -142,14 +142,14 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>
                     </div>
-                    <p className="caption mb-8 text-center">
+                    <p className="caption mb-8 md:mb-12 text-center">
                     Original wireframes and documentation (blurred for confidentiality)
                     </p>
                     <h2 className="custom-h2">Exploring look and feel</h2>
               <p className="p mb-4">
               My next step was exploring the brand's visual identity: colors, shapes, font and grid. I selected elements with our target audience in mind to ensure the app’s design would resonate with them. The founders and I concluded that muted color tones with neutral backgrounds would be a strong direction. The target audience:
               </p>
-              <ul className="list-disc list-inside space-y-1 mb-4">
+              <ul className="list-disc list-inside space-y-1 mb-4 md:mb-12">
                 <li className="p">Women, age 27 - 45 with children</li>
                 <li className="p">Live in zip codes with the top 25% income</li>
                 <li className="p">Interests include parenting, family, mom groups, organization, work life balance.</li>
@@ -160,7 +160,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>
                     </div>
-                    <p className="caption mb-8 text-center">
+                    <p className="caption mb-8 md:mb-12 text-center">
                     Exploring color and font from our target audiences' most loved brands.
                     </p>
             </CaseSection>
@@ -171,7 +171,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               <p className="p mb-4">
               The dashboard was the centerpiece of Jam. Unlike traditional finance/sales dashboards, this needed to be accessible and engaging for children and adults.
               </p>
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
               To achieve this, I focused on creating a clear, highly visual layout. I utilized color and structure over stats or progress charts. At the top, a weekly view provided an at-a-glance overview. Below, users could dive into a detailed daily calendar, to-do list, and shopping list.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -179,7 +179,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>
                     </div>
-                    <p className="caption mb-8 text-center">
+                    <p className="caption mb-8 md:mb-12 text-center">
                     Desktop dashboards explorations.
                     </p>
                     <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -187,14 +187,14 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>
                     </div>
-                    <p className="caption mb-8 text-center">
+                    <p className="caption mb-8 md:mb-12 text-center">
                     Final Designs for dashboard.
                     </p>
                     <h2 className="custom-h2">I mapped complex user flows</h2>
               <p className="p mb-4">
               The most complex part of this project was mapping out the extensive user flows. Users could create tasks, events, and lists in Jam. Each of these items were assignable, schedule-able and could be linked to one another. Because they were deeply integrated, it was important to show visual examples of how they worked together on mobile and desktop.
               </p>
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
               In hindsight, I think creating these flows in wireframe fidelity would have been sufficient. If I were to approach this again, I would rely on Figma Dev Mode combined with direct developer conversations to save time and resources.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -202,7 +202,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>
                     </div>
-                    <p className="caption mb-8 text-center">
+                    <p className="caption mb-8 md:mb-12 text-center">
                     Add an Event Mobile User Flow (high level)
                     </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -210,7 +210,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>
                     </div>
-                    <p className="caption mb-8 text-center">
+                    <p className="caption mb-8 md:mb-12 text-center">
                     Add an Event Desktop User Flow (full)
                     </p>
                     <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -218,7 +218,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>
                     </div>
-                    <p className="caption mb-8 text-center">
+                    <p className="caption mb-8 md:mb-12 text-center">
                     Create Task Mobile User Flow (high level)
                     </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -226,14 +226,14 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>
                     </div>
-                    <p className="caption mb-8 text-center">
+                    <p className="caption mb-8 md:mb-12 text-center">
                     Create Task Desktop User Flow (full)
                     </p>
                     <h2 className="custom-h2">I creating a comprehensive style guide</h2>
               <p className="p mb-4">
               I created a comprehensive style guide to support a smooth handoff to a developer. This guide covered spacing, typography, responsive behavior, color, and user flows.
               </p>
-              <p className="p mb-4">
+              <p className="p mb-4 md:mb-12">
               Since I wouldn't be present to oversee development, my mockups and documentation were designed to be exceptionally clear so a future developer could easily implement my work.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -241,13 +241,13 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>
                     </div>
-                    <p className="caption mb-8 text-center">
+                    <p className="caption mb-8 md:mb-12 text-center">
                     Developer guidelines for responsive margin.
                     </p>
             </CaseSection>
 
             <CaseSection id="results" title="Results">
-            <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+            <div className="w-full bg-gray-100 rounded-lg mb-4 md:mb-12" style={{ aspectRatio: '3/2' }}>
                       <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
                         Placeholder Image Box<br/>(3:2 aspect ratio)
                       </div>

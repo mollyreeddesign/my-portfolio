@@ -65,13 +65,14 @@ h1 {
   font-weight: 500;
   font-size: 22px;
   line-height: 30px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 @media (min-width: 768px) {
   .custom-h2 {
     font-size: 28px;
-    line-height: 40px;
+    line-height: 36px;
+    margin-bottom: 14px;
   }
   
   /* Desktop-only margin-bottom for all h2 elements */
@@ -94,6 +95,7 @@ h1 {
   line-height: 20px;
   color: #767676;
   text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 /* Custom scroll margin top for case study sections */
@@ -108,6 +110,7 @@ h1 {
     line-height: 24px;
     color: #767676;
     text-transform: uppercase;
+    margin-bottom: 12px;
   }
 }
 
