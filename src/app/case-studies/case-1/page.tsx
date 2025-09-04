@@ -295,26 +295,29 @@ export default function CaseStudyOnePage() {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-4 md:gap-8">
-                {/* Left column with text content */}
                 <div>
                   <h2 className="custom-h2">I advocated for
                   accessibility</h2>
                   <p className="p mb-4 md:mb-12">
                   I collaborated closely with Hilton's accessibility team during these updates to ensure I was up to date with the latest WCAG standards. Color contrast, Focus Indicators and translations adaptability were key elements I made sure to advocate for.
-                  </p>
-                  
+                  </p>               
                 </div>
-                
-                {/* Right column with placeholder image box */}
-                <div>
-                  <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '3/2' }}>
-                    <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                      Placeholder Image Box<br/>(3:2 aspect ratio)
+                  <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+                    <div className="flex items-center justify-center h-full">
+                      <div className="w-3/4 rounded-2xl border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                        <video ref={(el) => { if (el) videoRefs.current[1] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                          <source src="/videos/hilton-accessiblecomponent.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                  <p className="caption mb-8 md:mb-12 text-center">
+              Examples of the Meetings component I designed for Embassy Suites, Hilton Garden Inn and Hampton pages. 
+
+              </p>
+                
+              
               <h2 className="custom-h2">I brought key branded elements into Property pages like
               buttons, colors, icons and font.</h2>
               <p className="p mb-4">
@@ -324,7 +327,7 @@ export default function CaseStudyOnePage() {
               User testing confirmed this. We heard in recorded verbal tests that visitors felt like they had navigated to a different hotel website when entering a Property page.
               </p>
               <p className="p mb-4 md:mb-12">
-              To address this, I advocated for merging the Property pages into Hilton’s monorepo, a major tech debt initiative at the time, so we could use Hilton’s main codebase styles and create a more cohesive, on-brand experience.
+              To address this, I advocated for merging the Property pages into Hilton's monorepo, a major tech debt initiative at the time, so we could use Hilton’s main codebase styles and create a more cohesive, on-brand experience.
               </p>
               {/* Placeholder Box - 3:2 aspect ratio */}
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
