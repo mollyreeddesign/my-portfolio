@@ -10,12 +10,13 @@ import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
 import { ArrowRight, Download } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function CaseStudyOnePage() {
   const [scrollY, setScrollY] = useState(0);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
+  const videoRefs = useRef<HTMLVideoElement[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +29,32 @@ export default function CaseStudyOnePage() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollY]);
+
+  useEffect(() => {
+    const videos = videoRefs.current;
+    if (!videos || videos.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            el.muted = true;
+            const playPromise = el.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {});
+            }
+          } else {
+            el.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    videos.forEach((v) => observer.observe(v));
+    return () => observer.disconnect();
+  }, []);
 
   const sections = [
     { id: "theproblem", label: "The Problem" },
@@ -253,11 +280,17 @@ export default function CaseStudyOnePage() {
                   </p>
                 </div>
                 
-                {/* Right column with placeholder image box */}
+                {/* Right column with two side-by-side videos */}
                 <div>
-                <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '3/2' }}>
-                    <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                      Placeholder Image Box<br/>(3:2 aspect ratio)
+                  <div className="flex gap-4">
+                    <div className="w-1/2 rounded-2xl border-[7px] border-[#4D4D4D] overflow-hidden">
+                      <video ref={(el) => { if (el) videoRefs.current[0] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                        <source src="/videos/Hilton-Embassy.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <div className="w-1/2 rounded-2xl border-[7px] border-[#4D4D4D] overflow-hidden relative">
+                      <Image src="/images/hilton-meetingcomponent.png" alt="Hilton meeting component" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
                     </div>
                   </div>
                 </div>
