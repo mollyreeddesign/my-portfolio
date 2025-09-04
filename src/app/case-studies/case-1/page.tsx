@@ -413,14 +413,19 @@ export default function CaseStudyOnePage() {
                       ),
                       content: (
                         <div>
-                          <h3 className="custom-h3 mb-2">Iconography</h3>
-                          <p className="p mb-4">Custom icons designed for clarity, alignment, and accessibility.</p>
-                          <div className="flex items-center gap-4 text-gray-600">
-                            <Image src="/globe.svg" alt="Globe" width={24} height={24} />
-                            <Image src="/window.svg" alt="Window" width={24} height={24} />
-                            <Image src="/file.svg" alt="File" width={24} height={24} />
-                          </div>
-                </div>
+                          <ImageShowcaseGrid
+                            images={[
+                              { src: "/images/hilton-doubletreetab/attendee.png", alt: "Attendee website" },
+                              { src: "/images/hilton-doubletreetab/whatsnearby.png", alt: "What's nearby" },
+                              { src: "/images/hilton-doubletreetab/amenities.png", alt: "Featured amenities" },
+                              { src: "/images/hilton-doubletreetab/search.png", alt: "Search dates" },
+                              { src: "/images/hilton-doubletreetab/group.png", alt: "Group travel and events" },
+                              { src: "/images/hilton-doubletreetab/member.png", alt: "Hilton Honors member benefits" },
+                              { src: "/images/hilton-doubletreetab/hotelpolicies.png", alt: "Hotel policies" },
+                            ]}
+                            rightTallBgClass="bg-[#f1f1f1]"
+                          />
+                        </div>
                       ),
                     },
                   ]}
