@@ -548,10 +548,15 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
               </p>
               <h2 className="custom-h2">Navigation</h2>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
-                  Placeholder Box (3:2 aspect ratio)
-                </div>
-              </div>
+                    <div className="flex items-center justify-center h-full">
+                      <div className="w-1/4 rounded-2xl border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                        <video ref={(el) => { if (el) videoRefs.current[1] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                          <source src="/videos/hilton-SiteNavigation.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </div>
+                  </div>
               <p className="caption mb-8 md:mb-12 text-center">
               A UX designer and I modernized Hilton's site navigation across desktop, tablet and mobile. I brought accessible focus indicators, optical alignment, typography changes and improved the information architecture.
               </p>
