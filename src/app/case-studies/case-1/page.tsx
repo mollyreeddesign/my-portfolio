@@ -285,13 +285,13 @@ export default function CaseStudyOnePage() {
                 {/* Right column with two side-by-side videos */}
                 <div>
                   <div className="flex gap-4">
-                    <div className="w-1/2 rounded-2xl border-[7px] border-[#4D4D4D] overflow-hidden">
+                    <div className="w-1/2 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden">
                       <video ref={(el) => { if (el) videoRefs.current[0] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                         <source src="/videos/Hilton-Embassy.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
                     </div>
-                    <div className="w-1/2 rounded-2xl border-[7px] border-[#4D4D4D] overflow-hidden relative">
+                    <div className="w-1/2 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden relative">
                       <Image src="/images/hilton-meetingcomponent.png" alt="Hilton meeting component" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
                     </div>
                   </div>
@@ -306,7 +306,7 @@ export default function CaseStudyOnePage() {
                 </div>
                   <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                     <div className="flex items-center justify-center h-full">
-                      <div className="w-3/4 rounded-2xl border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                      <div className="w-3/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
                         <video ref={(el) => { if (el) videoRefs.current[1] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                           <source src="/videos/hilton-accessiblecomponent.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
@@ -535,7 +535,7 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
               <h2 className="custom-h2">Personal Information</h2>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                     <div className="flex items-center justify-center h-full">
-                      <div className="w-3/4 rounded-2xl border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                      <div className="w-3/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
                         <video ref={(el) => { if (el) videoRefs.current[1] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                           <source src="/videos/Hilton-PersonalInformation.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
@@ -549,7 +549,7 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
               <h2 className="custom-h2">Navigation</h2>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                     <div className="flex items-center justify-center h-full">
-                      <div className="w-1/4 rounded-2xl border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                      <div className="w-1/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
                         <video ref={(el) => { if (el) videoRefs.current[1] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                           <source src="/videos/hilton-SiteNavigation.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
