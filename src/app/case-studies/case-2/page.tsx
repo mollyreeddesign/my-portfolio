@@ -31,8 +31,8 @@ export default function CaseStudyTwoPage() {
 
   const sections = [
     { id: "theproblem", label: "The Problem" },
-    { id: "howmightwe", label: "How might we" },
-    { id: "whatidid", label: "What I did" },
+    { id: "howmightwe", label: "How Might We" },
+    { id: "whatidid", label: "What I Did" },
     { id: "inthefield", label: "In the Field" },
     { id: "results", label: "Results" },
     { id: "otheruowork", label: "Other UO Work" }

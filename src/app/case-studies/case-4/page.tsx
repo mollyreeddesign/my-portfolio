@@ -20,7 +20,7 @@ export default function CaseStudyFourPage() {
     { id: "theproblem", label: "The Problem" },
     { id: "howmightwe", label: "How Might We" },
     { id: "processoverview", label: "Process Overview" },
-    { id: "settinggoals", label: "Setting goals" },
+    { id: "settinggoals", label: "Setting Goals" },
     { id: "whatidid", label: "What I Did" },
     { id: "results", label: "Results" }
   ];

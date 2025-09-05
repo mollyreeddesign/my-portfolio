@@ -450,10 +450,14 @@ export default function CaseStudyOnePage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-12 md:gap-8">
                 {/* Mobile: Order 2 (image second), Desktop: Left column (image first) */}
                 <div className="order-2 lg:order-1">
-                  <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
-                    <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                      Placeholder Image Box<br/>(Square - 1:1 aspect ratio)
-                    </div>
+                  <div className="w-full bg-gray-100 rounded-lg border border-gray-200 relative overflow-hidden" style={{ aspectRatio: '1/1' }}>
+                    <Image
+                      src="/videos/hilton-icons.gif"
+                      alt="Hilton custom icons animation"
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
                   </div>
                 </div>
                 
@@ -474,10 +478,11 @@ The icons were published company- wide using the Hilton shared codebase. They we
               <p className="p mb-4 md:mb-12">
 I regularly spoke at Hilton's monthly Figma showcases, managed library permissions, and supported teams in adopting the system. This experience directly improved the Property page update because of my foundational knowledge in Hilton's web styles.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
-                  Placeholder Box (3:2 aspect ratio)
-                </div>
+              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4" style={{ aspectRatio: '3/2' }}>
+                <video ref={(el) => { if (el) videoRefs.current[2] = el; }} autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
+                  <source src="/videos/Hilton-DesignSystem-480p.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <p className="caption mb-8 md:mb-12 text-center">
               Views of the Hilton Design system I built and maintained in Figma.
@@ -529,10 +534,15 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
             <CaseSection id="otherhiltonwork" title="Other Hilton Work" headingLevel="h4">
               <h2 className="custom-h2">Personal Information</h2>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
-                  Placeholder Box (3:2 aspect ratio)
-                </div>
-              </div>
+                    <div className="flex items-center justify-center h-full">
+                      <div className="w-3/4 rounded-2xl border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                        <video ref={(el) => { if (el) videoRefs.current[1] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                          <source src="/videos/Hilton-PersonalInformation.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </div>
+                  </div>
               <p className="caption mb-8 md:mb-12 text-center">
               Two other designers and I were tasked to give users a more focused view of their personal information. I brought new iconography, accessibility considerations, clear typographic hierarchy and an improved user experience.
               </p>

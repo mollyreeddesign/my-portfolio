@@ -21,7 +21,7 @@ export default function CaseStudyThreePage() {
     { id: "businessgoal", label: "Business Goal" },
     { id: "processoverview", label: "Process Overview" },
     { id: "planningresearch", label: "Planning + Research" },
-    { id: "whatidid", label: "What I did" },
+    { id: "whatidid", label: "What I Did" },
     { id: "results", label: "Results" }
   ];
   return (
