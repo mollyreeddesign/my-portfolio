@@ -110,7 +110,7 @@ export default function CaseStudyFourPage() {
               
             </CaseSection>
 
-            <CaseSection id="processoverview" title="Process overview" headingLevel="h4">
+            <CaseSection id="processoverview" title="Process overview" headingLevel="h4" className="hidden md:block">
               <ProcessOverview
                 steps={[
                   "Inital goal setting",

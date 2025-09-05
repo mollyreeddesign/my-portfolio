@@ -205,7 +205,7 @@ export default function CaseStudyOnePage() {
               </Statement>
             </CaseSection>
 
-            <CaseSection id="design" title="Process Overview" headingLevel="h4">
+            <CaseSection id="design" title="Process Overview" headingLevel="h4" className="hidden md:block">
             <ProcessOverview
                 steps={[
                   "Look at past tests",

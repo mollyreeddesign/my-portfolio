@@ -116,7 +116,7 @@ export default function CaseStudyThreePage() {
               </Statement>
             </CaseSection>
 
-            <CaseSection id="processoverview" title="Process Overview" headingLevel="h4">
+            <CaseSection id="processoverview" title="Process Overview" headingLevel="h4" className="hidden md:block">
             <ProcessOverview
             steps={[
               "Wireframing + Documentation",
