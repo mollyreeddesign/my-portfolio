@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 export default function CaseStudyFourPage() {
   const sections = [
     { id: "theproblem", label: "The Problem" },
-    { id: "howmightwe", label: "How might we" },
-    { id: "processoverview", label: "Process overview" },
+    { id: "howmightwe", label: "How Might We" },
+    { id: "processoverview", label: "Process Overview" },
     { id: "settinggoals", label: "Setting goals" },
-    { id: "whatidid", label: "What I did" },
+    { id: "whatidid", label: "What I Did" },
     { id: "results", label: "Results" }
   ];
   return (
@@ -181,6 +181,19 @@ export default function CaseStudyFourPage() {
                     <p className="caption mb-8 md:mb-12 text-center">
                     The valeriejurado.com sitemap
                     </p>
+                    <h2 className="custom-h2">I aligned business needs with technical solutions</h2>
+                    <p className="p mb-4">
+                    A key business goal of the refresh was making the site easier for Valerie to update independently. I prioritized two capabilities when choosing platforms:
+                    </p>
+                    <ul className="list-disc list-outside pl-4 space-y-4 mb-4">
+                      <li className="p"><strong>Complete Customization</strong> I wanted to build a bespoke experience that didn't look like a template site.
+                      </li>
+                      <li className="p"><strong>A Sustainable Solution</strong> I wanted Valerie to be able to update content without relying on me to write code.
+                      </li>
+                    </ul>
+                    <p className="p mb-4 md:mb-12">
+                    I selected Prismic, a headless CMS that let me build custom-coded slices with HTML, Tailwind CSS, Next.js, and React. On Valerie's end, she could update text, switch images and rearrange the slices using a clean UI. I also added Mailchimp integrations so Valerie's leads were pulled directly into her mailing list audience when they filled out the contact form.
+              </p>
               <h2 className="custom-h2">I overhauled the contact form</h2>
                     <p className="p mb-4">
                     I improved the user experience of the contact form by removing a bulk of the fields, minimizing what was required and simplifying the design. I also added a spam filter to improve lead quality.
@@ -205,19 +218,8 @@ export default function CaseStudyFourPage() {
                     <p className="caption mb-8 md:mb-12 text-center">
                     I created a service blueprint showing a user filling out the contact form, going through the spam filter and the business notifications that happen consequentially.
                     </p>
-                    <h2 className="custom-h2">I built the site</h2>
-                    <p className="p mb-4">
-                    A key business goal of the refresh was making the site easier for Valerie to update independently. I prioritized two capabilities when choosing platforms:
-                    </p>
-                    <ul className="list-disc list-outside pl-4 space-y-4 mb-4">
-                      <li className="p"><strong>Complete customization</strong> I wanted to build a bespoke experience that didn't look like a template site.
-                      </li>
-                      <li className="p"><strong>A sustainable solution</strong> I wanted Valerie to be able to update content without relying on me to write code.
-                      </li>
-                    </ul>
-                    <p className="p mb-4">
-                    I selected Prismic, a headless CMS that let me build custom-coded slices with HTML, Tailwind CSS, Next.js, and React. On Valerie's end, she could update text, switch images and rearrange the slices using a clean UI. I also added Mailchimp integrations so Valerie's leads were pulled directly into her mailing list audience when they filled out the contact form.
-              </p>
+                    
+              <h2 className="custom-h2">I built the site</h2>
               <p className="p mb-4 md:mb-12">
               I chose minimal text and interface elements to keep Valerie's floral work at the forefront. This reinforced her brand's value and allowed for a better experience on smaller devices. This was important due to the large amount of mobile visitors coming directly from her instagram.
               </p>

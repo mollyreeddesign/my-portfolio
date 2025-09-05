@@ -18,7 +18,7 @@ export default function ProcessOverview({ steps }: ProcessOverviewProps) {
   if (!steps || steps.length === 0) return null;
 
   return (
-    <div className="w-full">
+    <div className="hidden md:block w-full">
       <div className="flex flex-wrap md:flex-nowrap items-center justify-start gap-y-3 md:gap-y-0">
         {steps.map((step, index) => {
           const isLast = index === steps.length - 1;

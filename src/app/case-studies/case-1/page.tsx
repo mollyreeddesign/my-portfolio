@@ -63,7 +63,7 @@ export default function CaseStudyOnePage() {
     { id: "businessgoal", label: "Business Goal" },
     { id: "design", label: "Process Overview" },
     { id: "insights", label: "Insights" },
-    { id: "whatidid", label: "What I did" },
+    { id: "whatidid", label: "What I Did" },
     { id: "results", label: "Results" },
     { id: "otherhiltonwork", label: "Other Hilton Work" }
   ];
@@ -89,7 +89,7 @@ export default function CaseStudyOnePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2 mb-4">
             <div className="space-y-2 mb-6">
-              <h2 className="custom-h2">My role</h2>
+              <h2 className="custom-h2">My Role</h2>
               <ul className="list-disc list-inside space-y-1">
                 <li className="p">Designed testable prototypes</li>
                 <li className="p">Built and maintained a design system</li>
@@ -174,7 +174,7 @@ export default function CaseStudyOnePage() {
           <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2">
-                Hilton's Property pages were poor-performing areas of the site.
+                Hilton's Property pages were poor-performing areas of the site
               </h2>
               
               <p className="p mb-6 md:mb-12">
@@ -205,7 +205,7 @@ export default function CaseStudyOnePage() {
               </Statement>
             </CaseSection>
 
-            <CaseSection id="design" title="Process Overview">
+            <CaseSection id="design" title="Process Overview" headingLevel="h4">
             <ProcessOverview
                 steps={[
                   "Look at past tests",
@@ -269,7 +269,7 @@ export default function CaseStudyOnePage() {
               
             </CaseSection>
 
-            <CaseSection id="whatidid" title="What I did" headingLevel="h4">
+            <CaseSection id="whatidid" title="What I Did" headingLevel="h4">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-4 md:gap-8 md:mb-12">
                 {/* Left column with text content */}
                 <div>
@@ -321,7 +321,7 @@ export default function CaseStudyOnePage() {
                 
               
               <h2 className="custom-h2">I brought key branded elements into Property pages like
-              buttons, colors, icons and font.</h2>
+              buttons, colors, icons and font</h2>
               <p className="p mb-4">
               I knew from my experience on Brand, Booking, Search, and Honors teams that Property pages were missing key branded elements: color, typography, buttons, and iconography. These might seem like minor design details, but they were crucial for signaling to users that they were still within the Hilton experience.
               </p>
