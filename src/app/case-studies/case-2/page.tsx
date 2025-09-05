@@ -42,8 +42,8 @@ export default function CaseStudyTwoPage() {
     <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] py-8 sm:py-12 bg-white text-gray-800">
       <PageContainer>
         <h1 className="custom-h1 mb-6">
-        Exceeded financial expectations
-          <span className="hidden md:inline"><br /></span>
+        Helped drive 9% revenue growth
+          <span className="hidden md:inline"><br /></span>{" "}
           with a self checkout program
         </h1>
         

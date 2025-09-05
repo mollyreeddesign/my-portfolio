@@ -72,8 +72,8 @@ export default function CaseStudyOnePage() {
     <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] py-8 sm:py-12 bg-white text-gray-800">
       <PageContainer>
         <h1 className="custom-h1 mb-6">
-          Increased conversion and engagement
-          <span className="hidden md:inline"><br /></span>
+          Increased conversion and engagement 
+          <span className="hidden md:inline"><br /></span>{" "}
           on 7,000+ hotel property pages
         </h1>
         

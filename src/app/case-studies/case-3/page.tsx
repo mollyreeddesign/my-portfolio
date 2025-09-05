@@ -29,7 +29,7 @@ export default function CaseStudyThreePage() {
       <PageContainer>
         <h1 className="custom-h1 mb-6">
         Lightened the load on stressed parents
-          <span className="hidden md:inline"><br /></span>
+          <span className="hidden md:inline"><br /></span>{" "}
           with a responsive family calendar
         </h1>
         <div className="flex flex-wrap gap-2 mb-8">

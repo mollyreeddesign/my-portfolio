@@ -29,7 +29,7 @@ export default function CaseStudyFourPage() {
       <PageContainer>
         <h1 className="custom-h1 mb-6">
         Brought 7x more contact form conversions
-          <span className="hidden md:inline"><br /></span>
+          <span className="hidden md:inline"><br /></span>{" "}
           to a high-end botanical designer
         </h1>
         <div className="flex flex-wrap gap-2 mb-8">
