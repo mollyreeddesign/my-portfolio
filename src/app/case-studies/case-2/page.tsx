@@ -102,14 +102,14 @@ export default function CaseStudyTwoPage() {
           <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2">
-              The default software for Urban Outfitters' upcoming self- checkout system had a poor user experience and confusing information architecture that didn’t align with the brand.
+              The default software for Urban Outfitters' upcoming self-checkout system had a poor user experience and confusing information architecture that didn’t align with the brand.
               </h2>
               
               <p className="p mb-4">
               In 2018, Urban Outfitters planned to initiate a pilot self-checkout program at its flagship store in Herald Square, New York City. The aim was to stay competitive with other retailers testing self checkout and cater to their younger tech-savvy audience with new touchscreen kiosks.
               </p>
               <p className="p mb-4 md:mb-12">
-              The Point of sale 'Elo' kiosks came with a default software that had a poor user experience and confusing information architecture that did not reflect the Urban Outfitters brand.
+              The point of sale 'Elo' kiosks came with a default software that had a poor user experience and confusing information architecture that did not reflect the Urban Outfitters brand.
               </p>
               
               <div>
@@ -182,26 +182,20 @@ export default function CaseStudyTwoPage() {
             <CaseSection id="inthefield" title="In the Field" headingLevel="h2">
             
             
-               <div>
-                <div className="w-full bg-gray-100 rounded-lg mb-6" style={{ aspectRatio: '3/2' }}>
-                    <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                      Placeholder Image Box<br/>(3:2 aspect ratio)
-                    </div>
-                  </div>
-                </div>
+              <div>
+               <div className="w-full bg-gray-100 rounded-lg mb-6 relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                 <Image src="/images/uo-inthefield3.jpeg" alt="Urban Outfitters self checkout in the field" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
+               </div>
+              </div>
                 
                {/* Two column grid with portrait images */}
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                 <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '2/3' }}>
-                   <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                     Placeholder Image Box<br/>(2:3 portrait)
-                   </div>
-                 </div>
-                 <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '2/3' }}>
-                   <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                     Placeholder Image Box<br/>(2:3 portrait)
-                   </div>
-                 </div>
+                <div className="w-full bg-gray-100 rounded-lg relative overflow-hidden" style={{ aspectRatio: '2/3' }}>
+                  <Image src="/images/uo-inthefield1.jpeg" alt="Urban Outfitters in the field portrait" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
+                </div>
+                <div className="w-full bg-gray-100 rounded-lg relative overflow-hidden" style={{ aspectRatio: '2/3' }}>
+                  <Image src="/images/uo-inthefield2.jpeg" alt="Urban Outfitters in the field portrait 2" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
+                </div>
                </div>
                               <p className="caption mb-8 md:mb-12 text-center">
                 Customers interacting with the new self checkout screens in Herald Square, New York City.
@@ -222,10 +216,11 @@ export default function CaseStudyTwoPage() {
                   
                   {/* Right column - portrait image */}
                   <div className="order-2 lg:order-2">
-                    <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '2/3' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(2:3 portrait)
-                      </div>
+                    <div className="w-full bg-gray-100 rounded-lg overflow-hidden">
+                      <video autoPlay muted loop playsInline preload="metadata" className="w-full h-auto object-contain">
+                        <source src="/videos/UO-Tiktok-SelfCheckout.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
                     <p className="caption mt-4 md:mb-12 text-center">
                       A Tiktok video from 2023 with the UI I designed in 2018.

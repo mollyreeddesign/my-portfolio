@@ -10,15 +10,16 @@ import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
 import Tabs from "@/components/Tabs";
 import ImageShowcaseGrid from "@/components/ImageShowcaseGrid";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import BackToTopButton from "@/components/BackToTopButton";
 
 export default function CaseStudyOnePage() {
   const [scrollY, setScrollY] = useState(0);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
-  const videoRefs = useRef<HTMLVideoElement[]>([]);
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +34,7 @@ export default function CaseStudyOnePage() {
   }, [scrollY]);
 
   useEffect(() => {
-    const videos = videoRefs.current;
+    const videos = Array.from(document.querySelectorAll<HTMLVideoElement>('video[data-auto-play]'));
     if (!videos || videos.length === 0) return;
 
     const observer = new IntersectionObserver(
@@ -51,7 +52,7 @@ export default function CaseStudyOnePage() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.25 }
     );
 
     videos.forEach((v) => observer.observe(v));
@@ -286,7 +287,7 @@ export default function CaseStudyOnePage() {
                 <div>
                   <div className="flex gap-4">
                     <div className="w-1/2 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden">
-                      <video ref={(el) => { if (el) videoRefs.current[0] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                      <video data-auto-play loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                         <source src="/videos/Hilton-Embassy.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
@@ -307,7 +308,7 @@ export default function CaseStudyOnePage() {
                   <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                     <div className="flex items-center justify-center h-full">
                       <div className="w-3/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
-                        <video ref={(el) => { if (el) videoRefs.current[1] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                        <video data-auto-play loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                           <source src="/videos/hilton-accessiblecomponent.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
@@ -479,7 +480,7 @@ The icons were published company- wide using the Hilton shared codebase. They we
 I regularly spoke at Hilton's monthly Figma showcases, managed library permissions, and supported teams in adopting the system. This experience directly improved the Property page update because of my foundational knowledge in Hilton's web styles.
               </p>
               <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4" style={{ aspectRatio: '3/2' }}>
-                <video ref={(el) => { if (el) videoRefs.current[2] = el; }} autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
+                <video data-auto-play autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
                   <source src="/videos/Hilton-DesignSystem-480p.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
@@ -518,14 +519,12 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
                   
                   {/* Desktop: Buttons below metrics */}
                   <div className="hidden md:block space-y-3 pt-4">
-                    <button className="btn btn--primary w-full">
-                      <span>View Case Study</span>
-                      <ArrowRight size={20} />
-                    </button>
-                    <button className="btn btn--secondary w-full">
-                      <span>Download PDF</span>
-                      <Download size={20} />
-                    </button>
+                    
+                    <BackToTopButton className="btn btn--primary w-full" />
+                    <a href="https://www.hilton.com/en/hotels/oggmkhx-hampton-suites-maui-north-shore/" target="_blank" rel="noopener noreferrer" className="btn btn--secondary w-full">
+                      <span>View Live Project</span>
+                      <ArrowUpRight size={20} />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -536,7 +535,7 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                     <div className="flex items-center justify-center h-full">
                       <div className="w-3/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
-                        <video ref={(el) => { if (el) videoRefs.current[1] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                        <video data-auto-play loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                           <source src="/videos/Hilton-PersonalInformation.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
@@ -550,7 +549,7 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                     <div className="flex items-center justify-center h-full">
                       <div className="w-1/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
-                        <video ref={(el) => { if (el) videoRefs.current[1] = el; }} loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                        <video data-auto-play loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                           <source src="/videos/hilton-SiteNavigation.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
