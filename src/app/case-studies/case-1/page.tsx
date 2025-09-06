@@ -500,14 +500,11 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
                   
                   {/* Mobile: Buttons below paragraph */}
                   <div className="md:hidden space-y-3 pt-4">
-                    <button className="btn btn--primary w-full">
-                      <span>View Case Study</span>
-                      <ArrowRight size={20} />
-                    </button>
-                    <button className="btn btn--secondary w-full">
-                      <span>Download PDF</span>
-                      <Download size={20} />
-                    </button>
+                  <BackToTopButton className="btn btn--primary w-full" />
+                  <a href="https://www.hilton.com/en/hotels/oggmkhx-hampton-suites-maui-north-shore/" target="_blank" rel="noopener noreferrer" className="btn btn--secondary w-full">
+                      <span>View Live Project</span>
+                      <ArrowUpRight size={20} />
+                    </a>
                   </div>
                 </div>
                 
@@ -550,7 +547,7 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
                     <div className="flex items-center justify-center h-full">
                       <div className="w-1/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
                         <video data-auto-play loop muted playsInline preload="metadata" className="w-full h-full object-cover">
-                          <source src="/videos/hilton-SiteNavigation.mp4" type="video/mp4" />
+                          <source src="/videos/Hilton-SiteNavigation.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
                       </div>

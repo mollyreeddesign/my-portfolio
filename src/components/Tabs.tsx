@@ -96,7 +96,7 @@ export default function Tabs({ items, initialActiveKey, className }: TabsProps) 
                 "flex flex-col items-center justify-center rounded-lg border transition-all duration-150 " +
                 (isActive
                   ? "border-[#D9D9D9] bg-gray-100 text-gray-900"
-                  : "border-gray-200 bg-white hover:bg-gray-50 text-gray-800")
+                  : "border-gray-200 bg-white text-gray-800 motion-safe:animate-pulse hover:animate-none focus:animate-none")
               }
               onClick={() => setActiveKey(item.key)}
             >

@@ -58,7 +58,7 @@ export default function CaseStudyTwoPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2 mb-4">
             <div className="space-y-2 mb-6">
-              <h2 className="custom-h2">My role</h2>
+              <h2 className="custom-h2">My Role</h2>
               <ul className="list-disc list-inside space-y-1">
                 <li className="p">Designed self checkout screen states</li>
                 <li className="p">Implemented loyalty program personalization</li>
@@ -113,15 +113,13 @@ export default function CaseStudyTwoPage() {
               </p>
               
               <div>
-                <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                    <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                      Placeholder Image Box<br/>(3:2 aspect ratio)
-                    </div>
-                  </div>
+                <div className="w-full bg-gray-100 rounded-lg mb-4 relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                  <Image src="/images/uo-originalui.png" alt="Urban Outfitters default checkout UI" fill className="object-contain pb-4 pt-8" sizes="(min-width: 768px) 50vw, 100vw" />
                 </div>
+              </div>
               
               <p className="caption mb-8 md:mb-12 text-center">
-              Original view of the default checkout software
+              Default checkout software
               </p>
               <p className="p mb-4">
               A lead UI designer and I were brought onto the project to improve the visual design, brand presence, UO Rewards options and overall user experience in self checkout.
@@ -131,7 +129,7 @@ export default function CaseStudyTwoPage() {
             <CaseSection id="howmightwe" title="How might we" headingLevel="h4">
               <Statement>
                 <h2 className="custom-h2">
-                How might we redesign the default self-checkout software to be more intuitive, align with the Urban Outfitters brand, and enhance the in-store customer experience?
+                How might we redesign the default self-checkout software on the point of sale kiosks to be more intuitive, align with the Urban Outfitters brand, and enhance the in-store customer experience?
                 </h2>
               </Statement>
             </CaseSection>
@@ -139,18 +137,16 @@ export default function CaseStudyTwoPage() {
             <CaseSection id="whatidid" title="" headingLevel="h4">
             
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-8">
-                {/* Left column - placeholder image */}
+                {/* Left column - gif animation */}
                 <div className="order-2 lg:order-1">
-                  <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '2/3' }}>
-                    <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                      Placeholder Image Box<br/>(2:3 aspect ratio)
-                    </div>
+                  <div className="w-full bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '2/3' }}>
+                    <Image src="/images/uo-cardanimation.gif" alt="UO card animation" fill className="object-cover shadow-lg rounded-lg mt-2" sizes="(min-width: 1024px) 50vw, 100vw" unoptimized />
                   </div>
                 </div>
                 
                 {/* Right column - text content */}
                 <div className="order-1 lg:order-2 mb-8 md:mb-12">
-                  <h4 className="custom-h4">What I did</h4>
+                  <h4 className="custom-h4">What I Did</h4>
                 <h2 className="custom-h2">I designed the self checkout screens</h2>
                   
                   <p className="p mb-4">
@@ -166,13 +162,19 @@ export default function CaseStudyTwoPage() {
               <p className="p mb-4 md:mb-12">
               I oversaw the development process, performing several rounds of VQA with software engineering before the test product was launched in August, 2018.
                   </p>
-                  <div>
-                <div className="w-full bg-gray-100 rounded-l mb-4" style={{ aspectRatio: '3/2' }}>
-                    <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                      Placeholder Image Box<br/>(3:2 aspect ratio)
+                  
+                    <div className="w-full rounded-lg grid grid-cols-3 sm:grid-cols-3 gap-4 p-4 mb-4">
+                      <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
+                        <Image src="/images/uo-flatselfcheckout-1.png" alt="UO flat self checkout screen 1" fill className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+                      </div>
+                      <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
+                        <Image src="/images/uo-flatselfcheckout-2.png" alt="UO flat self checkout screen 2" fill className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+                      </div>
+                      <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
+                        <Image src="/images/uo-flatselfcheckout-3.png" alt="UO flat self checkout screen 3" fill className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  
               
                              <p className="caption mb-8 md:mb-12 text-center">
                Final UI of self checkout screens
