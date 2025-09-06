@@ -550,7 +550,7 @@ I regularly spoke at Hilton's monthly Figma showcases, managed library permissio
                     <div className="flex items-center justify-center h-full">
                       <div className="w-1/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
                         <video data-auto-play loop muted playsInline preload="metadata" className="w-full h-full object-cover">
-                          <source src="/videos/hilton-SiteNavigation.mp4" type="video/mp4" />
+                          <source src="/videos/Hilton-SiteNavigation.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
                       </div>
