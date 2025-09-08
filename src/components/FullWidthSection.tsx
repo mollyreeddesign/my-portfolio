@@ -5,12 +5,18 @@ type FullWidthSectionProps = {
   backgroundColor?: string;
   backgroundImage?: string;
   children: React.ReactNode;
+  useContainer?: boolean;
+  sectionClassName?: string;
+  noPadding?: boolean;
 };
 
 export default function FullWidthSection({
   backgroundColor = "#ffffff",
   backgroundImage,
   children,
+  useContainer = true,
+  sectionClassName,
+  noPadding = false,
 }: FullWidthSectionProps) {
   const backgroundStyles: React.CSSProperties = {
     backgroundColor,
@@ -20,10 +26,14 @@ export default function FullWidthSection({
   };
 
   return (
-    <section className="w-full py-16 sm:py-24 bg-cover bg-center" style={backgroundStyles}>
-      <PageContainer>
-        {children}
-      </PageContainer>
+    <section className={`w-full ${noPadding ? "" : "py-16 sm:py-24"} bg-cover bg-center ${sectionClassName ?? ""}`} style={backgroundStyles}>
+      {useContainer ? (
+        <PageContainer>
+          {children}
+        </PageContainer>
+      ) : (
+        <>{children}</>
+      )}
     </section>
   );
 }

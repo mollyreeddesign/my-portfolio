@@ -10,12 +10,14 @@ import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
 import { ArrowRight, Download } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CaseStudyTwoPage() {
   const [scrollY, setScrollY] = useState(0);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
+  const [imageScrollProgress, setImageScrollProgress] = useState(0);
+  const galleryRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +30,31 @@ export default function CaseStudyTwoPage() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollY]);
+
+  useEffect(() => {
+    const updateProgress = () => {
+      const el = galleryRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const viewportH = window.innerHeight || 0;
+      const raw = (viewportH - rect.top) / viewportH;
+      const clamped = Math.max(0, Math.min(1, raw));
+      setImageScrollProgress(clamped);
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress);
+    window.addEventListener('resize', updateProgress);
+    return () => {
+      window.removeEventListener('scroll', updateProgress);
+      window.removeEventListener('resize', updateProgress);
+    };
+  }, []);
+
+  const offsetFirst = -7 * (1 - imageScrollProgress);
+  const offsetSecond = -2 * (1 - imageScrollProgress);
+  const offsetThird = 2 * (1 - imageScrollProgress);
+  const offsetFourth = 7 * (1 - imageScrollProgress);
 
   const sections = [
     { id: "theproblem", label: "The Problem" },
@@ -84,10 +111,33 @@ export default function CaseStudyTwoPage() {
         </div>
       </PageContainer>
 
-      <FullWidthSection backgroundColor="#f5f5f5">
-        <div className="text-center">
-          <h2 className="custom-h2 mb-4">Image here</h2>
-        </div>
+      <FullWidthSection backgroundColor="#f5f5f5" useContainer={false} noPadding>
+        
+          <div className="w-full overflow-hidden" ref={galleryRef}>
+            <div className="grid grid-cols-4 w-[calc(100vw+14vw)] -ml-[7vw] gap-0 transition-transform duration-300 ease-out">
+              <div className="relative h-[90vh] overflow-hidden">
+                <div style={{ transform: `translateX(${offsetFirst}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
+                  <Image src="/images/uo-selfcheckout-1.png?v=1" alt="Urban Outfitters self checkout 1" fill className="object-cover" sizes="25vw" />
+                </div>
+              </div>
+              <div className="relative h-[90vh] overflow-hidden">
+                <div style={{ transform: `translateX(${offsetSecond}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
+                  <Image src="/images/uoselfcheckout-2.png?v=1" alt="Urban Outfitters self checkout 2" fill className="object-cover" sizes="25vw" />
+                </div>
+              </div>
+              <div className="relative h-[90vh] overflow-hidden">
+                <div style={{ transform: `translateX(${offsetThird}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
+                  <Image src="/images/uoselfcheckout-3.png?v=1" alt="Urban Outfitters self checkout 3" fill className="object-cover" sizes="25vw" />
+                </div>
+              </div>
+              <div className="relative h-[90vh] overflow-hidden">
+                <div style={{ transform: `translateX(${offsetFourth}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
+                  <Image src="/images/uo-selfcheckout-4.png?v=1" alt="Urban Outfitters self checkout 4" fill className="object-cover" sizes="25vw" />
+                </div>
+              </div>
+            </div>
+          </div>
+        
       </FullWidthSection>
 
       <PageContainer>
