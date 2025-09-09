@@ -93,10 +93,10 @@ export default function Tabs({ items, initialActiveKey, className }: TabsProps) 
               tabIndex={isActive ? 0 : -1}
               aria-label={item.label}
               className={
-                "flex flex-col items-center justify-center rounded-lg border transition-all duration-150 " +
+                "flex flex-col items-center justify-center rounded-lg transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 " +
                 (isActive
-                  ? "border-[#D9D9D9] bg-gray-100 text-gray-900"
-                  : "border-gray-200 bg-white text-gray-800 motion-safe:animate-pulse hover:animate-none focus:animate-none")
+                  ? "border-2 border-gray-400 bg-gray-100 text-gray-900"
+                  : "border border-gray-200 bg-white text-gray-800 opacity-80 hover:opacity-100 focus-visible:opacity-100 hover:bg-gray-50 hover:border-gray-300")
               }
               onClick={() => setActiveKey(item.key)}
             >

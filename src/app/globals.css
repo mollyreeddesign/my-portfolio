@@ -331,3 +331,54 @@ p,
   }
 }
 
+/* Hover-triggered glisten utility */
+.glisten-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.glisten-overlay-on-hover {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    rgba(255,255,255,0) 30%,
+    rgba(255,255,255,0) 30%,
+    rgba(255,255,255,0.5) 40%,
+    rgba(255,255,255,0.5) 60%,
+    rgba(255,255,255,0) 70%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: translateX(-150%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.glisten-hover:hover .glisten-overlay-on-hover {
+  animation: glisten-sweep-instant 2s ease-in-out 1;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glisten-hover:hover .glisten-overlay-on-hover {
+    animation: none;
+  }
+}
+
+/* Immediate-start glisten sweep for hover */
+@keyframes glisten-sweep-instant {
+  0% {
+    transform: translateX(-150%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(150%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+}
+

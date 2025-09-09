@@ -183,14 +183,17 @@ export default function CaseStudyOnePage() {
               </p>
               
               {/* Original Hilton Property page screens */}
-              <div className="w-full rounded-lg mb-4 overflow-hidden">
+              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
                 <Image 
                   src="/images/hilton-originalscreens.png"
                   alt="Original Hilton Property page screens"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-contain rounded-lg"
+                  fill
+                  className="object-contain rounded-lg"
+                  sizes="(min-width: 1024px) 100vw, 100vw"
                 />
+                <div className="absolute top-2 right-2 z-10">
+                  <Tag tag="Before Redesign" className="bg-black/80" />
+                </div>
               </div>
               
               <p className="caption mb-8 md:mb-12 text-center">
@@ -221,7 +224,23 @@ export default function CaseStudyOnePage() {
           
             </CaseSection>
 
-            <CaseSection id="insights" title="Insights + Opportunities" headingLevel="h4">
+            <CaseSection id="insights" title="Insights + Foundations" headingLevel="h4">
+            <h2 className="custom-h2">Leveraging my knowledge of Hilton's design system</h2>
+              <p className="p mb-4">
+              An initial advantage I brought to the Property page redesign was my deep involvement in Hilton's Figma web design system. I had developed a strong familiarity with Hilton's design language across the site from spending significant time creating, maintaining, and improving the system. I regularly spoke at Hilton's monthly Figma showcases, managed library permissions, and supported teams in adopting the system.
+              </p>
+              <p className="p mb-4 md:mb-12">
+              My foundational knowledge of Hilton's design system heavily informed the strategy of the new Property page design.
+              </p>
+              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4" style={{ aspectRatio: '3/2' }}>
+                <video data-auto-play autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
+                  <source src="/videos/Hilton-DesignSystem-480p.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p className="caption mb-8 md:mb-12 text-center">
+              Views of the Hilton Design system I built and maintained in Figma.
+              </p>
             <h2 className="custom-h2">
             Gaining valuable information with user testing
                 </h2>
@@ -271,9 +290,9 @@ export default function CaseStudyOnePage() {
             </CaseSection>
 
             <CaseSection id="whatidid" title="What I Did" headingLevel="h4">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-4 md:gap-8 md:mb-12">
-                {/* Left column with text content */}
-                <div>
+              
+                
+                <div className="mb-4 md:mb-12">
                   <h2 className="custom-h2">I designed impactful components</h2>
                   <p className="p mb-4">
                   We created new components based on business goals and user testing insights.
@@ -283,54 +302,38 @@ export default function CaseStudyOnePage() {
                   </p>
                 </div>
                 
-                {/* Right column with two side-by-side videos */}
-                <div>
-                  <div className="flex gap-4">
-                    <div className="w-1/2 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden">
+                
+             
+              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+                    <div className="flex items-center justify-center h-full">
+                    <div className="flex gap-4 w-1/2">
+                    <div className="w-1/2 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
                       <video data-auto-play loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                         <source src="/videos/Hilton-Embassy.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
                     </div>
-                    <div className="w-1/2 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden relative">
+                    <div className="w-1/2 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden relative shadow-lg">
                       <Image src="/images/hilton-meetingcomponent.png" alt="Hilton meeting component" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
                     </div>
                   </div>
-                </div>
-              </div>
-                <div>
-                  <h2 className="custom-h2">I advocated for
-                  accessibility</h2>
-                  <p className="p mb-4 md:mb-12">
-                  I collaborated closely with Hilton's accessibility team during these updates to ensure I was up to date with the latest WCAG standards. Color contrast, Focus Indicators and translations adaptability were key elements I made sure to advocate for.
-                  </p>               
-                </div>
-                  <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                    <div className="flex items-center justify-center h-full">
-                      <div className="w-3/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
-                        <video data-auto-play loop muted playsInline preload="metadata" className="w-full h-full object-cover">
-                          <source src="/videos/hilton-accessiblecomponent.mp4" type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      </div>
                     </div>
                   </div>
-                  <p className="caption mb-8 md:mb-12 text-center">
-              Examples of the Meetings component I designed for Embassy Suites, Hilton Garden Inn and Hampton pages. 
-
-              </p>
-                
-              
-              <h2 className="custom-h2">I brought key branded elements into Property pages like
-              buttons, colors, icons and font</h2>
+                  <p className="caption mb-8 md:mb-12 text-center">The Locations component (left) we designed to surface information about nearby attractions and airport transportation; items that we heard users ask for in screen recordings.  We created the Info box (right) to be a flexible component that showcases bite-sized blocks of text for better information architecture.</p>
+                <div>
+                <h2 className="custom-h2">I unified Property into Hilton's core codebase 
+                  </h2>
               <p className="p mb-4">
               I knew from my experience on Brand, Booking, Search, and Honors teams that Property pages were missing key branded elements: color, typography, buttons, and iconography. These might seem like minor design details, but they were crucial for signaling to users that they were still within the Hilton experience.
               </p>
               <p className="p mb-4">
               User testing confirmed this. We heard in recorded verbal tests that visitors felt like they had navigated to a different hotel website when entering a Property page.
               </p>
+              <p className="p mb-4">
+              To address this, I advocated for merging the Property pages into Hilton's monorepo, a major tech debt initiative at the time, so we could use Hilton’s main codebase styles and create a more cohesive, on-brand experience. 
+              </p>
               <p className="p mb-4 md:mb-12">
-              To address this, I advocated for merging the Property pages into Hilton's monorepo, a major tech debt initiative at the time, so we could use Hilton’s main codebase styles and create a more cohesive, on-brand experience.
+              When we designed the new components, not only did we have to make sure they were translatable across all 12 brands but also that we were designing with the correct styles from monorepo. 
               </p>
               {/* Tabs showcasing brand elements with image titles */}
               <div className="w-full mb-4 md:mb-12 hidden lg:block">
@@ -446,6 +449,32 @@ export default function CaseStudyOnePage() {
                   ]}
                 />
               </div>
+                  <h2 className="custom-h2">I advocated for
+                  accessibility</h2>
+                  <p className="p mb-4">
+                  I collaborated closely with Hilton's accessibility team during these updates to ensure I was up to date with the latest WCAG standards. I advocated for key elements like color contrast, focus indicators and translations adaptability. Accessibility was especially important during this update because the components we built had to be translatable across all Hilton brands. 
+                  </p>
+                  <p className="p mb-4 md:mb-12">
+                  I collaborated heavily with software engineering to enforce this. For example, in the Groups & Meetings component shown below, I had to evaluate whether each brand's primary or secondary colors in the monorepo were more accessible when paired with white text.
+                  </p>               
+                </div>
+                  <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+                    <div className="flex items-center justify-center h-full">
+                      <div className="w-3/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                        <video data-auto-play loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                          <source src="/videos/hilton-accessiblecomponent.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="caption mb-8 md:mb-12 text-center">
+              Examples of the Groups & Meetings component we designed for all 12 of Hilton's portfolio brands. 
+
+              </p>
+                
+              
+             
               
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start mb-12 md:gap-8">
@@ -472,22 +501,7 @@ The icons were published company- wide using the Hilton shared codebase. They we
                   </p>
                 </div>
               </div>
-              <h2 className="custom-h2">I built and maintained Hilton's web design system</h2>
-              <p className="p mb-4">
-              An advantage I brought to the Property page redesign was my deep involvement in Hilton's Figma web design system. I had developed a strong familiarity with Hilton's design language across the site from spending significant time creating, maintaining, and improving the system.
-              </p>
-              <p className="p mb-4 md:mb-12">
-I regularly spoke at Hilton's monthly Figma showcases, managed library permissions, and supported teams in adopting the system. This experience directly improved the Property page update because of my foundational knowledge in Hilton's web styles.
-              </p>
-              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4" style={{ aspectRatio: '3/2' }}>
-                <video data-auto-play autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
-                  <source src="/videos/Hilton-DesignSystem-480p.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <p className="caption mb-8 md:mb-12 text-center">
-              Views of the Hilton Design system I built and maintained in Figma.
-              </p>
+              
             </CaseSection>
 
             <CaseSection id="results" title="Results">

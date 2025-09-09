@@ -3,6 +3,7 @@
 import PageContainer from "@/components/PageContainer";
 import ProcessOverview from "@/components/ProcessOverview";
 import Tag from "@/components/Tag";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import Metric from "@/components/Metric";
 import FullWidthSection from "@/components/FullWidthSection";
 import StickyNavigation from "@/components/StickyNavigation";
@@ -49,6 +50,34 @@ export default function CaseStudyTwoPage() {
       window.removeEventListener('scroll', updateProgress);
       window.removeEventListener('resize', updateProgress);
     };
+  }, []);
+
+  // Autoplay videos with data-auto-play when they enter the viewport
+  useEffect(() => {
+    const videos = Array.from(document.querySelectorAll<HTMLVideoElement>('video[data-auto-play]'));
+    if (!videos || videos.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            el.muted = true;
+            el.setAttribute('playsinline', '');
+            const playPromise = el.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {});
+            }
+          } else {
+            el.pause();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    videos.forEach((v) => observer.observe(v));
+    return () => observer.disconnect();
   }, []);
 
   const offsetFirst = -7 * (1 - imageScrollProgress);
@@ -115,24 +144,24 @@ export default function CaseStudyTwoPage() {
         
           <div className="w-full overflow-hidden" ref={galleryRef}>
             <div className="grid grid-cols-4 w-[calc(100vw+14vw)] -ml-[7vw] gap-0 transition-transform duration-300 ease-out">
-              <div className="relative h-[90vh] overflow-hidden">
+              <div className="relative h-[50vw]">
                 <div style={{ transform: `translateX(${offsetFirst}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                  <Image src="/images/uo-selfcheckout-1.png?v=1" alt="Urban Outfitters self checkout 1" fill className="object-cover" sizes="25vw" />
+                  <Image src="/images/uo-selfcheckout-1.png" alt="Urban Outfitters self checkout 1" fill unoptimized className="object-cover" sizes="(min-width:1536px) 29vw"/>
                 </div>
               </div>
-              <div className="relative h-[90vh] overflow-hidden">
+              <div className="relative h-[50vw]">
                 <div style={{ transform: `translateX(${offsetSecond}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                  <Image src="/images/uoselfcheckout-2.png?v=1" alt="Urban Outfitters self checkout 2" fill className="object-cover" sizes="25vw" />
+                  <Image src="/images/uo-selfcheckout-2.png" alt="Urban Outfitters self checkout 2" fill unoptimized className="object-cover" sizes="(min-width:1536px) 29vw"/>
                 </div>
               </div>
-              <div className="relative h-[90vh] overflow-hidden">
+              <div className="relative h-[50vw]">
                 <div style={{ transform: `translateX(${offsetThird}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                  <Image src="/images/uoselfcheckout-3.png?v=1" alt="Urban Outfitters self checkout 3" fill className="object-cover" sizes="25vw" />
+                  <Image src="/images/uo-selfcheckout-3.png" alt="Urban Outfitters self checkout 3" fill unoptimized className="object-cover" sizes="(min-width:1536px) 29vw"/>
                 </div>
               </div>
-              <div className="relative h-[90vh] overflow-hidden">
+              <div className="relative h-[50vw]">
                 <div style={{ transform: `translateX(${offsetFourth}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                  <Image src="/images/uo-selfcheckout-4.png?v=1" alt="Urban Outfitters self checkout 4" fill className="object-cover" sizes="25vw" />
+                  <Image src="/images/uo-selfcheckout-4.png" alt="Urban Outfitters self checkout 4" fill unoptimized className="object-cover" sizes="(min-width:1536px) 29vw"/>
                 </div>
               </div>
             </div>
@@ -164,6 +193,9 @@ export default function CaseStudyTwoPage() {
               
               <div>
                 <div className="w-full bg-gray-100 rounded-lg mb-4 relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                  <div className="absolute top-2 right-2 z-10">
+                    <Tag tag="Before Redesign" className="bg-black/80" />
+                  </div>
                   <Image src="/images/uo-originalui.png" alt="Urban Outfitters default checkout UI" fill className="object-contain pb-4 pt-8" sizes="(min-width: 768px) 50vw, 100vw" />
                 </div>
               </div>
@@ -215,13 +247,13 @@ export default function CaseStudyTwoPage() {
                   
                     <div className="w-full rounded-lg grid grid-cols-3 sm:grid-cols-3 gap-4 p-4 mb-4">
                       <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
-                        <Image src="/images/uo-flatselfcheckout-1.png" alt="UO flat self checkout screen 1" fill className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+                        <Image src="/images/uo-flatselfcheckout-1.png" alt="UO flat self checkout screen 1" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
                       </div>
                       <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
-                        <Image src="/images/uo-flatselfcheckout-2.png" alt="UO flat self checkout screen 2" fill className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+                        <Image src="/images/uo-flatselfcheckout-2.png" alt="UO flat self checkout screen 2" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
                       </div>
                       <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
-                        <Image src="/images/uo-flatselfcheckout-3.png" alt="UO flat self checkout screen 3" fill className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+                        <Image src="/images/uo-flatselfcheckout-3.png" alt="UO flat self checkout screen 3" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
                       </div>
                     </div>
                   
@@ -332,19 +364,28 @@ export default function CaseStudyTwoPage() {
             <CaseSection id="otheruowork" title="Other Urban Outfitters Work" headingLevel="h4">
               <h2 className="custom-h2">Help & Info Section Redesign</h2>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
-                  Placeholder Box (3:2 aspect ratio)
-                </div>
-              </div>
+                    <div className="flex items-center justify-center h-full">
+                      <div className="w-3/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                        <video data-auto-play autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                          <source src="/videos/uo-help+infovideo.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </div>
+                  </div>
               <p className="caption mb-8 md:mb-12 text-center">
               I redesigned the typography and information architecture for 20 Help + Info pages, breaking up dense text with iconography, photography, and clear type hierarchy.
 
               </p>
               <h2 className="custom-h2">UO Blog Overhaul</h2>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                <div className="flex items-center justify-center h-full text-gray-500 text-sm">
-                  Placeholder Box (3:2 aspect ratio)
-                </div>
+              <div className="w-full mb-4">
+                <BeforeAfterSlider
+                  beforeSrc="/images/uo-afterblog.png"
+                  afterSrc="/images/uo-beforeblog.png"
+                  aspectRatio="3/2"
+                  contentInset="0%"
+                  objectFit="contain"
+                />
               </div>
               <p className="caption mb-8 md:mb-12 text-center">
               I redesigned the Urban Outfitters blog to create a more engaging experience. I introduced clear typographic hierarchy, integrated video content, quiz layout ideas and shoppable product rails.
