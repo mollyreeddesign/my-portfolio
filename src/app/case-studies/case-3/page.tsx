@@ -9,6 +9,9 @@ import StickyNavigation from "@/components/StickyNavigation";
 import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import HorizontalPanImage from "@/components/HorizontalPanImage";
+import FeaturesImageBlock from "@/components/FeaturesImageBlock";
 
 export const metadata: Metadata = {
   title: "Case Study 3 | Portfolio",
@@ -72,9 +75,14 @@ export default function CaseStudyThreePage() {
         </div>
       </PageContainer>
 
-      <FullWidthSection backgroundColor="#f5f5f5">
-        <div className="text-center">
-          <h2 className="custom-h2 mb-4">Image here</h2>
+      <FullWidthSection backgroundColor="#EAF0FF" noPadding>
+        <div className="w-full">
+          <div className="relative w-full rounded-lg overflow-hidden" style={{ aspectRatio: '16/9' }}>
+            <video autoPlay loop muted playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover">
+              <source src="/videos/jam-topvideo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </FullWidthSection>
 
@@ -99,9 +107,13 @@ export default function CaseStudyThreePage() {
               My role was to design the app at high fidelity for a future developer, define complex responsive user flows and explore the brand’s overall look and feel.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
+              <Image 
+                  src="/images/jam-theproblem.png"
+                  alt="Jam's pitch deck"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain rounded-lg"
+                />
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
                     A page of Jam's pitch deck illustrating the problem of the mental load on parents.
@@ -138,12 +150,31 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               Throughout the design process, I referenced familiar patterns and interactions from these products. I wanted to shape a product experience that felt intuitive to users, yet was still differentiated for Jam's audience.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
+              <div className="flex items-center justify-center h-full">
+                      <div className="flex gap-4 mx-10">
+                        <div>
+                          <Image
+                            src="/images/jam-mobiledashwire.png"
+                            alt="Dashboard wireframe"
+                            width={1200}
+                            height={800}
+                            className="w-full h-auto rounded-lg shadow-md"
+                          />
+                        </div>
+                        <div>
+                          <Image
+                            src="/images/jam-documentation.png"
+                            alt="Dashboard exploration"
+                            width={1200}
+                            height={800}
+                            className="w-full h-auto rounded-lg shadow-md"
+                          />
+                        </div>
+                      </div>
                       </div>
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Original wireframes and documentation (blurred for confidentiality)
+                    Wireframes sketches and documentation (blurred for confidentiality)
                     </p>
                     <h2 className="custom-h2">Exploring look and feel</h2>
               <p className="p mb-4">
@@ -156,9 +187,13 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                 <li className="p">Enjoy brands like Goop, Magnolia Home, Home Edit, Hello Sunshine</li>
               </ul>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
+              <Image 
+                  src="/images/jam-inspoframes.png"
+                  alt="Jam's inspiration"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain rounded-lg"
+                />
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
                     Exploring color and font from our target audiences' most loved brands.
@@ -175,60 +210,83 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               To achieve this, I focused on creating a clear, highly visual layout. I utilized color and structure over stats or progress charts. At the top, a weekly view provided an at-a-glance overview. Below, users could dive into a detailed daily calendar, to-do list, and shopping list.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
+                      <div className="flex items-center justify-center h-full">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-10">
+                      
+                      <Image
+                        src="/images/jam-dashwire.png"
+                        alt="Dashboard wireframe"
+                        width={1200}
+                        height={800}
+                        className="w-full h-auto rounded-lg shadow-md"
+                      />
+                      <Image
+                        src="/images/jam-dashexploration.png"
+                        alt="Dashboard exploration"
+                        width={1200}
+                        height={800}
+                        className="w-full h-auto rounded-lg shadow-md"
+                      />
+                    </div>
                       </div>
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Desktop dashboards explorations.
+                    Balsalmiq wireframe and early concept for the dashboard.
                     </p>
+                    
                     <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
+                    <div className="flex items-center justify-center h-full">
+                      <div className="w-1/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                        <video autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                          <source src="/videos/jam-dashboardmobile.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
                     </div>
+                    </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Final Designs for dashboard.
+                    Mobile dashboard design and interactions.
                     </p>
                     <h2 className="custom-h2">I mapped complex user flows</h2>
               <p className="p mb-4">
-              The most complex part of this project was mapping out the extensive user flows. Users could create tasks, events, and lists in Jam. Each of these items were assignable, schedule-able and could be linked to one another. Because they were deeply integrated, it was important to show visual examples of how they worked together on mobile and desktop.
+              Users could create tasks, events, and lists in Jam. Each of these items were assignable, schedule-able and could be linked to one another. It was my task to build these flows in low and high fidelity.
               </p>
               <p className="p mb-4 md:mb-12">
-              In hindsight, I think creating these flows in wireframe fidelity would have been sufficient. If I were to approach this again, I would rely on Figma Dev Mode combined with direct developer conversations to save time and resources.
+              Mapping user flows served several purposes. They helped us identify which features were truly necessary, how they would integrate with each other, and where more thinking was needed. This was crucial during Jam's creation phase because we could explore ideas quickly and cheaply.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
+              <Image
+                        src="/images/jam-path.png"
+                        alt="Add an Event Simplified Mobile User Flow"
+                        width={1200}
+                        height={800}
+                        className="w-full h-auto"
+                      />
+                    </div>
+                    <p className="caption mb-8 md:mb-12 text-center">
+                    Example of one of the many user flows in Jam. This one focused on the user path of adding an event.
+                    </p>
+              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+              <Image
+                        src="/images/jam-simplified.png"
+                        alt="Add an Event Simplified Mobile User Flow"
+                        width={1200}
+                        height={800}
+                        className="w-full h-auto"
+                        unoptimized
+                      />
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
                     Add an Event Mobile User Flow (high level)
                     </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
-                    </div>
-                    <p className="caption mb-8 md:mb-12 text-center">
-                    Add an Event Desktop User Flow (full)
-                    </p>
+              
                     <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
+                      <FeaturesImageBlock />
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
                     Create Task Mobile User Flow (high level)
                     </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
-                    </div>
-                    <p className="caption mb-8 md:mb-12 text-center">
-                    Create Task Desktop User Flow (full)
-                    </p>
+              
                     <h2 className="custom-h2">I creating a comprehensive style guide</h2>
               <p className="p mb-4">
               I created a comprehensive style guide to support a smooth handoff to a developer. This guide covered spacing, typography, responsive behavior, color, and user flows.

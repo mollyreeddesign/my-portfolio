@@ -35,6 +35,29 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Thin, sleek horizontal scrollbar */
+.scrollbar-thin {
+  scrollbar-color: rgba(0,0,0,0.35) transparent;
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.35);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
 /* Global h1 styles - all h1 elements use Americana font */
 h1 {
   font-family: 'Americana Std Roman', serif;
