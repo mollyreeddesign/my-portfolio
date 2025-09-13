@@ -4,7 +4,7 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 
 const workSans = Work_Sans({
-  variable: "--font-work-sans",
+  variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 });
@@ -20,12 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={workSans.variable}
-      style={{ ["--font-work-sans" as any]: workSans.style.fontFamily, ["--font-sans" as any]: workSans.style.fontFamily }}
-    >
-      <body className={`${workSans.className} antialiased font-sans`}>
+    <html lang="en" className={workSans.variable}>
+      <body className={`${workSans.className} antialiased`}>
         {/* Fixed Nav overlays content, so add top padding equal to nav height */}
         <header>
           <Nav />
