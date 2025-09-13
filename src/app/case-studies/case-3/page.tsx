@@ -213,7 +213,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                       <div className="flex items-center justify-center h-full">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-10">
+                      <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mx-10">
                       
                       <Image
                         src="/images/jam-dashwire.png"
@@ -233,7 +233,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                       </div>
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Balsalmiq wireframe and early concept for the dashboard.
+                    Balsalmiq wireframe and an early concept for the dashboard.
                     </p>
                     
                     <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -247,7 +247,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                     </div>
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Mobile dashboard design and interactions.
+                    Mobile prototype showing the dashboard flow and interactions.
                     </p>
                     <h2 className="custom-h2">I mapped complex user flows</h2>
               <p className="p mb-4">
@@ -266,7 +266,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                       />
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Example of one of the many user flows in Jam. This one focused on the user path of adding an event.
+                    Example of one of the many user flows in Jam. This one focused on adding an event.
                     </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
               <Image
@@ -279,30 +279,35 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                       />
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Add an Event Mobile User Flow (high level)
+                    A simplified view of the add event user flow.
                     </p>
               
                     <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                       <FeaturesImageBlock />
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Create Task Mobile User Flow (high level)
+                    High-fidelity user flow exploring the full features of adding an event: time/date, assigning, to bring, repeat, drop-off/pick-up and linking tasks and lists. 
                     </p>
               
                     <h2 className="custom-h2">I creating a comprehensive style guide</h2>
               <p className="p mb-4">
-              I created a comprehensive style guide to support a smooth handoff to a developer. This guide covered spacing, typography, responsive behavior, color, and user flows.
+              I created a comprehensive style guide to support a smooth handoff to development. The guide covered spacing, typography, responsive behavior, color, and user flows.
               </p>
               <p className="p mb-4 md:mb-12">
               Since I wouldn't be present to oversee development, my mockups and documentation were designed to be exceptionally clear so a future developer could easily implement my work.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
+              <Image 
+                  src="/images/jam-responsivegrid.png"
+                  alt="Jam's responsive grid"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain rounded-lg" 
+                  unoptimized
+                />
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Developer guidelines for responsive margin.
+                    A page from the Jam style guide showing responsive margin framework.
                     </p>
             </CaseSection>
 
@@ -315,6 +320,9 @@ I looked at shared calendar setups from Apple and Google, along with task manage
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Mobile: Order 2, Desktop: Left column */}
                 <div className="order-2 md:order-1 col-span-1">
+                <p className="p mb-4">
+                  The Jam Family Calendar app was launched in February 2024 and has since been downloaded over 5,000 times on Google Play.
+                  </p>
                   <p className="p mb-4">
                   I'm proud of the foundation I created through my design system, user flows and comprehensive style guide for Jam Family Calendar. This project taught me valuable lessons about when (or when not) to design in high fidelity, knowing your user and building a sustainable product that can be iterated in future redesigns. Most of all, it was rewarding to contribute to a product tackling a very real challenge for modern families. I'm excited to see Jam continue to grow and ease the mental load for parents.
                   </p>
