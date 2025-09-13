@@ -20,8 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={workSans.variable}>
-      <body className={`antialiased font-sans`}>
+    <html
+      lang="en"
+      className={workSans.variable}
+      style={{ ["--font-work-sans" as any]: workSans.style.fontFamily }}
+    >
+      <body className={`${workSans.className} antialiased font-sans`}>
         {/* Fixed Nav overlays content, so add top padding equal to nav height */}
         <header>
           <Nav />
