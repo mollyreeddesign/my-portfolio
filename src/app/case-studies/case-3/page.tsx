@@ -12,6 +12,8 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import HorizontalPanImage from "@/components/HorizontalPanImage";
 import FeaturesImageBlock from "@/components/FeaturesImageBlock";
+import dynamic from "next/dynamic";
+const LottiePlayer = dynamic(() => import("@/components/LottiePlayer"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Case Study 3 | Portfolio",
@@ -31,7 +33,7 @@ export default function CaseStudyThreePage() {
     <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] py-8 sm:py-12 bg-white text-gray-800">
       <PageContainer>
         <h1 className="custom-h1 mb-6">
-        Lightened the load on stressed parents
+        Simplified scheduling for stressed parents
           <span className="hidden md:inline"><br /></span>{" "}
           with a responsive family calendar
         </h1>
@@ -306,9 +308,9 @@ I looked at shared calendar setups from Apple and Google, along with task manage
 
             <CaseSection id="results" title="Results">
             <div className="w-full bg-gray-100 rounded-lg mb-4 md:mb-12" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
+                     
+                        <LottiePlayer src="/animations/jam-mobileresults.json" className=" rounded-lg w-auto h-full" />
+                      
                     </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Mobile: Order 2, Desktop: Left column */}

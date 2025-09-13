@@ -14,6 +14,8 @@ import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import BackToTopButton from "@/components/BackToTopButton";
+import dynamic from "next/dynamic";
+const LottieCover = dynamic(() => import("@/components/LottieCover"), { ssr: false });
 
 export default function CaseStudyOnePage() {
   const [scrollY, setScrollY] = useState(0);
@@ -232,11 +234,8 @@ export default function CaseStudyOnePage() {
               <p className="p mb-4 md:mb-12">
               My foundational knowledge of Hilton's design system heavily informed the strategy of the new Property page design.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4" style={{ aspectRatio: '3/2' }}>
-                <video data-auto-play autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
-                  <source src="/videos/Hilton-DesignSystem-480p.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative" style={{ aspectRatio: '3/2' }}>
+                <LottieCover src="/animations/hilton-designsystem.json" />
               </div>
               <p className="caption mb-8 md:mb-12 text-center">
               Views of the Hilton Design system I built and maintained in Figma.
