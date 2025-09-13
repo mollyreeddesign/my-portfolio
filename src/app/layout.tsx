@@ -23,7 +23,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={workSans.variable}
-      style={{ ["--font-work-sans" as any]: workSans.style.fontFamily }}
+      style={{ ["--font-work-sans" as any]: workSans.style.fontFamily, ["--font-sans" as any]: workSans.style.fontFamily }}
     >
       <body className={`${workSans.className} antialiased font-sans`}>
         {/* Fixed Nav overlays content, so add top padding equal to nav height */}
