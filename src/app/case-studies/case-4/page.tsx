@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageContainer from "@/components/PageContainer";
 import ProcessOverview from "@/components/ProcessOverview";
 import Tag from "@/components/Tag";
@@ -85,7 +86,7 @@ export default function CaseStudyFourPage() {
           {/* Main Content - full width on mobile, 3/4 width on lg+ */}
           <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
-              <h2 className="custom-h2">Valerie Jurado needed a product that converted visitors into qualified leads while reflecting her high-end, avant- garde aesthetic.</h2>
+              <h2 className="custom-h2">Valerie Jurado needed a product that converted visitors into qualified leads while reflecting her high-end, avant-garde aesthetic.</h2>
               <p className="p mb-4">
               Valerie Jurado, a Los Angeles–based botanical designer, needed a new website that could better serve her business goals.
               </p>
@@ -93,16 +94,24 @@ export default function CaseStudyFourPage() {
               Valerie's original site was built in Squarespace in 2018. It was expensive, had low visual impact and was hard to update. Her business goals and clientele had changed since then. The site's contact form wasn't capturing viable leads and the photography didn't reflect the artistry in her work.
               </p>
               <p className="p mb-4 md:mb-12">
-              In May 2024, Valerie came to me to redesign and rebuild a website that showcased her brand's value, captured high-quality leads and supported her new business direction.
+              Valerie came to me to redesign and rebuild a website that showcased her brand's value, captured high-quality leads and supported her new business direction.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
-                    </div>
-                    <p className="caption mb-8 md:mb-12 text-center">
-                    Valerie's original site and contact page.
-                    </p>
+              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+                <Image 
+                  src="/images/val-originalsite.png"
+                  alt="Original Valerie Jurado site"
+                  fill
+                  className="object-contain rounded-lg"
+                  sizes="(min-width: 1024px) 100vw, 100vw"
+                />
+                <div className="absolute top-2 right-2 z-10">
+                  <Tag tag="Before Redesign" className="bg-black/80" />
+                </div>
+              </div>
+              
+              <p className="caption mb-8 md:mb-12 text-center">
+                Valerie's original contact form on her site.
+              </p>
             </CaseSection>
 
             <CaseSection id="howmightwe" title="How might we" headingLevel="h4">
@@ -125,18 +134,22 @@ export default function CaseStudyFourPage() {
             <CaseSection id="settinggoals" title="Setting goals" headingLevel="h4">
               <h2 className="custom-h2">Aligning on Valerie's business goals</h2>
               <p className="p mb-4">
-              I met with Valerie and her business partner, Allan, to define the goals and values guiding the website refresh. From that conversation, a few priorities emerged:
+              I set up a remote brainstorm session with Valerie and her business partner, Allan, to define the goals and values guiding the website refresh. From that conversation, a few priorities emerged:
               </p>
               <ul className="list-disc list-outside pl-4 space-y-4 mb-4 md:mb-12">
                 <li className="p"><strong>Attracting the Right Audience</strong> The few leads from her existing site weren't the right type of clientele.</li>
                 <li className="p"><strong>Streamlined Engagement</strong> She wanted an easy way to direct people to her site, where they could quickly contact her or sign up for email newsletters.</li>
                 <li className="p"><strong>Defining a Unique Brand</strong> She wanted the brand to emphasize uniqueness and bespoke botanical experiences, rather than just weddings or events.</li>
               </ul>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
-                    </div>
+              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                  src="/images/val-brainstorm.png"
+                  alt="Valerie, Allan and I's Figjam brainstorm"
+                  fill
+                  className="object-contain rounded-lg"
+                  sizes="(min-width: 1024px) 100vw, 100vw"
+                />
+                </div>
                     <p className="caption mb-8 md:mb-12 text-center">
                     Valerie, Allan and I's Figjam brainstorm.
                     </p>
@@ -145,15 +158,19 @@ export default function CaseStudyFourPage() {
               After the brainstorm, I created a rough Now-Next-Later roadmap to define scope and keep the project on track.
               </p>
               <p className="p mb-4 md:mb-12">
-              I set the goal to launch the refreshed site within the year, with a plan to add new content quarterly and complete additional enhancements by the end of 2024/early 2025.
+              I set the goal to launch the refreshed site within the year, with a plan to add new content quarterly and complete additional enhancements by the end of 2024.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
-                    </div>
+              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                  src="/images/val-nownextlater.png"
+                  alt="Valerie, Allan and I's Figjam brainstorm"
+                  fill
+                  className="object-contain rounded-lg"
+                  sizes="(min-width: 1024px) 100vw, 100vw"
+                />
+                </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Valerie, Allan and I's Figjam brainstorm.
+                    The Now-Next-Later roadmap I created from our remote brainstorm session.
                     </p>
                     <h2 className="custom-h2">Competitive research and identifying business values</h2>
               <p className="p mb-4">
