@@ -94,9 +94,9 @@ export default function CaseStudyOnePage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My Role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Designed testable prototypes</li>
-                <li className="p">Built and maintained a design system</li>
-                <li className="p">Advocated for accessibility and sustainability</li>
+                <li className="p">Used testing insights to inform design updates</li>
+                <li className="p">Developed and maintained Hilton's design system</li>
+                <li className="p">Designed reusable components for 12 Hilton brands</li>
               </ul>
             </div>
             <div className="space-y-2">
@@ -244,7 +244,7 @@ export default function CaseStudyOnePage() {
             Gaining valuable information with user testing
                 </h2>
               <p className="p mb-4">
-              A UX designer, a content strategist and I reviewed previous user testing results to investigate prior user pain points and opportunities for page improvement. We also requested fresh user screen recordings where users could verbalize their experience on the page.
+              A UX designer, a content strategist and I reviewed previous user testing results to investigate prior user pain points and opportunities for page improvement. We also requested fresh user screen recordings where users could verbalize their experience on the Hilton Property pages.
 
 
               </p>

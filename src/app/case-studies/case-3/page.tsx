@@ -51,11 +51,11 @@ export default function CaseStudyThreePage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Designed High Fi responsive screens
+                <li className="p">Led competitive and audience research 
                 </li>
-                <li className="p">Built complex user flows
+                <li className="p">Created a foundational style guide
                 </li>
-                <li className="p">Created a dashboard for kids and adults</li>
+                <li className="p"> Mapped user flows to to clarify feature interactions</li>
               </ul>
             </div>
             <div className="space-y-2">
@@ -213,27 +213,21 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                       <div className="flex items-center justify-center h-full">
-                      <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mx-10">
                       
-                      <Image
-                        src="/images/jam-dashwire.png"
-                        alt="Dashboard wireframe"
-                        width={1200}
-                        height={800}
-                        className="w-full h-auto rounded-lg shadow-md"
-                      />
+                      
+                      
                       <Image
                         src="/images/jam-dashexploration.png"
                         alt="Dashboard exploration"
                         width={1200}
                         height={800}
-                        className="w-full h-auto rounded-lg shadow-md"
+                        className="w-3/4 h-auto rounded-lg shadow-md"
                       />
-                    </div>
+                    
                       </div>
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Balsalmiq wireframe and an early concept for the dashboard.
+                    Early concept for the Jam dashboard.
                     </p>
                     
                     <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
@@ -289,7 +283,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                     High-fidelity user flow exploring the full features of adding an event: time/date, assigning, to bring, repeat, drop-off/pick-up and linking tasks and lists. 
                     </p>
               
-                    <h2 className="custom-h2">I creating a comprehensive style guide</h2>
+                    <h2 className="custom-h2">I created a comprehensive style guide</h2>
               <p className="p mb-4">
               I created a comprehensive style guide to support a smooth handoff to development. The guide covered spacing, typography, responsive behavior, color, and user flows.
               </p>

@@ -116,9 +116,9 @@ export default function CaseStudyTwoPage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My Role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Designed self checkout screen states</li>
+                <li className="p">Designed in-store self checkout interface</li>
                 <li className="p">Implemented loyalty program personalization</li>
-                <li className="p">Identified branding opportunities</li>
+                <li className="p">Coordinated dev handoff</li>
               </ul>
             </div>
             <div className="space-y-2">
@@ -201,7 +201,7 @@ export default function CaseStudyTwoPage() {
               </div>
               
               <p className="caption mb-8 md:mb-12 text-center">
-              Default checkout software
+              The point of sale 'Elo' kiosks with with default checkout software
               </p>
               <p className="p mb-4">
               A lead UI designer and I were brought onto the project to improve the visual design, brand presence, UO Rewards options and overall user experience in self checkout.
@@ -216,44 +216,59 @@ export default function CaseStudyTwoPage() {
               </Statement>
             </CaseSection>
 
-            <CaseSection id="whatidid" title="" headingLevel="h4">
+            <CaseSection id="whatidid" title="What I did" headingLevel="h4">
+            <h2 className="custom-h2">I designed the self checkout interface</h2>
+                  
+                  <p className="p mb-4 md:mb-12">
+                  I used the default self-checkout flow as a framework to define screen states: active, signed-in, checkout, paying, and finish. From these states, I designed screens that incorporated Urban Outfitters’ branding, typography, and visual style. 
+                  </p>
+                    
             
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-4 md:mb-12">
+              
                 {/* Left column - gif animation */}
                 <div className="order-2 lg:order-1">
                   <div className="w-full bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '2/3' }}>
-                    <Image src="/images/uo-cardanimation.gif" alt="UO card animation" fill className="object-cover shadow-lg rounded-lg mt-2" sizes="(min-width: 1024px) 50vw, 100vw" unoptimized />
+                  <Image src="/images/uo-flatselfcheckout-1.png" alt="UO flat self checkout screen 1" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
                   </div>
                 </div>
                 
                 {/* Right column - text content */}
                 <div className="order-1 lg:order-2 mb-8 md:mb-12">
-                  <h4 className="custom-h4">What I Did</h4>
-                <h2 className="custom-h2">I designed the self checkout screens</h2>
-                  
-                  <p className="p mb-4">
-                  I worked with illustrator and designer, Miranda Leung, to come up with UO- style empty state animations to keep the user engaged on static screens.
-
-                  </p>
-                  <p className="p mb-4">
-                  I utilized Urban Outfitters branded text, logo and buttons for the UI, making sure to keep the design and colors minimal throughout a process that could easily overwhelm to a user. I created Signed In/Signed Out states for users that were in the UO Rewards program, bringing in personalization where possible.
-                  </p>
+                <p className="p mb-4">
+                    I identified opportunities for personalization such as greeting users by name in the checkout state when they signed in to their rewards account. Users could simply scan a QR code on the kiosk screen with their mobile device and their account could be accessed.
+                    </p>
+                <p className="p mb-4 md:mb-12">
+                    To enhance engagement during more passive moments, I collaborated with illustrator and designer Miranda Leung to create Urban Outfitters–style empty state animations.
+                    </p>
+                    
                 </div>
+                
               </div>
-              <h2 className="custom-h2">I oversaw development and launch</h2>
-              <p className="p mb-4 md:mb-12">
-              I oversaw the development process, performing several rounds of VQA with software engineering before the test product was launched in August, 2018.
-                  </p>
-                  
-                    <div className="w-full rounded-lg grid grid-cols-3 sm:grid-cols-3 gap-4 p-4 mb-4">
-                      <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
-                        <Image src="/images/uo-flatselfcheckout-1.png" alt="UO flat self checkout screen 1" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
-                      </div>
-                      <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
+              
+
+
+              <h2 className="custom-h2">I coordinated design handoff</h2>
+              <p className="p mb-4">
+              For development handoff, I created detailed redlines that mapped out styles using Tailwind CSS nomenclature. 
+              </p>
+              
+<p className="p mb-4">
+  After handoff, I collaborated closely with software engineering to fine-tune details such as animations and element spacing. The touchscreen kiosks with the new UI were installed in Herald Square in August 2018.
+</p>
+
+<div className="w-full rounded-lg grid grid-cols-3 sm:grid-cols-3 gap-4 p-4 mb-4">
+  <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
+                        
                         <Image src="/images/uo-flatselfcheckout-2.png" alt="UO flat self checkout screen 2" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
                       </div>
                       <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
+                        
                         <Image src="/images/uo-flatselfcheckout-3.png" alt="UO flat self checkout screen 3" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+                      </div>
+                      <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
+                        
+                        <Image src="/images/uo-cardanimation.gif" alt="UO card animation" fill className="object-cover shadow-lg rounded-lg mt-2" sizes="(min-width: 1024px) 50vw, 100vw" unoptimized />
                       </div>
                     </div>
                   
@@ -322,7 +337,7 @@ export default function CaseStudyTwoPage() {
                 <div className="order-2 md:order-1 col-span-1">
                   <p className="p mb-4">
                   A month after the kiosks were rolled out with the newly designed interface, the results came back that self checkout had been highly favored by the UO Customer. </p> 
-                  <p className="p mb-4"><a href="https://www.forbes.com/sites/greatspeculations/2018/11/16/urban-outfitters-to-benefit-from-improved-all-round-growth-in-the-third-quarter/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 underline inline-flex items-center gap-1"><b>Forbes published an article</b> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a> stating Urban Outfitters had been among the top performing companies in the retail sector that year, with Self checkout being one of the reasons for its 9% revenue growth and 50%+ earnings growth.
+                  <p className="p mb-4"><a href="https://www.forbes.com/sites/greatspeculations/2018/11/16/urban-outfitters-to-benefit-from-improved-all-round-growth-in-the-third-quarter/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 underline inline-flex items-center gap-1"><b>Forbes published an article</b> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a> stating Urban Outfitters had been among the top performing companies in the retail sector that year, with self checkout being one of the reasons for its 9% revenue growth and 50%+ earnings growth.
                   </p>
                   
                                     {/* Mobile: Buttons below paragraph */}

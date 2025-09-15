@@ -45,9 +45,9 @@ export default function CaseStudyFourPage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Designed and built responsive business site</li>
-                <li className="p">Conducted market research</li>
-                <li className="p">Built business/customer user flows</li>
+                <li className="p">Aligned design direction with business objectives</li>
+                <li className="p">Improved lead quality through a contact form</li>
+                <li className="p">Built bespoke business site using Prismic CMS</li>
               </ul>
             </div>
             <div className="space-y-2">
@@ -86,7 +86,7 @@ export default function CaseStudyFourPage() {
           {/* Main Content - full width on mobile, 3/4 width on lg+ */}
           <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
-              <h2 className="custom-h2">Valerie Jurado needed a product that converted visitors into qualified leads while reflecting her high-end, avant-garde aesthetic.</h2>
+              <h2 className="custom-h2">Valerie Jurado needed a new website that converted visitors into qualified leads while reflecting her high-end, avant-garde aesthetic.</h2>
               <p className="p mb-4">
               Valerie Jurado, a Los Angeles–based botanical designer, needed a new website that could better serve her business goals.
               </p>
@@ -174,7 +174,7 @@ export default function CaseStudyFourPage() {
                     </p>
                     <h2 className="custom-h2">Competitive research and identifying business values</h2>
               <p className="p mb-4">
-              A key part of this project was analyzing competitors in the high-end florist and botanical designer market. We observed that many luxury florists didn’t reference flowers or plants in their logo. The brand sounded more editorial and high fashion when we just used a name. We simplified Valerie’s logo by removing ‘Botanical Design’ and using just ‘Valerie Jurado’.
+              A key part of this project was analyzing competitors in the high-end florist and botanical designer market. We observed that many luxury florists didn’t reference flowers or plants in their logo. The brand sounded more editorial and high fashion when we just used a name. We simplified Valerie's logo by removing ‘Botanical Design’ and used just ‘Valerie Jurado’.
               </p>
               <p className="p mb-4">
               Valerie's favorite designers emphasized minimal UI with large, striking photography. I knew her work photography was a major brand strength, so I designed the site with minimal typography, buttons and text. This let her work take center stage.
@@ -183,12 +183,12 @@ export default function CaseStudyFourPage() {
             </CaseSection>
 
             <CaseSection id="whatidid" title="What I did" headingLevel="h4">
-              <h2 className="custom-h2">I created sitemaps and wireframes</h2>
+              <h2 className="custom-h2">I defined the site structure</h2>
               <p className="p mb-4">
-              We decided the home page would be a long-form scroll experience with custom sections showcasing Valerie’s projects. This would form the bulk of the design and development effort.
+              I mapped out the site structure to support Valerie’s business goals and new brand direction. We decided the homepage would be a long-form, Tumblr-inspired experience, with custom sections to showcase her projects. This would form the bulk of the design and development effort.
               </p>
               <p className="p mb-4 md:mb-12">
-              We identified key supporting pages, including Greens, Floral, About, and Contact. Analytics from Valerie’s existing Squarespace site showed that About and Contact were the most visited pages of her site, so we kept them easily accessible in the new design.
+              One of Valerie’s key business goals from our initial brainstorm was growing the ‘Greens’ portion of her business, where she designed and maintained living plant displays for her clients. This informed the decision to surface supporting pages like Greens and Floral early on the homepage with About and Contact.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                       <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
@@ -217,7 +217,7 @@ export default function CaseStudyFourPage() {
 
               </p>
               <p className="p mb-4 md:mb-12">
-              I explored placing an opt-in form in the footer, however analytics revealed that it was collecting 98% spam submissions. We decided to remove it and keep only the main form on the Contact page.
+              I explored placing an opt-in form in the footer, however data from Mailchimp revealed that it was collecting mostly spam submissions. We decided to remove it and keep only the main form on the Contact page.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                       <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
@@ -261,7 +261,7 @@ export default function CaseStudyFourPage() {
                 {/* Mobile: Order 2, Desktop: Left column */}
                 <div className="order-2 md:order-1 col-span-1">
                 <p className="p mb-4">
-              On December 10, 2024, valeriejurado.com successfully launched on Vercel hosting. Migrating to cloud-based hosting reduced Valerie's annual hosting costs by 92% compared to Squarespace.
+              On December 10, 2024, valeriejurado.com successfully launched on Vercel hosting. Migrating to cloud-based hosting reduced Valerie's annual hosting costs by 92% compared to the cost of her old Squarespace site.
               </p>
               <p className="p mb-4">
               When I measured post-launch metrics (measured 8 months before and after), I found a significant boost in engagement and over 7x more contact form conversions. I can confidently say I achieved Valerie's business goals we identified at the beginning of the project.
