@@ -294,7 +294,7 @@ export default function CaseStudyOnePage() {
                 <div className="mb-4 md:mb-12">
                   <h2 className="custom-h2">I designed impactful components</h2>
                   <p className="p mb-4">
-                  We created new components based on business goals and user testing insights.
+                  We created new components based on business goals and user testing insights. For example, we designed the Locations component to surface information about nearby attractions and airport transportation; items that we heard users ask for in screen recordings.  We also created the Info Card, a stackable component that showcases bite-sized blocks of heading and paragraph text for easier scannability.
                   </p>
                   <p className="p mb-4">
                   We also surfaced essential information in pre-existing components like Hotel phone numbers, emails, room prices and check-in/check-out times.
@@ -318,9 +318,9 @@ export default function CaseStudyOnePage() {
                   </div>
                     </div>
                   </div>
-                  <p className="caption mb-8 md:mb-12 text-center">The Locations component (left) we designed to surface information about nearby attractions and airport transportation; items that we heard users ask for in screen recordings.  We created the Info box (right) to be a flexible component that showcases bite-sized blocks of text for better information architecture.</p>
+                  <p className="caption mb-8 md:mb-12 text-center">The Locations component (left) and Info Card component (right)</p>
                 <div>
-                <h2 className="custom-h2">I unified Property into Hilton's core codebase 
+                <h2 className="custom-h2">I unified the Property team into Hilton's core codebase 
                   </h2>
               <p className="p mb-4">
               I knew from my experience on Brand, Booking, Search, and Honors teams that Property pages were missing key branded elements: color, typography, buttons, and iconography. These might seem like minor design details, but they were crucial for signaling to users that they were still within the Hilton experience.
@@ -454,7 +454,7 @@ export default function CaseStudyOnePage() {
                   I collaborated closely with Hilton's accessibility team during these updates to ensure I was up to date with the latest WCAG standards. I advocated for key elements like color contrast, focus indicators and translations adaptability. Accessibility was especially important during this update because the components we built had to be translatable across all Hilton brands. 
                   </p>
                   <p className="p mb-4 md:mb-12">
-                  I collaborated heavily with software engineering to enforce this. For example, in the Groups & Meetings component shown below, I had to evaluate whether each brand's primary or secondary colors in the monorepo were more accessible when paired with white text.
+                  I collaborated heavily with software engineering to enforce this. For example, in the Groups & Meetings component shown below, I had to evaluate whether each brand's primary or secondary colors in the monorepo were more accessible when paired with white text and then communicated this to the software engineering team for implimentation.
                   </p>               
                 </div>
                   <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
