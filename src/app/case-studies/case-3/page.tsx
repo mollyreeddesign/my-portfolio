@@ -125,7 +125,7 @@ export default function CaseStudyThreePage() {
             <CaseSection id="businessgoal" title="Business Goal" headingLevel="h4">
               <Statement>
                 <h2 className="custom-h2">
-                Jam's business goal was to take logistics of running a household and merge them in one singular app designed for and accessible by the entire family.
+                Jam's business goal was to take logistics of running a household and merge them into one singular app designed for and accessible by the entire family.
                 </h2>
               </Statement>
             </CaseSection>
