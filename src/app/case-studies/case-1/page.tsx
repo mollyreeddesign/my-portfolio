@@ -81,11 +81,11 @@ export default function CaseStudyOnePage() {
         </h1>
         
         <div className="flex flex-wrap gap-2 mb-8">
+        <Tag tag="eCommerce" />
+        <Tag tag="Design Systems" />
           <Tag tag="User Testing" />
           <Tag tag="Accessibility" />
           <Tag tag="Prototyping" />
-          <Tag tag="Design Systems" />
-          <Tag tag="Templating" />
         </div>
         
         {/* Responsive Grid Container */}

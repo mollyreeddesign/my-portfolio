@@ -201,7 +201,7 @@ export default function CaseStudyTwoPage() {
               </div>
               
               <p className="caption mb-8 md:mb-12 text-center">
-              The point of sale 'Elo' kiosks with with default checkout software
+              The point of sale 'Elo' kiosks with default checkout software
               </p>
               <p className="p mb-4">
               A lead UI designer and I were brought onto the project to improve the visual design, brand presence, UO Rewards options and overall user experience in self checkout.
@@ -211,7 +211,7 @@ export default function CaseStudyTwoPage() {
             <CaseSection id="howmightwe" title="How might we" headingLevel="h4">
               <Statement>
                 <h2 className="custom-h2">
-                How might we redesign the default self-checkout software on the point of sale kiosks to be more intuitive, align with the Urban Outfitters brand, and enhance the in-store customer experience?
+                How might we redesign the default self-checkout software to be more intuitive, align with the Urban Outfitters brand, and enhance the in-store customer experience?
                 </h2>
               </Statement>
             </CaseSection>
@@ -254,7 +254,7 @@ export default function CaseStudyTwoPage() {
               </p>
               
 <p className="p mb-4">
-  After handoff, I collaborated closely with software engineering to fine-tune details such as animations and element spacing. The touchscreen kiosks with the new UI were installed in Herald Square in August 2018.
+  After handoff, I collaborated closely with software engineering to fine-tune details such as animations and spacing. The touchscreen kiosks with the new UI were installed in Herald Square in August 2018.
 </p>
 
 <div className="w-full rounded-lg grid grid-cols-3 sm:grid-cols-3 gap-4 p-4 mb-4">
@@ -274,7 +274,7 @@ export default function CaseStudyTwoPage() {
                   
               
                              <p className="caption mb-8 md:mb-12 text-center">
-               Final UI of self checkout screens
+               Final UI of self checkout
                </p>
             </CaseSection>
 
@@ -297,7 +297,7 @@ export default function CaseStudyTwoPage() {
                 </div>
                </div>
                               <p className="caption mb-8 md:mb-12 text-center">
-                Customers interacting with the new self checkout screens in Herald Square, New York City.
+                Customers interacting with the new self checkout kiosks in Herald Square, New York City.
                 </p>
                 
                 {/* Two column layout with text and image */}

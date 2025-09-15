@@ -39,9 +39,9 @@ export default function CaseStudyThreePage() {
         </h1>
         <div className="flex flex-wrap gap-2 mb-8">
           <Tag tag="SaaS" />
-          <Tag tag="High Fi Mockups" />
-          <Tag tag="Complex User Flows" />
-          <Tag tag="Dashboard" />
+          <Tag tag="Dashboards" />
+          <Tag tag="Product" />
+          <Tag tag="User Flows" />
           <Tag tag="User Personas" />
         </div>
 

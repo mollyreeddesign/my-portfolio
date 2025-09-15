@@ -35,8 +35,9 @@ export default function CaseStudyFourPage() {
         </h1>
         <div className="flex flex-wrap gap-2 mb-8">
           <Tag tag="Responsive Web" />
-          <Tag tag="Lead Generation" />
+          <Tag tag="Growth Design" />
           <Tag tag="Branding" />
+          <Tag tag="Business Goals" />
         </div>
 
         {/* Responsive Grid Container */}
@@ -115,7 +116,7 @@ export default function CaseStudyFourPage() {
             </CaseSection>
 
             <CaseSection id="howmightwe" title="How might we" headingLevel="h4">
-              <Statement><h2 className="custom-h2">How might we create a sustainable digital experience that converts visitors into leads and showcases business value?</h2></Statement>
+              <Statement><h2 className="custom-h2">How might we create a sustainable digital experience for a botanical designer that converts visitors into leads and showcases business value?</h2></Statement>
               
             </CaseSection>
 
