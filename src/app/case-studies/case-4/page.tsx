@@ -10,6 +10,7 @@ import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
 import BackToTopButton from "@/components/BackToTopButton";
 import { ArrowUpRight } from "lucide-react";
+import LottieCover from "@/components/LottieCover";
 
 export const metadata: Metadata = {
   title: "Case Study 4 | Portfolio",
@@ -186,16 +187,22 @@ export default function CaseStudyFourPage() {
             <CaseSection id="whatidid" title="What I did" headingLevel="h4">
               <h2 className="custom-h2">I defined the site structure</h2>
               <p className="p mb-4">
-              I mapped out the site structure to support Valerie’s business goals and new brand direction. We decided the homepage would be a long-form, Tumblr-inspired experience, with custom sections to showcase her projects. This would form the bulk of the design and development effort.
+              I mapped out the site structure to support Valerie's business goals and new brand direction. We decided the homepage would be a long-form, Tumblr-inspired experience, with custom sections to showcase her projects. This would form the bulk of the design and development effort.
               </p>
               <p className="p mb-4 md:mb-12">
-              One of Valerie’s business goals from our initial brainstorm was growing the ‘Greens’ portion of her business, where she designed and maintained living plant displays for her clients. This informed the decision to surface supporting pages like Greens and Floral early on the homepage with About and Contact.
+              One of Valerie's business goals from our initial brainstorm was growing the ‘Greens’ portion of her business, where she designed and maintained living plant displays for her clients. This informed the decision to surface supporting pages like Greens and Floral early on the homepage with About and Contact.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
-                    </div>
+              
+              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                  src="/images/val-sitemap.png"
+                  alt="Valeriejurado.com sitemap"
+                  fill
+                  className="object-contain rounded-lg"
+                  sizes="(min-width: 1024px) 100vw, 100vw"
+                />
+                </div>
+                    
                     <p className="caption mb-8 md:mb-12 text-center">
                     The valeriejurado.com sitemap
                     </p>
@@ -228,11 +235,15 @@ export default function CaseStudyFourPage() {
                     <p className="caption mb-8 md:mb-12 text-center">
                     Previous and new contact forms (video showing spam filter in action)
                     </p>
-                    <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
-                    </div>
+                    <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                  src="/images/val-contactpageflow.png"
+                  alt="Valeriejurado.com contact page flow"
+                  fill
+                  className="object-contain rounded-lg"
+                  sizes="(min-width: 1024px) 100vw, 100vw"
+                />
+                </div>
                     <p className="caption mb-8 md:mb-12 text-center">
                     I created a service blueprint showing a user filling out the contact form, going through the spam filter and the business notifications that happen consequentially.
                     </p>
@@ -252,11 +263,10 @@ export default function CaseStudyFourPage() {
             </CaseSection>
 
             <CaseSection id="results" title="Results">
-            <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
-                    </div>
+            
+            <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative" style={{ aspectRatio: '16/9' }}>
+                <LottieCover src="/animations/val-finalvideo.json" />
+              </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Mobile: Order 2, Desktop: Left column */}
