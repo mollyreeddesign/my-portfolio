@@ -220,7 +220,7 @@ export default function CaseStudyTwoPage() {
             <h2 className="custom-h2">I designed the self checkout interface</h2>
                   
                   <p className="p mb-4 md:mb-12">
-                  I used the default self-checkout flow as a framework to define screen states: active, signed-in, checkout, paying, and finish. From these states, I designed screens that incorporated Urban Outfitters’ branding, typography, and visual style. 
+                  I used the default self-checkout software flow as a framework to define screen states: active, signed-in, checkout, paying, and finish. From these states, I designed screens that incorporated Urban Outfitters’ branding, typography, and visual style. 
                   </p>
                     
             
@@ -239,7 +239,7 @@ export default function CaseStudyTwoPage() {
                     I identified opportunities for personalization such as greeting users by name in the checkout state when they signed in to their rewards account. Users could simply scan a QR code on the kiosk screen with their mobile device and their account could be accessed.
                     </p>
                 <p className="p mb-4 md:mb-12">
-                    To enhance engagement during more passive moments, I collaborated with illustrator and designer Miranda Leung to create Urban Outfitters–style empty state animations.
+                    I collaborated with illustrator and designer Miranda Leung to create Urban Outfitters–style empty state animations. This kept users engaged during more passive moments of the checkout process.
                     </p>
                     
                 </div>
@@ -403,7 +403,7 @@ export default function CaseStudyTwoPage() {
                 />
               </div>
               <p className="caption mb-8 md:mb-12 text-center">
-              I redesigned the Urban Outfitters blog to create a more engaging experience. I introduced clear typographic hierarchy, integrated video content, quiz layout ideas and shoppable product rails.
+              I overhauled the Urban Outfitters blog to create a more engaging experience. I introduced clear typographic hierarchy, integrated video content, quiz layout ideas and shoppable product rails.
               </p>
                           </CaseSection>
               

@@ -189,7 +189,7 @@ export default function CaseStudyFourPage() {
               I mapped out the site structure to support Valerie’s business goals and new brand direction. We decided the homepage would be a long-form, Tumblr-inspired experience, with custom sections to showcase her projects. This would form the bulk of the design and development effort.
               </p>
               <p className="p mb-4 md:mb-12">
-              One of Valerie’s key business goals from our initial brainstorm was growing the ‘Greens’ portion of her business, where she designed and maintained living plant displays for her clients. This informed the decision to surface supporting pages like Greens and Floral early on the homepage with About and Contact.
+              One of Valerie’s business goals from our initial brainstorm was growing the ‘Greens’ portion of her business, where she designed and maintained living plant displays for her clients. This informed the decision to surface supporting pages like Greens and Floral early on the homepage with About and Contact.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                       <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">

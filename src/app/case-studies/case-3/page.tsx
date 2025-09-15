@@ -273,7 +273,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                       />
                     </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    A simplified view of the add event user flow.
+                    An additional simplified view of the add event user flow.
                     </p>
               
                     <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
