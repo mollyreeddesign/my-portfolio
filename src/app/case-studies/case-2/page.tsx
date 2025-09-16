@@ -191,18 +191,17 @@ export default function CaseStudyTwoPage() {
               The point of sale 'Elo' kiosks came with a default software that had a poor user experience and confusing information architecture that did not reflect the Urban Outfitters brand.
               </p>
               
-              <div>
-                <div className="w-full bg-gray-100 rounded-lg mb-4 relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
-                  <div className="absolute top-2 right-2 z-10">
-                    <Tag tag="Before Redesign" className="bg-black/80" />
-                  </div>
-                  <Image src="/images/uo-originalui.png" alt="Urban Outfitters default checkout UI" fill className="object-contain pb-4 pt-8" sizes="(min-width: 768px) 50vw, 100vw" />
-                </div>
+              <div className="w-full mb-4">
+                <BeforeAfterSlider
+                  beforeSrc="/images/uo-after.png"
+                  afterSrc="/images/uo-before.png"
+                  aspectRatio="5/4"
+                  contentInset="0%"
+                  objectFit="contain"
+                />
               </div>
               
-              <p className="caption mb-8 md:mb-12 text-center">
-              The point of sale 'Elo' kiosks with default checkout software
-              </p>
+          
               <p className="p mb-4">
               A lead UI designer and I were brought onto the project to improve the visual design, brand presence, UO Rewards options and overall user experience in self checkout.
               </p>

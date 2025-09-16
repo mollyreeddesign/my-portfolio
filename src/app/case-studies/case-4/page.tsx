@@ -11,6 +11,7 @@ import Statement from "@/components/Statement";
 import BackToTopButton from "@/components/BackToTopButton";
 import { ArrowUpRight } from "lucide-react";
 import LottieCover from "@/components/LottieCover";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 export const metadata: Metadata = {
   title: "Case Study 4 | Portfolio",
@@ -98,22 +99,16 @@ export default function CaseStudyFourPage() {
               <p className="p mb-4 md:mb-12">
               Valerie came to me to redesign and rebuild a website that showcased her brand's value, captured high-quality leads and supported her new business direction.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
-                <Image 
-                  src="/images/val-originalsite.png"
-                  alt="Original Valerie Jurado site"
-                  fill
-                  className="object-contain rounded-lg"
-                  sizes="(min-width: 1024px) 100vw, 100vw"
+              <div className="w-full mb-4">
+                <BeforeAfterSlider
+                  beforeSrc="/images/val-after.png"
+                  afterSrc="/images/val-before.png"
+                  aspectRatio="3/2"
+                  contentInset="0%"
+                  objectFit="contain"
                 />
-                <div className="absolute top-2 right-2 z-10">
-                  <Tag tag="Before Redesign" className="bg-black/80" />
-                </div>
               </div>
               
-              <p className="caption mb-8 md:mb-12 text-center">
-                Valerie's original contact form on her site.
-              </p>
             </CaseSection>
 
             <CaseSection id="howmightwe" title="How might we" headingLevel="h4">

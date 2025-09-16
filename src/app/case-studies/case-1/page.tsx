@@ -195,10 +195,6 @@ export default function CaseStudyOnePage() {
                   objectFit="contain"
                 />
               </div>
-              
-              <p className="caption mb-8 md:mb-12 text-center">
-                DoubleTree by Hilton Denver Cherry Creek original Property page.
-              </p>
             </CaseSection>
 
             <CaseSection id="businessgoal" title="Business Goal" headingLevel="h4">
