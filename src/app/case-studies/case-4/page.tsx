@@ -298,9 +298,9 @@ export default function CaseStudyFourPage() {
                 
                 {/* Mobile: Order 1, Desktop: Right column */}
                 <div className="order-1 md:order-2 col-span-1 space-y-3">
-                <Metric metric="72% increase in site engagement" icon="arrow-up-right" />
-              <Metric metric="7x more contact form conversions" icon="arrow-up-right" />
-              <Metric metric="92% reduction in site costs" icon="arrow-down-right" />
+                <Metric className="md:flex md:w-full" metric="72% increase in site engagement" icon="arrow-up-right" />
+              <Metric className="md:flex md:w-full" metric="7x more contact form conversions" icon="arrow-up-right" />
+              <Metric className="md:flex md:w-full" metric="92% reduction in site costs" icon="arrow-down-right" />
                   
                   {/* Desktop: Buttons below metrics */}
                   <div className="hidden md:block space-y-3 pt-4">

@@ -329,9 +329,9 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                 
                 {/* Mobile: Order 1, Desktop: Right column */}
                 <div className="order-1 md:order-2 col-span-1 space-y-3">
-                <Metric metric="5K+ downloads on Google Play" />
-              <Metric metric="Created 400+ High Fi mockup screens" />
-              <Metric metric="Designed 5 complex user flows" />
+                <Metric className="md:flex md:w-full" metric="5K+ downloads on Google Play" />
+              <Metric className="md:flex md:w-full" metric="Created 400+ High Fi mockup screens" />
+              <Metric className="md:flex md:w-full" metric="Designed 5 complex user flows" />
                   
                   {/* Desktop: Buttons below metrics */}
                   <div className="hidden md:block space-y-3 pt-4">

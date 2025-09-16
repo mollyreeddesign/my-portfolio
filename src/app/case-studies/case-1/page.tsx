@@ -15,6 +15,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import BackToTopButton from "@/components/BackToTopButton";
 import dynamic from "next/dynamic";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 const LottieCover = dynamic(() => import("@/components/LottieCover"), { ssr: false });
 
 export default function CaseStudyOnePage() {
@@ -185,17 +186,14 @@ export default function CaseStudyOnePage() {
               </p>
               
               {/* Original Hilton Property page screens */}
-              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
-                <Image 
-                  src="/images/hilton-originalscreens.png"
-                  alt="Original Hilton Property page screens"
-                  fill
-                  className="object-contain rounded-lg"
-                  sizes="(min-width: 1024px) 100vw, 100vw"
+              <div className="w-full mb-4">
+                <BeforeAfterSlider
+                  beforeSrc="/images/hilton-after.png"
+                  afterSrc="/images/hilton-before.png"
+                  aspectRatio="3/2"
+                  contentInset="0%"
+                  objectFit="contain"
                 />
-                <div className="absolute top-2 right-2 z-10">
-                  <Tag tag="Before Redesign" className="bg-black/80" />
-                </div>
               </div>
               
               <p className="caption mb-8 md:mb-12 text-center">
@@ -523,9 +521,9 @@ The icons were published company- wide using the Hilton shared codebase. They we
                 
                 {/* Mobile: Order 1, Desktop: Right column */}
                 <div className="order-1 md:order-2 col-span-1 space-y-3">
-                  <Metric metric="32% increase in property page visits" icon="arrow-up-right" />
-                  <Metric metric="11% increase in reservations from property pages" icon="arrow-up-right" />
-                  <Metric metric="Reduced product team tech debt" icon="arrow-down-right" />
+                  <Metric className="md:flex md:w-full" metric="32% increase in property page visits" icon="arrow-up-right" />
+                  <Metric className="md:flex md:w-full" metric="11% increase in reservations from property pages" icon="arrow-up-right" />
+                  <Metric className="md:flex md:w-full" metric="Reduced product team tech debt" icon="arrow-down-right" />
                   
                   {/* Desktop: Buttons below metrics */}
                   <div className="hidden md:block space-y-3 pt-4">

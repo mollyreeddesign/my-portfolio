@@ -356,9 +356,9 @@ export default function CaseStudyTwoPage() {
                 
                 {/* Mobile: Order 1, Desktop: Right column */}
                 <div className="order-1 md:order-2 col-span-1 space-y-3">
-                  <Metric metric="Contributed to 9% revenue growth in Q3 2018" icon="arrow-up-right" />
-                  <Metric metric="Drove direct sales from self checkout" icon="arrow-up-right" />
-                  <Metric metric="Increased in-store engagement" icon="arrow-up-right" />
+                  <Metric className="md:flex md:w-full" metric="Contributed to 9% revenue growth in Q3 2018" icon="arrow-up-right" />
+                  <Metric className="md:flex md:w-full" metric="Drove direct sales from self checkout" icon="arrow-up-right" />
+                  <Metric className="md:flex md:w-full" metric="Increased in-store engagement" icon="arrow-up-right" />
                   
                   {/* Desktop: Buttons below metrics */}
                   <div className="hidden md:block space-y-3 pt-4">
