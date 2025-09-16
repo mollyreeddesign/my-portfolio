@@ -61,17 +61,37 @@ export default function CaseStudyThreePage() {
             <div className="space-y-2">
               <h2 className="custom-h2">Team</h2>
               <p className="p">
-                Founders
+                Founding Product Leader • Founding Content Leader
               </p>
             </div>
           </div>
 
           <div className="space-y-2">
             <h2 className="custom-h2">Result</h2>
-            <div className="space-y-3">
+            <div className="space-y-3 mb-6">
               <Metric metric="5K+ downloads on Google Play" />
               <Metric metric="Created 400+ High Fi mockup screens" />
               <Metric metric="Designed 5 complex user flows" />
+            </div>
+            <div className="flex gap-2">
+              <a
+                href="https://apps.apple.com/us/app/jam-family-calendar/id6449090626"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download on the Apple App Store"
+                className="inline-block focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
+              >
+                <Image src="/images/jam-applestore.png" alt="Download on the Apple App Store" width={130} height={50} />
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.gojamplanner.app&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get it on Google Play"
+                className="inline-block focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
+              >
+                <Image src="/images/jam-googleplay.png" alt="Get it on Google Play" width={150} height={30} />
+              </a>
             </div>
           </div>
         </div>
@@ -328,7 +348,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                 </div>
                 
                 {/* Mobile: Order 1, Desktop: Right column */}
-                <div className="order-1 md:order-2 col-span-1 space-y-3">
+                <div className="order-1 md:order-2 col-span-1 space-y-3 md:flex md:flex-col md:h-full">
                 <Metric className="md:flex md:w-full" metric="5K+ downloads on Google Play" />
               <Metric className="md:flex md:w-full" metric="Created 400+ High Fi mockup screens" />
               <Metric className="md:flex md:w-full" metric="Designed 5 complex user flows" />
@@ -341,6 +361,29 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                       <span>View Live Project</span>
                       <ArrowUpRight size={20} />
                     </a>
+                  </div>
+                  {/* Desktop: Store badges pinned to bottom */}
+                  <div className="hidden md:block md:mt-auto">
+                    <div className="flex gap-2">
+                      <a
+                        href="https://apps.apple.com/us/app/jam-family-calendar/id6449090626"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Download on the Apple App Store"
+                        className="inline-block focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
+                      >
+                        <Image src="/images/jam-applestore.png" alt="Download on the Apple App Store" width={130} height={50} />
+                      </a>
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.gojamplanner.app&hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Get it on Google Play"
+                        className="inline-block focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
+                      >
+                        <Image src="/images/jam-googleplay.png" alt="Get it on Google Play" width={150} height={30} />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

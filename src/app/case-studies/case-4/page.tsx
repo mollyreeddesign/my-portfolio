@@ -131,7 +131,7 @@ export default function CaseStudyFourPage() {
             <CaseSection id="settinggoals" title="Setting goals" headingLevel="h4">
               <h2 className="custom-h2">Aligning on Valerie's business goals</h2>
               <p className="p mb-4">
-              I set up a remote brainstorm session with Valerie and her business partner, Allan, to define the goals and values guiding the website refresh. From that conversation, a few priorities emerged:
+              I set up a remote workshop with Valerie and her business partner, Allan, to define the goals and values guiding the website refresh. From that conversation, a few priorities emerged:
               </p>
               <ul className="list-disc list-outside pl-4 space-y-4 mb-4 md:mb-12">
                 <li className="p"><strong>Attracting the Right Audience</strong> The few leads from her existing site weren't the right type of clientele.</li>
