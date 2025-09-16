@@ -71,9 +71,9 @@ export default function CaseStudyFourPage() {
         </div>
       </PageContainer>
 
-      <FullWidthSection backgroundColor="#f5f5f5">
-        <div className="text-center">
-          <h2 className="custom-h2 mb-4">Image here</h2>
+      <FullWidthSection backgroundColor="#EAF0FF" noPadding useContainer={false}>
+        <div className="relative w-full overflow-hidden" style={{ aspectRatio: '21/9' }}>
+          <LottieCover src="/animations/val-mainvideo.json" fit="cover" />
         </div>
       </FullWidthSection>
 
@@ -228,12 +228,17 @@ export default function CaseStudyFourPage() {
               I explored placing an opt-in form in the footer, however data from Mailchimp revealed that it was collecting mostly spam submissions. We decided to remove it and keep only the main form on the Contact page.
               </p>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
+                    <div className="flex items-center justify-center h-full">
+                      <div className="w-3/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                        <video autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+                          <source src="/videos/val-spamfilter.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
                     </div>
+                  </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Previous and new contact forms (video showing spam filter in action)
+                    The new contact form flow with a Mailchimp spam filter.
                     </p>
                     <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
               <Image 
@@ -245,18 +250,22 @@ export default function CaseStudyFourPage() {
                 />
                 </div>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    I created a service blueprint showing a user filling out the contact form, going through the spam filter and the business notifications that happen consequentially.
+                    I created a service blueprint to show the actions on the business and client side when a user sends a submission through the contact form.
                     </p>
                     
               <h2 className="custom-h2">I built the site</h2>
               <p className="p mb-4 md:mb-12">
               I chose minimal text and interface elements to keep Valerie's floral work at the forefront. This reinforced her brand's value and allowed for a better experience on smaller devices. This was important due to the large amount of mobile visitors coming directly from her instagram.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm p-4 text-center">
-                        Placeholder Image Box<br/>(3:2 aspect ratio)
-                      </div>
-                    </div>
+              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                  src="/images/val-headlesscms.png"
+                  alt="Valeriejurado.com sitemap"
+                  fill
+                  className="object-contain rounded-lg"
+                  sizes="(min-width: 1024px) 100vw, 100vw"
+                />
+                </div>
                     <p className="caption mb-8 md:mb-12 text-center">
                     My view in VS Code, Valerie's view on Prismic UI and what the user sees in the end. Essentially a diagram of the headless CMS workflow.
                     </p>
