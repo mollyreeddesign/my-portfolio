@@ -31,6 +31,14 @@ body {
   color: var(--foreground);
 }
 
+/* Ensure white page gutters (main padding, footer margin) on case studies */
+.case-studies-route {
+  --background: #ffffff;
+  --foreground: #2C2C2C;
+  background: #ffffff;
+  color: #2C2C2C;
+}
+
 html {
   scroll-behavior: smooth;
 }

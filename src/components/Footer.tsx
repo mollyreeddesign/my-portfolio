@@ -1,11 +1,16 @@
+"use client";
 import React from "react";
 import PageContainer from "@/components/PageContainer";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isCaseStudiesPage = pathname === "/case-studies" || pathname.startsWith("/case-studies/");
+
   return (
-    <footer className="mt-16 mb-16">
-      <PageContainer className="py-6 text-sm grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+    <footer className={`mb-16 ${isCaseStudiesPage ? "bg-[#FFFFFF] text-[#2C2C2C]" : ""}`}>
+      <PageContainer className="text-sm grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
       
      
       <Link href="/" className="font-americana text-[18px] md:text-[24px] hover:opacity-80">

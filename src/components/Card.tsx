@@ -42,7 +42,7 @@ export default function Card({
           />
           {logo ? (
             <div className="absolute inset-0 pointer-events-none flex items-end">
-              <div className="px-6 -mb-4">
+              <div className="px-4 md:px-6 -mb-2 md:-mb-4">
                 <img
                   src={logo}
                   alt=""

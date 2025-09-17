@@ -3,6 +3,7 @@ import Nav from "@/app/nav";
 import Footer from "@/components/Footer";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
+import CaseStudyBodyClass from "@/components/CaseStudyBodyClass";
 
 const workSans = Work_Sans({
   variable: "--font-sans",
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en" className={workSans.variable}>
       <body className={`${workSans.className} antialiased`}>
         {/* Fixed Nav overlays content, so add top padding equal to nav height */}
+        <CaseStudyBodyClass />
         <header>
           <Nav />
         </header>
