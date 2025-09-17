@@ -27,9 +27,9 @@ export default function Home() {
       </section>
 
       </PageContainer>
-      <FullWidthSection backgroundColor="#E8E8E8">
+      <FullWidthSection backgroundColor="#E8E8E8" sectionClassName="scroll-mt-18" >
         <PageContainer noPadding>
-          <div className="mx-2 md:-mx-8 lg:-mx-16">
+          <div className="mx-2 md:-mx-8 lg:-mx-16" id="cases">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
               <Card
                 href="/case-studies/case-1"
@@ -136,13 +136,13 @@ export default function Home() {
       </PageContainer>
       </FullWidthSection>
       <FullWidthSection backgroundColor="#0b0b0b">
-        <PageContainer  className="-mb-6 md:-mb-22">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
+        <PageContainer noPadding  className="-mb-6 md:-mb-22">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           <div>
             <Image src="/images/home-about.png" alt="About" unoptimized width={600} height={600} className="rounded-lg object-cover mx-auto mb-6" style={{ aspectRatio: '1/1' }} />
             </div>
             <div>
-          <h1 className="custom-h1 text-white mb-4">I'm a product designer, web designer and artist.</h1>
+          <h1 className="custom-h1 text-white mb-4 md:mb-6">I'm a product designer, web designer and artist.</h1>
           <p className="mb-4 text-white/80">
           I’ve been designing experiences in technology for people and businesses for over a decade.
           </p>
@@ -152,7 +152,7 @@ export default function Home() {
           <p className="mb-4 text-white/80">
           <span className="line-through">Philadelphia</span> <span className="line-through">Los Angeles</span> Zurich, CH 🇨🇭
           </p>
-          <p className="mb-14 md:mb-8 text-white/80">
+          <p className="mb-14 md:mb-10 text-white/80">
           Painter, gardener, hiker and motorcyclist.
           </p>
           <div className="flex flex-col md:flex-row gap-6">
