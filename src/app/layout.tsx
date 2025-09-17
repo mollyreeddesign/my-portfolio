@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Nav from "@/app/nav";
+import Footer from "@/components/Footer";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -26,7 +27,8 @@ export default function RootLayout({
         <header>
           <Nav />
         </header>
-        <main className="pt-[72px] md:pt-[88px]">{children}</main>
+        <main className="pt-[72px] md:pt-[88px] pb-16 md:pb-24">{children}</main>
+        <Footer />
       </body>
     </html>
   );
