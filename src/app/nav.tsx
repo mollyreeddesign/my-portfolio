@@ -50,12 +50,12 @@ export default function Nav() {
 
   const links: NavLink[] = [
     {
-      label: "Work",
+      label: "work",
       href: "/",
       isActive: (p) => p === "/" || p.startsWith("/case-studies/"),
     },
     {
-      label: "About",
+      label: "about",
       href: "/about",
       isActive: (p) => p === "/about",
     },
@@ -74,7 +74,7 @@ export default function Nav() {
     >
       <div className="font-americana text-[22px] md:text-[24px] mx-auto max-w-6xl px-4 md:px-8 lg:px-16 py-2 flex items-center justify-between">
       {/* Left: Brand (no active underline) */}
-      <Link href="/" className="tracking-tight hover:opacity-80">
+      <Link href="/" className="tracking-wide hover:opacity-80">
         molly reed
       </Link>
 
@@ -86,8 +86,8 @@ export default function Nav() {
             <li key={item.href} className="relative">
               <Link
                 href={item.href}
-                className={`group relative inline-block px-1 pt-2 pb-0.5 transition-all duration-200 focus:outline-none focus-visible:outline-none 
-                  after:absolute after:left-0 after:bottom-0 after:h-px after:rounded-full after:transition-all after:duration-200 
+                className={`group relative inline-block px-1 pt-2 pb-0 transition-all duration-200 focus:outline-none focus-visible:outline-none 
+                  after:absolute after:left-0 after:bottom-0.5 after:h-px after:rounded-full after:transition-all after:duration-200 
                   ${isCaseStudiesPage ? "after:bg-[#2C2C2C]" : "after:bg-foreground"}
                   ${active ? "after:w-full after:opacity-100" : "after:w-0 after:opacity-60 hover:after:w-full"}
                 `}

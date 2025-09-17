@@ -13,7 +13,7 @@ export default function Footer() {
       <PageContainer className="text-sm grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
       
      
-      <Link href="/" className="font-americana text-[18px] md:text-[24px] hover:opacity-80">
+      <Link href="/" className="font-americana tracking-wide text-[24px] md:text-[24px] hover:opacity-80">
         molly reed
       </Link>
       <div className="min-w-0">
