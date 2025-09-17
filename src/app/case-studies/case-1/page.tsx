@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import BackToTopButton from "@/components/BackToTopButton";
 import dynamic from "next/dynamic";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import MediaFrame from "@/components/MediaFrame";
 const LottieCover = dynamic(() => import("@/components/LottieCover"), { ssr: false });
 
 export default function CaseStudyOnePage() {
@@ -228,7 +229,7 @@ export default function CaseStudyOnePage() {
               <p className="p mb-4 md:mb-12">
               My foundational knowledge of Hilton's design system heavily informed the strategy of the new Property page design.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative" style={{ aspectRatio: '3/2' }}>
+                <div className="relative overflow-hidden border border-gray-200 mb-4" style={{ aspectRatio: '3/2' }}>
                 <LottieCover src="/animations/hilton-designsystem.json" />
               </div>
               <p className="caption mb-8 md:mb-12 text-center">
@@ -248,7 +249,7 @@ export default function CaseStudyOnePage() {
 
               </p>
               {/* Hilton Hero Test Results */}
-              <div className="w-full rounded-lg mb-4 overflow-hidden">
+              <MediaFrame aspectRatio="3 / 2" enableModal caption="User testing showed 75% of participants preferred the carousel film strip hero over the gallery grid hero.">
                 <Image 
                   src="/images/hilton-herotest.png"
                   alt="Hilton Hero Test Results"
@@ -256,7 +257,7 @@ export default function CaseStudyOnePage() {
                   height={400}
                   className="w-full h-auto object-contain rounded-lg"
                 />
-              </div>
+              </MediaFrame>
               <p className="caption mb-8 md:mb-12 text-center">
               User testing showed 75% of participants preferred the carousel film strip hero over the gallery grid hero.
 
@@ -265,7 +266,7 @@ export default function CaseStudyOnePage() {
               One of the challenges we had with Hilton’s property pages was that they lacked high- quality imagery. Pictures of the rooms, particularly in budget brands like DoubleTree and Hampton Inn, were not attractive or high resolution. This meant it was important for product design to carry the experience. We had to surface business value without turning to the easy answer of premium photography. One example where we achieved this was with room tiles.
               </p>
               {/* Hilton Room Crop Comparison */}
-              <div className="w-full rounded-lg mb-4 overflow-hidden">
+              <MediaFrame aspectRatio="3 / 2" enableModal caption="User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2">
                 <Image 
                   src="/images/hilton-roomcrop.png"
                   alt="Hilton Room Crop Comparison"
@@ -273,7 +274,7 @@ export default function CaseStudyOnePage() {
                   height={400}
                   className="w-full h-auto object-contain rounded-lg"
                 />
-              </div>
+              </MediaFrame>
               <p className="caption mb-8 md:mb-12 text-center">
               User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2
 

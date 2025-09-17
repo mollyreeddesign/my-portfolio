@@ -12,6 +12,7 @@ import BackToTopButton from "@/components/BackToTopButton";
 import { ArrowUpRight } from "lucide-react";
 import LottieCover from "@/components/LottieCover";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import MediaFrame from "@/components/MediaFrame";
 
 export const metadata: Metadata = {
   title: "Case Study 4 | Portfolio",
@@ -138,7 +139,7 @@ export default function CaseStudyFourPage() {
                 <li className="p"><strong>Streamlined Engagement</strong> She wanted an easy way to direct people to her site, where they could quickly contact her or sign up for email newsletters.</li>
                 <li className="p"><strong>Defining a Unique Brand</strong> She wanted the brand to emphasize uniqueness and bespoke botanical experiences, rather than just weddings or events.</li>
               </ul>
-              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+              <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
               <Image 
                   src="/images/val-brainstorm.png"
                   alt="Valerie, Allan and I's Figjam brainstorm"
@@ -146,7 +147,7 @@ export default function CaseStudyFourPage() {
                   className="object-contain rounded-lg"
                   sizes="(min-width: 1024px) 100vw, 100vw"
                 />
-                </div>
+                </MediaFrame>
                     <p className="caption mb-8 md:mb-12 text-center">
                     Valerie, Allan and I's Figjam brainstorm.
                     </p>
@@ -157,7 +158,7 @@ export default function CaseStudyFourPage() {
               <p className="p mb-4 md:mb-12">
               I set the goal to launch the refreshed site within the year, with a plan to add new content quarterly and complete additional enhancements by the end of 2024.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+              <MediaFrame aspectRatio="3 / 2" enableModal>
               <Image 
                   src="/images/val-nownextlater.png"
                   alt="Valerie, Allan and I's Figjam brainstorm"
@@ -165,7 +166,7 @@ export default function CaseStudyFourPage() {
                   className="object-contain rounded-lg"
                   sizes="(min-width: 1024px) 100vw, 100vw"
                 />
-                </div>
+                </MediaFrame>
                     <p className="caption mb-8 md:mb-12 text-center">
                     The Now-Next-Later roadmap I created from our remote brainstorm session.
                     </p>
@@ -188,7 +189,7 @@ export default function CaseStudyFourPage() {
               One of Valerie's business goals from our initial brainstorm was growing the ‘Greens’ portion of her business, where she designed and maintained living plant displays for her clients. This informed the decision to surface supporting pages like Greens and Floral early on the homepage with About and Contact.
               </p>
               
-              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+              <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
               <Image 
                   src="/images/val-sitemap.png"
                   alt="Valeriejurado.com sitemap"
@@ -196,7 +197,7 @@ export default function CaseStudyFourPage() {
                   className="object-contain rounded-lg"
                   sizes="(min-width: 1024px) 100vw, 100vw"
                 />
-                </div>
+                </MediaFrame>
                     
                     <p className="caption mb-8 md:mb-12 text-center">
                     The valeriejurado.com sitemap
@@ -212,11 +213,23 @@ export default function CaseStudyFourPage() {
                       </li>
                     </ul>
                     <p className="p mb-4 md:mb-12">
-                    I selected Prismic, a headless CMS that let me build custom-coded slices with HTML, Tailwind CSS, Next.js, and React. On Valerie's end, she could update text, switch images and rearrange the slices using a clean UI. I also added Mailchimp integrations so Valerie's leads were pulled directly into her mailing list audience when they filled out the contact form.
+                    I selected Prismic, a headless CMS that let me build custom-coded slices with HTML, Tailwind CSS, Next.js, and React. On Valerie's end, she could update text, switch images and rearrange the slices using a clean UI. 
               </p>
+              <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
+              <Image 
+                  src="/images/val-headlesscms.png"
+                  alt="Valeriejurado.com sitemap"
+                  fill
+                  className="object-contain rounded-lg"
+                  sizes="(min-width: 1024px) 100vw, 100vw"
+                />
+                </MediaFrame>
+                    <p className="caption mb-8 md:mb-12 text-center">
+                    My view in VS Code, Valerie's view on Prismic UI and what the user sees in the end. Essentially a diagram of the headless CMS workflow.
+                    </p>
               <h2 className="custom-h2">I overhauled the contact form</h2>
                     <p className="p mb-4">
-                    I improved the user experience of the contact form by removing a bulk of the fields, minimizing what was required and simplifying the design. I also added a spam filter to improve lead quality.
+                    I improved the user experience of the contact form by removing a bulk of the fields, minimizing what was required and simplifying the design. I added Mailchimp integrations so Valerie's leads were pulled directly into her mailing list audience when they filled out the contact form. In addition,I added a spam filter to improve lead quality.
 
               </p>
               <p className="p mb-4 md:mb-12">
@@ -235,7 +248,7 @@ export default function CaseStudyFourPage() {
                     <p className="caption mb-8 md:mb-12 text-center">
                     The new contact form flow with a Mailchimp spam filter.
                     </p>
-                    <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+                    <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
               <Image 
                   src="/images/val-contactpageflow.png"
                   alt="Valeriejurado.com contact page flow"
@@ -243,32 +256,27 @@ export default function CaseStudyFourPage() {
                   className="object-contain rounded-lg"
                   sizes="(min-width: 1024px) 100vw, 100vw"
                 />
-                </div>
+                </MediaFrame>
                     <p className="caption mb-8 md:mb-12 text-center">
                     I created a service blueprint to show the actions on the business and client side when a user sends a submission through the contact form.
                     </p>
                     
               <h2 className="custom-h2">I built the site</h2>
-              <p className="p mb-4 md:mb-12">
-              I chose minimal text and interface elements to keep Valerie's floral work at the forefront. This reinforced her brand's value and allowed for a better experience on smaller devices. This was important due to the large amount of mobile visitors coming directly from her instagram.
+              <p className="p mb-4">
+              Once the design was finalized, I shifted into the development phase. I built the site using Next.js, React, Tailwind CSS and Prismic. To keep it flexible, I coded the content in modular sections that could be rearranged or reused to create new pages.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
-              <Image 
-                  src="/images/val-headlesscms.png"
-                  alt="Valeriejurado.com sitemap"
-                  fill
-                  className="object-contain rounded-lg"
-                  sizes="(min-width: 1024px) 100vw, 100vw"
-                />
-                </div>
-                    <p className="caption mb-8 md:mb-12 text-center">
-                    My view in VS Code, Valerie's view on Prismic UI and what the user sees in the end. Essentially a diagram of the headless CMS workflow.
-                    </p>
+              <p className="p mb-4">
+              On the backend, I connected Prismic’s editor to the custom code, so any updates made in the CMS (like swapping photos, changing text, or reordering sections) instantly appeared on the live site. This setup gave Valerie the freedom to update her content independently while keeping the fully custom design we created.
+              </p>
+              <p className="p mb-4">
+              Finally, I set up hosting on Vercel, connected Valerie’s existing domain and provided her team with a walkthrough of the CMS. I wanted to make sure they could confidently use Prismic to update content as her business evolved.
+              </p>
+              
             </CaseSection>
 
             <CaseSection id="results" title="Results">
             
-            <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 relative" style={{ aspectRatio: '16/9' }}>
+            <div className="w-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden mb-4 md:mb-12 relative" style={{ aspectRatio: '16/9' }}>
                 <LottieCover src="/animations/val-finalvideo.json" />
               </div>
               

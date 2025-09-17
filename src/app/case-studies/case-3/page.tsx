@@ -10,9 +10,8 @@ import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import HorizontalPanImage from "@/components/HorizontalPanImage";
-import FeaturesImageBlock from "@/components/FeaturesImageBlock";
 import dynamic from "next/dynamic";
+import MediaFrame from "@/components/MediaFrame";
 const LottiePlayer = dynamic(() => import("@/components/LottiePlayer"), { ssr: false });
 
 export const metadata: Metadata = {
@@ -128,7 +127,7 @@ export default function CaseStudyThreePage() {
               <p className="p mb-4 md:mb-12">
               My role was to design the app at high fidelity for a future developer, define complex responsive user flows and explore the brand’s overall look and feel.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+              <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
               <Image 
                   src="/images/jam-theproblem.png"
                   alt="Jam's pitch deck"
@@ -136,7 +135,7 @@ export default function CaseStudyThreePage() {
                   height={400}
                   className="w-full h-auto object-contain rounded-lg"
                 />
-                    </div>
+                    </MediaFrame>
                     <p className="caption mb-8 md:mb-12 text-center">
                     A page of Jam's pitch deck illustrating the problem of the mental load on parents.
                     </p>
@@ -171,12 +170,12 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               <p className="p mb-4 md:mb-12">
               Throughout the design process, I referenced familiar patterns and interactions from these products. I wanted to shape a product experience that felt intuitive to users, yet was still differentiated for Jam's audience.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+              <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
               <div className="flex items-center justify-center h-full">
                       <div className="flex gap-4 mx-10">
                         <div>
                           <Image
-                            src="/images/jam-mobiledashwire.png"
+                            src="/images/jam-wiremobile.png"
                             alt="Dashboard wireframe"
                             width={1200}
                             height={800}
@@ -185,7 +184,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         </div>
                         <div>
                           <Image
-                            src="/images/jam-documentation.png"
+                            src="/images/jam-wiredesktop.png"
                             alt="Dashboard exploration"
                             width={1200}
                             height={800}
@@ -194,9 +193,9 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         </div>
                       </div>
                       </div>
-                    </div>
+                    </MediaFrame>
                     <p className="caption mb-8 md:mb-12 text-center">
-                    Wireframes sketches and documentation (blurred for confidentiality)
+                    Early Balsalmiq wireframes sketching out the Jam dashboard.
                     </p>
                     <h2 className="custom-h2">Exploring look and feel</h2>
               <p className="p mb-4">
@@ -208,7 +207,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                 <li className="p">Interests include parenting, family, mom groups, organization, work life balance.</li>
                 <li className="p">Enjoy brands like Goop, Magnolia Home, Home Edit, Hello Sunshine</li>
               </ul>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+              <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
               <Image 
                   src="/images/jam-inspoframes.png"
                   alt="Jam's inspiration"
@@ -216,7 +215,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                   height={400}
                   className="w-full h-auto object-contain rounded-lg"
                 />
-                    </div>
+                    </MediaFrame>
                     <p className="caption mb-8 md:mb-12 text-center">
                     Exploring color and font from our target audiences' most loved brands.
                     </p>
@@ -231,11 +230,8 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               <p className="p mb-4 md:mb-12">
               To achieve this, I focused on creating a clear, highly visual layout. I utilized color and structure over stats or progress charts. At the top, a weekly view provided an at-a-glance overview. Below, users could dive into a detailed daily calendar, to-do list, and shopping list.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+              <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
                       <div className="flex items-center justify-center h-full">
-                      
-                      
-                      
                       <Image
                         src="/images/jam-dashexploration.png"
                         alt="Dashboard exploration"
@@ -243,23 +239,22 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         height={800}
                         className="w-3/4 h-auto rounded-lg shadow-md"
                       />
-                    
                       </div>
-                    </div>
-                    <p className="caption mb-8 md:mb-12 text-center">
+                    </MediaFrame>
+                    <p className="caption mb-4 md:mb-12 text-center">
                     Early concept for the Jam dashboard.
                     </p>
                     
-                    <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                    <div className="flex items-center justify-center h-full">
-                      <div className="w-1/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                    
+                    <div className="w-full bg-gray-100 rounded-lg mb-4 flex items-center justify-center" style={{ aspectRatio: '3/2' }}>
+                      <div className="w-1/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg flex items-center justify-center">
                         <video autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                           <source src="/videos/jam-dashboardmobile.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
                       </div>
-                    </div>
-                    </div>
+      </div>                    
+                    
                     <p className="caption mb-8 md:mb-12 text-center">
                     Mobile prototype showing the dashboard flow and interactions.
                     </p>
@@ -270,7 +265,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               <p className="p mb-4 md:mb-12">
               Mapping user flows served several purposes. They helped us identify which features were truly necessary, how they would integrate with each other, and where more thinking was needed. This was crucial during Jam's creation phase because we could explore ideas quickly and cheaply.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+              <MediaFrame aspectRatio="3 / 2" enableModal>
               <Image
                         src="/images/jam-path.png"
                         alt="Add an Event Simplified Mobile User Flow"
@@ -278,11 +273,11 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         height={800}
                         className="w-full h-auto"
                       />
-                    </div>
+                    </MediaFrame>
                     <p className="caption mb-8 md:mb-12 text-center">
                     Example of one of the many user flows in Jam. This one focused on adding an event.
                     </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+              <MediaFrame aspectRatio="3 / 2" enableModal>
               <Image
                         src="/images/jam-simplified.png"
                         alt="Add an Event Simplified Mobile User Flow"
@@ -291,14 +286,31 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         className="w-full h-auto"
                         unoptimized
                       />
-                    </div>
+                    </MediaFrame>
                     <p className="caption mb-8 md:mb-12 text-center">
                     An additional simplified view of the add event user flow.
                     </p>
               
-                    <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                      <FeaturesImageBlock />
-                    </div>
+                    <MediaFrame aspectRatio="5/3" enableModal>
+                    <div className="gap-4 h-full">
+                    <Image
+                        src="/images/jam-features-title.png"
+                        alt="Features title"
+                        width={500}
+                        height={50}
+                        className="w-1/2 h-auto"
+                        unoptimized
+                      />
+                      <Image
+                        src="/images/jam-features.png"
+                        alt="Features title"
+                        width={1200}
+                        height={800}
+                        className="w-full h-auto px-6"
+                        unoptimized
+                      />
+                      </div>
+                    </MediaFrame>
                     <p className="caption mb-8 md:mb-12 text-center">
                     High-fidelity user flow exploring the full features of adding an event: time/date, assigning, to bring, repeat, drop-off/pick-up and linking tasks and lists. 
                     </p>
@@ -310,7 +322,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               <p className="p mb-4 md:mb-12">
               Since I wouldn't be present to oversee development, my mockups and documentation were designed to be exceptionally clear so a future developer could easily implement my work.
               </p>
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+              <MediaFrame aspectRatio="3 / 2" enableModal>
               <Image 
                   src="/images/jam-responsivegrid.png"
                   alt="Jam's responsive grid"
@@ -319,7 +331,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                   className="w-full h-auto object-contain rounded-lg" 
                   unoptimized
                 />
-                    </div>
+                    </MediaFrame>
                     <p className="caption mb-8 md:mb-12 text-center">
                     A page from the Jam style guide showing responsive margin framework.
                     </p>

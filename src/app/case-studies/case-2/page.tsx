@@ -12,6 +12,7 @@ import Statement from "@/components/Statement";
 import { ArrowRight, Download } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import MediaFrame from "@/components/MediaFrame";
 
 export default function CaseStudyTwoPage() {
   const [scrollY, setScrollY] = useState(0);
@@ -195,7 +196,7 @@ export default function CaseStudyTwoPage() {
                 <BeforeAfterSlider
                   beforeSrc="/images/uo-after.png"
                   afterSrc="/images/uo-before.png"
-                  aspectRatio="5/4"
+                  aspectRatio="3/2"
                   contentInset="0%"
                   objectFit="contain"
                 />
@@ -252,25 +253,22 @@ export default function CaseStudyTwoPage() {
               For development handoff, I created detailed redlines that mapped out styles using Tailwind CSS nomenclature. 
               </p>
               
-<p className="p mb-4">
+<p className="p mb-4 md:mb-12">
   After handoff, I collaborated closely with software engineering to fine-tune details such as animations and spacing. The touchscreen kiosks with the new UI were installed in Herald Square in August 2018.
 </p>
-
-<div className="w-full rounded-lg grid grid-cols-3 sm:grid-cols-3 gap-4 p-4 mb-4">
-  <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
-                        
-                        <Image src="/images/uo-flatselfcheckout-2.png" alt="UO flat self checkout screen 2" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
-                      </div>
-                      <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
-                        
-                        <Image src="/images/uo-flatselfcheckout-3.png" alt="UO flat self checkout screen 3" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
-                      </div>
-                      <div className="w-full shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '3/5' }}>
-                        
-                        <Image src="/images/uo-cardanimation.gif" alt="UO card animation" fill className="object-cover shadow-lg rounded-lg mt-2" sizes="(min-width: 1024px) 50vw, 100vw" unoptimized />
-                      </div>
-                    </div>
-                  
+<MediaFrame aspectRatio="3 / 2" padding="p-4" contentClassName="block" enableModal>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
+    <div className="relative overflow-hidden shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
+      <Image src="/images/uo-flatselfcheckout-2.png" alt="UO flat self checkout screen 2" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+    </div>
+    <div className="relative overflow-hidden shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
+      <Image src="/images/uo-flatselfcheckout-3.png" alt="UO flat self checkout screen 3" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+    </div>
+    <div className="relative overflow-hidden shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
+      <Image src="/images/uo-cardanimation.gif" alt="UO card animation" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" unoptimized />
+    </div>
+  </div>
+</MediaFrame>
               
                              <p className="caption mb-8 md:mb-12 text-center">
                Final UI of self checkout
@@ -281,19 +279,19 @@ export default function CaseStudyTwoPage() {
             
             
               <div>
-               <div className="w-full bg-gray-100 rounded-lg mb-6 relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
+               <MediaFrame aspectRatio="3 / 2" className="mb-6" enableModal>
                  <Image src="/images/uo-inthefield3.jpeg" alt="Urban Outfitters self checkout in the field" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
-               </div>
+               </MediaFrame>
               </div>
                 
                {/* Two column grid with portrait images */}
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                <div className="w-full bg-gray-100 rounded-lg relative overflow-hidden" style={{ aspectRatio: '2/3' }}>
+                <MediaFrame aspectRatio="2 / 3" className="mb-6" enableModal>
                   <Image src="/images/uo-inthefield1.jpeg" alt="Urban Outfitters in the field portrait" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
-                </div>
-                <div className="w-full bg-gray-100 rounded-lg relative overflow-hidden" style={{ aspectRatio: '2/3' }}>
+                </MediaFrame>
+                <MediaFrame aspectRatio="2 / 3" className="mb-6" enableModal>
                   <Image src="/images/uo-inthefield2.jpeg" alt="Urban Outfitters in the field portrait 2" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
-                </div>
+                </MediaFrame>
                </div>
                               <p className="caption mb-8 md:mb-12 text-center">
                 Customers interacting with the new self checkout kiosks in Herald Square, New York City.
