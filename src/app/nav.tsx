@@ -50,24 +50,14 @@ export default function Nav() {
 
   const links: NavLink[] = [
     {
-      label: "Home",
+      label: "Work",
       href: "/",
-      isActive: (p) => p === "/",
-    },
-    {
-      label: "Cases",
-      href: "/case-studies",
-      isActive: (p) => p === "/case-studies" || p.startsWith("/case-studies/"),
+      isActive: (p) => p === "/" || p.startsWith("/case-studies/"),
     },
     {
       label: "About",
       href: "/about",
       isActive: (p) => p === "/about",
-    },
-    {
-      label: "Art",
-      href: "/art",
-      isActive: (p) => p === "/art",
     },
   ];
 
@@ -76,8 +66,8 @@ export default function Nav() {
       className={
         "fixed top-0 left-0 right-0 z-50 transition-transform duration-300 will-change-transform backdrop-blur border-b " +
         (isCaseStudiesPage 
-          ? "bg-[#FFFFFF] text-[#2C2C2C] border-[#2C2C2C]/[.08]" 
-          : "bg-background/80 text-foreground border-black/[.08] dark:border-white/[.145]"
+          ? "bg-[#FFFFFF] text-[#2C2C2C] border-none" 
+          : "bg-background/80 text-foreground border-none dark:border-none"
         ) +
         (isHidden ? " -translate-y-full" : " translate-y-0")
       }
@@ -96,11 +86,11 @@ export default function Nav() {
             <li key={item.href} className="relative">
               <Link
                 href={item.href}
-                className={`relative inline-block focus:outline-none px-3 py-1 rounded-md border transition-all duration-200 ${
-                  active 
-                    ? (isCaseStudiesPage ? "border-[#2C2C2C]" : "border-foreground")
-                    : "border-transparent hover:border-gray-300"
-                }`}
+                className={`group relative inline-block px-1 pt-2 pb-0.5 transition-all duration-200 focus:outline-none focus-visible:outline-none 
+                  after:absolute after:left-0 after:bottom-0 after:h-px after:rounded-full after:transition-all after:duration-200 
+                  ${isCaseStudiesPage ? "after:bg-[#2C2C2C]" : "after:bg-foreground"}
+                  ${active ? "after:w-full after:opacity-100" : "after:w-0 after:opacity-60 hover:after:w-full"}
+                `}
                 aria-current={active ? "page" : undefined}
               >
                 {item.label}

@@ -1,129 +1,179 @@
+"use client";
 import Link from "next/link";
 import Tag from "@/components/Tag";
 import PageContainer from "@/components/PageContainer";
 import FullWidthSection from "@/components/FullWidthSection";
 import Card from "@/components/Card";
 import Metric from "@/components/Metric";
-import { ArrowRight } from "lucide-react";
+import { ChevronDown, ArrowUpRight, Download, Copy } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="py-16 sm:py-24">
       <PageContainer>
-      <section className="text-center sm:text-left">
-        <h1 className="custom-h1 tracking-tight">
-          Hello, I'm Molly — designer & developer
-        </h1>
-        <p className="mt-4 text-base/7 text-foreground/80 max-w-2xl">
-          I build thoughtful digital experiences. Explore selected work, a bit about me,
-          and some art experiments.
-        </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-3">
-          <Link href="/case-studies" className="btn btn--primary">
-            View case studies
-          </Link>
-          <Link href="/about" className="btn btn--secondary">
-            About me
-          </Link>
+       <section className="h-[65vh] flex flex-col">
+        <div className="text-center my-2 md:-my-16">
+        <Image src="/images/home-sky.png" alt="Sky" width={240} height={240} className="mx-auto mb-6" />
+        <h1 className="text-xl md:text-3xl mb-2">Product Designer</h1>
+        <p className="caption">I design distinct digital experiences<br />{" "}that clarify and convert.</p>
         </div>
-        <div className="mt-8 flex flex-wrap gap-2 justify-center sm:justify-start">
-          <Tag tag="Product" titile="Product Design" role="designer" type="discipline" />
-          <Tag tag="UX" titile="User Experience" role="designer" type="discipline" />
-          <Tag tag="React" titile="React" role="developer" type="tech" />
-          <Tag tag="Next.js" titile="Next.js" role="developer" type="tech" />
-        </div>
-        <div className="mt-6 flex flex-wrap gap-3 justify-center sm:justify-start">
-          <Metric metric="Uptime" measure="99.98%" success />
-          <Metric metric="Monthly Users" measure="24k" />
+         <div className="mt-auto mb-4 self-center text-center">
+        <p className="caption">Based in Zurich, CH 🇨🇭</p>
+        <p className="caption mb-0 md:mb-2">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
+        <ChevronDown className="mx-auto animated-chevron-down" size={28} strokeWidth={1.25} />
         </div>
       </section>
 
-      <section className="mt-16">
-        <h2 className="text-xl font-medium mb-4">Quick links</h2>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <li>
-            <Link href="/case-studies/case-1" className="block rounded-lg p-4 border border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition">
-              Case Study 1
-            </Link>
-          </li>
-          <li>
-            <Link href="/case-studies/case-2" className="block rounded-lg p-4 border border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition">
-              Case Study 2
-            </Link>
-          </li>
-          <li>
-            <Link href="/case-studies/case-3" className="block rounded-lg p-4 border border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition">
-              Case Study 3
-            </Link>
-          </li>
-          <li>
-            <Link href="/art" className="block rounded-lg p-4 border border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition">
-              Art
-            </Link>
-          </li>
-        </ul>
-      </section>
-
-      <section className="mt-16">
-        <h2 className="text-xl font-medium mb-4">Buttons</h2>
-        <div className="flex flex-col sm:flex-row gap-3">
-          <button className="btn btn--primary">
-            <span>Primary</span>
-            <ArrowRight size={20} />
-          </button>
-          <button className="btn btn--secondary">
-            <span>Secondary</span>
-            <ArrowRight size={20} />
-          </button>
-        </div>
-      </section>
       
-      <section className="mt-16">
-        <h2 className="text-xl font-medium mb-4">Featured work</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-4">
-          <Card
-            href="/case-studies/case-1"
-            image="/window.svg"
-            title="Case Study 1"
-            description="High-level overview of project one."
-            tags={[{ tag: "Product" }, { tag: "Next.js" }]}
-            className="lg:col-span-5"
-          />
-          <Card
-            href="/case-studies/case-2"
-            image="/file.svg"
-            title="Case Study 2"
-            description="High-level overview of project two."
-            tags={[{ tag: "UX" }, { tag: "React" }]}
-            className="lg:col-span-3"
-          />
-          <Card
-            href="/case-studies/case-3"
-            image="/window.svg"
-            title="Case Study 3"
-            description="High-level overview of project three."
-            tags={[{ tag: "Design" }, { tag: "Frontend" }]}
-            className="lg:col-span-3"
-          />
-          <Card
-            href="/art"
-            image="/globe.svg"
-            title="Art Showcase"
-            description="Selected artwork and experiments."
-            tags={[{ tag: "Art" }, { tag: "Visual" }]}
-            className="lg:col-span-5"
-          />
-        </div>
-      </section>
+
+      
+      
+      
       </PageContainer>
-      <FullWidthSection backgroundImage="/globe.svg" backgroundColor="#0b0b0b">
-        <div className="text-center sm:text-left">
-          <h2 className="custom-h2 text-white">Full-width demo section</h2>
-          <p className="mt-2 text-base/7 text-white/80">
-            This band spans the full viewport width, while its content follows the
-            same margins as the rest of the page.
+      <FullWidthSection backgroundColor="#E8E8E8" noPadding>
+        <PageContainer noPadding>
+          <div className="-mx-4 md:-mx-8 lg:-mx-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-10 gap-4">
+            <Card
+              href="/case-studies/case-1"
+              image="/window.svg"
+              title="Increased conversion and engagement on 7,000+ hotel property pages"
+              logo="/images/hilton-logo.svg"
+              tags={[{ tag: "eCommerce" }, { tag: "Design Systems" }, { tag: "User Testing" }]}
+              className="lg:col-span-6"
+            />
+            <Card
+              href="/case-studies/case-2"
+              image="/file.svg"
+              title="Helped drive 9% revenue growth with a self-checkout program"
+              logo="/images/uo-logo.svg"
+              logoWidth={280}
+              tags={[{ tag: "eCommerce" }, { tag: "Loyalty" }, { tag: "Point of Sale" }]}
+              className="lg:col-span-4"
+            />
+            <Card
+              href="/case-studies/case-3"
+              image="/window.svg"
+              title="Simplified family scheduling with a responsive calendar"
+              logo="/images/jam-logo.png"
+              tags={[{ tag: "SaaS" }, { tag: "User Flows" }, { tag: "Dashboards" }]}
+              className="lg:col-span-4"
+            />
+            <Card
+              href="/case-studies/case-4"
+              image="/globe.svg"
+              title="Brought 7x more contact form conversions to a high-end botanical designer"
+              logo="/images/val-logo.svg"
+              tags={[{ tag: "Responsive Web" }, { tag: "Growth Design" }, { tag: "Branding" }]}
+              className="lg:col-span-6"
+            />
+            </div>
+          </div>
+        </PageContainer>
+      </FullWidthSection>
+      <FullWidthSection backgroundColor="#0b0b0b">
+        <PageContainer className="h-[55vh] text-center">
+        <div className="pt-8">
+          <h1 className="custom-h1 text-white mb-4">Proven by Experience</h1>
+          <p className="mb-8 text-white/80">
+          Employing a foundation in visual design, a career <br /> in user experience and a gritty work ethic.
           </p>
+          <div className="flex justify-center gap-6">
+           <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex">
+             LinkedIn
+             <ArrowUpRight />
+           </Link>
+           <Link href="/case-studies/case-4" className="btn btn--secondary-white inline-flex">
+             Download CV
+             <Download />
+           </Link>
+          <button
+            type="button"
+            className="btn btn--secondary-white inline-flex"
+            onClick={() => {
+              const email = "mollyreeddesign@gmail.com";
+              if (navigator?.clipboard?.writeText) {
+                navigator.clipboard.writeText(email);
+              } else {
+                const t = document.createElement("textarea");
+                t.value = email;
+                document.body.appendChild(t);
+                t.select();
+                document.execCommand("copy");
+                document.body.removeChild(t);
+              }
+            }}
+          >
+            Copy Email
+            <Copy />
+          </button>
+           </div>
         </div>
+        </PageContainer>
+      </FullWidthSection>
+      <FullWidthSection backgroundColor="#E8E8E8">
+        <PageContainer noPadding className="h-[55vh]">
+        <div className="py-12">
+        <h1 className="custom-h1 text-black text-center mb-8">How I Work</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+        <h3 className="custom-h3 text-black mb-2">Align</h3>
+        <p className="text-black/80">
+        I bring together key business objectives, user/competitor research and product goals.</p>
+        <p className="text-black/80"> I define scope early on.</p>
+          </div>
+          <div>
+        <h3 className="custom-h3 text-black mb-2">Create</h3>
+        <p className="text-black/80">
+        I build working prototypes and validate with testing often.</p> 
+        <p className="text-black/80">I don't design in a silo, I bring stakeholders along.</p>
+        
+          </div>
+          <div>
+        <h3 className="custom-h3 text-black mb-2">Execute</h3>
+        <p className="text-black/80">
+        I synthesize research, strategy, and design into a final product.</p>
+        <p className="text-black/80"> I maintain my craft from start to finish.</p>
+          </div>
+          </div>
+          </div>
+          
+      </PageContainer>
+      </FullWidthSection>
+      <FullWidthSection backgroundColor="#0b0b0b">
+        <PageContainer noPadding className="h-[55vh]">
+        <div className="pt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <Image src="/images/home-about.png" alt="About" unoptimized width={600} height={600} className="rounded-lg object-cover mx-auto mb-6" style={{ aspectRatio: '1/1' }} />
+            </div>
+            <div>
+          <h1 className="custom-h1 text-white mb-4">I'm a product designer, web designer and artist.</h1>
+          <p className="mb-4 text-white/80">
+          I’ve been designing experiences in technology for people and businesses for over a decade.
+          </p>
+          <p className="text-white/80">
+          Born and raised in Vermont, USA. Based in
+          </p>
+          <p className="mb-4 text-white/80">
+          <span className="line-through">Philadelphia</span> <span className="line-through">Los Angeles</span> Zurich, CH 🇨🇭
+          </p>
+          <p className="mb-8 text-white/80">
+          Painter, gardener, hiker and motorcyclist.
+          </p>
+          <div className="flex gap-6">
+          <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex">
+             LinkedIn
+             <ArrowUpRight />
+           </Link>
+            <Link href="/about" className="btn btn--white inline-flex">
+             About Me
+             <ArrowUpRight />
+           </Link>
+           </div>
+          </div>
+        </div>
+        </PageContainer>
       </FullWidthSection>
     </main>
   );

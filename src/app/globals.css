@@ -257,6 +257,31 @@ p,
   border-color: #1a1a1a;
 }
 
+/* Secondary button variant for dark backgrounds (white outline/text/icon) */
+.btn--secondary-white {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn--secondary-white:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #f5f5f5;
+}
+
+/* White background, black text/icon button (for dark backgrounds) */
+.btn--white {
+  background-color: #FFFFFF;
+  color: #0b0b0b;
+  border-color: #FFFFFF;
+}
+
+.btn--white:hover {
+  background-color: #f5f5f5;
+  border-color: #e5e5e5;
+  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.18), 0 3px 8px -4px rgba(0, 0, 0, 0.12);
+}
+
 /* Ensure icons size and inherit color */
 .btn svg,
 .btn img {
@@ -403,5 +428,17 @@ p,
     transform: translateX(150%);
     opacity: 0;
   }
+}
+
+/* Subtle chevron down animation: fade in/out with small downward motion */
+.animated-chevron-down {
+  opacity: 0.6;
+  animation: chevron-float 2.4s ease-in-out infinite;
+}
+
+@keyframes chevron-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+  100% { transform: translateY(0); }
 }
 
