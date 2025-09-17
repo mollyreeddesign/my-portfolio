@@ -15,13 +15,13 @@ export default function Home() {
       <PageContainer>
        <section className="h-[67vh] md:h-[65vh] flex flex-col">
         <div className="text-center my-2 md:-my-16">
-        <Image src="/images/home-sky.png" alt="Sky" width={240} height={240} className="mx-auto mb-6" />
-        <h1 className="text-3xl mb-2">Product Designer</h1>
+        <Image src="/images/home-sky.png" alt="Sky" width={240} height={240} className="mx-auto mb-6 w-40 h-auto md:w-60 md:h-atuo" sizes="(max-width: 767px) 160px, 240px" />
+        <h1 className="text-2xl md:text-3xl mb-2">Product Designer</h1>
         <p className="text-gray-400 text-base md:!text-sm">I design distinct digital experiences<br />{" "}that clarify and convert.</p>
         </div>
-         <div className="mt-auto mb-10 self-center text-center">
+         <div className="mt-auto mb-6 md:mb-10 self-center text-center">
         <p className="text-gray-400 text-base md:!text-sm">Based in Zurich, CH 🇨🇭</p>
-        <p className="text-gray-400 text-base md:!text-sm">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
+        <p className="text-gray-400 text-base md:!text-sm mb-2">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
         <ChevronDown className="mx-auto animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function Home() {
         <PageContainer className="py-22 md:py-32 text-center">
         <div>
           <h1 className="custom-h1 text-white mb-4">Proven by Experience</h1>
-          <p className="mb-8 text-white/80">
+          <p className="mb-8 text-white/80 max-w-[18rem] md:max-w-none mx-auto">
           Employing a foundation in visual design, a career in user experience and a gritty work ethic.
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-6">
@@ -139,7 +139,7 @@ export default function Home() {
       </FullWidthSection>
       <FullWidthSection backgroundColor="#0b0b0b">
         <PageContainer  className="-mb-6 md:-mb-22">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
           <div>
             <Image src="/images/home-about.png" alt="About" unoptimized width={600} height={600} className="rounded-lg object-cover mx-auto mb-6" style={{ aspectRatio: '1/1' }} />
             </div>
@@ -154,7 +154,7 @@ export default function Home() {
           <p className="mb-4 text-white/80">
           <span className="line-through">Philadelphia</span> <span className="line-through">Los Angeles</span> Zurich, CH 🇨🇭
           </p>
-          <p className="mb-8 text-white/80">
+          <p className="mb-14 md:mb-8 text-white/80">
           Painter, gardener, hiker and motorcyclist.
           </p>
           <div className="flex flex-col md:flex-row gap-6">
