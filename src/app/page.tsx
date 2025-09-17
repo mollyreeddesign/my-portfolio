@@ -3,7 +3,7 @@ import Link from "next/link";
 import Tag from "@/components/Tag";
 import PageContainer from "@/components/PageContainer";
 import FullWidthSection from "@/components/FullWidthSection";
-import CardV2 from "@/components/CardV2";
+import Card from "@/components/Card";
 import Metric from "@/components/Metric";
 import { ChevronDown, ArrowUpRight, Download, Copy } from "lucide-react";
 import BackToTopButton from "@/components/BackToTopButton";
@@ -31,7 +31,7 @@ export default function Home() {
         <PageContainer noPadding>
           <div className="mx-2 md:-mx-8 lg:-mx-16">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
-              <CardV2
+              <Card
                 href="/case-studies/case-1"
                 image="/images/hilton-after.png"
                 title="Increased conversion and engagement on 7,000+ hotel property pages"
@@ -39,22 +39,23 @@ export default function Home() {
                 logoWidth={90}
                 tags={[{ tag: "eCommerce" }, { tag: "Design Systems" }, { tag: "User Testing" }]}
               />
-              <CardV2
+              <Card
                 href="/case-studies/case-2"
                 image="/images/uo-after.png"
                 title="Helped drive 9% revenue growth with a self-checkout program"
                 logo="/images/uo-logo.svg"
                 logoWidth={220}
+                logoClassName="md:py-1"
                 tags={[{ tag: "eCommerce" }, { tag: "Loyalty" }, { tag: "Point of Sale" }]}
               />
-              <CardV2
+              <Card
                 href="/case-studies/case-3"
                 image="/images/jam-dashexploration.png"
                 title="Simplified family scheduling with a responsive calendar"
                 logo="/images/jam-logo.png"
                 tags={[{ tag: "SaaS" }, { tag: "User Flows" }, { tag: "Dashboards" }]}
               />
-              <CardV2
+              <Card
                 href="/case-studies/case-4"
                 image="/images/val-nownextlater.png"
                 title="Brought 7x more contact form conversions to a high-end botanical designer"
