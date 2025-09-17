@@ -175,6 +175,35 @@ export default function Home() {
         </div>
         </PageContainer>
       </FullWidthSection>
+      <FullWidthSection backgroundColor="#0b0b0b">
+        <PageContainer noPadding className="h-[55vh]">
+        <div className="pt-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="p-8 bg-white/10 border border-white/30 rounded-lg h-full flex flex-col">
+            <p className="text-white/80 mb-8">“Molly was my absolute favorite UI design partner at Hilton. She was quick and receptive to feedback, adapting quickly to stakeholder demands. When in doubt, her own skills and leadership abilities were showcased as she quickly made executive level decisions based on team feedback for overall product success. She was a limited resource, and we made sure to openly and expressively fight for her attentions. She will delight anyone that hires her with her creative abilities and fast approach to art and design.”</p>
+            <Link href="https://www.linkedin.com/in/april-walczak" target="_blank" rel="noopener noreferrer" className="mt-auto -m-2 p-2 flex items-center gap-3 rounded-md transition-colors hover:bg-white/5 group">
+              <Image src="/images/april.png" alt="April Walczak" width={50} height={50} className="rounded-full object-cover transition-transform duration-200 group-hover:scale-105" />
+              <div>
+                <h3 className="custom-h3 text-white transition-colors group-hover:text-white group-hover:underline">April Walczak</h3>
+                <p className="text-white/70 transition-colors group-hover:text-white/80">UX Design Lead</p>
+              </div>
+            </Link>
+            </div>
+            <div className="p-8 bg-white/10 border border-white/30 rounded-lg h-full flex flex-col">
+            <p className="text-white/80 mb-4">“I had the pleasure of working with Molly at Hilton, where she jumped right in and became a key part of the team from day one. She picked things up fast, brought a can-do attitude, and always contributed thoughtful, well-reasoned ideas.”
+</p>
+            <p className="text-white/80 mb-8">“If you’re looking for a smart, dependable designer who makes an impact and is a joy to work with, you’ll be lucky to have her on your team.”</p>
+            
+            <Link href="https://www.linkedin.com/in/ilke-vn" target="_blank" rel="noopener noreferrer" className="mt-auto -m-2 p-2 flex items-center gap-3 rounded-md transition-colors hover:bg-white/5 group">
+              <Image src="/images/ilke.png" alt="Ilke Ingram" width={50} height={50} className="rounded-full object-cover transition-transform duration-200 group-hover:scale-105" />
+              <div>
+                <h3 className="custom-h3 text-white transition-colors group-hover:text-white group-hover:underline">Ilke Ingram</h3>
+                <p className="text-white/70 transition-colors group-hover:text-white/80">Product Designer</p>
+              </div>
+            </Link>
+            </div>
+        </div>
+        </PageContainer>
+      </FullWidthSection>
     </main>
   );
 }
