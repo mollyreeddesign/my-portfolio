@@ -35,7 +35,7 @@ export default function AboutPage() {
 </div>
         </PageContainer>
         <h1 className="custom-h1 text-black md:mb-16 mb-8 text-center mx-auto">Experience</h1>
-        <div className="max-w-[45rem] mx-auto flex flex-col px-4 md:px-8 gap-5">
+        <div className="max-w-[45rem] mx-auto flex flex-col px-4 md:px-8 gap-3 md:gap-5">
 
           <div className="pb-3 md:pb-5 border-b border-gray-200">
           <p className="p text-black">May 2024 - ✷</p>
@@ -136,7 +136,7 @@ Explore my work, read my journal, or reach out if you’d like to chat."
         <PageContainer noPadding className="mb-16 md:mb-8">
         <div>
         <h1 className="custom-h1 text-black text-center mb-10">My Principals</h1>
-        <div className="mx-0 md:-mx-8 lg:-mx-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+        <div className="mx-0 md:-mx-8 lg:-mx-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
         <h3 className="custom-h3 text-black mb-2">Accessibility</h3>
         <p className="text-black/80 md:mb-4 mb-0">
