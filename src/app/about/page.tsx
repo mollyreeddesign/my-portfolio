@@ -15,57 +15,74 @@ export default function AboutPage() {
   return (
     <main className="min-h-[60vh] py-8 sm:py-12">
       <PageContainer>
-      <section className="h-[67vh] md:h-[65vh] flex flex-col">
-      <h1 className="custom-h1 max-w-[41rem] mb-3 mx-auto">I’m a Product Designer merging distinct craft, user experience and business goals. Advocate for accessibility and sustainable product design.</h1>
+      <section className="h-[67vh] md:h-[65vh] flex flex-col justify-center md:justify-start">
+      <h1 className="custom-h1 max-w-[28rem] md:max-w-[41rem] mb-22 mx-auto">I’m a Product Designer merging distinct craft, user experience and business goals. Advocate for accessibility and sustainable product design.</h1>
       
       </section>
       </PageContainer>
       {/* About Me as a Designer Paragraph */}
       <FullWidthSection backgroundColor="#f5f5f4">
-        <PageContainer noPadding className="mb-8 sm:mb-24">
+        <PageContainer noPadding className="mb-16 sm:mb-24">
         <Image src="/images/about-smallportrait.png" alt="About Me" width={130} height={130} className="-mt-8 mb-8 mx-auto rounded-full" />
         <div className="mx-auto flex flex-col">
-      <h2 className="custom-h2 text-black max-w-[40rem] mb-4 mx-auto">My foundation in visual digital design shapes products that are engaging and easy to use. My career in UI/UX brings a strong business perspective, build-then-test workflow and the adaptability to thrive on any team.
+      <h2 className="custom-h2 text-black max-w-[40rem] md:mb-4 mx-auto">My foundation in visual digital design shapes products that are engaging and easy to use. My career in UI/UX brings a strong business perspective, build-then-test workflow and the adaptability to thrive on any team.
       </h2>
       <p className="p text-black max-w-[40rem] mb-4 mx-auto">
       I’ve been designing digital experiences for people and businesses for over a decade. From agency internships to B2B products to representing design across five agile teams, I’ve grown into a multidisciplinary product designer with a versatile toolkit and strong work ethic.</p>
 <p className="p text-black max-w-[40rem] mb-4 mx-auto">Along the way, I’ve built design systems, launched apps, and taken products from concept to reality. I’m not a one-trick pony. I thrive as an all-around designer, committed to improving myself and my team while learning everything I can.</p> 
-<p className="text-black !font-semibold max-w-[40rem] mb-4 mx-auto">I’m currently based in Zurich, Switzerland and open to on-site or remote projects.</p>
+<p className="text-black !font-semibold max-w-[40rem] mx-auto">I’m currently based in Zurich, Switzerland and open to on-site or remote projects.</p>
 
 </div>
         </PageContainer>
-        <h1 className="custom-h1 text-black max-w-[41rem] mb-16 text-center mx-auto">Experience</h1>
-        <div className="max-w-[45rem] mx-auto flex flex-col">
+        <h1 className="custom-h1 text-black md:mb-16 mb-8 text-center mx-auto">Experience</h1>
+        <div className="max-w-[45rem] mx-auto flex flex-col px-4 md:px-8 gap-5">
 
-          <div className="px-8 pb-5 rounded-lg border-b border-gray-200">
+          <div className="pb-3 md:pb-5 border-b border-gray-200">
           <p className="p text-black">May 2024 - ✷</p>
-          <h3 className="custom-h3 !text-2xl text-black mb-0">Freelance Product Designer <span className="!font-normal text-gray-400">BitcoinOS, Valerie Jurado...</span></h3>
+          <div className="flex flex-col md:flex-row md:gap-2 gap-0">
+          <h3 className="custom-h3 !text-xl md:!text-2xl text-black mb-0">Freelance Product Designer </h3>
+          <h3 className="custom-h3 !text-xl md:!text-2xl !font-normal text-gray-400">BitcoinOS, Valerie Jurado...</h3>
+          </div>
           </div>
 
-          <div className="px-8 py-5 border-b border-gray-200">
+          <div className="pb-3 md:pb-5 border-b border-gray-200">
           <p className="p text-black">July 2023 - May 2024</p>
-          <h3 className="custom-h3 !text-2xl text-black mb-0">Travel Career Break <span className="!font-normal text-gray-400">New Zealand, Asia</span></h3>
-          
+          <div className="flex flex-col md:flex-row md:gap-2 gap-0">
+          <h3 className="custom-h3 !text-xl md:!text-2xl text-black mb-0">Travel Career Break</h3>
+          <h3 className="custom-h3 !text-xl md:!text-2xl !font-normal text-gray-400">New Zealand, Asia</h3>
+          </div>
           </div>
 
-          <div className="px-8 py-5 border-b border-gray-200">
+          <div className="pb-3 md:pb-5 border-b border-gray-200">
           <p className="p text-black mb-0 ">Jan 2022 - Jun 2023</p>
-          <h3 className="custom-h3 !text-2xl text-black mb-0">UI Designer <span className="!font-normal text-gray-400">Hilton</span></h3>
+          <div className="flex flex-col md:flex-row md:gap-2 gap-0">
+          <h3 className="custom-h3 !text-xl md:!text-2xl md:!text-2xl text-black mb-0">UI Designer</h3>
+          <h3 className="custom-h3 !text-xl md:!text-2xl md:!text-2xl !font-normal text-gray-400">Hilton</h3>
+          </div>
           </div>
 
-          <div className="px-8 py-5 border-b border-gray-200">
+          <div className="pb-3 md:pb-5 border-b border-gray-200">
           <p className="p text-black mb-0 ">Jan 2022 - Jul 2022</p>
-          <h3 className="custom-h3 !text-2xl text-black mb-0">Product Designer <span className="!font-normal text-gray-400">Jam Family Calendar</span></h3>
+          <div className="flex flex-col md:flex-row md:gap-2 gap-0">
+          <h3 className="custom-h3 !text-xl md:!text-2xl text-black mb-0">Product Designer</h3>
+          <h3 className="custom-h3 !text-xl md:!text-2xl !font-normal text-gray-400">Jam Family Calendar</h3>
+          </div>
           </div>
 
-          <div className="px-8 py-5 border-b border-gray-200">
+          <div className="pb-3 md:pb-5 border-b border-gray-200">
           <p className="p text-black mb-0 ">Feb 2019 - Jan 2022</p>
-          <h3 className="custom-h3 !text-2xl text-black mb-0">Product Designer <span className="!font-normal text-gray-400">BAI Connect</span></h3>
+          <div className="flex flex-col md:flex-row md:gap-2 gap-0">
+          <h3 className="custom-h3 !text-xl md:!text-2xl text-black mb-0">Product Designer</h3>
+          <h3 className="custom-h3 !text-xl md:!text-2xl !font-normal text-gray-400">BAI Connect</h3>
+          </div>
           </div>
 
-          <div className="px-8 py-5">
+          <div className="pb-3 md:pb-5">
           <p className="p text-black mb-0 ">Oct 2017 - Aug 2018</p>
-          <h3 className="custom-h3 !text-2xl text-black mb-0">Junior UI Designer <span className="!font-normal text-gray-400">Urban Outfitters</span></h3>
+          <div className="flex flex-col md:flex-row md:gap-2 gap-0">
+          <h3 className="custom-h3 !text-xl md:!text-2xl text-black mb-0">Junior UI Designer</h3>
+          <h3 className="custom-h3 !text-xl md:!text-2xl !font-normal text-gray-400">Urban Outfitters</h3>
+          </div>
           </div>
           
           </div>
@@ -73,10 +90,10 @@ export default function AboutPage() {
       </FullWidthSection>
       {/* How I Started */}
       <FullWidthSection noPadding backgroundColor="#0b0b0b">
-        <PageContainer className="">
+        <PageContainer className="mt-12">
         <div>
           <h1 className="custom-h1 text-white text-center mb-16">How I Started</h1>
-          <div className="grid grid-cols-1 -mx-16 mb-16 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 mx-0 md:-mx-16 mb-16 md:grid-cols-3 gap-12">
           <Card
                 href=""
                 image="/images/uo-after.png"
@@ -105,7 +122,7 @@ Explore my work, read my journal, or reach out if you’d like to chat."
 
           </div>
           <div className="flex justify-center">
-            <Link href="/art" className="btn btn--white">
+            <Link href="/art" className="btn btn--white mb-16">
               More of my Art
               <ArrowUpRight />
             </Link>
@@ -116,13 +133,13 @@ Explore my work, read my journal, or reach out if you’d like to chat."
       </FullWidthSection>
       {/* My Principals */}
       <FullWidthSection backgroundColor="#f5f5f4">
-        <PageContainer className="py-18 md:py-28">
+        <PageContainer noPadding className="mb-16 md:mb-8">
         <div>
         <h1 className="custom-h1 text-black text-center mb-10">My Principals</h1>
-        <div className="mx-8 md:-mx-8 lg:-mx-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="mx-0 md:-mx-8 lg:-mx-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
         <div>
         <h3 className="custom-h3 text-black mb-2">Accessibility</h3>
-        <p className="text-black/80 mb-4">
+        <p className="text-black/80 md:mb-4 mb-0">
         I believe technology is for everyone. We now have tools and design standards to make products accessible to every user. I make sure to know them and use them accordingly. </p>
         <p className="text-black/80"><span className="font-bold">I follow WebAIM</span> to stay updated on current accessibility standards.</p>
           </div>
