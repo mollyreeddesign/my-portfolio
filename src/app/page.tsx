@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Tag from "@/components/Tag";
 import PageContainer from "@/components/PageContainer";
@@ -10,12 +11,55 @@ import BackToTopButton from "@/components/BackToTopButton";
 import Image from "next/image";
 
 export default function Home() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [skyLightOpacity, setSkyLightOpacity] = useState(0.05);
+
+  useEffect(() => {
+    const updateOpacity = () => {
+      const section = sectionRef.current;
+      if (!section) return;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight || window.innerHeight * 0.67;
+      const viewportHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+      // Start the effect once we reach the section (keep faint before)
+      const start = sectionTop; // begin at section top
+      const end = sectionTop + sectionHeight * 0.80; // finish halfway through the section
+      const progressRaw = (scrollTop - start) / Math.max(1, end - start);
+      const progress = Math.max(0, Math.min(1, progressRaw));
+      if (scrollTop <= sectionTop) {
+        setSkyLightOpacity(0.05);
+        return;
+      }
+      const opacity = 0.05 + progress * 0.95; // fade from 0.05 to 1.0
+      setSkyLightOpacity(opacity);
+    };
+
+    updateOpacity();
+    window.addEventListener("scroll", updateOpacity, { passive: true });
+    window.addEventListener("resize", updateOpacity);
+    return () => {
+      window.removeEventListener("scroll", updateOpacity);
+      window.removeEventListener("resize", updateOpacity);
+    };
+  }, []);
   return (
     <main className="py-16 sm:py-32">
       <PageContainer>
-       <section className="h-[67vh] md:h-[65vh] flex flex-col">
+        <div className="relative overflow-x-hidden">
+        <section ref={sectionRef} className="fixed left-0 right-0 top-40 h-[67vh] md:h-[65vh] flex flex-col z-10 pointer-events-none">
+        <div className="absolute left-1/2 -translate-x-[315px] md:-translate-x-[500px] -translate-y-[60px] md:-translate-y-[180px] w-[700px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms ease" }}>
+          <Image
+            src="/images/home-skylight.png"
+            alt=""
+            width={1000}
+            height={1000}
+            className="w-[700px] md:w-[1100px] h-auto"
+            priority
+          />
+        </div>
         <div className="text-center my-2 md:-my-16">
-        <div className="mx-auto mb-6 w-40 h-40 md:w-60 md:h-30 relative">
+        <div className="mx-auto mb-6 w-40 h-20 md:w-60 md:h-30 relative">
           <video
             className="home-sky-mask w-full h-full object-cover"
             src="/videos/home-skyvideo.mp4"
@@ -44,9 +88,11 @@ export default function Home() {
         <ChevronDown className="mx-auto animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
       </section>
+      <div className="h-[150vh] md:h-[150vh]"></div>
+      </div>
 
       </PageContainer>
-      <FullWidthSection backgroundColor="#f5f5f4" sectionClassName="scroll-mt-18" >
+      <FullWidthSection backgroundColor="#f5f5f4" sectionClassName="scroll-mt-18 relative z-20" >
         <PageContainer noPadding>
           <div className="mx-2 md:-mx-8 lg:-mx-16" id="cases">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
