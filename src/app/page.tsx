@@ -9,6 +9,7 @@ import Metric from "@/components/Metric";
 import { ChevronDown, ArrowUpRight, Download, Copy } from "lucide-react";
 import BackToTopButton from "@/components/BackToTopButton";
 import Image from "next/image";
+import LottieCover from "@/components/LottieCover";
 
 export default function Home() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -70,6 +71,7 @@ export default function Home() {
             playsInline
             preload="metadata"
           />
+          <LottieCover src="/animations/birdflock.json" className="home-sky-mask z-[5] pointer-events-none" fit="cover" />
           <Image
             src="/images/home-sky-frame.png"
             alt=""
