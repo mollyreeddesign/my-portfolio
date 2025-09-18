@@ -14,6 +14,8 @@ import LottieCover from "@/components/LottieCover";
 export default function Home() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [skyLightOpacity, setSkyLightOpacity] = useState(0.05);
+  const pinWrapperRef = useRef<HTMLDivElement | null>(null);
+  const [heroHidden, setHeroHidden] = useState(false);
   const videoSources = [
     "/videos/home-skyvideo.mp4",
     "/videos/sunset-loop.mp4",
@@ -50,11 +52,27 @@ export default function Home() {
       window.removeEventListener("resize", updateOpacity);
     };
   }, []);
+
+  useEffect(() => {
+    const updateHeroVisibility = () => {
+      const wrapper = pinWrapperRef.current;
+      if (!wrapper) return;
+      const rect = wrapper.getBoundingClientRect();
+      setHeroHidden(rect.bottom <= 0);
+    };
+    updateHeroVisibility();
+    window.addEventListener("scroll", updateHeroVisibility, { passive: true });
+    window.addEventListener("resize", updateHeroVisibility);
+    return () => {
+      window.removeEventListener("scroll", updateHeroVisibility);
+      window.removeEventListener("resize", updateHeroVisibility);
+    };
+  }, []);
   return (
     <main className="py-16 sm:py-32">
       <PageContainer>
-        <div className="relative overflow-x-hidden">
-        <section ref={sectionRef} className="fixed left-0 right-0 top-40 h-[67vh] md:h-[65vh] flex flex-col z-10 pointer-events-none">
+       <div ref={pinWrapperRef} className="relative overflow-x-hidden">
+        <section ref={sectionRef} className="fixed left-0 right-0 top-40 h-[67vh] md:h-[65vh] flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
         <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[500px] -translate-y-[67px] md:-translate-y-[180px] w-[720px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms ease" }}>
           <Image
             src="/images/home-skylight.png"
