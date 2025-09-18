@@ -14,6 +14,12 @@ import LottieCover from "@/components/LottieCover";
 export default function Home() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [skyLightOpacity, setSkyLightOpacity] = useState(0.05);
+  const videoSources = [
+    "/videos/home-skyvideo.mp4",
+    "/videos/sunset-loop.mp4",
+    "/videos/home-lightening.mp4",
+  ];
+  const [selectedVideo] = useState(() => videoSources[Math.floor(Math.random() * videoSources.length)]);
 
   useEffect(() => {
     const updateOpacity = () => {
@@ -63,7 +69,7 @@ export default function Home() {
         <div className="mx-auto mb-6 w-40 h-20 md:w-60 md:h-30 relative">
           <video
             className="home-sky-mask w-full h-full object-cover"
-            src="/videos/home-skyvideo.mp4"
+            src={selectedVideo}
             poster="/images/home-sky.png"
             autoPlay
             loop
