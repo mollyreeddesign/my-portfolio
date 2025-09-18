@@ -24,7 +24,7 @@ export default function Home() {
       const scrollTop = window.scrollY;
       // Start the effect once we reach the section (keep faint before)
       const start = sectionTop; // begin at section top
-      const end = sectionTop + sectionHeight * 0.80; // finish halfway through the section
+      const end = sectionTop + sectionHeight * 0.90; // finish halfway through the section
       const progressRaw = (scrollTop - start) / Math.max(1, end - start);
       const progress = Math.max(0, Math.min(1, progressRaw));
       if (scrollTop <= sectionTop) {
@@ -48,13 +48,13 @@ export default function Home() {
       <PageContainer>
         <div className="relative overflow-x-hidden">
         <section ref={sectionRef} className="fixed left-0 right-0 top-40 h-[67vh] md:h-[65vh] flex flex-col z-10 pointer-events-none">
-        <div className="absolute left-1/2 -translate-x-[315px] md:-translate-x-[500px] -translate-y-[60px] md:-translate-y-[180px] w-[700px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms ease" }}>
+        <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[500px] -translate-y-[67px] md:-translate-y-[180px] w-[720px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms ease" }}>
           <Image
             src="/images/home-skylight.png"
             alt=""
             width={1000}
             height={1000}
-            className="w-[700px] md:w-[1100px] h-auto"
+            className="w-[720px] md:w-[1100px] h-auto"
             priority
           />
         </div>
