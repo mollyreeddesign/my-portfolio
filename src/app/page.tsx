@@ -27,10 +27,19 @@ export default function Home() {
       </section>
 
       </PageContainer>
-      <FullWidthSection backgroundColor="#E8E8E8" sectionClassName="scroll-mt-18" >
+      <FullWidthSection backgroundColor="#f5f5f4" sectionClassName="scroll-mt-18" >
         <PageContainer noPadding>
           <div className="mx-2 md:-mx-8 lg:-mx-16" id="cases">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
+            <Card
+                href="/case-studies/case-2"
+                image="/images/uo-after.png"
+                title="Helped drive 9% revenue growth with a self-checkout program"
+                logo="/images/uo-logo.svg"
+                logoWidth={200}
+                logoClassName="md:py-1"
+                tags={[{ tag: "eCommerce" }, { tag: "Loyalty" }, { tag: "Point of Sale" }]}
+              />
               <Card
                 href="/case-studies/case-1"
                 image="/images/hilton-after.png"
@@ -39,15 +48,7 @@ export default function Home() {
                 logoWidth={90}
                 tags={[{ tag: "eCommerce" }, { tag: "Design Systems" }, { tag: "User Testing" }]}
               />
-              <Card
-                href="/case-studies/case-2"
-                image="/images/uo-after.png"
-                title="Helped drive 9% revenue growth with a self-checkout program"
-                logo="/images/uo-logo.svg"
-                logoWidth={220}
-                logoClassName="md:py-1"
-                tags={[{ tag: "eCommerce" }, { tag: "Loyalty" }, { tag: "Point of Sale" }]}
-              />
+              
               <Card
                 href="/case-studies/case-3"
                 image="/images/jam-dashexploration.png"
@@ -106,7 +107,7 @@ export default function Home() {
         </div>
         </PageContainer>
       </FullWidthSection>
-      <FullWidthSection backgroundColor="#E8E8E8">
+      <FullWidthSection backgroundColor="#f5f5f4">
         <PageContainer className="py-18 md:py-28">
         <div>
         <h1 className="custom-h1 text-black text-center mb-10">How I Work</h1>
