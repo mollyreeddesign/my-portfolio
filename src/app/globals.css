@@ -451,3 +451,16 @@ p,
   100% { transform: translateY(0); }
 }
 
+/* Mask for home hero sky video using existing PNG shape */
+.home-sky-mask {
+  display: block;
+  -webkit-mask-image: url('/images/home-sky.png');
+  mask-image: url('/images/home-sky.png');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+

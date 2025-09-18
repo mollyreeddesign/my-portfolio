@@ -15,7 +15,26 @@ export default function Home() {
       <PageContainer>
        <section className="h-[67vh] md:h-[65vh] flex flex-col">
         <div className="text-center my-2 md:-my-16">
-        <Image src="/images/home-sky.png" alt="Sky" width={240} height={240} className="mx-auto mb-6 w-40 h-auto md:w-60 md:h-atuo" sizes="(max-width: 767px) 160px, 240px" />
+        <div className="mx-auto mb-6 w-40 h-40 md:w-60 md:h-30 relative">
+          <video
+            className="home-sky-mask w-full h-full object-cover"
+            src="/videos/home-skyvideo.mp4"
+            poster="/images/home-sky.png"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+          />
+          <Image
+            src="/images/home-sky-frame.png"
+            alt=""
+            fill
+            className="pointer-events-none select-none z-10"
+            sizes="(max-width: 767px) 160px, 240px"
+            priority
+          />
+        </div>
         <h1 className="text-2xl md:text-3xl mb-2">Product Designer</h1>
         <p className="text-gray-400 text-base md:!text-sm">I design distinct digital experiences<br />{" "}that clarify and convert.</p>
         </div>
