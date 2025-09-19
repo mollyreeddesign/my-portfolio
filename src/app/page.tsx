@@ -19,7 +19,6 @@ export default function Home() {
   const videoSources = [
     "/videos/home-skyvideo.mp4",
     "/videos/sunset-loop.mp4",
-    "/videos/home-lightening.mp4",
   ];
   const [selectedVideo] = useState(() => videoSources[Math.floor(Math.random() * videoSources.length)]);
 
@@ -69,7 +68,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <main className="py-16 sm:py-32">
+    <main className="py-16 sm:py-32 bg-[#0b0b0b]">
       <PageContainer>
        <div ref={pinWrapperRef} className="relative overflow-x-hidden">
         <section ref={sectionRef} className="fixed left-0 right-0 top-40 h-[67vh] md:h-[65vh] flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
@@ -130,6 +129,17 @@ export default function Home() {
                 logoWidth={200}
                 logoClassName="md:py-1"
                 tags={[{ tag: "eCommerce" }, { tag: "Loyalty" }, { tag: "Point of Sale" }]}
+                renderImageOverlay={(hovered) => (
+                  <>
+                    {/* Example: floating receipt popping out of top-right */}
+                    <img
+                      src="/images/uo-cardanimation.gif"
+                      alt=""
+                      className={`${hovered ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 translate-y-10 rotate-3"} pointer-events-none select-none absolute -right-6 -top-8 w-28 h-auto drop-shadow-xl transition-all duration-500 ease-out`}
+                      aria-hidden
+                    />
+                  </>
+                )}
               />
               <Card
                 href="/case-studies/case-1"
@@ -238,6 +248,9 @@ export default function Home() {
           <p className="mb-4 text-white/80">
           I’ve been designing experiences in technology for people and businesses for over a decade.
           </p>
+          <p className="mb-4 text-white/80">
+          With a background in visual design and industry experience in eCommerce, Telecom and Hospitality, I design experiences that bring real results.
+          </p>
           <p className="text-white/80">
           Born and raised in Vermont, USA. Based in
           </p>
@@ -253,7 +266,7 @@ export default function Home() {
              <ArrowUpRight />
            </Link>
             <Link href="/about" className="btn btn--white inline-flex">
-             About Me
+             More About Me
              <ArrowUpRight />
            </Link>
            </div>

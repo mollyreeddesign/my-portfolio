@@ -349,7 +349,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                 <p className="p mb-4">
                   The Jam Family Calendar app was launched in February 2024 and has since been downloaded over 5,000 times on Google Play.
                   </p>
-                  <p className="p mb-4">
+                  <p className="p">
                   I'm proud of the foundation I created through my design system, user flows and comprehensive style guide for Jam Family Calendar. This project taught me valuable lessons about when (or when not) to design in high fidelity, knowing your user and building a sustainable product that can be iterated in future redesigns. Most of all, it was rewarding to contribute to a product tackling a very real challenge for modern families. I'm excited to see Jam continue to grow and ease the mental load for parents.
                   </p>
                   

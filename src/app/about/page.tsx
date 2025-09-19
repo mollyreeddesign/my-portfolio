@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-[60vh] py-8 sm:py-12">
+    <main className="min-h-[60vh] py-8 sm:py-12 bg-[#0b0b0b]">
       <PageContainer>
       <section className="h-[67vh] md:h-[65vh] flex flex-col justify-center md:justify-start">
       <h1 className="custom-h1 max-w-[28rem] md:max-w-[41rem] mb-22 mx-auto">I’m a Product Designer merging distinct craft, user experience and business goals. Advocate for accessibility and sustainable product design.</h1>

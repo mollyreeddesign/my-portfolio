@@ -15,6 +15,13 @@ type CardProps = {
   href: string;
   tags?: TagProps[];
   className?: string;
+  imageClassName?: string;
+  imageContainerClassName?: string;
+  /**
+   * Optional render prop to draw custom overlay/layers around the image area.
+   * Useful for per-card hover animations that can escape the image frame.
+   */
+  renderImageOverlay?: (hovered: boolean) => React.ReactNode;
 };
 
 export default function Card({
@@ -29,22 +36,37 @@ export default function Card({
   href,
   tags,
   className,
+  imageClassName,
+  imageContainerClassName,
+  renderImageOverlay,
 }: CardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const hasLongDescription = typeof description === "string" && description.trim().length > 120;
   return (
     <Link
       href={href}
-      className={`block h-full overflow-hidden ${className ?? ""}`}
+      className={`group block h-full ${className ?? ""}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="flex h-full flex-col">
-        <div className="relative w-full aspect-[3/2] border rounded-md overflow-hidden">
-          <img
-            src={image}
-            alt={title}
-            className="absolute inset-0 h-full w-full object-cover"
-            loading="lazy"
-          />
+        <div className={`relative w-full aspect-[3/2] ${imageContainerClassName ?? ""}`}>
+          {/* Cropped image frame */}
+          <div className="relative h-full w-full border rounded-md overflow-hidden z-0 transition-shadow duration-300 ease-out group-hover:shadow-md">
+            <img
+              src={image}
+              alt={title}
+              className={`absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03] ${imageClassName ?? ""}`}
+              loading="lazy"
+            />
+          </div>
+          {/* Custom overlay that can escape the frame */}
+          {typeof renderImageOverlay === "function" ? (
+            <div className="pointer-events-none absolute inset-0 z-10 overflow-visible">
+              {renderImageOverlay(isHovered)}
+            </div>
+          ) : null}
         </div>
         <div className="py-2 md:py-3 mt-2">
           {logo ? (
