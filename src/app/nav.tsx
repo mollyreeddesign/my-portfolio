@@ -79,7 +79,7 @@ export default function Nav() {
         "fixed top-0 left-0 right-0 z-50 transition-transform duration-300 will-change-transform backdrop-blur border-b " +
         (isCaseStudiesPage 
           ? "bg-[#FFFFFF] text-[#2C2C2C] border-none" 
-          : "bg-background/80 text-foreground border-none dark:border-none"
+          : "bg-[#0b0b0b] text-white border-none"
         ) +
         (isHidden ? " -translate-y-full" : " translate-y-0")
       }
@@ -102,7 +102,7 @@ export default function Nav() {
                   href={item.href}
                   className={`group relative inline-block px-1 pt-2 pb-0 transition-all duration-200 focus:outline-none focus-visible:outline-none 
                     after:absolute after:left-0 after:bottom-0.5 after:h-px after:rounded-full after:transition-all after:duration-200 
-                    ${isCaseStudiesPage ? "after:bg-[#2C2C2C]" : "after:bg-foreground"}
+                    ${isCaseStudiesPage ? "after:bg-[#2C2C2C]" : "after:bg-white"}
                     ${active ? "after:w-full after:opacity-100" : "after:w-0 after:opacity-60 hover:after:w-full"}
                   `}
                   aria-current={active ? "page" : undefined}
@@ -117,7 +117,7 @@ export default function Nav() {
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="md:hidden p-2 rounded-md transition-colors focus:outline-none focus-visible:outline-none hover:bg-black/5"
+          className={`md:hidden p-2 rounded-md transition-colors focus:outline-none focus-visible:outline-none ${isCaseStudiesPage ? "hover:bg-black/5" : "hover:bg-white/10"}`}
           aria-label="Open menu"
           aria-haspopup="menu"
           aria-expanded={isMenuOpen}
@@ -136,15 +136,15 @@ export default function Nav() {
         >
           <div
             className={`${
-              isCaseStudiesPage ? "bg-white text-[#2C2C2C]" : "bg-background text-foreground"
-            } border-t border-black/10 shadow-lg`}
+              isCaseStudiesPage ? "bg-white text-[#2C2C2C] border-t border-black/10" : "bg-[#0b0b0b] text-white border-t border-white/10"
+            } shadow-lg`}
           >
             <ul className="py-2 text-right">
               {links.map((item, idx) => (
-                <li key={item.href} className={idx !== links.length - 1 ? "border-b border-black/10" : ""}>
+                <li key={item.href} className={idx !== links.length - 1 ? (isCaseStudiesPage ? "border-b border-black/10" : "border-b border-white/10") : ""}>
                   <Link
                     href={item.href}
-                    className="block px-4 py-3 text-base tracking-wide hover:bg-black/5"
+                    className={`block px-4 py-3 text-base tracking-wide ${isCaseStudiesPage ? "hover:bg-black/5" : "hover:bg-white/10"}`}
                     role="menuitem"
                   >
                     {item.label}

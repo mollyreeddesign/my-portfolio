@@ -110,7 +110,7 @@ export default function Home() {
          <div className="mt-auto mb-6 md:mb-10 self-center text-center">
         <p className="text-gray-400 text-base md:!text-sm">Based in Zurich, CH 🇨🇭</p>
         <p className="text-gray-400 text-base md:!text-sm mb-2">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
-        <ChevronDown className="mx-auto animated-chevron-down" size={35} strokeWidth={1.75} />
+        <ChevronDown className="mx-auto color-gray-400 animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
       </section>
       <div className="h-[150vh] md:h-[150vh]"></div>
