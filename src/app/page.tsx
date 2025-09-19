@@ -104,7 +104,7 @@ export default function Home() {
             priority
           />
         </div>
-        <h1 className="text-2xl md:text-3xl mb-2">Product Designer</h1>
+        <h1 className="text-2xl text-white md:text-3xl mb-2">Product Designer</h1>
         <p className="text-gray-400 text-base md:!text-sm">I design distinct digital experiences<br />{" "}that clarify and convert.</p>
         </div>
          <div className="mt-auto mb-6 md:mb-10 self-center text-center">
