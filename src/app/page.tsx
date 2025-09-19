@@ -137,6 +137,36 @@ export default function Home() {
                 logo="/images/hilton-logo.svg"
                 logoWidth={90}
                 tags={[{ tag: "eCommerce" }, { tag: "Design Systems" }, { tag: "User Testing" }]}
+                renderImageContent={(hovered) => (
+                  <div className="w-full h-full" style={{ backgroundColor: "#D3E7F5" }}>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex items-end justify-center w-[86%] h-[80%]">
+                        <img
+                          src="/images/hilton-hamptoninn.png"
+                          alt=""
+                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -mr-5 md:-mr-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "-translate-x-[40px] -translate-y-4 scale-110" : ""}`}
+                          loading="lazy"
+                        />
+                        <img
+                          src="/images/hilton-doubletree.png"
+                          alt=""
+                          className={`relative z-10 h-[100%] md:h-[100%] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-110" : ""}`}
+                          loading="lazy"
+                        />
+                        <img
+                          src="/images/hilton-embassysuites.png"
+                          alt=""
+                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "translate-x-[40px] -translate-y-4 scale-110" : ""}`}
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                    {/* White overlay that fades from 20% to 0% on hover */}
+                    <div
+                      className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
+                    />
+                  </div>
+                )}
               />
               
               <Card

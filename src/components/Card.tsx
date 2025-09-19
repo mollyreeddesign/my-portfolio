@@ -22,6 +22,11 @@ type CardProps = {
    * Useful for per-card hover animations that can escape the image frame.
    */
   renderImageOverlay?: (hovered: boolean) => React.ReactNode;
+  /**
+   * Optional render prop to fully control the content inside the framed image area.
+   * When provided, the default <img> will not render and this content will fill the frame.
+   */
+  renderImageContent?: (hovered: boolean) => React.ReactNode;
 };
 
 export default function Card({
@@ -39,9 +44,29 @@ export default function Card({
   imageClassName,
   imageContainerClassName,
   renderImageOverlay,
+  renderImageContent,
 }: CardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [canHover, setCanHover] = useState(false);
+  
+  // Detect whether the device supports hover (e.g., desktop with a fine pointer)
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mql = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setCanHover(mql.matches);
+    update();
+    try {
+      mql.addEventListener("change", update);
+      return () => mql.removeEventListener("change", update);
+    } catch {
+      // Safari < 14 fallback
+      mql.addListener(update);
+      return () => mql.removeListener(update);
+    }
+  }, []);
+
+  const effectiveHovered = canHover && isHovered;
   const hasLongDescription = typeof description === "string" && description.trim().length > 120;
   return (
     <Link
@@ -53,18 +78,24 @@ export default function Card({
       <div className="flex h-full flex-col">
         <div className={`relative w-full aspect-[3/2] ${imageContainerClassName ?? ""}`}>
           {/* Cropped image frame */}
-          <div className="relative h-full w-full border rounded-md overflow-hidden z-0 transition-shadow duration-300 ease-out group-hover:shadow-md">
-            <img
-              src={image}
-              alt={title}
-              className={`absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03] ${imageClassName ?? ""}`}
-              loading="lazy"
-            />
+          <div className="relative h-full w-full border rounded-md overflow-hidden md:group-hover:overflow-visible z-0 transition-shadow duration-300 ease-out group-hover:shadow-md">
+            {typeof renderImageContent === "function" ? (
+              <div className="absolute inset-0">
+                {renderImageContent(effectiveHovered)}
+              </div>
+            ) : (
+              <img
+                src={image}
+                alt={title}
+                className={`absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03] ${imageClassName ?? ""}`}
+                loading="lazy"
+              />
+            )}
           </div>
           {/* Custom overlay that can escape the frame */}
           {typeof renderImageOverlay === "function" ? (
             <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden group-hover:overflow-visible">
-              {renderImageOverlay(isHovered)}
+              {renderImageOverlay(effectiveHovered)}
             </div>
           ) : null}
         </div>
