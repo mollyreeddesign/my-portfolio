@@ -15,11 +15,11 @@ import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import MediaFrame from "@/components/MediaFrame";
 
 export const metadata: Metadata = {
-  title: "Case Study 4 | Portfolio",
-  description: "Details for case study 4.",
+  title: "Valerie Jurado | Portfolio",
+  description: "Brought 7x more contact form conversions to a high-end botanical designer.",
 };
 
-export default function CaseStudyFourPage() {
+export default function ValerieJuradoPage() {
   const sections = [
     { id: "theproblem", label: "The Problem" },
     { id: "howmightwe", label: "How Might We" },
@@ -176,7 +176,7 @@ export default function CaseStudyFourPage() {
               </p>
               <p className="p mb-4">
               Valerie's favorite designers emphasized minimal UI with large, striking photography. I knew her work photography was a major brand strength, so I designed the site with minimal typography, buttons and text. This let her work take center stage.
-
+              
               </p>
             </CaseSection>
 
@@ -230,7 +230,7 @@ export default function CaseStudyFourPage() {
               <h2 className="custom-h2">I overhauled the contact form</h2>
                     <p className="p mb-4">
                     I improved the user experience of the contact form by removing a bulk of the fields, minimizing what was required and simplifying the design. I added Mailchimp integrations so Valerie's leads were pulled directly into her mailing list audience when they filled out the contact form. In addition,I added a spam filter to improve lead quality.
-
+              
               </p>
               <p className="p mb-4 md:mb-12">
               I explored placing an opt-in form in the footer, however data from Mailchimp revealed that it was collecting mostly spam submissions. We decided to remove it and keep only the main form on the Contact page.
@@ -324,5 +324,6 @@ export default function CaseStudyFourPage() {
     </main>
   );
 }
+
 
 

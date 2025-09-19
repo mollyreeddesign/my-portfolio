@@ -247,16 +247,15 @@ export default function CaseStudyTwoPage() {
               </div>
               
 
-
               <h2 className="custom-h2">I coordinated design handoff</h2>
               <p className="p mb-4">
               For development handoff, I created detailed redlines that mapped out styles using Tailwind CSS nomenclature. 
               </p>
               
-<p className="p mb-4 md:mb-12">
+              <p className="p mb-4 md:mb-12">
   After handoff, I collaborated closely with software engineering to fine-tune details such as animations and spacing. The touchscreen kiosks with the new UI were installed in Herald Square in August 2018.
-</p>
-<MediaFrame aspectRatio="3 / 2" padding="p-4" contentClassName="block" enableModal>
+              </p>
+              <MediaFrame aspectRatio="3 / 2" padding="p-4" contentClassName="block" enableModal>
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
     <div className="relative overflow-hidden shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
       <Image src="/images/uo-flatselfcheckout-2.png" alt="UO flat self checkout screen 2" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
@@ -387,7 +386,7 @@ export default function CaseStudyTwoPage() {
                   </div>
               <p className="caption mb-8 md:mb-12 text-center">
               I redesigned the typography and information architecture for 20 Help + Info pages, breaking up dense text with iconography, photography, and clear type hierarchy.
-
+              
               </p>
               <h2 className="custom-h2">UO Blog Overhaul</h2>
               <div className="w-full mb-4">
@@ -424,5 +423,6 @@ export default function CaseStudyTwoPage() {
     </main>
   );
 }
+
 
 

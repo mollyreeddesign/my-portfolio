@@ -103,14 +103,14 @@ export default function AboutPage() {
 Naturally, I gravitated toward graphic design where I discovered a love for building websites. I could tell a story that combined all my interests: writing, drawing, animation, and interaction. I graduated in 2017 from the University of the Arts in Philadelphia with a BFA in Graphic Design, with a strong focus on web."
               />
               <Card
-                href="/case-studies/case-2"
+                href="/case-studies/uoselfcheckout"
                 image="/images/uo-after.png"
                 title="Career"
                 description="I launched my career in UI Design at Urban Outfitters HQ in Philadelphia, where I honed my skills in visual design and user experience. In 2018, I moved to LA to design for a boutique telecom company, learning how to build B2B products that met real business goals and thinking beyond just UI. In 2022, I returned to my hometown in Vermont and worked remotely for Hilton Hotels across five agile web product teams, pulling in user research, business goals, and visual design to deliver measurable results. Throughout these roles, I’ve worked closely with engineers, product managers, and stakeholders with tools like Figma, Miro, and Jira to bring ideas from concept to launch."
                 titleClassName="text-white"
               />
               <Card
-                href="/case-studies/case-2"
+                href="/case-studies/uoselfcheckout"
                 image="/images/uo-after.png"
                 title="Recently"
                 description="Recently, I’ve had the good fortune to travel extensively with my husband, Kai. We lived in a campervan in New Zealand for nine months, trailoring a DRZ400 and a KTM650. At the end of our trip, we sold everything and bought Honda Blades in Southeast Asia, riding through Cambodia, Laos, Thailand, Taiwan, and Vietnam covering over 23,000 kilometers.

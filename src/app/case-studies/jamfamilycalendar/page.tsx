@@ -15,11 +15,11 @@ import MediaFrame from "@/components/MediaFrame";
 const LottiePlayer = dynamic(() => import("@/components/LottiePlayer"), { ssr: false });
 
 export const metadata: Metadata = {
-  title: "Case Study 3 | Portfolio",
-  description: "Details for case study 3.",
+  title: "Jam Family Calendar | Portfolio",
+  description: "Simplified family scheduling with a responsive calendar.",
 };
 
-export default function CaseStudyThreePage() {
+export default function JamFamilyCalendarPage() {
   const sections = [
     { id: "theproblem", label: "The Problem" },
     { id: "businessgoal", label: "Business Goal" },
@@ -407,5 +407,6 @@ I looked at shared calendar setups from Apple and Google, along with task manage
     </main>
   );
 }
+
 
 

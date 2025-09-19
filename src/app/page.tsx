@@ -122,16 +122,16 @@ export default function Home() {
           <div className="mx-2 md:-mx-8 lg:-mx-16" id="cases">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
             <Card
-                href="/case-studies/case-2"
+                href="/case-studies/uoselfcheckout"
                 image="/images/uo-after.png"
-                title="Helped drive 9% revenue growth with a self-checkout program"
+                title="Urban Outfitters Self Checkout"
                 logo="/images/uo-logo.svg"
                 logoWidth={200}
                 logoClassName="md:py-1"
                 tags={[{ tag: "eCommerce" }, { tag: "Loyalty" }, { tag: "Point of Sale" }]}
               />
               <Card
-                href="/case-studies/case-1"
+                href="/case-studies/hiltonpropertypages"
                 image="/images/hilton-after.png"
                 title="Increased conversion and engagement on 7,000+ hotel property pages"
                 logo="/images/hilton-logo.svg"
@@ -140,9 +140,9 @@ export default function Home() {
               />
               
               <Card
-                href="/case-studies/case-3"
+                href="/case-studies/jamfamilycalendar"
                 image="/images/jam-dashexploration.png"
-                title="Simplified family scheduling with a responsive calendar"
+                title="Jam Family Calendar"
                 logo="/images/jam-logo.png"
                 tags={[{ tag: "SaaS" }, { tag: "User Flows" }, { tag: "Dashboards" }]}
                 renderImageOverlay={(hovered) => (
@@ -162,9 +162,9 @@ export default function Home() {
                 )}
               />
               <Card
-                href="/case-studies/case-4"
+                href="/case-studies/valeriejurado"
                 image="/images/val-nownextlater.png"
-                title="Brought 7x more contact form conversions to a high-end botanical designer"
+                title="Valerie Jurado"
                 logo="/images/val-logo.svg"
                 tags={[{ tag: "Responsive Web" }, { tag: "Growth Design" }, { tag: "Branding" }]}
               />
