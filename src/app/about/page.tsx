@@ -16,7 +16,7 @@ export default function AboutPage() {
     <main className="min-h-[60vh] py-8 sm:py-12 bg-[#0b0b0b]">
       <PageContainer>
       <section className="h-[67vh] md:h-[65vh] flex flex-col justify-center md:justify-start">
-      <h1 className="custom-h1 max-w-[28rem] md:max-w-[41rem] mb-22 mx-auto">I’m a Product Designer merging distinct craft, user experience and business goals. Advocate for accessibility and sustainable product design.</h1>
+      <h1 className="custom-h1 max-w-[28rem] md:max-w-[41rem] mb-22 mx-auto text-white">I’m a Product Designer merging distinct craft, user experience and business goals. Advocate for accessibility and sustainable product design.</h1>
       
       </section>
       </PageContainer>
@@ -93,7 +93,7 @@ export default function AboutPage() {
         <PageContainer className="mt-12">
         <div>
           <h1 className="custom-h1 text-white text-center mb-16">How I Started</h1>
-          <div className="grid grid-cols-1 mx-0 md:-mx-16 mb-16 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 mx-0 md:-mx-16 mb-16 md:grid-cols-3 gap-12 text-white">
           <Card
                 href=""
                 image="/images/uo-after.png"

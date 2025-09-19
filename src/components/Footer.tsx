@@ -9,11 +9,11 @@ export default function Footer() {
   const isCaseStudiesPage = pathname === "/case-studies" || pathname.startsWith("/case-studies/");
 
   return (
-    <footer className={`mb-16 ${isCaseStudiesPage ? "bg-[#FFFFFF] text-[#2C2C2C]" : ""}`}>
+    <footer className={`mb-16 ${isCaseStudiesPage ? "bg-[#FFFFFF] text-[#2C2C2C]" : "bg-[#0b0b0b] text-white"}`}>
       <PageContainer className="text-sm grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
       
      
-      <Link href="/" className="font-americana tracking-wide text-[24px] md:text-[24px] hover:opacity-80">
+      <Link href="/" className="font-americana tracking-wide text-[24px] md:text-[24px] hover:opacity-80 hidden md:block">
         molly reed
       </Link>
       <div className="min-w-0">

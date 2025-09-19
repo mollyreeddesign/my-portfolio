@@ -39,6 +39,14 @@ body {
   color: #2C2C2C;
 }
 
+/* Force true-black background on designated dark routes (home, about) */
+.dark-page-route {
+  --background: #0b0b0b;
+  --foreground: #ffffff;
+  background: #0b0b0b;
+  color: #ffffff;
+}
+
 html {
   scroll-behavior: smooth;
 }
