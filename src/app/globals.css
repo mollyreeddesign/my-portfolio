@@ -472,3 +472,33 @@ p,
   mask-size: contain;
 }
 
+/* Card overlay loop: gentle vertical drift + fade in/out */
+.card-overlay-loop {
+  animation: card-overlay-loop 7s linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes card-overlay-loop {
+  0% {
+    transform: translateY(300px);
+    opacity: 0.05;
+  }
+  10% {
+    opacity: 0.55;
+  }
+  
+90% {
+  opacity: 0.55;
+}
+  100% {
+    transform: translateY(-100px);
+    opacity: 0.05;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-overlay-loop {
+    animation: none;
+  }
+}
+

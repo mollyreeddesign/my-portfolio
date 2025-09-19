@@ -63,7 +63,7 @@ export default function Card({
           </div>
           {/* Custom overlay that can escape the frame */}
           {typeof renderImageOverlay === "function" ? (
-            <div className="pointer-events-none absolute inset-0 z-10 overflow-visible">
+            <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden group-hover:overflow-visible">
               {renderImageOverlay(isHovered)}
             </div>
           ) : null}

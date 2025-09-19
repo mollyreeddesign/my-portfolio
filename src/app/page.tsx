@@ -129,17 +129,6 @@ export default function Home() {
                 logoWidth={200}
                 logoClassName="md:py-1"
                 tags={[{ tag: "eCommerce" }, { tag: "Loyalty" }, { tag: "Point of Sale" }]}
-                renderImageOverlay={(hovered) => (
-                  <>
-                    {/* Example: floating receipt popping out of top-right */}
-                    <img
-                      src="/images/uo-cardanimation.gif"
-                      alt=""
-                      className={`${hovered ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 translate-y-10 rotate-3"} pointer-events-none select-none absolute -right-6 -top-8 w-28 h-auto drop-shadow-xl transition-all duration-500 ease-out`}
-                      aria-hidden
-                    />
-                  </>
-                )}
               />
               <Card
                 href="/case-studies/case-1"
@@ -156,6 +145,21 @@ export default function Home() {
                 title="Simplified family scheduling with a responsive calendar"
                 logo="/images/jam-logo.png"
                 tags={[{ tag: "SaaS" }, { tag: "User Flows" }, { tag: "Dashboards" }]}
+                renderImageOverlay={(hovered) => (
+                  <>
+                    {/* Floating receipt starts in-frame, gently drifts + fades, and slides out on hover */}
+                    <div
+                      className={`${hovered ? "translate-x-[28px] -translate-y-[28px]" : "translate-x-0 translate-y-0"} absolute right-3 top-3 transition-transform duration-300 ease-linear`}
+                    >
+                      <img
+                        src="/images/uo-cardanimation.gif"
+                        alt=""
+                        className="pointer-events-none select-none w-28 h-auto drop-shadow-xl card-overlay-loop"
+                        aria-hidden
+                      />
+                    </div>
+                  </>
+                )}
               />
               <Card
                 href="/case-studies/case-4"
