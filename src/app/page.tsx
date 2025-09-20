@@ -10,6 +10,7 @@ import { ChevronDown, ArrowUpRight, Download, Copy } from "lucide-react";
 import BackToTopButton from "@/components/BackToTopButton";
 import Image from "next/image";
 import LottieCover from "@/components/LottieCover";
+import JamCardScene from "@/components/JamCardScene";
 
 export default function Home() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -124,11 +125,59 @@ export default function Home() {
             <Card
                 href="/case-studies/uoselfcheckout"
                 image="/images/uo-after.png"
-                title="Urban Outfitters Self Checkout"
+                title="Helped drive 9% revenue growth with a self-checkout program"
                 logo="/images/uo-logo.svg"
                 logoWidth={200}
                 logoClassName="md:py-1"
                 tags={[{ tag: "eCommerce" }, { tag: "Loyalty" }, { tag: "Point of Sale" }]}
+                renderImageContent={(hovered) => (
+                  <div className="w-full h-full" style={{ backgroundColor: "#FFFFFF" }}>
+                    {/* Mobile: static cover image only */}
+                    <div className="absolute inset-0 block md:hidden">
+                      <img src="/images/home-uo-mobilecardcover.png" alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                    </div>
+                    {/* Desktop: animated composition */}
+                    <div className="absolute inset-0 hidden md:flex items-center justify-center">
+                      <div className="flex items-end justify-center w-[86%] h-[80%]">
+                      <img
+                          src="/images/home-uo-homecard5.png"
+                          alt=""
+                          className={`relative z-0 h-[80%] md:h-[80%] -translate-y-4 ${hovered ? "translate-x-[65px]" : "translate-x-[127px]"} rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 transition-transform duration-300 ease-out ${hovered ? "-translate-y-5 scale-110" : ""}`}
+                          loading="lazy"
+                        />
+                        <img
+                          src="/images/home-uo-homecard4.png"
+                          alt=""
+                          className={`relative z-5 h-[100%] md:h-[100%] translate-y-2 ${hovered ? "-translate-x-[90px]" : "-translate-x-[50px]"} rounded-md w-auto object-contain drop-shadow-md -mr-5 md:-mr-44 transition-transform duration-300 ease-out ${hovered ? "-translate-y-4 scale-110" : ""}`}
+                          loading="lazy"
+                        />
+                        <img
+                          src="/images/home-uo-homecard1.gif"
+                          alt=""
+                          className={`relative z-10 h-[120%] md:h-[120%] translate-y-7 translate-x-[22px] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-125" : ""}`}
+                          loading="lazy"
+                        />
+                        <img
+                          src="/images/home-uo-homecard2-1.png"
+                          alt=""
+                          className={`relative z-5 h-[100%] md:h-[100%] translate-y-2 translate-x-[50px] rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 transition-transform duration-300 ease-out ${hovered ? "translate-x-[90px] -translate-y-4 scale-110" : ""}`}
+                          loading="lazy"
+                        />
+                        <img
+                          src="/images/home-uo-homecard6.png"
+                          alt=""
+                          className={`relative z-0 h-[80%] md:h-[80%] -translate-y-4 translate-x-[50px] rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 transition-transform duration-300 ease-out ${hovered ? "translate-x-[110px] -translate-y-5 scale-110" : ""}`}
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                    {/* White overlay that fades from 20% to 0% on hover */}
+                    <div
+                      className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
+                    />
+                  </div>
+                )}
+                
               />
               <Card
                 href="/case-studies/hiltonpropertypages"
@@ -138,7 +187,7 @@ export default function Home() {
                 logoWidth={90}
                 tags={[{ tag: "eCommerce" }, { tag: "Design Systems" }, { tag: "User Testing" }]}
                 renderImageContent={(hovered) => (
-                  <div className="w-full h-full" style={{ backgroundColor: "#D3E7F5" }}>
+                  <div className="w-full rounded-md h-full" style={{ backgroundColor: "#D3E7F5" }}>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="flex items-end justify-center w-[86%] h-[80%]">
                         <img
@@ -172,31 +221,55 @@ export default function Home() {
               <Card
                 href="/case-studies/jamfamilycalendar"
                 image="/images/jam-dashexploration.png"
-                title="Jam Family Calendar"
+                title="Simplified family scheduling with a responsive calendar"
                 logo="/images/jam-logo.png"
                 tags={[{ tag: "SaaS" }, { tag: "User Flows" }, { tag: "Dashboards" }]}
-                renderImageOverlay={(hovered) => (
-                  <>
-                    {/* Floating receipt starts in-frame, gently drifts + fades, and slides out on hover */}
+                renderImageContent={(hovered) => (
+                  <div className="w-full rounded-md h-full" style={{ backgroundColor: "#EAF0FF" }}>
+                    <JamCardScene hovered={hovered} />
+                    {/* White overlay that fades from 20% to 0% on hover */}
                     <div
-                      className={`${hovered ? "translate-x-[28px] -translate-y-[28px]" : "translate-x-0 translate-y-0"} absolute right-3 top-3 transition-transform duration-300 ease-linear`}
-                    >
-                      <img
-                        src="/images/uo-cardanimation.gif"
-                        alt=""
-                        className="pointer-events-none select-none w-28 h-auto drop-shadow-xl card-overlay-loop"
-                        aria-hidden
-                      />
-                    </div>
-                  </>
+                      className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
+                    />
+                  </div>
                 )}
               />
               <Card
                 href="/case-studies/valeriejurado"
                 image="/images/val-nownextlater.png"
-                title="Valerie Jurado"
+                title="Brought 7x more contact form conversions to a high-end botanical designer"
                 logo="/images/val-logo.svg"
                 tags={[{ tag: "Responsive Web" }, { tag: "Growth Design" }, { tag: "Branding" }]}
+                renderImageContent={(hovered) => (
+                  <div className="w-full h-full" style={{ backgroundColor: "#000000" }}>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                       <div className="relative flex items-end justify-center w-[86%] h-[80%]">
+                        <img
+                          src="/images/ValFlowers-test.png"
+                          alt=""
+                          className={`relative z-0 h-[110%] md:h-[110%] rounded-md w-auto object-contain -mr-5 md:-mr-80 -translate-y-3 transition-transform duration-500 ease-out ${hovered ? "-translate-x-[40px] -translate-y-4 scale-120" : ""}`}
+                          loading="lazy"
+                        />
+                        <img
+                          src="/images/home-val-form.png"
+                          alt=""
+                           className={`absolute left-1/2 -translate-x-1/2 bottom-0 z-10 h-[90%] md:h-[90%] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-105" : ""}`}
+                          loading="lazy"
+                        />
+                        <img
+                          src="/images/ValFruit-test.png"
+                          alt=""
+                          className={`relative z-0 h-[110%] md:h-[110%] rounded-md w-auto object-contain -ml-20 md:ml-100 -translate-y-3 transition-transform duration-500 ease-out ${hovered ? "translate-x-[40px] -translate-y-4 scale-120" : ""}`}
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                    {/* White overlay that fades from 20% to 0% on hover */}
+                    <div
+                      className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
+                    />
+                  </div>
+                )}
               />
             </div>
           </div>
@@ -283,7 +356,7 @@ export default function Home() {
           I’ve been designing experiences in technology for people and businesses for over a decade.
           </p>
           <p className="mb-4 text-white/80">
-          With a background in visual design and industry experience in eCommerce, Telecom and Hospitality, I design experiences that bring real results.
+          With a background in visual design and industry experience in eCommerce, Telecom and Hospitality, I design products that bring real results.
           </p>
           <p className="text-white/80">
           Born and raised in Vermont, USA. Based in

@@ -474,24 +474,24 @@ p,
 
 /* Card overlay loop: gentle vertical drift + fade in/out */
 .card-overlay-loop {
-  animation: card-overlay-loop 7s linear infinite;
+  animation: card-overlay-loop 5s linear infinite;
   will-change: transform, opacity;
 }
 
 @keyframes card-overlay-loop {
   0% {
-    transform: translateY(300px);
+    transform: translateY(100px);
     opacity: 0.05;
   }
-  10% {
-    opacity: 0.55;
+  2% {
+    opacity: 0.95;
   }
   
-90% {
-  opacity: 0.55;
+95% {
+  opacity: 0.95;
 }
   100% {
-    transform: translateY(-100px);
+    transform: translateY(-200px);
     opacity: 0.05;
   }
 }
