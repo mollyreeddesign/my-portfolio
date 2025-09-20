@@ -118,7 +118,7 @@ export default function Home() {
       </div>
 
       </PageContainer>
-      <FullWidthSection backgroundColor="#f5f5f4" sectionClassName="scroll-mt-18 relative z-20" >
+      <FullWidthSection backgroundColor="#f5f5f4" sectionClassName="scroll-mt-18 relative z-20 overflow-x-hidden" >
         <PageContainer noPadding>
           <div className="mx-2 md:-mx-8 lg:-mx-16" id="cases">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
@@ -253,7 +253,7 @@ export default function Home() {
                         <img
                           src="/images/home-val-form.png"
                           alt=""
-                           className={`absolute left-1/2 -translate-x-1/2 bottom-0 z-10 h-[90%] md:h-[90%] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-105" : ""}`}
+                           className={`absolute left-1/2 -translate-x-1/2 bottom-2 z-10 h-[90%] md:h-[90%] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-105" : ""}`}
                           loading="lazy"
                         />
                         <img
