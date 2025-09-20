@@ -14,8 +14,8 @@ export default function JamCardScene({ hovered }: JamCardSceneProps) {
     <div className="absolute inset-0">
       <div className="relative w-full h-full">
         {/* Left stack */}
-        <div className="absolute bottom-6 left-8 flex flex-col gap-0 z-[5]">
-          <div className="relative w-[200px] h-[55px]">
+        <div className="absolute bottom-4 left-8 flex flex-col gap-0 z-[5] jam-stagger">
+          <div className="relative w-[150px] md:w-[200px] h-[25px] -mt-6">
             <div className="absolute inset-0 card-overlay-loop">
               <img
                 src="/images/home-jam-card/ToDo1.png"
@@ -25,7 +25,7 @@ export default function JamCardScene({ hovered }: JamCardSceneProps) {
               />
             </div>
           </div>
-          <div className="relative w-[200px] h-[55px] -mt-1">
+          <div className="relative w-[150px] md:w-[200px] h-[25px] -mt-6">
             <div className="absolute inset-0 card-overlay-loop">
               <img
                 src="/images/home-jam-card/ToDo2.png"
@@ -35,7 +35,17 @@ export default function JamCardScene({ hovered }: JamCardSceneProps) {
               />
             </div>
           </div>
-          <div className="relative w-[200px] h-[55px] -mt-1">
+          <div className="relative w-[150px] md:w-[200px] h-[25px] -mt-6">
+            <div className="absolute inset-0 card-overlay-loop">
+              <img
+                src="/images/home-jam-card/ToDo3.png"
+                alt=""
+                className={`h-full w-full object-contain drop-shadow-md transition-transform duration-300 ease-out transform-gpu ${hovered ? "-translate-x-[80px] scale-110" : "-translate-x-[20px]"}`}
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div className="relative w-[150px] md:w-[200px] h-[25px] -mt-6">
             <div className="absolute inset-0 card-overlay-loop">
               <img
                 src="/images/home-jam-card/ToDo4.png"
@@ -45,7 +55,7 @@ export default function JamCardScene({ hovered }: JamCardSceneProps) {
               />
             </div>
           </div>
-          <div className="relative w-[200px] h-[55px] -mt-1">
+          <div className="relative w-[150px] md:w-[200px] h-[25px] -mt-6">
             <div className="absolute inset-0 card-overlay-loop">
               <img
                 src="/images/home-jam-card/ToDo5.png"
@@ -55,6 +65,18 @@ export default function JamCardScene({ hovered }: JamCardSceneProps) {
               />
             </div>
           </div>
+          <div className="relative w-[150px] md:w-[200px] h-[25px] -mt-6">
+            <div className="absolute inset-0 card-overlay-loop">
+              <img
+                src="/images/home-jam-card/ToDo6.png"
+                alt=""
+                className={`h-full w-full object-contain drop-shadow-md transition-transform duration-300 ease-out transform-gpu ${hovered ? "-translate-x-[80px] scale-110" : "-translate-x-[20px]"}`}
+                loading="lazy"
+              />
+            </div>
+          </div>
+          
+          
         </div>
 
         {/* Center phone */}
@@ -66,27 +88,59 @@ export default function JamCardScene({ hovered }: JamCardSceneProps) {
         />
 
         {/* Right stack */}
-        <div className="absolute bottom-6 right-6 flex flex-col gap-0 z-[5]">
-          <div className="relative w-[88px] h-[72px] overflow-hidden">
-            <div className="absolute inset-0 card-overlay-loop">
+        <div className="absolute bottom-6 right-6 flex flex-col gap-0 z-[5] jam-stagger-right">
+          
+          <div className="relative w-[180px] h-[40px]">
+            <div className="absolute inset-0 card-overlay-loop -mt-6">
               <img
-                src="/images/home-jam-card/ToDo1.png"
+                src="/images/home-jam-card/Schedule2.png"
                 alt=""
-                className={`h-full w-full object-contain drop-shadow-md transition-transform duration-300 ease-out transform-gpu ${hovered ? "translate-x-[80px] scale-110" : "translate-x-[20px]"}`}
+                className={`h-full w-full object-contain drop-shadow-md transition-transform duration-300 ease-out transform-gpu ${hovered ? "translate-x-[50px] scale-110" : "translate-x-[20px]"}`}
                 loading="lazy"
               />
             </div>
           </div>
-          <div className="relative w-[88px] h-[72px] overflow-hidden -mt-1">
-            <div className="absolute inset-0 card-overlay-loop">
+          <div className="relative w-[180px] h-[40px]">
+            <div className="absolute inset-0 card-overlay-loop -mt-6">
               <img
-                src="/images/home-jam-card/ToDo2.png"
+                src="/images/home-jam-card/Schedule3.png"
                 alt=""
-                className={`h-full w-full object-contain drop-shadow-md transition-transform duration-300 ease-out transform-gpu ${hovered ? "translate-x-[80px] scale-110" : "translate-x-[20px]"}`}
+                className={`h-full w-full object-contain drop-shadow-md transition-transform duration-300 ease-out transform-gpu ${hovered ? "translate-x-[50px] scale-110" : "translate-x-[20px]"}`}
                 loading="lazy"
               />
             </div>
           </div>
+          <div className="relative w-[180px] h-[30px]">
+            <div className="absolute inset-0 card-overlay-loop -mt-6">
+              <img
+                src="/images/home-jam-card/Schedule4.png"
+                alt=""
+                className={`h-full w-full object-contain drop-shadow-md transition-transform duration-300 ease-out transform-gpu ${hovered ? "translate-x-[50px] scale-110" : "translate-x-[20px]"}`}
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div className="relative w-[180px] h-[40px]">
+            <div className="absolute inset-0 card-overlay-loop -mt-6">
+              <img
+                src="/images/home-jam-card/Schedule5.png"
+                alt=""
+                className={`h-full w-full object-contain drop-shadow-md transition-transform duration-300 ease-out transform-gpu ${hovered ? "translate-x-[50px] scale-110" : "translate-x-[20px]"}`}
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div className="relative w-[180px] h-[30px]">
+            <div className="absolute inset-0 card-overlay-loop -mt-6">
+              <img
+                src="/images/home-jam-card/Schedule6.png"
+                alt=""
+                className={`h-full w-full object-contain drop-shadow-md transition-transform duration-300 ease-out transform-gpu ${hovered ? "translate-x-[50px] scale-110" : "translate-x-[20px]"}`}
+                loading="lazy"
+              />
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
