@@ -141,31 +141,31 @@ export default function Home() {
                       <img
                           src="/images/home-uo-homecard5.png"
                           alt=""
-                          className={`relative z-0 h-[80%] md:h-[80%] -translate-y-4 ${hovered ? "translate-x-[65px]" : "translate-x-[127px]"} rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 transition-transform duration-300 ease-out ${hovered ? "-translate-y-5 scale-110" : ""}`}
+                          className={`relative z-0 h-[80%] md:h-[80%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 -translate-y-4 ${hovered ? "translate-x-[85px] -translate-y-5 scale-101" : "translate-x-[127px]"}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/home-uo-homecard4.png"
                           alt=""
-                          className={`relative z-5 h-[100%] md:h-[100%] translate-y-2 ${hovered ? "-translate-x-[90px]" : "-translate-x-[50px]"} rounded-md w-auto object-contain drop-shadow-md -mr-5 md:-mr-44 transition-transform duration-300 ease-out ${hovered ? "-translate-y-4 scale-110" : ""}`}
+                          className={`relative z-5 h-[100%] md:h-[100%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -mr-5 md:-mr-44 translate-y-2 ${hovered ? "-translate-x-[70px] -translate-y-4 scale-105" : "-translate-x-[50px]"}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/home-uo-homecard1.gif"
                           alt=""
-                          className={`relative z-10 h-[120%] md:h-[120%] translate-y-7 translate-x-[22px] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-125" : ""}`}
+                          className={`relative z-10 h-[120%] md:h-[120%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out translate-y-7 translate-x-[22px] ${hovered ? "-translate-y-1 scale-105" : ""}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/home-uo-homecard2-1.png"
                           alt=""
-                          className={`relative z-5 h-[100%] md:h-[100%] translate-y-2 translate-x-[50px] rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 transition-transform duration-300 ease-out ${hovered ? "translate-x-[90px] -translate-y-4 scale-110" : ""}`}
+                          className={`relative z-5 h-[100%] md:h-[100%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 translate-y-2 translate-x-[50px] ${hovered ? "translate-x-[70px] -translate-y-4 scale-105" : ""}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/home-uo-homecard6.png"
                           alt=""
-                          className={`relative z-0 h-[80%] md:h-[80%] -translate-y-4 translate-x-[50px] rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 transition-transform duration-300 ease-out ${hovered ? "translate-x-[110px] -translate-y-5 scale-110" : ""}`}
+                          className={`relative z-0 h-[80%] md:h-[80%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 -translate-y-4 translate-x-[50px] ${hovered ? "translate-x-[90px] -translate-y-5 scale-101" : ""}`}
                           loading="lazy"
                         />
                       </div>
@@ -192,19 +192,19 @@ export default function Home() {
                         <img
                           src="/images/hilton-hamptoninn.png"
                           alt=""
-                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -mr-5 md:-mr-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "-translate-x-[40px] -translate-y-4 scale-110" : ""}`}
+                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -mr-5 md:-mr-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "-translate-x-[25px] -translate-y-4 scale-105" : ""}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/hilton-doubletree.png"
                           alt=""
-                          className={`relative z-10 h-[100%] md:h-[100%] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-110" : ""}`}
+                          className={`relative z-10 h-[100%] md:h-[100%] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-105" : ""}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/hilton-embassysuites.png"
                           alt=""
-                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "translate-x-[40px] -translate-y-4 scale-110" : ""}`}
+                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "translate-x-[25px] -translate-y-4 scale-105" : ""}`}
                           loading="lazy"
                         />
                       </div>
@@ -260,7 +260,7 @@ export default function Home() {
                         <img
                           src="/images/ValFruit-test.png"
                           alt=""
-                          className={`relative z-0 h-[110%] md:h-[110%] rounded-md w-auto object-contain -ml-20 md:ml-100 -translate-y-3 transition-transform duration-500 ease-out ${hovered ? "translate-x-[40px] -translate-y-4 scale-120" : ""}`}
+                          className={`relative z-0 h-[120%] md:h-[120%] rounded-md w-auto object-contain -ml-20 md:ml-100 -translate-y-3 transition-transform duration-500 ease-out ${hovered ? "translate-x-[40px] -translate-y-4 scale-120" : ""}`}
                           loading="lazy"
                         />
                       </div>
