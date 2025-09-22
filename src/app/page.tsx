@@ -10,6 +10,7 @@ import { ChevronDown, ArrowUpRight, Download, Copy } from "lucide-react";
 import BackToTopButton from "@/components/BackToTopButton";
 import Image from "next/image";
 import LottieCover from "@/components/LottieCover";
+import Reveal from "@/components/Reveal";
 
 export default function Home() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -70,8 +71,10 @@ export default function Home() {
   return (
     <main className="py-16 sm:py-32 bg-[#0b0b0b]">
       <PageContainer>
+      
        <div ref={pinWrapperRef} className="relative overflow-x-hidden">
         <section ref={sectionRef} className="fixed left-0 right-0 top-40 h-[67vh] md:h-[65vh] flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
+          
         <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[500px] -translate-y-[67px] md:-translate-y-[180px] w-[720px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms ease" }}>
           <Image
             src="/images/home-skylight.png"
@@ -82,6 +85,7 @@ export default function Home() {
             priority
           />
         </div>
+       
         <div className="text-center my-2 md:-my-16">
         <div className="mx-auto mb-6 w-40 h-20 md:w-60 md:h-30 relative">
           <video
@@ -119,6 +123,7 @@ export default function Home() {
       </PageContainer>
       <FullWidthSection backgroundColor="#f5f5f4" sectionClassName="scroll-mt-18 relative z-20 overflow-x-hidden" >
         <PageContainer noPadding>
+          <Reveal>
           <div className="mx-2 md:-mx-8 lg:-mx-16" id="cases">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
             <Card
@@ -274,44 +279,55 @@ export default function Home() {
               />
             </div>
           </div>
+          </Reveal>
         </PageContainer>
       </FullWidthSection>
       <FullWidthSection backgroundColor="#0b0b0b">
         <PageContainer className="py-22 md:py-32 text-center">
         <div>
+          <Reveal>
           <h1 className="custom-h1 text-white mb-4">Proven by Experience</h1>
+          </Reveal>
+          <Reveal delayMs={120}>
           <p className="mb-8 text-white/80 max-w-[18rem] md:max-w-none mx-auto">
           Employing a foundation in visual design, a career in user experience and a gritty work ethic.
           </p>
+          </Reveal>
           <div className="flex flex-col md:flex-row justify-center gap-6">
-           <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex">
-             LinkedIn
-             <ArrowUpRight />
-           </Link>
-           <Link href="/case-studies/case-4" className="btn btn--secondary-white inline-flex">
-             Download CV
-             <Download />
-           </Link>
-          <button
-            type="button"
-            className="btn btn--secondary-white inline-flex"
-            onClick={() => {
-              const email = "mollyreeddesign@gmail.com";
-              if (navigator?.clipboard?.writeText) {
-                navigator.clipboard.writeText(email);
-              } else {
-                const t = document.createElement("textarea");
-                t.value = email;
-                document.body.appendChild(t);
-                t.select();
-                document.execCommand("copy");
-                document.body.removeChild(t);
-              }
-            }}
-          >
-            Copy Email
-            <Copy />
-          </button>
+           <Reveal delayMs={240}>
+             <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex">
+               LinkedIn
+               <ArrowUpRight />
+             </Link>
+           </Reveal>
+           <Reveal delayMs={360}>
+             <Link href="/case-studies/case-4" className="btn btn--secondary-white inline-flex">
+               Download CV
+               <Download />
+             </Link>
+           </Reveal>
+           <Reveal delayMs={480}>
+            <button
+              type="button"
+              className="btn btn--secondary-white inline-flex"
+              onClick={() => {
+                const email = "mollyreeddesign@gmail.com";
+                if (navigator?.clipboard?.writeText) {
+                  navigator.clipboard.writeText(email);
+                } else {
+                  const t = document.createElement("textarea");
+                  t.value = email;
+                  document.body.appendChild(t);
+                  t.select();
+                  document.execCommand("copy");
+                  document.body.removeChild(t);
+                }
+              }}
+            >
+              Copy Email
+              <Copy />
+            </button>
+           </Reveal>
            </div>
         </div>
         </PageContainer>
@@ -319,27 +335,34 @@ export default function Home() {
       <FullWidthSection backgroundColor="#f5f5f4">
         <PageContainer className="py-18 md:py-28">
         <div>
+        <Reveal>
         <h1 className="custom-h1 text-black text-center mb-10">How I Work</h1>
+        </Reveal>
         <div className="mx-8 md:-mx-8 lg:-mx-16 grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div>
-        <h3 className="custom-h3 text-black mb-2">Align</h3>
-        <p className="text-black/80">
-        I bring together key business objectives, user/competitor research and product goals.
-        I define scope early on.</p>
-          </div>
+          <Reveal>
           <div>
-        <h3 className="custom-h3 text-black mb-2">Create</h3>
-        <p className="text-black/80">
-        I build working prototypes and validate with testing often. 
-        I don't design in a silo, I bring stakeholders along.</p>
-        
+            <h3 className="custom-h3 text-black mb-2">Align</h3>
+            <p className="text-black/80">
+            I bring together key business objectives, user/competitor research and product goals.
+            I define scope early on.</p>
           </div>
+          </Reveal>
+          <Reveal delayMs={120}>
           <div>
-        <h3 className="custom-h3 text-black mb-2">Execute</h3>
-        <p className="text-black/80">
-        I synthesize research, strategy, and design into a final product.
-       I maintain my craft from start to finish.</p>
+            <h3 className="custom-h3 text-black mb-2">Create</h3>
+            <p className="text-black/80">
+            I build working prototypes and validate with testing often. 
+            I don't design in a silo, I bring stakeholders along.</p>
           </div>
+          </Reveal>
+          <Reveal delayMs={240}>
+          <div>
+            <h3 className="custom-h3 text-black mb-2">Execute</h3>
+            <p className="text-black/80">
+            I synthesize research, strategy, and design into a final product.
+           I maintain my craft from start to finish.</p>
+          </div>
+          </Reveal>
           </div>
           </div>
           
@@ -347,12 +370,18 @@ export default function Home() {
       </FullWidthSection>
       <FullWidthSection backgroundColor="#0b0b0b">
         <PageContainer noPadding  className="-mb-6 md:-mb-22">
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+          <Reveal>
           <div>
             <Image src="/images/home-about.png" alt="About" unoptimized width={600} height={600} className="rounded-lg object-cover mx-auto mb-6" style={{ aspectRatio: '1/1' }} />
             </div>
+            </Reveal>
             <div>
+              <Reveal>
           <h1 className="custom-h1 text-white mb-4 md:mb-6">I'm a product designer, web designer and artist.</h1>
+          </Reveal>
+          <Reveal delayMs={120}>
           <p className="mb-4 text-white/80">
           I’ve been designing experiences in technology for people and businesses for over a decade.
           </p>
@@ -368,6 +397,7 @@ export default function Home() {
           <p className="mb-14 md:mb-10 text-white/80">
           Painter, gardener, hiker and motorcyclist.
           </p>
+          
           <div className="flex flex-col md:flex-row gap-6">
           <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex">
              LinkedIn
@@ -378,12 +408,15 @@ export default function Home() {
              <ArrowUpRight />
            </Link>
            </div>
+           </Reveal>
           </div>
         </div>
+        
         </PageContainer>
       </FullWidthSection>
       <FullWidthSection noPadding backgroundColor="#0b0b0b">
         <PageContainer className="-mb-18 md:-mb-48">
+        <Reveal>
         <div className="grid grid-cols-1 mb-22 md:grid-cols-2 gap-12">
           <div className="p-6 md:p-8 bg-white/10 border border-white/30 rounded-lg h-full flex flex-col">
             <p className="text-white/80 mb-8">“Molly was my absolute favorite UI design partner at Hilton. She was quick and receptive to feedback, adapting quickly to stakeholder demands. When in doubt, her own skills and leadership abilities were showcased as she quickly made executive level decisions based on team feedback for overall product success. She was a limited resource, and we made sure to openly and expressively fight for her attentions. She will delight anyone that hires her with her creative abilities and fast approach to art and design.”</p>
@@ -409,9 +442,12 @@ export default function Home() {
             </Link>
             </div>
         </div>
+        </Reveal>
+        <Reveal delayMs={75}>
         <div className="text-center">
         <BackToTopButton className="btn btn--white inline-flex gap-2" label="Back to Top" />
       </div>
+        </Reveal>
         
         </PageContainer>
       </FullWidthSection>
