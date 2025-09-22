@@ -10,7 +10,6 @@ import { ChevronDown, ArrowUpRight, Download, Copy } from "lucide-react";
 import BackToTopButton from "@/components/BackToTopButton";
 import Image from "next/image";
 import LottieCover from "@/components/LottieCover";
-import JamCardScene from "@/components/JamCardScene";
 
 export default function Home() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -225,12 +224,14 @@ export default function Home() {
                 logo="/images/jam-logo.png"
                 tags={[{ tag: "SaaS" }, { tag: "User Flows" }, { tag: "Dashboards" }]}
                 renderImageContent={(hovered) => (
-                  <div className="w-full rounded-md h-full" style={{ backgroundColor: "#EAF0FF" }}>
-                    <JamCardScene hovered={hovered} />
-                    {/* White overlay that fades from 20% to 0% on hover */}
-                    <div
-                      className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
-                    />
+                  <div className="w-full h-full">
+                    <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.03]" : "scale-100"}`} style={{ backgroundColor: "#EAF0FF" }}>
+                      <LottieCover src="/animations/home-jam-card.json" className="rounded-md" fit="cover" />
+                      {/* White overlay that fades from 20% to 0% on hover */}
+                      <div
+                        className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
+                      />
+                    </div>
                   </div>
                 )}
               />

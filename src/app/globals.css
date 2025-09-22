@@ -447,18 +447,6 @@ p,
   }
 }
 
-/* Subtle chevron down animation: fade in/out with small downward motion */
-.animated-chevron-down {
-  opacity: 0.6;
-  animation: chevron-float 2.4s ease-in-out infinite;
-}
-
-@keyframes chevron-float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-  100% { transform: translateY(0); }
-}
-
 /* Mask for home hero sky video using existing PNG shape */
 .home-sky-mask {
   display: block;
@@ -472,51 +460,7 @@ p,
   mask-size: contain;
 }
 
-/* Card overlay loop: gentle vertical drift + fade in/out */
-.card-overlay-loop {
-  animation: card-overlay-loop 5s linear infinite;
-  will-change: transform, opacity;
-}
 
-@keyframes card-overlay-loop {
-  0% {
-    transform: translateY(200px);
-    opacity: 0.05;
-  }
-  2% {
-    opacity: 0.95;
-  }
-  
-95% {
-  opacity: 0.95;
-}
-  100% {
-    transform: translateY(-300px);
-    opacity: 0.05;
-  }
-}
-
-/* Stagger helper for Jam left stack */
-.jam-stagger > div:nth-child(1) .card-overlay-loop { animation-delay: 0s; }
-.jam-stagger > div:nth-child(2) .card-overlay-loop { animation-delay: 0.8s; }
-.jam-stagger > div:nth-child(3) .card-overlay-loop { animation-delay: 1.6s; }
-.jam-stagger > div:nth-child(4) .card-overlay-loop { animation-delay: 2.4s; }
-.jam-stagger > div:nth-child(5) .card-overlay-loop { animation-delay: 3.2s; }
-.jam-stagger > div:nth-child(6) .card-overlay-loop { animation-delay: 4s; }
-.jam-stagger > div:nth-child(7) .card-overlay-loop { animation-delay: 4.8s; }
-.jam-stagger > div:nth-child(8) .card-overlay-loop { animation-delay: 5.6s; }
-.jam-stagger > div:nth-child(9) .card-overlay-loop { animation-delay: 6.4s; }
-
-/* Stagger helper for Jam right stack */
-.jam-stagger-right > div:nth-child(1) .card-overlay-loop { animation-delay: 0s; }
-.jam-stagger-right > div:nth-child(2) .card-overlay-loop { animation-delay: 1.3s; }
-.jam-stagger-right > div:nth-child(3) .card-overlay-loop { animation-delay: 1.6s; }
-.jam-stagger-right > div:nth-child(4) .card-overlay-loop { animation-delay: 2.4s; }
-.jam-stagger-right > div:nth-child(5) .card-overlay-loop { animation-delay: 3.2s; }
-.jam-stagger-right > div:nth-child(6) .card-overlay-loop { animation-delay: 4s; }
-.jam-stagger-right > div:nth-child(7) .card-overlay-loop { animation-delay: 4.8s; }
-.jam-stagger-right > div:nth-child(8) .card-overlay-loop { animation-delay: 5.6s; }
-.jam-stagger-right > div:nth-child(9) .card-overlay-loop { animation-delay: 6.4s; }
 
 @media (prefers-reduced-motion: reduce) {
   .card-overlay-loop {
