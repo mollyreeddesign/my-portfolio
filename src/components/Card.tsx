@@ -17,6 +17,12 @@ type CardProps = {
   className?: string;
   imageClassName?: string;
   imageContainerClassName?: string;
+  /** Remove the border around the image frame */
+  noFrameBorder?: boolean;
+  /** Disable hover animations (scale, shadow, overflow changes) */
+  disableHover?: boolean;
+  /** Disable pointer cursor and prevent navigation on click */
+  disablePointer?: boolean;
   /**
    * Optional render prop to draw custom overlay/layers around the image area.
    * Useful for per-card hover animations that can escape the image frame.
@@ -43,6 +49,9 @@ export default function Card({
   className,
   imageClassName,
   imageContainerClassName,
+  noFrameBorder,
+  disableHover,
+  disablePointer,
   renderImageOverlay,
   renderImageContent,
 }: CardProps) {
@@ -66,19 +75,26 @@ export default function Card({
     }
   }, []);
 
-  const effectiveHovered = canHover && isHovered;
+  const hoverEnabled = !disableHover;
+  const effectiveHovered = hoverEnabled && canHover && isHovered;
   const hasLongDescription = typeof description === "string" && description.trim().length > 120;
   return (
     <Link
       href={href}
-      className={`group block h-full ${className ?? ""}`}
+      className={`${hoverEnabled ? "group" : ""} block h-full ${disablePointer ? "cursor-default" : ""} ${className ?? ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={(e) => {
+        if (disablePointer) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }}
     >
       <div className="flex h-full flex-col">
         <div className={`relative w-full aspect-[3/2] ${imageContainerClassName ?? ""}`}>
           {/* Cropped image frame */}
-          <div className="relative h-full w-full border rounded-md overflow-hidden md:group-hover:overflow-visible z-0 transition-shadow duration-300 ease-out group-hover:shadow-md">
+          <div className={`relative h-full w-full ${noFrameBorder ? "" : "border"} rounded-md overflow-hidden ${hoverEnabled ? "md:group-hover:overflow-visible" : ""} z-0 transition-shadow duration-300 ease-out ${hoverEnabled ? "group-hover:shadow-md" : ""}`}>
             {typeof renderImageContent === "function" ? (
               <div className="absolute inset-0">
                 {renderImageContent(effectiveHovered)}
@@ -87,14 +103,14 @@ export default function Card({
               <img
                 src={image}
                 alt={title}
-                className={`absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03] ${imageClassName ?? ""}`}
+                className={`absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-out ${hoverEnabled ? "group-hover:scale-[1.03]" : ""} ${imageClassName ?? ""}`}
                 loading="lazy"
               />
             )}
           </div>
           {/* Custom overlay that can escape the frame */}
           {typeof renderImageOverlay === "function" ? (
-            <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden group-hover:overflow-visible">
+            <div className={`pointer-events-none absolute inset-0 z-10 overflow-hidden ${hoverEnabled ? "group-hover:overflow-visible" : ""}`}>
               {renderImageOverlay(effectiveHovered)}
             </div>
           ) : null}

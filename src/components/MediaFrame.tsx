@@ -302,7 +302,7 @@ function ZoomableMedia({ children }: { children: ReactNode }) {
           <button
             type="button"
             onClick={() => setScale((s) => Math.min(8, s * 1.1))}
-            className="inline-flex items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 border border-gray-200 shadow-sm px-3 py-1 text-sm"
+            className="inline-flex items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 border border-gray-200 shadow-sm px-3 py-1 text-sm text-black"
             aria-label="Zoom in"
           >
             +
@@ -310,7 +310,7 @@ function ZoomableMedia({ children }: { children: ReactNode }) {
           <button
             type="button"
             onClick={() => setScale((s) => Math.max(1, s / 1.1))}
-            className="inline-flex items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 border border-gray-200 shadow-sm px-3 py-1 text-sm"
+            className="inline-flex items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 border border-gray-200 shadow-sm px-3 py-1 text-sm text-black"
             aria-label="Zoom out"
           >
             −
@@ -318,7 +318,7 @@ function ZoomableMedia({ children }: { children: ReactNode }) {
           <button
             type="button"
             onClick={reset}
-            className="inline-flex items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 border border-gray-200 shadow-sm px-3 py-1 text-sm"
+            className="inline-flex items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 border border-gray-200 shadow-sm px-3 py-1 text-sm text-black"
             aria-label="Reset zoom"
           >
             Reset

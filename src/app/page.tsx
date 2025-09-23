@@ -17,6 +17,7 @@ export default function Home() {
   const [skyLightOpacity, setSkyLightOpacity] = useState(0.05);
   const pinWrapperRef = useRef<HTMLDivElement | null>(null);
   const [heroHidden, setHeroHidden] = useState(false);
+  const [isAlignHovered, setIsAlignHovered] = useState(false);
   const videoSources = [
     "/videos/home-skyvideo.mp4",
     "/videos/sunset-loop.mp4",
@@ -332,15 +333,21 @@ export default function Home() {
         </div>
         </PageContainer>
       </FullWidthSection>
-      <FullWidthSection backgroundColor="#f5f5f4">
-        <PageContainer className="py-18 md:py-28">
+      <FullWidthSection backgroundColor="#f5f5f4" sectionClassName="relative overflow-hidden">
+        <div
+          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[1] pointer-events-none -rotate-90 transition-opacity duration-300 ${isAlignHovered ? 'opacity-80' : 'opacity-0'}`}
+          style={{ width: 'max(100vw, 100vh)', height: 'max(100vw, 100vh)' }}
+        >
+          <LottieCover src="/animations/home-pulsinglines.json" fit="cover" />
+        </div>
+        <PageContainer className="py-18 md:py-28 relative z-10">
         <div>
         <Reveal>
         <h1 className="custom-h1 text-black text-center mb-10">How I Work</h1>
         </Reveal>
         <div className="mx-8 md:-mx-8 lg:-mx-16 grid grid-cols-1 md:grid-cols-3 gap-12">
           <Reveal>
-          <div>
+          <div className="bg-[#f5f5f4] rounded-lg p-4" onMouseEnter={() => setIsAlignHovered(true)} onMouseLeave={() => setIsAlignHovered(false)}>
             <h3 className="custom-h3 text-black mb-2">Align</h3>
             <p className="text-black/80">
             I bring together key business objectives, user/competitor research and product goals.
@@ -348,7 +355,7 @@ export default function Home() {
           </div>
           </Reveal>
           <Reveal delayMs={120}>
-          <div>
+          <div className="bg-[#f5f5f4] rounded-lg p-4">
             <h3 className="custom-h3 text-black mb-2">Create</h3>
             <p className="text-black/80">
             I build working prototypes and validate with testing often. 
@@ -356,7 +363,7 @@ export default function Home() {
           </div>
           </Reveal>
           <Reveal delayMs={240}>
-          <div>
+          <div className="bg-[#f5f5f4] rounded-lg p-4">
             <h3 className="custom-h3 text-black mb-2">Execute</h3>
             <p className="text-black/80">
             I synthesize research, strategy, and design into a final product.

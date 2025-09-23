@@ -115,31 +115,46 @@ export default function AboutPage() {
           <Reveal>
           <Card
                 href=""
-                image="/images/uo-after.png"
+                image="/images/about-plant.png"
+                imageClassName="opacity-90"
                 title="Early"
                 titleClassName="text-white"
+                imageContainerClassName="border-0 p-2 bg-white/95 rounded-lg"
+                noFrameBorder
+                disableHover
+                disablePointer
                 description="I’ve always been fascinated by telling stories through art and technology. Since I was little, I’ve been drawing and writing books, usually several at a time. My earliest memories of using our family computer was using Photoshop to color my own graphic novels and Windows Media Player to make my own short movies and animations.
 Naturally, I gravitated toward graphic design where I discovered a love for building websites. I could tell a story that combined all my interests: writing, drawing, animation, and interaction. I graduated in 2017 from the University of the Arts in Philadelphia with a BFA in Graphic Design, with a strong focus on web."
               />
               </Reveal>
               <Reveal delayMs={120}>
               <Card
-                href="/case-studies/uoselfcheckout"
-                image="/images/uo-after.png"
+                href=""
+                image="/images/about-butter.png"
+                imageContainerClassName="border-0 p-2 bg-white/95 rounded-lg"
+                imageClassName="opacity-90 bg-black"
+                noFrameBorder
+                disableHover
+                disablePointer
                 title="Career"
-                description="I launched my career in UI Design at Urban Outfitters HQ in Philadelphia, where I honed my skills in visual design and user experience. In 2018, I moved to LA to design for a boutique telecom company, learning how to build B2B products that met real business goals and thinking beyond just UI. In 2022, I returned to my hometown in Vermont and worked remotely for Hilton Hotels across five agile web product teams, pulling in user research, business goals, and visual design to deliver measurable results. Throughout these roles, I’ve worked closely with engineers, product managers, and stakeholders with tools like Figma, Miro, and Jira to bring ideas from concept to launch."
+                description="I launched my career in UI Design at Urban Outfitters HQ in Philadelphia, where I honed my skills in visual design and user experience. In 2018, I moved to LA to design for a boutique telecom company, learning how to build B2B products that met real business goals and thinking beyond just UI. In 2022, I returned to my hometown in Vermont and worked remotely for Hilton Hotels across five agile web product teams, pulling in user research, business goals, and visual design to deliver measurable results. Throughout these roles, I’ve worked closely with engineers, product managers, and stakeholders to bring ideas from concept to launch."
                 titleClassName="text-white"
               />
               </Reveal>
               <Reveal delayMs={240}>
               <Card
-                href="/case-studies/uoselfcheckout"
-                image="/images/uo-after.png"
+                href=""
+                image="/images/about-clip.png"
                 title="Recently"
+                imageContainerClassName="border-0 p-2 bg-white/95 rounded-lg"
+                imageClassName="opacity-90"
+                noFrameBorder
+                disableHover
+                disablePointer
                 description="Recently, I’ve had the good fortune to travel extensively with my husband, Kai. We lived in a campervan in New Zealand for nine months, trailoring a DRZ400 and a KTM650. At the end of our trip, we sold everything and bought Honda Blades in Southeast Asia, riding through Cambodia, Laos, Thailand, Taiwan, and Vietnam covering over 23,000 kilometers.
                 
 These days, I’m based in a small town outside Zurich, Switzerland. When I’m not designing, you’ll find me hiking, gardening, traveling, cooking, learning German, drawing, riding motorcycles, or catching a show.
-Explore my work, read my journal, or reach out if you’d like to chat."
+Explore my work, or reach out if you'd like to connect!"
                 titleClassName="text-white"
               />
               </Reveal>
