@@ -25,7 +25,7 @@ export default function ArtPage() {
       <p className="text-base/7 text-foreground/80">
         Work I've done for fun, school and for clients.
       </p>
-      <div className="mt-6 grid grid-cols-2 gap-4">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
         {artImages.map((img, idx) => (
           <MediaFrame
             key={`${img.src}-${idx}`}

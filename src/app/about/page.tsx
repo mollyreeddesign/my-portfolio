@@ -23,6 +23,7 @@ export default function AboutPage() {
         backgroundSweepDurationSec={8}
         backgroundSweepMaxOpacity={0.6}
         backgroundRadialMask
+        backgroundSweepHideOnMobile
         noPadding
         sectionClassName="h-[67vh] md:h-[85vh] -mt-[72px] md:-mt-[88px] flex items-center justify-center"
       >
@@ -34,7 +35,7 @@ export default function AboutPage() {
       <FullWidthSection backgroundColor="#f5f5f4">
         <PageContainer noPadding className="mb-16 sm:mb-24">
         <Reveal>
-        <Image src="/images/about-smallportrait.png" alt="About Me" width={130} height={130} className="-mt-20 mb-8 mx-auto rounded-full" />
+        <Image src="/images/about-smallportrait.png" alt="About Me" width={130} height={130} className="-mt-4 md:-mt-20 mb-8 mx-auto rounded-full" />
         </Reveal>
         <div className="mx-auto flex flex-col">
       <Reveal>
