@@ -62,10 +62,13 @@ export default function MediaFrame({
   caption,
   modalAriaLabel = "Expanded media",
 }: MediaFrameProps) {
-  const containerStyle: CSSProperties = {
-    aspectRatio: typeof aspectRatio === "number" ? String(aspectRatio) : aspectRatio,
-    ...style,
-  };
+  const isFluid = aspectRatio === "auto";
+  const containerStyle: CSSProperties = isFluid
+    ? { ...style }
+    : {
+        aspectRatio: typeof aspectRatio === "number" ? String(aspectRatio) : aspectRatio,
+        ...style,
+      };
 
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -102,7 +105,8 @@ export default function MediaFrame({
     <>
       <div
         className={cn(
-          "relative w-full overflow-hidden mb-4",
+          "relative w-full mb-4",
+          isFluid ? "overflow-visible" : "overflow-hidden",
           backgroundClassName,
           roundedClassName,
           modalEnabled && "cursor-zoom-in",
@@ -121,7 +125,11 @@ export default function MediaFrame({
         }}
         aria-label={modalEnabled ? "Open media in a larger view" : undefined}
       >
-        <div className={cn("absolute inset-0 flex items-center justify-center", padding, contentClassName)}>{children}</div>
+        {isFluid ? (
+          <div className={cn(padding, contentClassName)}>{children}</div>
+        ) : (
+          <div className={cn("absolute inset-0 flex items-center justify-center", padding, contentClassName)}>{children}</div>
+        )}
       </div>
 
       {modalEnabled && isOpen && (

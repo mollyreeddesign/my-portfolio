@@ -312,16 +312,16 @@ export default function CaseStudyTwoPage() {
               <p className="p mb-4 md:mb-12">
   After handoff, I collaborated closely with software engineering to fine-tune details such as animations and spacing. The touchscreen kiosks with the new UI were installed in Herald Square in August 2018.
               </p>
-              <MediaFrame aspectRatio="3 / 2" padding="p-4" contentClassName="block" enableModal>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
-    <div className="relative overflow-hidden shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
-      <Image src="/images/uo-flatselfcheckout-2.png" alt="UO flat self checkout screen 2" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+              <MediaFrame aspectRatio="auto" padding="p-4" contentClassName="block" enableModal>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+    <div className="relative shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
+      <Image src="/images/uo-flatselfcheckout-2.png" alt="UO flat self checkout screen 2" fill unoptimized className="object-contain object-center" sizes="100vw" />
     </div>
-    <div className="relative overflow-hidden shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
-      <Image src="/images/uo-flatselfcheckout-3.png" alt="UO flat self checkout screen 3" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+    <div className="relative shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
+      <Image src="/images/uo-flatselfcheckout-3.png" alt="UO flat self checkout screen 3" fill unoptimized className="object-contain object-center" sizes="100vw" />
     </div>
-    <div className="relative overflow-hidden shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
-      <Image src="/images/uo-cardanimation.gif" alt="UO card animation" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" unoptimized />
+    <div className="relative shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
+      <Image src="/images/uo-cardanimation.gif" alt="UO card animation" fill className="object-contain object-center" sizes="100vw" unoptimized />
     </div>
   </div>
 </MediaFrame>
