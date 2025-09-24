@@ -9,6 +9,7 @@ type FullWidthSectionProps = {
   backgroundSweepDurationSec?: number; // animation duration in seconds
   backgroundSweepMaxOpacity?: number; // max combined opacity (base + sweep) at center, 0-1
   backgroundRadialMask?: boolean; // fade image to 0 at edges, peak at center
+  backgroundSweepHideOnMobile?: boolean; // hide sweep overlay on mobile (< md)
   children: React.ReactNode;
   useContainer?: boolean;
   sectionClassName?: string;
@@ -23,6 +24,7 @@ export default function FullWidthSection({
   backgroundSweepDurationSec,
   backgroundSweepMaxOpacity,
   backgroundRadialMask = false,
+  backgroundSweepHideOnMobile = false,
   children,
   useContainer = true,
   sectionClassName,
@@ -75,7 +77,7 @@ export default function FullWidthSection({
       {shouldUseSweep && (
         <div
           aria-hidden="true"
-          className="background-sweep-overlay"
+          className={`background-sweep-overlay ${backgroundSweepHideOnMobile ? "hidden md:block" : ""}`}
           style={{ backgroundImage: `url(${backgroundImage})`, animationDuration: `${sweepDuration}s`, opacity: overlayOpacity }}
         />
       )}

@@ -294,6 +294,7 @@ export default function Home() {
         backgroundSweepDurationSec={8}
         backgroundSweepMaxOpacity={0.6}
         backgroundRadialMask
+        backgroundSweepHideOnMobile
       >
         <PageContainer className="py-22 md:py-32 text-center">
         <div>
@@ -307,13 +308,13 @@ export default function Home() {
           </Reveal>
           <div className="flex flex-col md:flex-row justify-center gap-6">
            <Reveal delayMs={240}>
-             <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex">
+             <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center">
                LinkedIn
                <ArrowUpRight />
              </Link>
            </Reveal>
            <Reveal delayMs={360}>
-             <Link href="/case-studies/case-4" className="btn btn--secondary-white inline-flex">
+             <Link href="/case-studies/case-4" className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center">
                Download CV
                <Download />
              </Link>
@@ -321,7 +322,7 @@ export default function Home() {
            <Reveal delayMs={480}>
             <button
               type="button"
-              className="btn btn--secondary-white inline-flex"
+              className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center"
               onClick={() => {
                 const email = "mollyreeddesign@gmail.com";
                 if (navigator?.clipboard?.writeText) {
@@ -484,11 +485,11 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col md:flex-row gap-6">
-          <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex">
+          <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center">
              LinkedIn
              <ArrowUpRight />
            </Link>
-            <Link href="/about" className="btn btn--white inline-flex">
+            <Link href="/about" className="btn btn--white inline-flex w-full md:w-auto justify-center">
              More About Me
              <ArrowUpRight />
            </Link>
@@ -530,7 +531,7 @@ export default function Home() {
         </Reveal>
         <Reveal delayMs={75}>
         <div className="text-center">
-        <BackToTopButton className="btn btn--white inline-flex gap-2" label="Back to Top" />
+        <BackToTopButton className="btn btn--white inline-flex gap-2 w-full md:w-auto justify-center" label="Back to Top" />
       </div>
         </Reveal>
         

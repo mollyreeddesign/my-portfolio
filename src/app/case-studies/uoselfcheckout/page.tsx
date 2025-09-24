@@ -210,7 +210,7 @@ export default function CaseStudyTwoPage() {
               <p className="p mb-4">
               In 2018, Urban Outfitters planned to initiate a pilot self-checkout program at its flagship store in Herald Square, New York City. The aim was to stay competitive with other retailers testing self checkout and cater to their younger tech-savvy audience with new touchscreen kiosks.
               </p>
-              <p className="p mb-12 md:mb-12">
+              <p className="p mb-12">
               The point of sale 'Elo' kiosks came with a default software that had a poor user experience and confusing information architecture that did not reflect the Urban Outfitters brand.
               </p>
               
