@@ -130,6 +130,7 @@ export default function Home() {
           <Reveal>
           <div className="mx-2 md:-mx-8 lg:-mx-16" id="cases">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
+            <div className="order-2 md:order-none">
             <Card
                 href="/case-studies/uoselfcheckout"
                 image="/images/uo-after.png"
@@ -187,6 +188,8 @@ export default function Home() {
                 )}
                 
               />
+              </div>
+              <div className="order-1 md:order-none">
               <Card
                 href="/case-studies/hiltonpropertypages"
                 image="/images/hilton-after.png"
@@ -225,7 +228,9 @@ export default function Home() {
                   </div>
                 )}
               />
+              </div>
               
+              <div className="order-3 md:order-none">
               <Card
                 href="/case-studies/jamfamilycalendar"
                 image="/images/jam-dashexploration.png"
@@ -244,6 +249,8 @@ export default function Home() {
                   </div>
                 )}
               />
+              </div>
+              <div className="order-4 md:order-none">
               <Card
                 href="/case-studies/valeriejurado"
                 image="/images/val-nownextlater.png"
@@ -281,6 +288,7 @@ export default function Home() {
                   </div>
                 )}
               />
+              </div>
             </div>
           </div>
           </Reveal>

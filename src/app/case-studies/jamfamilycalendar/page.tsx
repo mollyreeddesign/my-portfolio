@@ -379,7 +379,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                     </a>
                   </div>
                   {/* Desktop: Store badges pinned to bottom */}
-                  <div className="md:mt-auto">
+                  <div className="mt-8 mb-4 md:mt-auto">
                     <div className="flex gap-2">
                       <a
                         href="https://apps.apple.com/us/app/jam-family-calendar/id6449090626"

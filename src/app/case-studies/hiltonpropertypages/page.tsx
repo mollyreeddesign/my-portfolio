@@ -258,7 +258,7 @@ export default function CaseStudyOnePage() {
                   className="w-full h-auto object-contain rounded-lg"
                 />
               </MediaFrame>
-              <p className="caption mb-8 md:mb-12 text-center">
+              <p className="caption mb-12 text-center">
               User testing showed 75% of participants preferred the carousel film strip hero over the gallery grid hero.
               
               </p>
