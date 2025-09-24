@@ -29,7 +29,7 @@ export default function JamFamilyCalendarPage() {
     { id: "results", label: "Results" }
   ];
   return (
-    <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] py-8 sm:py-12 bg-white text-gray-800">
+    <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] pt-8 sm:pt-12 bg-white text-gray-800">
       <PageContainer>
         <h1 className="custom-h1 mb-6">
         Simplified scheduling for stressed parents
@@ -46,7 +46,7 @@ export default function JamFamilyCalendarPage() {
 
         {/* Responsive Grid Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2 mb-4">
+          <div className="space-y-2 mb-0 md:mb-4">
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My role</h2>
               <ul className="list-disc list-inside space-y-1">
@@ -72,7 +72,7 @@ export default function JamFamilyCalendarPage() {
               <Metric metric="Created 400+ High Fi mockup screens" />
               <Metric metric="Designed 5 complex user flows" />
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 mb-12 md:mb-0">
               <a
                 href="https://apps.apple.com/us/app/jam-family-calendar/id6449090626"
                 target="_blank"
@@ -96,7 +96,7 @@ export default function JamFamilyCalendarPage() {
         </div>
       </PageContainer>
 
-      <FullWidthSection backgroundColor="#EAF0FF" noPadding>
+      <FullWidthSection backgroundColor="#EAF0FF" sectionClassName="mb-6 md:mb-0" noPadding>
         <div className="w-full">
           <div className="relative w-full rounded-lg overflow-hidden" style={{ aspectRatio: '16/9' }}>
             <video autoPlay loop muted playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover">
@@ -119,12 +119,12 @@ export default function JamFamilyCalendarPage() {
           <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2">“Nearly half of American parents—48%—report feeling completely and overwhelmingly stressed on most days...”
-                <a href="https://www.psychologytoday.com/us/blog/parenting-translator/202409/parent-stress-is-a-serious-public-health-concern?utm_" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 underline inline-flex items-center gap-1 ml-5 align-baseline whitespace-nowrap text-sm"><b>pyschologytoday.com</b> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                <a href="https://www.psychologytoday.com/us/blog/parenting-translator/202409/parent-stress-is-a-serious-public-health-concern?utm_" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 underline inline-flex items-center gap-1 ml-0 md:ml-5 align-baseline whitespace-nowrap text-sm mb-6 md:mb-0"><b>pyschologytoday.com</b> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
               </h2>
               <p className="p mb-4">
               Former colleagues Jessica Etting and Amanda Roessler approached me with the idea for Jam, a family calendar app designed to ease the mental load of burnt-out parents. The concept was to bring together all the logistics of running a household into one shared, accessible app for the entire family.
               </p>
-              <p className="p mb-4 md:mb-12">
+              <p className="p mb-12">
               My role was to design the app at high fidelity for a future developer, define complex responsive user flows and explore the brand’s overall look and feel.
               </p>
               <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
@@ -136,7 +136,7 @@ export default function JamFamilyCalendarPage() {
                   className="w-full h-auto object-contain rounded-lg"
                 />
                     </MediaFrame>
-                    <p className="caption mb-8 md:mb-12 text-center">
+                    <p className="caption mb-12 text-center">
                     A page of Jam's pitch deck illustrating the problem of the mental load on parents.
                     </p>
             </CaseSection>
@@ -167,7 +167,7 @@ export default function JamFamilyCalendarPage() {
               Starting with rough wireframes and a few pages of documentation, I conducted competitive research to understand the existing market.
 I looked at shared calendar setups from Apple and Google, along with task management tools like Trello and Google Tasks.
               </p>
-              <p className="p mb-4 md:mb-12">
+              <p className="p mb-12">
               Throughout the design process, I referenced familiar patterns and interactions from these products. I wanted to shape a product experience that felt intuitive to users, yet was still differentiated for Jam's audience.
               </p>
               <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
@@ -194,14 +194,14 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                       </div>
                       </div>
                     </MediaFrame>
-                    <p className="caption mb-8 md:mb-12 text-center">
+                    <p className="caption mb-12 text-center">
                     Early Balsalmiq wireframes sketching out the Jam dashboard.
                     </p>
                     <h2 className="custom-h2">Exploring look and feel</h2>
               <p className="p mb-4">
               My next step was exploring the brand's visual identity: colors, shapes, font and grid. I selected elements with our target audience in mind to ensure the app’s design would resonate with them. The founders and I concluded that muted color tones with neutral backgrounds would be a strong direction. The target audience:
               </p>
-              <ul className="list-disc list-inside space-y-1 mb-4 md:mb-12">
+              <ul className="list-disc list-inside space-y-1 mb-12">
                 <li className="p">Women, age 27 - 45 with children</li>
                 <li className="p">Live in zip codes with the top 25% income</li>
                 <li className="p">Interests include parenting, family, mom groups, organization, work life balance.</li>
@@ -216,7 +216,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                   className="w-full h-auto object-contain rounded-lg"
                 />
                     </MediaFrame>
-                    <p className="caption mb-8 md:mb-12 text-center">
+                    <p className="caption mb-12 text-center">
                     Exploring color and font from our target audiences' most loved brands.
                     </p>
             </CaseSection>
@@ -227,7 +227,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               <p className="p mb-4">
               The dashboard was the centerpiece of Jam. Unlike traditional finance/sales dashboards, this needed to be accessible and engaging for children and adults.
               </p>
-              <p className="p mb-4 md:mb-12">
+              <p className="p mb-12">
               To achieve this, I focused on creating a clear, highly visual layout. I utilized color and structure over stats or progress charts. At the top, a weekly view provided an at-a-glance overview. Below, users could dive into a detailed daily calendar, to-do list, and shopping list.
               </p>
               <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
@@ -241,7 +241,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                       />
                       </div>
                     </MediaFrame>
-                    <p className="caption mb-4 md:mb-12 text-center">
+                    <p className="caption mb-12 text-center">
                     Early concept for the Jam dashboard.
                     </p>
                     
@@ -255,14 +255,14 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                       </div>
       </div>                    
                     
-                    <p className="caption mb-8 md:mb-12 text-center">
+                    <p className="caption mb-12 text-center">
                     Mobile prototype showing the dashboard flow and interactions.
                     </p>
                     <h2 className="custom-h2">I mapped complex user flows</h2>
               <p className="p mb-4">
               Users could create tasks, events, and lists in Jam. Each of these items were assignable, schedule-able and could be linked to one another. It was my task to build these flows in low and high fidelity.
               </p>
-              <p className="p mb-4 md:mb-12">
+              <p className="p mb-12">
               Mapping user flows served several purposes. They helped us identify which features were truly necessary, how they would integrate with each other, and where more thinking was needed. This was crucial during Jam's creation phase because we could explore ideas quickly and cheaply.
               </p>
               <MediaFrame aspectRatio="3 / 2" enableModal>
@@ -274,7 +274,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         className="w-full h-auto"
                       />
                     </MediaFrame>
-                    <p className="caption mb-8 md:mb-12 text-center">
+                    <p className="caption mb-12 text-center">
                     Example of one of the many user flows in Jam. This one focused on adding an event.
                     </p>
               <MediaFrame aspectRatio="3 / 2" enableModal>
@@ -287,7 +287,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                         unoptimized
                       />
                     </MediaFrame>
-                    <p className="caption mb-8 md:mb-12 text-center">
+                    <p className="caption mb-12 text-center">
                     An additional simplified view of the add event user flow.
                     </p>
               
@@ -311,7 +311,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                       />
                       </div>
                     </MediaFrame>
-                    <p className="caption mb-8 md:mb-12 text-center">
+                    <p className="caption mb-12 text-center">
                     High-fidelity user flow exploring the full features of adding an event: time/date, assigning, to bring, repeat, drop-off/pick-up and linking tasks and lists. 
                     </p>
               
@@ -319,7 +319,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
               <p className="p mb-4">
               I created a comprehensive style guide to support a smooth handoff to development. The guide covered spacing, typography, responsive behavior, color, and user flows.
               </p>
-              <p className="p mb-4 md:mb-12">
+              <p className="p mb-12">
               Since I wouldn't be present to oversee development, my mockups and documentation were designed to be exceptionally clear so a future developer could easily implement my work.
               </p>
               <MediaFrame aspectRatio="3 / 2" enableModal>
@@ -332,30 +332,34 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                   unoptimized
                 />
                     </MediaFrame>
-                    <p className="caption mb-8 md:mb-12 text-center">
+                    <p className="caption mb-12 text-center">
                     A page from the Jam style guide showing responsive margin framework.
                     </p>
             </CaseSection>
 
             <CaseSection id="results" title="Results">
-            <div className="w-full bg-gray-100 rounded-lg mb-4 md:mb-12" style={{ aspectRatio: '3/2' }}>
+            <div className="w-full bg-gray-100 rounded-lg mb-8" style={{ aspectRatio: '3/2' }}>
                      
                         <LottiePlayer src="/animations/jam-mobileresults.json" className=" rounded-lg w-auto h-full" />
                       
                     </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                 {/* Mobile: Order 2, Desktop: Left column */}
                 <div className="order-2 md:order-1 col-span-1">
                 <p className="p mb-4">
                   The Jam Family Calendar app was launched in February 2024 and has since been downloaded over 5,000 times on Google Play.
                   </p>
-                  <p className="p">
+                  <p className="p mb-12 md:mb-0">
                   I'm proud of the foundation I created through my design system, user flows and comprehensive style guide for Jam Family Calendar. This project taught me valuable lessons about when (or when not) to design in high fidelity, knowing your user and building a sustainable product that can be iterated in future redesigns. Most of all, it was rewarding to contribute to a product tackling a very real challenge for modern families. I'm excited to see Jam continue to grow and ease the mental load for parents.
                   </p>
                   
                                     {/* Mobile: Buttons below paragraph */}
-                  <div className="md:hidden space-y-3 pt-4">
+                  <div className="md:hidden space-y-6 pt-4">
                     <BackToTopButton className="btn btn--primary w-full" />
+                    <a href="https://www.jamfamilycalendar.com/?gad_source=1&gad_campaignid=22671104318&gbraid=0AAAAA-IYjC7HodZzJbx1s9U4iLmu-she5&gclid=CjwKCAjwiNXFBhBKEiwAPSaPCT9nuE6mIzQUyAOHUI7BBvu5iQYYgW_SJouklDjDGQmr0-XsJiAXnBoC7_kQAvD_BwE" target="_blank" rel="noopener noreferrer" className="btn btn--secondary w-full">
+                      <span>View Live Project</span>
+                      <ArrowUpRight size={20} />
+                    </a>
                   </div>
                 </div>
                 
@@ -375,7 +379,7 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                     </a>
                   </div>
                   {/* Desktop: Store badges pinned to bottom */}
-                  <div className="hidden md:block md:mt-auto">
+                  <div className="md:mt-auto">
                     <div className="flex gap-2">
                       <a
                         href="https://apps.apple.com/us/app/jam-family-calendar/id6449090626"

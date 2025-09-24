@@ -554,7 +554,7 @@ The icons were published company- wide using the Hilton shared codebase. They we
               <h2 className="custom-h2">Navigation</h2>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                     <div className="flex items-center justify-center h-full">
-                      <div className="w-1/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                      <div className="w-1/4 rounded-lg md:rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
                         <video data-auto-play loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                           <source src="/videos/Hilton-SiteNavigation.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
