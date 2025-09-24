@@ -118,7 +118,7 @@ export default function CaseStudyTwoPage() {
   ];
 
   return (
-    <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] py-8 sm:py-12 bg-white text-gray-800">
+    <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] pt-8 sm:pt-12 bg-white text-gray-800">
       <PageContainer>
         <h1 className="custom-h1 mb-6">
         Helped drive 9% revenue growth
@@ -134,8 +134,8 @@ export default function CaseStudyTwoPage() {
         </div>
         
         {/* Responsive Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 mb-12 md:mb-0">
+          <div className="space-y-2">
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My Role</h2>
               <ul className="list-disc list-inside space-y-1">
@@ -163,27 +163,27 @@ export default function CaseStudyTwoPage() {
         </div>
       </PageContainer>
 
-      <FullWidthSection backgroundColor="#f5f5f5" useContainer={false} noPadding>
+      <FullWidthSection backgroundColor="#f5f5f5" useContainer={false} noPadding sectionClassName="mb-6 md:mb-0">
         
           <div className="w-full overflow-hidden" ref={galleryRef}>
-            <div className="grid grid-cols-4 w-[calc(100vw+14vw)] -ml-[7vw] gap-0 transition-transform duration-300 ease-out">
-              <div className="relative h-[50vw]">
-                <div style={{ transform: `translateX(${offsetFirst}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
+            <div className="grid grid-cols-3 md:grid-cols-4 w-[calc(110vw+10vw)] md:w-[calc(100vw+14vw)] -ml-[5vw] md:-ml-[7vw] gap-0 transition-transform duration-300 ease-out">
+              <div className="relative h-[80vw] md:h-[50vw]">
+                <div style={{ transform: isDesktop ? `translateX(${offsetFirst}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
                   <Image src="/images/uo-selfcheckout-1.png" alt="Urban Outfitters self checkout 1" fill unoptimized className="object-cover" sizes="(min-width:1536px) 29vw"/>
                 </div>
               </div>
-              <div className="relative h-[50vw]">
-                <div style={{ transform: `translateX(${offsetSecond}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
+              <div className="relative h-[80vw] md:h-[50vw]">
+                <div style={{ transform: isDesktop ? `translateX(${offsetSecond}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
                   <Image src="/images/uo-selfcheckout-2.png" alt="Urban Outfitters self checkout 2" fill unoptimized className="object-cover" sizes="(min-width:1536px) 29vw"/>
                 </div>
               </div>
-              <div className="relative h-[50vw]">
-                <div style={{ transform: `translateX(${offsetThird}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
+              <div className="relative h-[80vw] md:h-[50vw]">
+                <div style={{ transform: isDesktop ? `translateX(${offsetThird}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
                   <Image src="/images/uo-selfcheckout-3.png" alt="Urban Outfitters self checkout 3" fill unoptimized className="object-cover" sizes="(min-width:1536px) 29vw"/>
                 </div>
               </div>
-              <div className="relative h-[50vw]">
-                <div style={{ transform: `translateX(${offsetFourth}vw)`, transition: 'transform 200ms ease-out' }} className="w-full h-full">
+              <div className="relative h-[70vw] md:h-[50vw] md:block hidden">
+                <div style={{ transform: isDesktop ? `translateX(${offsetFourth}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
                   <Image src="/images/uo-selfcheckout-4.png" alt="Urban Outfitters self checkout 4" fill unoptimized className="object-cover" sizes="(min-width:1536px) 29vw"/>
                 </div>
               </div>
@@ -210,11 +210,11 @@ export default function CaseStudyTwoPage() {
               <p className="p mb-4">
               In 2018, Urban Outfitters planned to initiate a pilot self-checkout program at its flagship store in Herald Square, New York City. The aim was to stay competitive with other retailers testing self checkout and cater to their younger tech-savvy audience with new touchscreen kiosks.
               </p>
-              <p className="p mb-4 md:mb-12">
+              <p className="p mb-12 md:mb-12">
               The point of sale 'Elo' kiosks came with a default software that had a poor user experience and confusing information architecture that did not reflect the Urban Outfitters brand.
               </p>
               
-              <div className="w-full mb-4">
+              <div className="w-full mb-12">
                 <BeforeAfterSlider
                   beforeSrc="/images/uo-after.png"
                   afterSrc="/images/uo-before.png"
@@ -246,11 +246,11 @@ export default function CaseStudyTwoPage() {
                   </p>
                     
             
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-4 md:mb-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
               
                 {/* Left column - gif animation */}
                 <div className="order-2 lg:order-1">
-                  <div className="w-full bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '2/3' }}>
+                  <div className="w-full bg-white rounded-lg md:rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '2/3' }}>
                     <Image src="/videos/uo-selfcheckout.gif" alt="UO flat self checkout screen 1" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
                     <div className="hidden lg:block absolute inset-0 pointer-events-none">
                       <button
@@ -288,14 +288,14 @@ export default function CaseStudyTwoPage() {
                 </div>
                 
                 {/* Right column - text content */}
-                <div className="order-1 lg:order-2 mb-8 md:mb-12">
+                <div className="order-1 lg:order-2 mb-0 md:mb-12">
                 <p className={`p mb-4 transition-colors ${isDesktop && hoveredAnnotation === 1 ? 'bg-gray-100' : ''}`}> 
                     Users could quickly access their rewards account by scanning a code on their mobile device.
                     </p>
                     <p className={`p mb-4 transition-colors ${isDesktop && hoveredAnnotation === 2 ? 'bg-gray-100' : ''}`}>
                     I identified opportunities for personalization such as greeting users by name in the checkout state when they signed in to their rewards account. 
                     </p>
-                <p className={`p mb-4 md:mb-12 transition-colors ${isDesktop && hoveredAnnotation === 3 ? 'bg-gray-100' : ''}`}>
+                <p className={`p mb-0 md:mb-12 transition-colors ${isDesktop && hoveredAnnotation === 3 ? 'bg-gray-100' : ''}`}>
                     I collaborated with illustrator and designer Miranda Leung to create Urban Outfitters–style empty state animations. This kept users engaged during more passive moments of the checkout process.
                     </p>
                     
@@ -309,24 +309,24 @@ export default function CaseStudyTwoPage() {
               For development handoff, I created detailed redlines that mapped out styles using Tailwind CSS nomenclature. 
               </p>
               
-              <p className="p mb-4 md:mb-12">
+              <p className="p mb-12">
   After handoff, I collaborated closely with software engineering to fine-tune details such as animations and spacing. The touchscreen kiosks with the new UI were installed in Herald Square in August 2018.
               </p>
               <MediaFrame aspectRatio="auto" padding="p-4" contentClassName="block" enableModal>
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-    <div className="relative shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
+    <div className="relative shadow-lg bg-white rounded-lg md:rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
       <Image src="/images/uo-flatselfcheckout-2.png" alt="UO flat self checkout screen 2" fill unoptimized className="object-contain object-center" sizes="100vw" />
     </div>
-    <div className="relative shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
+    <div className="relative shadow-lg bg-white rounded-lg md:rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
       <Image src="/images/uo-flatselfcheckout-3.png" alt="UO flat self checkout screen 3" fill unoptimized className="object-contain object-center" sizes="100vw" />
     </div>
-    <div className="relative shadow-lg bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
+    <div className="relative shadow-lg bg-white rounded-lg md:rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D]" style={{ aspectRatio: '3/5' }}>
       <Image src="/images/uo-cardanimation.gif" alt="UO card animation" fill className="object-contain object-center" sizes="100vw" unoptimized />
     </div>
   </div>
 </MediaFrame>
               
-                             <p className="caption mb-8 md:mb-12 text-center">
+                             <p className="caption mb-12 text-center">
                Final UI of self checkout
                </p>
             </CaseSection>
@@ -341,20 +341,20 @@ export default function CaseStudyTwoPage() {
               </div>
                 
                {/* Two column grid with portrait images */}
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                <MediaFrame aspectRatio="2 / 3" className="mb-6" enableModal>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <MediaFrame aspectRatio="2 / 3" className="" enableModal>
                   <Image src="/images/uo-inthefield1.jpeg" alt="Urban Outfitters in the field portrait" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
                 </MediaFrame>
-                <MediaFrame aspectRatio="2 / 3" className="mb-6" enableModal>
+                <MediaFrame aspectRatio="2 / 3" className="" enableModal>
                   <Image src="/images/uo-inthefield2.jpeg" alt="Urban Outfitters in the field portrait 2" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
                 </MediaFrame>
                </div>
-                              <p className="caption mb-8 md:mb-12 text-center">
+                              <p className="caption mb-12 md:mb-20 text-center">
                 Customers interacting with the new self checkout kiosks in Herald Square, New York City.
                 </p>
                 
                 {/* Two column layout with text and image */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mt-8 mb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start ">
                   {/* Left column - text content */}
                   <div className="order-1 lg:order-1">
                     <h2 className="custom-h2">“The Urban Outfitters customer is clearly voting for self checkouts with the percentage of self checkout transactions highly exceeding expectations...”</h2>
@@ -368,13 +368,13 @@ export default function CaseStudyTwoPage() {
                   
                   {/* Right column - portrait image */}
                   <div className="order-2 lg:order-2">
-                    <div className="w-full bg-gray-100 rounded-lg overflow-hidden">
+                    <div className="w-full mb-4 bg-gray-100 rounded-lg overflow-hidden">
                       <video autoPlay muted loop playsInline preload="metadata" className="w-full h-auto object-contain">
                         <source src="/videos/UO-Tiktok-SelfCheckout.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
                     </div>
-                    <p className="caption mt-4 md:mb-12 text-center">
+                    <p className="caption text-center">
                       A Tiktok video from 2023 with the UI I designed in 2018.
                     </p>
                   </div>
@@ -385,7 +385,7 @@ export default function CaseStudyTwoPage() {
               
                 <CaseSection id="results" title="Results" headingLevel="h2">
             
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {/* Mobile: Order 2, Desktop: Left column */}
                 <div className="order-2 md:order-1 col-span-1">
                   <p className="p mb-4">
@@ -433,7 +433,7 @@ export default function CaseStudyTwoPage() {
               <h2 className="custom-h2">Help & Info Section Redesign</h2>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                     <div className="flex items-center justify-center h-full">
-                      <div className="w-3/4 rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
+                      <div className="w-3/4 rounded-lg md:rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg">
                         <video data-auto-play autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
                           <source src="/videos/uo-help+infovideo.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
@@ -441,7 +441,7 @@ export default function CaseStudyTwoPage() {
                       </div>
                     </div>
                   </div>
-              <p className="caption mb-8 md:mb-12 text-center">
+              <p className="caption mb-12 text-center">
               I redesigned the typography and information architecture for 20 Help + Info pages, breaking up dense text with iconography, photography, and clear type hierarchy.
               
               </p>
@@ -461,10 +461,10 @@ export default function CaseStudyTwoPage() {
                           </CaseSection>
               
               {/* Back to Top Button */}
-              <div className="flex justify-center mt-16 mb-8">
+              <div className="flex justify-center mt-16 w-full">
                 <button 
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  className="btn btn--primary"
+                  className="btn btn--primary w-full md:w-auto"
                 >
                   <span>Back to Top</span>
                   <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

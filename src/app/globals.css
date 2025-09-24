@@ -178,8 +178,8 @@ p,
   font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #767676;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 20px;
   margin-bottom: 0.5rem; /* mb-2 on mobile */
 }
 
@@ -198,8 +198,8 @@ p,
   font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #767676;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 @media (min-width: 768px) {
@@ -458,6 +458,64 @@ p,
   mask-position: center;
   -webkit-mask-size: contain;
   mask-size: contain;
+}
+
+/* Background image sweep overlay: reveals full-opacity band across background image */
+.background-sweep-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* Oval glow: center 100% mask (reveals), edges 0% */
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  -webkit-mask-size: 10% 80%;
+  mask-size: 10% 80%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  /* Start off-screen top-left to move at 45deg */
+  -webkit-mask-position: -25% -25%;
+  mask-position: -25% -25%;
+  animation-name: background-sweep;
+  animation-duration: 5s; /* overridden per-instance if needed */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: -webkit-mask-position, mask-position;
+}
+
+@keyframes background-sweep {
+  /* Move along a 45deg path for ~40% of the cycle (~2s if 5s total) */
+  0% {
+    -webkit-mask-position: -25% -25%;
+    mask-position: -25% -25%;
+  }
+  40% {
+    -webkit-mask-position: 125% 125%;
+    mask-position: 125% 125%;
+  }
+  /* Hold off-screen to create ~3s pause before next sweep */
+  100% {
+    -webkit-mask-position: 145% 145%;
+    mask-position: 145% 145%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background-sweep-overlay {
+    animation: none;
+  }
 }
 
 

@@ -14,19 +14,27 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-[60vh] py-8 sm:py-12 bg-[#0b0b0b]">
-      <PageContainer>
-      <section className="h-[67vh] md:h-[65vh] flex flex-col justify-center md:justify-start">
-      <Reveal>
-      <h1 className="custom-h1 max-w-[28rem] md:max-w-[41rem] mb-22 mx-auto text-white">I’m a Product Designer merging distinct craft, user experience and business goals. Advocate for accessibility and sustainable product design.</h1>
-      </Reveal>
-      </section>
-      </PageContainer>
+    <main className="min-h-[60vh] pt-0 pb-8 sm:pb-12 bg-[#0b0b0b]">
+      <FullWidthSection
+        backgroundColor="#0b0b0b"
+        backgroundImage="/images/about-bg-grid.png"
+        backgroundImageOpacity={0.2}
+        backgroundSweep
+        backgroundSweepDurationSec={8}
+        backgroundSweepMaxOpacity={0.6}
+        backgroundRadialMask
+        noPadding
+        sectionClassName="h-[67vh] md:h-[85vh] -mt-[72px] md:-mt-[88px] flex items-center justify-center"
+      >
+        <Reveal>
+          <h1 className="custom-h1 max-w-[28rem] md:max-w-[41rem] mb-0 mx-auto text-white text-center">I’m a Product Designer merging distinct craft, user experience and business goals. Advocate for accessibility and sustainable product design.</h1>
+        </Reveal>
+      </FullWidthSection>
       {/* About Me as a Designer Paragraph */}
       <FullWidthSection backgroundColor="#f5f5f4">
         <PageContainer noPadding className="mb-16 sm:mb-24">
         <Reveal>
-        <Image src="/images/about-smallportrait.png" alt="About Me" width={130} height={130} className="-mt-8 mb-8 mx-auto rounded-full" />
+        <Image src="/images/about-smallportrait.png" alt="About Me" width={130} height={130} className="-mt-20 mb-8 mx-auto rounded-full" />
         </Reveal>
         <div className="mx-auto flex flex-col">
       <Reveal>
