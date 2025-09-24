@@ -20,6 +20,8 @@ export default function CaseStudyTwoPage() {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [imageScrollProgress, setImageScrollProgress] = useState(0);
   const galleryRef = useRef<HTMLDivElement | null>(null);
+  const [hoveredAnnotation, setHoveredAnnotation] = useState<number | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +52,26 @@ export default function CaseStudyTwoPage() {
     return () => {
       window.removeEventListener('scroll', updateProgress);
       window.removeEventListener('resize', updateProgress);
+    };
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+    const updateIsDesktop = () => setIsDesktop(mediaQuery.matches);
+    updateIsDesktop();
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', updateIsDesktop);
+    } else {
+      // @ts-ignore - Safari fallback
+      mediaQuery.addListener(updateIsDesktop);
+    }
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', updateIsDesktop);
+      } else {
+        // @ts-ignore - Safari fallback
+        mediaQuery.removeListener(updateIsDesktop);
+      }
     };
   }, []);
 
@@ -229,16 +251,51 @@ export default function CaseStudyTwoPage() {
                 {/* Left column - gif animation */}
                 <div className="order-2 lg:order-1">
                   <div className="w-full bg-white rounded-lg border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '2/3' }}>
-                  <Image src="/images/uo-flatselfcheckout-1.png" alt="UO flat self checkout screen 1" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+                    <Image src="/videos/uo-selfcheckout.gif" alt="UO flat self checkout screen 1" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
+                    <div className="hidden lg:block absolute inset-0 pointer-events-none">
+                      <button
+                        type="button"
+                        aria-label="Annotation 1"
+                        className="absolute flex items-center justify-center w-7 h-7 rounded-full bg-black text-white text-sm font-semibold shadow-md pointer-events-auto hover:scale-105 transition-transform"
+                        style={{ top: '5%', left: '14%' }}
+                        onMouseEnter={() => setHoveredAnnotation(1)}
+                        onMouseLeave={() => setHoveredAnnotation(null)}
+                      >
+                        1
+                      </button>
+                      <button
+                        type="button"
+                        aria-label="Annotation 2"
+                        className="absolute flex items-center justify-center w-7 h-7 rounded-full bg-black text-white text-sm font-semibold shadow-md pointer-events-auto hover:scale-105 transition-transform"
+                        style={{ top: '25%', left: '15%' }}
+                        onMouseEnter={() => setHoveredAnnotation(2)}
+                        onMouseLeave={() => setHoveredAnnotation(null)}
+                      >
+                        2
+                      </button>
+                      <button
+                        type="button"
+                        aria-label="Annotation 3"
+                        className="absolute flex items-center justify-center w-7 h-7 rounded-full bg-black text-white text-sm font-semibold shadow-md pointer-events-auto hover:scale-105 transition-transform"
+                        style={{ top: '50%', left: '55%' }}
+                        onMouseEnter={() => setHoveredAnnotation(3)}
+                        onMouseLeave={() => setHoveredAnnotation(null)}
+                      >
+                        3
+                      </button>
+                    </div>
                   </div>
                 </div>
                 
                 {/* Right column - text content */}
                 <div className="order-1 lg:order-2 mb-8 md:mb-12">
-                <p className="p mb-4">
-                    I identified opportunities for personalization such as greeting users by name in the checkout state when they signed in to their rewards account. Users could simply scan a QR code on the kiosk screen with their mobile device and their account could be accessed.
+                <p className={`p mb-4 transition-colors ${isDesktop && hoveredAnnotation === 1 ? 'bg-gray-100' : ''}`}> 
+                    Users could quickly access their rewards account by scanning a code on their mobile device.
                     </p>
-                <p className="p mb-4 md:mb-12">
+                    <p className={`p mb-4 transition-colors ${isDesktop && hoveredAnnotation === 2 ? 'bg-gray-100' : ''}`}>
+                    I identified opportunities for personalization such as greeting users by name in the checkout state when they signed in to their rewards account. 
+                    </p>
+                <p className={`p mb-4 md:mb-12 transition-colors ${isDesktop && hoveredAnnotation === 3 ? 'bg-gray-100' : ''}`}>
                     I collaborated with illustrator and designer Miranda Leung to create Urban Outfitters–style empty state animations. This kept users engaged during more passive moments of the checkout process.
                     </p>
                     

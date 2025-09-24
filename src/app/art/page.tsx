@@ -23,7 +23,7 @@ export default function ArtPage() {
       <PageContainer>
       <h1 className="custom-h1 text-white">Art</h1>
       <p className="text-base/7 text-foreground/80">
-        Work I've done for fun, school and for clients. Click any tile to view larger.
+        Work I've done for fun, school and for clients.
       </p>
       <div className="mt-6 grid grid-cols-2 gap-4">
         {artImages.map((img, idx) => (
