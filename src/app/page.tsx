@@ -6,7 +6,7 @@ import PageContainer from "@/components/PageContainer";
 import FullWidthSection from "@/components/FullWidthSection";
 import Card from "@/components/Card";
 import Metric from "@/components/Metric";
-import { ChevronDown, ArrowUpRight, Download, Copy, Users, Wrench, MonitorSmartphone } from "lucide-react";
+import { ChevronDown, ArrowUpRight, Download, Copy } from "lucide-react";
 import BackToTopButton from "@/components/BackToTopButton";
 import Image from "next/image";
 import LottieCover from "@/components/LottieCover";
@@ -18,9 +18,7 @@ export default function Home() {
   const [skyLightOpacity, setSkyLightOpacity] = useState(0.05);
   const pinWrapperRef = useRef<HTMLDivElement | null>(null);
   const [heroHidden, setHeroHidden] = useState(false);
-  const [isAlignHovered, setIsAlignHovered] = useState(false);
-  const [hoveredCard, setHoveredCard] = useState<"align" | "create" | "execute" | null>(null);
-  const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  
   const videoSources = [
     "/videos/home-skyvideo.mp4",
     "/videos/sunset-loop.mp4",
@@ -354,22 +352,6 @@ export default function Home() {
         </PageContainer>
       </FullWidthSection>
       <FullWidthSection backgroundColor="#f5f5f4" sectionClassName="relative overflow-hidden">
-        <div
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[1] pointer-events-none -rotate-90 transition-opacity duration-300 ${isAlignHovered ? 'opacity-80' : 'opacity-0'}`}
-          style={{ width: 'max(100vw, 100vh)', height: 'max(100vw, 100vh)' }}
-        >
-          <LottieCover src="/animations/home-pulsinglines.json" fit="cover" />
-        </div>
-        <div
-          className={`absolute inset-0 z-[1] pointer-events-none transition-opacity duration-300 ${hoveredCard === 'create' ? 'opacity-20' : 'opacity-0'}`}
-        >
-          <TiledLottie src="/animations/home-dotsdancing.json" tileSize={240} overlapXPercent={0.35} overlapYPercent={0.5} preserveAspect="cover" />
-        </div>
-        <div
-          className={`absolute inset-0 z-[1] pointer-events-none transition-opacity duration-300 ${hoveredCard === 'execute' ? 'opacity-40' : 'opacity-0'}`}
-         >
-           <LottieCover src="/animations/home-rotation.json" fit="cover" className="grayscale" />
-        </div>
         <PageContainer className="py-18 md:py-28 relative z-10">
         <div>
         <Reveal>
@@ -378,83 +360,32 @@ export default function Home() {
         <div className="mx-8 md:-mx-8 lg:-mx-16 grid grid-cols-1 md:grid-cols-3 gap-12">
           <Reveal>
           <div
-            className="bg-[#f5f5f4] rounded-lg p-4 relative md:cursor-none transition-transform duration-200 ease-out shadow-sm hover:shadow-lg hover:scale-[1.02]"
-            onMouseEnter={(e) => { setIsAlignHovered(true); setHoveredCard("align"); }}
-            onMouseLeave={() => { setIsAlignHovered(false); setHoveredCard(null); }}
-            onMouseMove={(e) => {
-              const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
-              setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-            }}
+            className="bg-[#f5f5f4] rounded-lg p-4 relative"
           >
             <h3 className="custom-h3 text-black mb-2">Align</h3>
             <p className="text-black/80">
             I bring together key business objectives, user/competitor research and product goals.
             I define scope early on.</p>
-            {/* Custom cursor overlay - desktop only */}
-            <div className="hidden md:block pointer-events-none absolute inset-0">
-              {hoveredCard === "align" && (
-                <div
-                  className="absolute -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shadow-md"
-                  style={{ left: `${cursorPos.x}px`, top: `${cursorPos.y}px` }}
-                >
-                  <Users size={18} strokeWidth={2} color="#fff" />
-                </div>
-              )}
-            </div>
           </div>
           </Reveal>
           <Reveal delayMs={120}>
           <div
-            className="bg-[#f5f5f4] rounded-lg p-4 relative md:cursor-none transition-transform duration-200 ease-out shadow-sm hover:shadow-lg hover:scale-[1.02]"
-            onMouseEnter={() => setHoveredCard("create")}
-            onMouseLeave={() => setHoveredCard(null)}
-            onMouseMove={(e) => {
-              const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
-              setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-            }}
+            className="bg-[#f5f5f4] rounded-lg p-4 relative"
           >
             <h3 className="custom-h3 text-black mb-2">Create</h3>
             <p className="text-black/80">
             I build working prototypes and validate with testing often. 
             I don't design in a silo, I bring stakeholders along.</p>
-            {/* Custom cursor overlay - desktop only */}
-            <div className="hidden md:block pointer-events-none absolute inset-0">
-              {hoveredCard === "create" && (
-                <div
-                  className="absolute -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shadow-md"
-                  style={{ left: `${cursorPos.x}px`, top: `${cursorPos.y}px` }}
-                >
-                  <Wrench size={18} strokeWidth={2} color="#fff" />
-                </div>
-              )}
-            </div>
           </div>
           </Reveal>
           <Reveal delayMs={240}>
           <div
-            className="bg-[#f5f5f4] rounded-lg p-4 relative md:cursor-none transition-transform duration-200 ease-out shadow-sm hover:shadow-lg hover:scale-[1.02]"
-            onMouseEnter={() => setHoveredCard("execute")}
-            onMouseLeave={() => setHoveredCard(null)}
-            onMouseMove={(e) => {
-              const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
-              setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-            }}
+            className="bg-[#f5f5f4] rounded-lg p-4 relative"
           >
             <h3 className="custom-h3 text-black mb-2">Execute</h3>
             <p className="text-black/80">
             I synthesize research, strategy, and design into a final product.
            I maintain my craft from start to finish.</p>
-            {/* Custom cursor overlay - desktop only */}
-            <div className="hidden md:block pointer-events-none absolute inset-0">
-              {hoveredCard === "execute" && (
-                <div
-                  className="absolute -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shadow-md"
-                  style={{ left: `${cursorPos.x}px`, top: `${cursorPos.y}px` }}
-                >
-                  <MonitorSmartphone size={18} strokeWidth={2} color="#fff" />
-                </div>
-              )}
-            </div>
           </div>
           </Reveal>
           </div>
@@ -480,7 +411,7 @@ export default function Home() {
           I’ve been designing experiences in technology for people and businesses for over a decade.
           </p>
           <p className="mb-4 text-white/80">
-          With a background in visual design and industry experience in eCommerce, Telecom and Hospitality, I design products that bring real results.
+          With a background in visual design and career in UI/UX, I design products that drive engagement, increase conversions and cut costs.
           </p>
           <p className="text-white/80">
           Born and raised in Vermont, USA. Based in
