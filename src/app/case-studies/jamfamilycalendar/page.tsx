@@ -50,11 +50,11 @@ export default function JamFamilyCalendarPage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Led competitive and audience research 
+                <li className="p">Competitive and user research 
                 </li>
                 <li className="p">Created a foundational style guide
                 </li>
-                <li className="p"> Mapped user flows to to clarify feature interactions</li>
+                <li className="p">Mapped user flows to to clarify feature interactions</li>
               </ul>
             </div>
             <div className="space-y-2">
