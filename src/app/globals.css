@@ -489,7 +489,7 @@ p,
   -webkit-mask-position: -25% -25%;
   mask-position: -25% -25%;
   animation-name: background-sweep;
-  animation-duration: 5s; /* overridden per-instance if needed */
+  animation-duration: 4s; /* overridden per-instance if needed */
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   will-change: -webkit-mask-position, mask-position;

@@ -297,7 +297,7 @@ export default function Home() {
         backgroundImage="/images/about-bg-grid.png"
         backgroundImageOpacity={0.2}
         backgroundSweep
-        backgroundSweepDurationSec={8}
+        backgroundSweepDurationSec={3.5}
         backgroundSweepMaxOpacity={0.6}
         backgroundRadialMask
         backgroundSweepHideOnMobile
