@@ -236,9 +236,11 @@ export default function Home() {
                 logo="/images/jam-logo.png"
                 tags={[{ tag: "SaaS" }, { tag: "User Flows" }, { tag: "Dashboards" }]}
                 renderImageContent={(hovered) => (
-                  <div className="w-full h-full">
-                    <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.03]" : "scale-100"}`} style={{ backgroundColor: "#EAF0FF" }}>
+                  <div className="w-full h-full" style={{ backgroundColor: "#EAF0FF" }}>
+                    <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.15] overflow-none" : "scale-100"}`}>
+                      
                       <LottieCover src="/animations/home-jam-card.json" className="rounded-md" fit="cover" />
+                      
                       {/* White overlay that fades from 20% to 0% on hover */}
                       <div
                         className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
