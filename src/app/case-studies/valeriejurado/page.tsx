@@ -32,9 +32,9 @@ export default function ValerieJuradoPage() {
     <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] pt-8 sm:pt-12 bg-white text-gray-800">
       <PageContainer>
         <h1 className="custom-h1 mb-6">
-        Brought 7x more contact form conversions
+        Drove 7x increase in contact form conversions
           <span className="hidden md:inline"><br /></span>{" "}
-          to a high-end botanical designer
+          for a high-end botanical designer
         </h1>
         <div className="flex flex-wrap gap-2 mb-8">
           <Tag tag="Responsive Web" />
@@ -49,9 +49,9 @@ export default function ValerieJuradoPage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Aligned design direction with business objectives</li>
-                <li className="p">Improved lead quality through a contact form</li>
-                <li className="p">Built bespoke business site using Prismic CMS</li>
+                <li className="p">Aligned design direction with business</li>
+                <li className="p">Improved lead quality</li>
+                <li className="p">Built bespoke business site</li>
               </ul>
             </div>
             <div className="space-y-2">

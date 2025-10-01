@@ -102,8 +102,10 @@ export default function Tabs({ items, initialActiveKey, className }: TabsProps) 
             >
               {item.titleNode ? (
                 <div className="p-3 w-full">
-                  <div className="min-h-14 w-full flex items-center justify-center">
-                    {item.titleNode}
+                  <div className="w-full flex items-center justify-center">
+                    <div className="flex-shrink-0">
+                      {item.titleNode}
+                    </div>
                   </div>
                   <span className="sr-only">{item.label}</span>
                 </div>

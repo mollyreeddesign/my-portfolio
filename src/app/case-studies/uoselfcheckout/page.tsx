@@ -123,7 +123,7 @@ export default function CaseStudyTwoPage() {
         <h1 className="custom-h1 mb-6">
         Helped drive 9% revenue growth
           <span className="hidden md:inline"><br /></span>{" "}
-          with a self checkout program
+          with an in store self checkout program
         </h1>
         
         <div className="flex flex-wrap gap-2 mb-8">
@@ -139,8 +139,8 @@ export default function CaseStudyTwoPage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My Role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Designed in-store self checkout interface</li>
-                <li className="p">Implemented loyalty program personalization</li>
+                <li className="p">Designed new self checkout UI</li>
+                <li className="p">Implemented loyalty personalization</li>
                 <li className="p">Coordinated dev handoff</li>
               </ul>
             </div>
@@ -246,7 +246,7 @@ export default function CaseStudyTwoPage() {
                   </p>
                     
             
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-12">
               
                 {/* Left column - gif animation */}
                 <div className="order-2 lg:order-1">
@@ -256,7 +256,7 @@ export default function CaseStudyTwoPage() {
                       <button
                         type="button"
                         aria-label="Annotation 1"
-                        className="absolute flex items-center justify-center w-7 h-7 rounded-full bg-black text-white text-sm font-semibold shadow-md pointer-events-auto hover:scale-105 transition-transform"
+                        className={`absolute flex items-center justify-center w-7 h-7 rounded-full bg-blue-600 text-white text-sm font-semibold shadow-md pointer-events-auto transition-transform ${hoveredAnnotation === 1 ? 'scale-115' : 'hover:scale-115'}`}
                         style={{ top: '5%', left: '14%' }}
                         onMouseEnter={() => setHoveredAnnotation(1)}
                         onMouseLeave={() => setHoveredAnnotation(null)}
@@ -266,7 +266,7 @@ export default function CaseStudyTwoPage() {
                       <button
                         type="button"
                         aria-label="Annotation 2"
-                        className="absolute flex items-center justify-center w-7 h-7 rounded-full bg-black text-white text-sm font-semibold shadow-md pointer-events-auto hover:scale-105 transition-transform"
+                        className={`absolute flex items-center justify-center w-7 h-7 rounded-full bg-blue-600 text-white text-sm font-semibold shadow-md pointer-events-auto transition-transform ${hoveredAnnotation === 2 ? 'scale-115' : 'hover:scale-115'}`}
                         style={{ top: '25%', left: '15%' }}
                         onMouseEnter={() => setHoveredAnnotation(2)}
                         onMouseLeave={() => setHoveredAnnotation(null)}
@@ -276,7 +276,7 @@ export default function CaseStudyTwoPage() {
                       <button
                         type="button"
                         aria-label="Annotation 3"
-                        className="absolute flex items-center justify-center w-7 h-7 rounded-full bg-black text-white text-sm font-semibold shadow-md pointer-events-auto hover:scale-105 transition-transform"
+                        className={`absolute flex items-center justify-center w-7 h-7 rounded-full bg-blue-600 text-white text-sm font-semibold shadow-md pointer-events-auto transition-transform ${hoveredAnnotation === 3 ? 'scale-115' : 'hover:scale-115'}`}
                         style={{ top: '50%', left: '55%' }}
                         onMouseEnter={() => setHoveredAnnotation(3)}
                         onMouseLeave={() => setHoveredAnnotation(null)}
@@ -289,15 +289,42 @@ export default function CaseStudyTwoPage() {
                 
                 {/* Right column - text content */}
                 <div className="order-1 lg:order-2 mb-0 md:mb-12">
-                <p className={`p mb-4 transition-colors ${isDesktop && hoveredAnnotation === 1 ? 'bg-gray-100' : ''}`}> 
-                    Users could quickly access their rewards account by scanning a code on their mobile device.
+                <div 
+                    className={`flex items-start gap-3 rounded-md p-0 md:p-3 mb-4 transition-colors pointer-events-auto ${isDesktop && hoveredAnnotation === 1 ? 'bg-gray-100' : ''}`}
+                    onMouseEnter={() => setHoveredAnnotation(1)}
+                    onMouseLeave={() => setHoveredAnnotation(null)}
+                >
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5 hidden md:flex">
+                        1
+                    </div>
+                    <p className="p"> 
+                        Users could quickly access their rewards account by scanning a code on their mobile device.
                     </p>
-                    <p className={`p mb-4 transition-colors ${isDesktop && hoveredAnnotation === 2 ? 'bg-gray-100' : ''}`}>
-                    I identified opportunities for personalization such as greeting users by name in the checkout state when they signed in to their rewards account. 
+                </div>
+                <div 
+                    className={`flex items-start gap-3 rounded-md p-0 md:p-3 mb-4 transition-colors pointer-events-auto ${isDesktop && hoveredAnnotation === 2 ? 'bg-gray-100' : ''}`}
+                    onMouseEnter={() => setHoveredAnnotation(2)}
+                    onMouseLeave={() => setHoveredAnnotation(null)}
+                >
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5 hidden md:flex">
+                        2
+                    </div>
+                    <p className="p">
+                        I identified opportunities for personalization such as greeting users by name in the checkout state when they signed in to their rewards account. 
                     </p>
-                <p className={`p mb-0 md:mb-12 transition-colors ${isDesktop && hoveredAnnotation === 3 ? 'bg-gray-100' : ''}`}>
-                    I collaborated with illustrator and designer Miranda Leung to create Urban Outfitters–style empty state animations. This kept users engaged during more passive moments of the checkout process.
+                </div>
+                <div 
+                    className={`flex items-start gap-3 rounded-md p-0 md:p-3 mb-0 md:mb-12 transition-colors pointer-events-auto ${isDesktop && hoveredAnnotation === 3 ? 'bg-gray-100' : ''}`}
+                    onMouseEnter={() => setHoveredAnnotation(3)}
+                    onMouseLeave={() => setHoveredAnnotation(null)}
+                >
+                    <div className="items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5 hidden md:flex">
+                        3
+                    </div>
+                    <p className="p">
+                        I collaborated with illustrator and designer Miranda Leung to create Urban Outfitters–style empty state animations. This kept users engaged during more passive moments of the checkout process.
                     </p>
+                </div>
                     
                 </div>
                 

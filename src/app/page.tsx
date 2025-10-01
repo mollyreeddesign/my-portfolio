@@ -10,12 +10,11 @@ import { ChevronDown, ArrowUpRight, Download, Copy } from "lucide-react";
 import BackToTopButton from "@/components/BackToTopButton";
 import Image from "next/image";
 import LottieCover from "@/components/LottieCover";
-import TiledLottie from "@/components/TiledLottie";
 import Reveal from "@/components/Reveal";
 
 export default function Home() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const [skyLightOpacity, setSkyLightOpacity] = useState(0.05);
+  const [skyLightOpacity, setSkyLightOpacity] = useState(0.2);
   const pinWrapperRef = useRef<HTMLDivElement | null>(null);
   const [heroHidden, setHeroHidden] = useState(false);
   
@@ -30,19 +29,19 @@ export default function Home() {
       const section = sectionRef.current;
       if (!section) return;
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight || window.innerHeight * 0.67;
+      const sectionHeight = section.offsetHeight || window.innerHeight * 0.50;
       const viewportHeight = window.innerHeight;
       const scrollTop = window.scrollY;
       // Start the effect once we reach the section (keep faint before)
       const start = sectionTop; // begin at section top
-      const end = sectionTop + sectionHeight * 0.90; // finish halfway through the section
+      const end = sectionTop + sectionHeight * 0.80; // finish earlier for quicker scroll
       const progressRaw = (scrollTop - start) / Math.max(1, end - start);
       const progress = Math.max(0, Math.min(1, progressRaw));
       if (scrollTop <= sectionTop) {
-        setSkyLightOpacity(0.05);
+        setSkyLightOpacity(0.2);
         return;
       }
-      const opacity = 0.05 + progress * 0.95; // fade from 0.05 to 1.0
+      const opacity = 0.2 + progress * 0.95; // fade from 0.05 to 1.0
       setSkyLightOpacity(opacity);
     };
 
@@ -75,7 +74,7 @@ export default function Home() {
       <PageContainer>
       
        <div ref={pinWrapperRef} className="relative overflow-x-hidden">
-        <section ref={sectionRef} className="fixed left-0 right-0 top-40 h-[67vh] md:h-[65vh] flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
+        <section ref={sectionRef} className="fixed left-0 right-0 top-40 h-[50vh] md:h-[50vh] flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
           
         <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[500px] -translate-y-[67px] md:-translate-y-[180px] w-[720px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms ease" }}>
           <Image
@@ -113,13 +112,13 @@ export default function Home() {
         <h1 className="text-2xl text-white md:text-3xl mb-2">Product Designer</h1>
         <p className="text-gray-400 text-base md:!text-sm">I design distinct digital experiences<br />{" "}that clarify and convert.</p>
         </div>
-         <div className="mt-auto mb-6 md:mb-0 self-center text-center">
+         <div className="mt-auto mb-0 md:-mb-30 self-center text-center">
         <p className="text-gray-400 text-base md:!text-sm">Based in Zurich, CH 🇨🇭</p>
         <p className="text-gray-400 text-base md:!text-sm mb-2">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
         <ChevronDown className="mx-auto text-gray-400 animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
       </section>
-      <div className="h-[150vh] md:h-[150vh]"></div>
+      <div className="h-[100vh] md:h-[100vh]"></div>
       </div>
 
       </PageContainer>
@@ -132,7 +131,7 @@ export default function Home() {
             <Card
                 href="/case-studies/uoselfcheckout"
                 image="/images/uo-after.png"
-                title="Helped drive 9% revenue growth with a self-checkout program"
+                title="Helped drive 9% revenue growth with an in store self-checkout program"
                 logo="/images/uo-logo.svg"
                 logoWidth={200}
                 logoClassName="md:py-1"
@@ -237,7 +236,7 @@ export default function Home() {
                 tags={[{ tag: "SaaS" }, { tag: "User Flows" }, { tag: "Dashboards" }]}
                 renderImageContent={(hovered) => (
                   <div className="w-full h-full" style={{ backgroundColor: "#EAF0FF" }}>
-                    <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.15] overflow-none" : "scale-100"}`}>
+                    <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.2] overflow-none" : "scale-100"}`}>
                       
                       <LottieCover src="/animations/home-jam-card.json" className="rounded-md" fit="cover" />
                       
@@ -254,7 +253,7 @@ export default function Home() {
               <Card
                 href="/case-studies/valeriejurado"
                 image="/images/val-nownextlater.png"
-                title="Brought 7x more contact form conversions to a high-end botanical designer"
+                title="Drove 7x increase in contact form conversions for a high-end botanical designer"
                 logo="/images/val-logo.svg"
                 tags={[{ tag: "Responsive Web" }, { tag: "Growth Design" }, { tag: "Branding" }]}
                 renderImageContent={(hovered) => (
