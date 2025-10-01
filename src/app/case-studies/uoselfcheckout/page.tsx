@@ -9,7 +9,7 @@ import FullWidthSection from "@/components/FullWidthSection";
 import StickyNavigation from "@/components/StickyNavigation";
 import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowDown, ArrowRight, Download } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import MediaFrame from "@/components/MediaFrame";
@@ -107,6 +107,7 @@ export default function CaseStudyTwoPage() {
   const offsetSecond = -2 * (1 - imageScrollProgress);
   const offsetThird = 2 * (1 - imageScrollProgress);
   const offsetFourth = 7 * (1 - imageScrollProgress);
+  const offsetFifth = 12 * (1 - imageScrollProgress);
 
   const sections = [
     { id: "theproblem", label: "The Problem" },
@@ -163,7 +164,8 @@ export default function CaseStudyTwoPage() {
         </div>
       </PageContainer>
 
-      <FullWidthSection backgroundColor="#f5f5f5" useContainer={false} noPadding sectionClassName="mb-6 md:mb-0">
+      {/* Temporarily disabled FullWidthSection */}
+      {/* <FullWidthSection backgroundColor="#f5f5f5" useContainer={false} noPadding sectionClassName="mb-6 md:mb-0">
         
           <div className="w-full overflow-hidden" ref={galleryRef}>
             <div className="grid grid-cols-3 md:grid-cols-4 w-[calc(110vw+10vw)] md:w-[calc(100vw+14vw)] -ml-[5vw] md:-ml-[7vw] gap-0 transition-transform duration-300 ease-out">
@@ -190,6 +192,39 @@ export default function CaseStudyTwoPage() {
             </div>
           </div>
         
+      </FullWidthSection> */}
+
+      {/* New FullWidthSection with 5 images and scroll animation */}
+      <FullWidthSection backgroundColor="#f5f5f5" useContainer={false} noPadding sectionClassName="mb-6 md:mb-0">
+        <div className="w-full overflow-hidden" ref={galleryRef}>
+          <div className="grid grid-cols-5 w-[calc(100vw+20vw)] -ml-[10vw] gap-0 transition-transform duration-300 ease-out">
+            <div className="relative h-[60vw] md:h-[32vw] mt-[90px]">
+              <div style={{ transform: isDesktop ? `translateX(${offsetFirst}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
+                <Image src="/images/home-uo-homecard5.png" alt="Urban Outfitters self checkout 1" fill unoptimized className="object-contain" sizes="(min-width:1536px) 20vw"/>
+              </div>
+            </div>
+            <div className="relative h-[60vw] md:h-[37vw] mt-[100px]">
+              <div style={{ transform: isDesktop ? `translateX(${offsetSecond}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
+                <Image src="/images/home-uo-homecard4.png" alt="Urban Outfitters self checkout 2" fill unoptimized className="object-contain" sizes="(min-width:1536px) 20vw"/>
+              </div>
+            </div>
+            <div className="relative h-[80vw] md:h-[50vw] ml-[30px]">
+              <div style={{ transform: isDesktop ? `translateX(${offsetThird}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
+                <Image src="/images/uo-selfcheckout-1.png" alt="Urban Outfitters self checkout 1" fill unoptimized className="object-contain" sizes="(min-width:1536px) 20vw"/>
+              </div>
+            </div>
+            <div className="relative h-[60vw] md:h-[37vw] mt-[100px]">
+              <div style={{ transform: isDesktop ? `translateX(${offsetFourth}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
+                <Image src="/images/home-uo-homecard2-1.png" alt="Urban Outfitters self checkout 4" fill unoptimized className="object-contain" sizes="(min-width:1536px) 20vw"/>
+              </div>
+            </div>
+            <div className="relative h-[60vw] md:h-[32vw] mt-[90px]">
+              <div style={{ transform: isDesktop ? `translateX(${offsetFifth}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
+                <Image src="/images/home-uo-homecard6.png" alt="Urban Outfitters self checkout 5" fill unoptimized className="object-contain" sizes="(min-width:1536px) 20vw"/>
+              </div>
+            </div>
+          </div>
+        </div>
       </FullWidthSection>
 
       <PageContainer>
@@ -455,8 +490,15 @@ export default function CaseStudyTwoPage() {
                 </div>
               </div>
             </CaseSection>
+            <CaseSection id="otheruowork" title="" headingLevel="h4" className="my-24 md:my-42">
+              <div className="w-full h-0.5 bg-gray-600 mb-4"></div>
+              <h2 className="custom-h2 flex items-center gap-2">
+                Other Urban Outfitters Work
+                <ArrowDown className="w-5 h-5 md:w-[30px] md:h-[30px]" />
+              </h2>
+            </CaseSection>
 
-            <CaseSection id="otheruowork" title="Other Urban Outfitters Work" headingLevel="h4">
+            <CaseSection id="helpandinfo" title="" headingLevel="h4">
               <h2 className="custom-h2">Help & Info Section Redesign</h2>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                     <div className="flex items-center justify-center h-full">

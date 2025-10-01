@@ -10,7 +10,7 @@ import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
 import Tabs from "@/components/Tabs";
 import ImageShowcaseGrid from "@/components/ImageShowcaseGrid";
-import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ArrowDown, Download } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import BackToTopButton from "@/components/BackToTopButton";
@@ -96,9 +96,9 @@ export default function CaseStudyOnePage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My Role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Used testing insights to inform design updates</li>
-                <li className="p">Developed and maintained Hilton's design system</li>
-                <li className="p">Designed reusable components for 12 Hilton brands</li>
+                <li className="p">Updated page template</li>
+                <li className="p">Created a multi-brand design system</li>
+                <li className="p">Designed reusable components</li>
               </ul>
             </div>
             <div className="space-y-2">
@@ -179,11 +179,11 @@ export default function CaseStudyOnePage() {
           <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2">
-                Hilton's Property pages were not engaging users, despite their high traffic.
+                Hilton's Property pages were not engaging or converting users, despite their high traffic.
               </h2>
               
               <p className="p mb-12">
-                Hilton's UX Research team found through testing that users toggled between Property pages more than any other page during the booking flow. Despite their high traffic, the pages' design didn't reflect their importance. The pages had little brand presence, usability issues, and poor information architecture that weakened the user experience.
+                Hilton's UX Research team found through testing that users toggled between Property pages more than any other page during the booking flow. Despite their high traffic, the pages' design didn't reflect their importance. The pages had little brand presence, usability issues, and poor information architecture. The result was a weak user experience and dropoff. 
               </p>
               
               {/* Original Hilton Property page screens */}
@@ -201,7 +201,7 @@ export default function CaseStudyOnePage() {
             <CaseSection id="businessgoal" title="Business Goal" headingLevel="h4">
               <Statement>
                 <h2 className="custom-h2">
-                  Hilton’s business goal was to see more engagement with Property pages that led to measurable downstream actions such as booking, loyalty enrollment, or continued exploration.
+                  Hilton’s business goal was to see more measurable downstream actions from Property pages like booking, loyalty enrollment, or continued exploration.
                 </h2>
               </Statement>
             </CaseSection>
@@ -543,8 +543,15 @@ The icons were published company- wide using the Hilton shared codebase. They we
                 </div>
               </div>
             </CaseSection>
+            <CaseSection id="otherhiltonwork" title="" headingLevel="h4" className="my-24 md:my-42">
+              <div className="w-full h-0.5 bg-gray-600 mb-4"></div>
+              <h2 className="custom-h2 flex items-center gap-2">
+                Other Hilton Work
+                <ArrowDown className="w-5 h-5 md:w-[30px] md:h-[30px]" />
+              </h2>
+            </CaseSection>
 
-            <CaseSection id="otherhiltonwork" title="Other Hilton Work" headingLevel="h4">
+            <CaseSection id="personalinformation" title="" headingLevel="h4">
               <h2 className="custom-h2">Personal Information</h2>
               <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
                     <div className="flex items-center justify-center h-full">

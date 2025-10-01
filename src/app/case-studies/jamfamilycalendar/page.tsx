@@ -54,7 +54,7 @@ export default function JamFamilyCalendarPage() {
                 </li>
                 <li className="p">Created a foundational style guide
                 </li>
-                <li className="p">Mapped user flows to to clarify feature interactions</li>
+                <li className="p">Mapped user flows</li>
               </ul>
             </div>
             <div className="space-y-2">
