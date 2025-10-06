@@ -200,27 +200,27 @@ export default function CaseStudyTwoPage() {
           <div className="grid grid-cols-5 w-[calc(100vw+20vw)] -ml-[10vw] gap-0 transition-transform duration-300 ease-out">
             <div className="relative h-[60vw] md:h-[32vw] mt-[90px]">
               <div style={{ transform: isDesktop ? `translateX(${offsetFirst}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                <Image src="/images/home-uo-homecard5.png" alt="Urban Outfitters self checkout 1" fill unoptimized className="object-contain" sizes="(min-width:1536px) 20vw"/>
+                <Image src="/images/home-uo-homecard5.png" alt="Urban Outfitters self checkout 1" fill unoptimized className="object-cover" sizes="(min-width:1536px) 20vw"/>
               </div>
             </div>
             <div className="relative h-[60vw] md:h-[37vw] mt-[100px]">
               <div style={{ transform: isDesktop ? `translateX(${offsetSecond}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                <Image src="/images/home-uo-homecard4.png" alt="Urban Outfitters self checkout 2" fill unoptimized className="object-contain" sizes="(min-width:1536px) 20vw"/>
+                <Image src="/images/home-uo-homecard4.png" alt="Urban Outfitters self checkout 2" fill unoptimized className="object-cover" sizes="(min-width:1536px) 20vw"/>
               </div>
             </div>
             <div className="relative h-[80vw] md:h-[50vw] ml-[30px]">
               <div style={{ transform: isDesktop ? `translateX(${offsetThird}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                <Image src="/images/uo-selfcheckout-1.png" alt="Urban Outfitters self checkout 1" fill unoptimized className="object-contain" sizes="(min-width:1536px) 20vw"/>
+                <Image src="/images/uo-selfcheckout-1.png" alt="Urban Outfitters self checkout 1" fill unoptimized className="object-cover" sizes="(min-width:1536px) 20vw"/>
               </div>
             </div>
             <div className="relative h-[60vw] md:h-[37vw] mt-[100px]">
               <div style={{ transform: isDesktop ? `translateX(${offsetFourth}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                <Image src="/images/home-uo-homecard2-1.png" alt="Urban Outfitters self checkout 4" fill unoptimized className="object-contain" sizes="(min-width:1536px) 20vw"/>
+                <Image src="/images/home-uo-homecard2-1.png" alt="Urban Outfitters self checkout 4" fill unoptimized className="object-cover" sizes="(min-width:1536px) 20vw"/>
               </div>
             </div>
             <div className="relative h-[60vw] md:h-[32vw] mt-[90px]">
               <div style={{ transform: isDesktop ? `translateX(${offsetFifth}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                <Image src="/images/home-uo-homecard6.png" alt="Urban Outfitters self checkout 5" fill unoptimized className="object-contain" sizes="(min-width:1536px) 20vw"/>
+                <Image src="/images/home-uo-homecard6.png" alt="Urban Outfitters self checkout 5" fill unoptimized className="object-cover" sizes="(min-width:1536px) 20vw"/>
               </div>
             </div>
           </div>
