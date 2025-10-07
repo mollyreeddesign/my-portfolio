@@ -20,6 +20,8 @@ export default function Home() {
   
   const videoSources = [
     "/videos/home-skyvideo.mp4",
+    "/videos/home-skyvideo-2.mp4",
+    "/videos/home-skyvideo-3.mp4",
     "/videos/sunset-loop.mp4",
   ];
   const [selectedVideo] = useState(() => videoSources[Math.floor(Math.random() * videoSources.length)]);

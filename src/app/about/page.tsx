@@ -45,7 +45,7 @@ export default function AboutPage() {
       </Reveal>
       <Reveal delayMs={120}>
       <p className="p text-black max-w-[40rem] mb-4 mx-auto">
-      I’ve been designing digital experiences for people and businesses for over a decade. From building B2B telecom products to designing the latest features for ecommerce apps, I’ve grown into a multidisciplinary product designer with a versatile toolkit and strong work ethic.</p>
+      I’ve been designing digital experiences for people and businesses for over a decade. From designing B2B telecom products to ecommerce apps, I’ve grown into a multidisciplinary product designer with a versatile toolkit and strong work ethic.</p>
       </Reveal>
       <Reveal delayMs={240}>
 <p className="p text-black max-w-[40rem] mb-4 mx-auto">Along the way, I’ve built design systems, launched apps, and taken products from concept to reality. I’ve learned not only how to make good design decisions, but also how to target specific business goals.</p> 
