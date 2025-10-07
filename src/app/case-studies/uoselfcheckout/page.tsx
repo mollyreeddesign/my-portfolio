@@ -103,11 +103,11 @@ export default function CaseStudyTwoPage() {
     return () => observer.disconnect();
   }, []);
 
-  const offsetFirst = -7 * (1 - imageScrollProgress);
-  const offsetSecond = -2 * (1 - imageScrollProgress);
+  const offsetFirst = 15 * (1 - imageScrollProgress);
+  const offsetSecond = 7 * (1 - imageScrollProgress);
   const offsetThird = 2 * (1 - imageScrollProgress);
-  const offsetFourth = 7 * (1 - imageScrollProgress);
-  const offsetFifth = 12 * (1 - imageScrollProgress);
+  const offsetFourth = -7 * (1 - imageScrollProgress);
+  const offsetFifth = -20 * (1 - imageScrollProgress);
 
   const sections = [
     { id: "theproblem", label: "The Problem" },
@@ -196,33 +196,63 @@ export default function CaseStudyTwoPage() {
 
       {/* New FullWidthSection with 5 images and scroll animation */}
       <FullWidthSection backgroundColor="#f5f5f5" useContainer={false} noPadding sectionClassName="mb-6 md:mb-0">
-        <div className="w-full overflow-hidden" ref={galleryRef}>
-          <div className="grid grid-cols-5 w-[calc(100vw+20vw)] -ml-[10vw] gap-0 transition-transform duration-300 ease-out">
-            <div className="relative h-[60vw] md:h-[32vw] mt-[90px]">
-              <div style={{ transform: isDesktop ? `translateX(${offsetFirst}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                <Image src="/images/home-uo-homecard5.png" alt="Urban Outfitters self checkout 1" fill unoptimized className="object-cover" sizes="(min-width:1536px) 20vw"/>
-              </div>
-            </div>
-            <div className="relative h-[60vw] md:h-[37vw] mt-[100px]">
-              <div style={{ transform: isDesktop ? `translateX(${offsetSecond}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                <Image src="/images/home-uo-homecard4.png" alt="Urban Outfitters self checkout 2" fill unoptimized className="object-cover" sizes="(min-width:1536px) 20vw"/>
-              </div>
-            </div>
-            <div className="relative h-[80vw] md:h-[50vw] ml-[30px]">
-              <div style={{ transform: isDesktop ? `translateX(${offsetThird}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                <Image src="/images/uo-selfcheckout-1.png" alt="Urban Outfitters self checkout 1" fill unoptimized className="object-cover" sizes="(min-width:1536px) 20vw"/>
-              </div>
-            </div>
-            <div className="relative h-[60vw] md:h-[37vw] mt-[100px]">
-              <div style={{ transform: isDesktop ? `translateX(${offsetFourth}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                <Image src="/images/home-uo-homecard2-1.png" alt="Urban Outfitters self checkout 4" fill unoptimized className="object-cover" sizes="(min-width:1536px) 20vw"/>
-              </div>
-            </div>
-            <div className="relative h-[60vw] md:h-[32vw] mt-[90px]">
-              <div style={{ transform: isDesktop ? `translateX(${offsetFifth}vw)` : 'none', transition: 'transform 200ms ease-out' }} className="w-full h-full">
-                <Image src="/images/home-uo-homecard6.png" alt="Urban Outfitters self checkout 5" fill unoptimized className="object-cover" sizes="(min-width:1536px) 20vw"/>
-              </div>
-            </div>
+        <div className="w-full h-[80vw] md:h-[50vw] overflow-hidden" ref={galleryRef}>
+          <div className="flex items-end justify-center w-full h-full">
+            <img
+              src="/images/home-uo-homecard5.png"
+              alt="Urban Outfitters self checkout 1"
+              className="relative z-0 h-[60%] md:h-[60%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 -translate-y-4"
+              style={{ 
+                transform: isDesktop 
+                  ? `translateX(${290 + offsetFirst * 10}px) translateY(-55px)` 
+                  : 'translateX(270px) translateY(-50px)' 
+              }}
+              loading="lazy"
+            />
+            <img
+              src="/images/home-uo-homecard4.png"
+              alt="Urban Outfitters self checkout 2"
+              className="relative z-5 h-[75%] md:h-[80%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -mr-5 md:-mr-44 translate-y-2"
+              style={{ 
+                transform: isDesktop 
+                  ? `translateX(${-5 + offsetSecond * 10}px) translateY(-33px)` 
+                  : 'translateX(105px) translateY(-43px)' 
+              }}
+              loading="lazy"
+            />
+            <img
+              src="/images/uo-selfcheckout-animation.gif"
+              alt="Urban Outfitters self checkout center"
+              className="relative z-10 h-[90%] md:h-[90%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out"
+              style={{ 
+                transform: isDesktop 
+                  ? `translateX(35px) translateY(-25px) scale(${1 + imageScrollProgress * 0.1})` 
+                  : 'translateX(20px) translateY(-15px)' 
+              }}
+              loading="lazy"
+            />
+            <img
+              src="/images/home-uo-homecard2-1.png"
+              alt="Urban Outfitters self checkout 4"
+              className="relative z-5 h-[75%] md:h-[80%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 translate-y-2"
+              style={{ 
+                transform: isDesktop 
+                  ? `translateX(${-30 + offsetFourth * 10}px) translateY(-33px)` 
+                  : 'translateX(-105px) translateY(-43px)' 
+              }}
+              loading="lazy"
+            />
+            <img
+              src="/images/home-uo-homecard6.png"
+              alt="Urban Outfitters self checkout 5"
+              className="relative z-0 h-[60%] md:h-[60%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 -translate-y-4"
+              style={{ 
+                transform: isDesktop 
+                  ? `translateX(${-150 + offsetFifth * 10}px) translateY(-55px)` 
+                  : 'translateX(-250px) translateY(-50px)' 
+              }}
+              loading="lazy"
+            />
           </div>
         </div>
       </FullWidthSection>
