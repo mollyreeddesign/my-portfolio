@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import CaseStudyBodyClass from "@/components/CaseStudyBodyClass";
+import DynamicFavicon from "@/components/DynamicFavicon";
 
 const workSans = Work_Sans({
   variable: "--font-sans",
@@ -12,8 +13,11 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Molly Reed | Product Designer",
   description: "Personal portfolio site",
+  icons: {
+    icon: '/favicon.ico', // Default favicon
+  },
 };
 
 export default function RootLayout({
@@ -24,6 +28,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={workSans.variable}>
       <body className={`${workSans.className} antialiased`}>
+        {/* Dynamic favicon component */}
+        <DynamicFavicon />
         {/* Fixed Nav overlays content, so add top padding equal to nav height */}
         <CaseStudyBodyClass />
         <header>
