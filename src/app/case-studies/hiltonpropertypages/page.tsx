@@ -122,47 +122,84 @@ export default function CaseStudyOnePage() {
       </PageContainer>
 
       {/* Custom Full Width Section - bypasses PageContainer */}
-      <section className="w-full py-8 sm:py-12 bg-[#f5f5f5] overflow-hidden mb-6 md:mb-0">
+      <section className="w-full py-8 sm:py-12 bg-[#D3E7F5] overflow-hidden mb-6 md:mb-0">
         <div className="relative overflow-hidden">
-          {/* Background images positioned behind */}
-          <div className="absolute inset-0 flex justify-center items-center overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 opacity-90 w-full px-8 sm:px-12 md:px-16 lg:px-30 overflow-hidden">
-              <div className="relative overflow-hidden" style={{ width: 'calc(100% + 140px)', marginLeft: '-140px' }}>
-                <Image 
-                  src="/images/hilton-hamptoninn.png"
-                  alt="Hampton by Hilton Hotel"
-                  width={600}
-                  height={450}
-                  className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out hidden md:block"
-                  style={{
-                    transform: `translateX(-${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
-                  }}
-                />
-              </div>
-              <div className="relative overflow-hidden" style={{ width: 'calc(100% + 140px)', marginRight: '-70px' }}>
-                <Image 
-                  src="/images/hilton-embassysuites.png"
-                  alt="Embassy Suites by Hilton Hotel"
-                  width={600}
-                  height={450}
-                  className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out hidden md:block"
-                  style={{
-                    transform: `translateX(${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
-                  }}
-                />
+          {/* Mobile: Homepage-style layout with three overlapping images */}
+          <div className="block md:hidden">
+            <div className="w-full rounded-md h-64 sm:h-80" style={{ backgroundColor: "#D3E7F5" }}>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex items-end justify-center w-[86%] h-[80%]">
+                  <Image
+                    src="/images/hilton-hamptoninn.png"
+                    alt="Hampton by Hilton Hotel"
+                    width={400}
+                    height={300}
+                    className="relative z-0 h-[80%] rounded-md w-auto object-contain drop-shadow-md -mr-5 -translate-y-3"
+                    loading="lazy"
+                  />
+                  <Image
+                    src="/images/hilton-doubletree.png"
+                    alt="DoubleTree Resort by Hilton Hotel"
+                    width={400}
+                    height={300}
+                    className="relative z-10 h-[100%] rounded-md w-auto object-contain drop-shadow-md"
+                    loading="lazy"
+                  />
+                  <Image
+                    src="/images/hilton-embassysuites.png"
+                    alt="Embassy Suites by Hilton Hotel"
+                    width={400}
+                    height={300}
+                    className="relative z-0 h-[80%] rounded-md w-auto object-contain drop-shadow-md -ml-5 -translate-y-3"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </div>
           </div>
-          
-          {/* Front image positioned on top */}
-          <div className="relative z-10 flex justify-center">
-            <Image 
-              src="/images/hilton-doubletree.png"
-              alt="DoubleTree Resort by Hilton Hotel"
-              width={700}
-              height={525}
-              className="w-full h-auto rounded-lg border border-[#D9D9D9] max-w-3xl"
-            />
+
+          {/* Desktop: Original layout */}
+          <div className="hidden md:block">
+            {/* Background images positioned behind */}
+            <div className="absolute inset-0 flex justify-center items-center overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 opacity-90 w-full px-8 sm:px-12 md:px-16 lg:px-30 overflow-hidden">
+                <div className="relative overflow-hidden" style={{ width: 'calc(100% + 140px)', marginLeft: '-140px' }}>
+                  <Image 
+                    src="/images/hilton-hamptoninn.png"
+                    alt="Hampton by Hilton Hotel"
+                    width={600}
+                    height={450}
+                    className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out"
+                    style={{
+                      transform: `translateX(-${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
+                    }}
+                  />
+                </div>
+                <div className="relative overflow-hidden" style={{ width: 'calc(100% + 140px)', marginRight: '-70px' }}>
+                  <Image 
+                    src="/images/hilton-embassysuites.png"
+                    alt="Embassy Suites by Hilton Hotel"
+                    width={600}
+                    height={450}
+                    className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out"
+                    style={{
+                      transform: `translateX(${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            
+            {/* Front image positioned on top */}
+            <div className="relative z-10 flex justify-center">
+              <Image 
+                src="/images/hilton-doubletree.png"
+                alt="DoubleTree Resort by Hilton Hotel"
+                width={700}
+                height={525}
+                className="w-full h-auto rounded-lg border border-[#D9D9D9] max-w-3xl"
+              />
+            </div>
           </div>
         </div>
       </section>
