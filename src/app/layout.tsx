@@ -5,6 +5,7 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import CaseStudyBodyClass from "@/components/CaseStudyBodyClass";
 import DynamicFavicon from "@/components/DynamicFavicon";
+import { Analytics } from '@vercel/analytics/react';
 
 const workSans = Work_Sans({
   variable: "--font-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
         </header>
         <main className="pt-[72px] md:pt-[88px] pb-16 md:pb-24">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
