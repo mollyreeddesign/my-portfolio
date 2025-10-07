@@ -112,9 +112,9 @@ export default function Home() {
         <h1 className="text-2xl text-white md:text-3xl mb-2">Product Designer</h1>
         <p className="text-gray-400 text-base md:!text-sm">I design distinct digital experiences<br />{" "}that clarify and convert.</p>
         </div>
-         <div className="mt-auto mb-0 md:-mb-30 self-center text-center">
+         <div className="mt-auto -mb-30 md:-mb-30 self-center text-center">
         <p className="text-gray-400 text-base md:!text-sm">Based in Zurich, CH 🇨🇭</p>
-        <p className="text-gray-400 text-base md:!text-sm mb-2">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
+        <p className="text-gray-400 text-base md:!text-sm mb-1">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
         <ChevronDown className="mx-auto text-gray-400 animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
       </section>
