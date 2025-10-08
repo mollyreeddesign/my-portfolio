@@ -26,7 +26,20 @@ export default function ContactButtons() {
           </Link>
         </Reveal>
         <Reveal delayMs={360} className="w-full md:w-auto my-4 md:mx-4 md:my-0">
-          <a href="/MollyReed-ProductDesigner-CV.pdf" download="MollyReed-ProductDesigner-CV.pdf" className="btn btn--secondary inline-flex w-full md:w-auto justify-center">
+          <a 
+            href="/MollyReed-ProductDesigner-CV.pdf" 
+            download="MollyReed-ProductDesigner-CV.pdf" 
+            className="btn btn--secondary inline-flex w-full md:w-auto justify-center"
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.mixpanel) {
+                window.mixpanel.track('CV Downloaded', {
+                  location: 'Contact Buttons',
+                  filename: 'MollyReed-ProductDesigner-CV.pdf',
+                  timestamp: new Date().toISOString(),
+                });
+              }
+            }}
+          >
             Download CV
             <Download />
           </a>
@@ -37,6 +50,16 @@ export default function ContactButtons() {
             className="btn btn--secondary inline-flex w-full md:w-auto justify-center md:justify-start"
             onClick={() => {
               const email = "mollyreeddesign@gmail.com";
+              
+              // Track the copy email action
+              if (typeof window !== 'undefined' && window.mixpanel) {
+                window.mixpanel.track('Email Copied', {
+                  location: 'Contact Buttons',
+                  email: email,
+                  timestamp: new Date().toISOString(),
+                });
+              }
+              
               if (navigator?.clipboard?.writeText) {
                 navigator.clipboard.writeText(email);
               } else {
