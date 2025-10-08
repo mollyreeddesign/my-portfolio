@@ -6,6 +6,7 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import CaseStudyBodyClass from "@/components/CaseStudyBodyClass";
 import DynamicFavicon from "@/components/DynamicFavicon";
+import MixpanelPageView from "@/components/MixpanelPageView";
 import { Analytics } from '@vercel/analytics/react';
 
 const workSans = Work_Sans({
@@ -42,7 +43,7 @@ export default function RootLayout({
               
               mixpanel.init('ee6288af340a17c15afd7c59f77fdd8a', {
                 autocapture: true,
-                record_sessions_percent: 100,
+                record_sessions_percent: 0,
               });
             `,
           }}
@@ -50,6 +51,8 @@ export default function RootLayout({
         
         {/* Dynamic favicon component */}
         <DynamicFavicon />
+        {/* Mixpanel Page View Tracking */}
+        <MixpanelPageView />
         {/* Fixed Nav overlays content, so add top padding equal to nav height */}
         <CaseStudyBodyClass />
         <header>
