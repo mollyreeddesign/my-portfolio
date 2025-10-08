@@ -322,12 +322,12 @@ export default function Home() {
                <ArrowUpRight />
              </Link>
            </Reveal>
-           <Reveal delayMs={360}>
-             <Link href="/case-studies/case-4" className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center">
-               Download CV
-               <Download />
-             </Link>
-           </Reveal>
+          <Reveal delayMs={360}>
+            <a href="/MollyReed-ProductDesigner-CV.pdf" download="MollyReed-ProductDesigner-CV.pdf" className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center">
+              Download CV
+              <Download />
+            </a>
+          </Reveal>
            <Reveal delayMs={480}>
             <button
               type="button"

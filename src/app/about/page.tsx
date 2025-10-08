@@ -6,6 +6,7 @@ import Card from "@/components/Card";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import ContactButtons from "@/components/ContactButtons";
 
 export const metadata: Metadata = {
   title: "About | Portfolio",
@@ -54,8 +55,10 @@ export default function AboutPage() {
 <p className="text-black max-w-[40rem] mb-4 mx-auto">I’m not a one-trick pony. I thrive as an all-around designer, constantly improving my craft, supporting my team, and learning everything I can.</p>
       </Reveal>
       <Reveal delayMs={480}>
-<p className="text-black !font-semibold max-w-[40rem] mx-auto">I’m currently based in Zurich, Switzerland and open to on-site or remote projects.</p>
+<p className="text-black !font-semibold max-w-[40rem] mb-8 mx-auto">I'm currently based in Zurich, Switzerland and open to on-site or remote projects.</p>
       </Reveal>
+
+      <ContactButtons />
 
 </div>
         </PageContainer>
