@@ -8,7 +8,19 @@ export default function ContactButtons() {
     <div className="w-full md:max-w-[40rem] md:mx-auto">
       <div className="flex flex-col md:flex-row justify-center md:justify-start items-stretch md:items-center">
         <Reveal delayMs={240} className="w-full md:w-auto">
-          <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary inline-flex w-full md:w-auto justify-center">
+          <Link 
+            href="https://www.linkedin.com/in/mollyreeddesign/" 
+            className="btn btn--secondary inline-flex w-full md:w-auto justify-center"
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.mixpanel) {
+                window.mixpanel.track('LinkedIn Button Clicked', {
+                  location: 'Contact Buttons',
+                  url: 'https://www.linkedin.com/in/mollyreeddesign/',
+                  timestamp: new Date().toISOString(),
+                });
+              }
+            }}
+          >
             LinkedIn
             <ArrowUpRight />
           </Link>
