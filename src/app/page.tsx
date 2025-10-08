@@ -317,13 +317,40 @@ export default function Home() {
           </Reveal>
           <div className="flex flex-col md:flex-row justify-center gap-6">
            <Reveal delayMs={240}>
-             <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center">
+             <Link 
+               href="https://www.linkedin.com/in/mollyreeddesign/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center"
+               onClick={() => {
+                 if (typeof window !== 'undefined' && window.mixpanel) {
+                   window.mixpanel.track('LinkedIn Button Clicked', {
+                     location: 'Home Page - Hero',
+                     url: 'https://www.linkedin.com/in/mollyreeddesign/',
+                     timestamp: new Date().toISOString(),
+                   });
+                 }
+               }}
+             >
                LinkedIn
                <ArrowUpRight />
              </Link>
            </Reveal>
           <Reveal delayMs={360}>
-            <a href="/MollyReed-ProductDesigner-CV.pdf" download="MollyReed-ProductDesigner-CV.pdf" className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center">
+            <a 
+              href="/MollyReed-ProductDesigner-CV.pdf" 
+              download="MollyReed-ProductDesigner-CV.pdf" 
+              className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.mixpanel) {
+                  window.mixpanel.track('CV Downloaded', {
+                    location: 'Home Page - Hero',
+                    filename: 'MollyReed-ProductDesigner-CV.pdf',
+                    timestamp: new Date().toISOString(),
+                  });
+                }
+              }}
+            >
               Download CV
               <Download />
             </a>
@@ -334,6 +361,16 @@ export default function Home() {
               className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center"
               onClick={() => {
                 const email = "mollyreeddesign@gmail.com";
+                
+                // Track the copy email action
+                if (typeof window !== 'undefined' && window.mixpanel) {
+                  window.mixpanel.track('Email Copied', {
+                    location: 'Home Page - Hero',
+                    email: email,
+                    timestamp: new Date().toISOString(),
+                  });
+                }
+                
                 if (navigator?.clipboard?.writeText) {
                   navigator.clipboard.writeText(email);
                 } else {
@@ -427,7 +464,21 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col md:flex-row gap-6">
-          <Link href="https://www.linkedin.com/in/mollyreeddesign/" className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center">
+          <Link 
+            href="https://www.linkedin.com/in/mollyreeddesign/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn--secondary-white inline-flex w-full md:w-auto justify-center"
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.mixpanel) {
+                window.mixpanel.track('LinkedIn Button Clicked', {
+                  location: 'Home Page - About Section',
+                  url: 'https://www.linkedin.com/in/mollyreeddesign/',
+                  timestamp: new Date().toISOString(),
+                });
+              }
+            }}
+          >
              LinkedIn
              <ArrowUpRight />
            </Link>

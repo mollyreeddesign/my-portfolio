@@ -10,6 +10,8 @@ export default function ContactButtons() {
         <Reveal delayMs={240} className="w-full md:w-auto">
           <Link 
             href="https://www.linkedin.com/in/mollyreeddesign/" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn--secondary inline-flex w-full md:w-auto justify-center"
             onClick={() => {
               if (typeof window !== 'undefined' && window.mixpanel) {
