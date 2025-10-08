@@ -139,12 +139,12 @@ export default function Nav() {
               isCaseStudiesPage ? "bg-white text-[#2C2C2C] border-t border-black/10" : "bg-[#0b0b0b] text-white border-t border-white/10"
             } shadow-lg`}
           >
-            <ul className="py-2 text-right">
+            <ul className="pt-2 pb-6 text-right">
               {links.map((item, idx) => (
-                <li key={item.href} className={idx !== links.length - 1 ? (isCaseStudiesPage ? "border-b border-black/10" : "border-b border-white/10") : ""}>
+                <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`block px-4 py-3 text-base tracking-wide ${isCaseStudiesPage ? "hover:bg-black/5" : "hover:bg-white/10"}`}
+                    className={`block px-4 py-5 text-xl tracking-wide ${isCaseStudiesPage ? "hover:bg-black/5" : "hover:bg-white/10"}`}
                     role="menuitem"
                   >
                     {item.label}
