@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Suspense } from "react";
 import Nav from "@/app/nav";
 import Footer from "@/components/Footer";
 import { Work_Sans } from "next/font/google";
@@ -52,7 +53,9 @@ export default function RootLayout({
         {/* Dynamic favicon component */}
         <DynamicFavicon />
         {/* Mixpanel Page View Tracking */}
-        <MixpanelPageView />
+        <Suspense fallback={null}>
+          <MixpanelPageView />
+        </Suspense>
         {/* Fixed Nav overlays content, so add top padding equal to nav height */}
         <CaseStudyBodyClass />
         <header>
