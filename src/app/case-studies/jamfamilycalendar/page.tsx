@@ -60,6 +60,7 @@ export default function JamFamilyCalendarPage() {
             <div className="space-y-2">
               <h2 className="custom-h2">Team</h2>
               <p className="p">
+              Product Design (me) <br />
                 Founding Product Leader • Founding Content Leader
               </p>
             </div>

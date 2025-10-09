@@ -57,7 +57,8 @@ export default function ValerieJuradoPage() {
             <div className="space-y-2">
               <h2 className="custom-h2">Team</h2>
               <p className="p">
-              Founders • Marketing • Finance
+              Product Design (me) <br />
+              Founders • Marketing
               </p>
             </div>
           </div>

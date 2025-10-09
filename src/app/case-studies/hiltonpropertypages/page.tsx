@@ -96,16 +96,16 @@ export default function CaseStudyOnePage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My Role</h2>
               <ul className="list-disc list-inside space-y-1">
-                <li className="p">Updated page template</li>
                 <li className="p">Created a multi-brand design system</li>
-                <li className="p">Designed reusable components</li>
+                <li className="p">Designed dynamic components</li>
+                <li className="p">Updated page template</li>
               </ul>
             </div>
             <div className="space-y-2">
               <h2 className="custom-h2">Team</h2>
               <p className="p">
-                UX Design • Content Design <br />
-                Product • Software Engineering
+              Product Design (me) • UX Design <br />
+                Content Design • Software Engineering
               </p>
             </div>
           </div>
@@ -216,15 +216,20 @@ export default function CaseStudyOnePage() {
           <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2">
-                Hilton's Property pages were not engaging or converting users, despite their high traffic.
+              Hilton’s property pages created confusion and drop-off during the booking journey.
+
               </h2>
               
+
+              <p className="p mb-4">
+                Many users frequently toggled through Property pages during the booking flow, but were abandoning the process shortly after. Business evaluation, design reviews, and user feedback revealed several issues: The pages lacked clear information architecture, didn’t reflect each Hilton brand consistently, and often felt like external hotel websites. Many users reported they couldn’t find the details they needed to make a decision like hotel email and check in/out times. These problems led to user frustration and drop-off. 
+              </p>
               <p className="p mb-12">
-                Hilton's UX Research team found through testing that users toggled between Property pages more than any other page during the booking flow. Despite their high traffic, the pages' design didn't reflect their importance. The pages had little brand presence, usability issues, and poor information architecture. The result was a weak user experience and dropoff. 
+              This prompted Hilton to focus on improving property pages’ structure and brand presence to increase conversion, engagement, and loyalty sign-ups.
               </p>
               
               {/* Original Hilton Property page screens */}
-              <div className="w-full mb-4">
+              <div className="w-full mb-12">
                 <BeforeAfterSlider
                   beforeSrc="/images/hilton-after.png"
                   afterSrc="/images/hilton-before.png"
@@ -233,12 +238,15 @@ export default function CaseStudyOnePage() {
                   objectFit="contain"
                 />
               </div>
+              <p className="p mb-12">
+              An added complexity was the scale of the project. Hilton had over 7,000 Property pages, each populated from a CMS where hotels entered their own information. This content was automatically pushed into the property page. Any design improvements had to accommodate variable amounts of content, work consistently across all 12 Hilton portfolio brands, and integrate seamlessly with existing hotel data.
+              </p>
             </CaseSection>
 
             <CaseSection id="businessgoal" title="Business Goal" headingLevel="h4">
               <Statement>
                 <h2 className="custom-h2">
-                  Hilton’s business goal was to see more measurable downstream actions from Property pages like booking, loyalty enrollment, or continued exploration.
+                Hilton’s business goal was to improve the information architecture and brand presence of 7,000+ property pages to increase conversion, engagement, and loyalty sign-ups.
                 </h2>
               </Statement>
             </CaseSection>
@@ -246,7 +254,7 @@ export default function CaseStudyOnePage() {
             <CaseSection id="design" title="Process Overview" headingLevel="h4" className="hidden md:block">
             <ProcessOverview
                 steps={[
-                  "Look at past tests",
+                  "Examine past tests",
                   "Make + test prototypes",
                   "Design new components",
                   "Monorepo Merge",
@@ -300,10 +308,10 @@ export default function CaseStudyOnePage() {
               
               </p>
               <p className="p mb-12">
-              One of the challenges we had with Hilton’s property pages was that they lacked high- quality imagery. Pictures of the rooms, particularly in budget brands like DoubleTree and Hampton Inn, were not attractive or high resolution. This meant it was important for product design to carry the experience. We had to surface business value without turning to the easy answer of premium photography. One example where we achieved this was with room tiles.
+              One of the challenges we had with Hilton’s property pages was that they lacked high- quality imagery. Pictures of the rooms, particularly in budget brands like DoubleTree and Hampton Inn, were not attractive or high resolution. This meant it was important for product design to carry the experience. We had to surface business value without turning to the easy answer of premium photography. One example where we achieved this was with room tiles:
               </p>
               {/* Hilton Room Crop Comparison */}
-              <MediaFrame aspectRatio="3 / 2" enableModal caption="User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2">
+              <MediaFrame aspectRatio="3 / 2" enableModal caption="User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2, removing the black overlay and bringing the room title below the image.">
                 <Image 
                   src="/images/hilton-roomcrop.png"
                   alt="Hilton Room Crop Comparison"
@@ -313,7 +321,7 @@ export default function CaseStudyOnePage() {
                 />
               </MediaFrame>
               <p className="caption mb-8 md:mb-12 text-center">
-              User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2
+              User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2, removing the black overlay and bringing the room title below the image.
               
               </p>
               
@@ -326,10 +334,10 @@ export default function CaseStudyOnePage() {
                 <div className="mb-12">
                   <h2 className="custom-h2">I designed impactful components</h2>
                   <p className="p mb-4">
-                  We created new components based on business goals and user testing insights. For example, we designed the Locations component to surface information about nearby attractions and airport transportation; items that we heard users ask for in screen recordings.  We also created the Info Card, a stackable component that showcases bite-sized blocks of heading and paragraph text for easier scannability.
+                  We created new components based on business goals and user testing insights. For example, we designed the Locations component to surface information about nearby attractions and airport transportation; items that we heard users ask for in screen recordings. We created the Info Card, a stackable component that showcases bite-sized blocks of heading and paragraph text for easier scannability.
                   </p>
                   <p className="p mb-4">
-                  We also surfaced essential information in pre-existing components like Hotel phone numbers, emails, room prices and check-in/check-out times.
+                  We surfaced essential information in pre-existing components like Hotel phone numbers, emails, room prices and check-in/check-out times.
                   </p>
                 </div>
                 
@@ -408,7 +416,7 @@ export default function CaseStudyOnePage() {
                           alt="Hampton by Hilton logo"
                           width={200}
                           height={80}
-                          className="h-18 w-auto max-w-full"
+                          className="h-14 w-auto max-w-full"
                         />
                       ),
                       content: (

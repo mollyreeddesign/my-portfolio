@@ -36,7 +36,7 @@ export default function Home() {
       const scrollTop = window.scrollY;
       // Start the effect immediately when user scrolls
       const start = 0; // begin at top of page
-      const end = sectionHeight * 0.25; // finish even sooner for quicker effect
+      const end = sectionHeight * 0.80; // finish at 80% of section height
       const progressRaw = (scrollTop - start) / Math.max(1, end - start);
       const progress = Math.max(0, Math.min(1, progressRaw));
       const opacity = 0.2 + progress * 0.95; // fade from 0.2 to 1.15
@@ -74,7 +74,7 @@ export default function Home() {
        <div ref={pinWrapperRef} className="relative overflow-x-hidden">
         <section ref={sectionRef} className="fixed left-0 right-0 top-1/2 -translate-y-[90%] md:-translate-y-[80%] flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
           
-        <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[500px] -translate-y-[78px] md:-translate-y-[115px] w-[720px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms" }}>
+        <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[500px] -translate-y-[74px] md:-translate-y-[114px] w-[720px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms" }}>
           <Image
             src="/images/home-skylight.png"
             alt=""
@@ -494,7 +494,7 @@ export default function Home() {
         <Reveal>
         <div className="grid grid-cols-1 mb-22 md:grid-cols-2 gap-12">
           <div className="p-6 md:p-8 bg-white/10 border border-white/30 rounded-lg h-full flex flex-col">
-            <p className="text-white/80 mb-8 [&_strong]:text-white">"<strong>Molly was my absolute favorite UI design partner at Hilton.</strong> She was quick and receptive to feedback, adapting quickly to stakeholder demands. When in doubt, her own skills and leadership abilities were showcased as she quickly made executive level decisions based on team feedback for overall product success. She was a limited resource, and we made sure to openly and expressively fight for her attentions. <strong>She will delight anyone that hires her with her creative abilities and fast approach to art and design."</strong></p>
+            <p className="text-white/80 mb-8 [&_strong]:text-white">"<strong>Molly was my absolute favorite UI design partner at Hilton.</strong> She was quick and receptive to feedback, adapting quickly to stakeholder demands. When in doubt, her own skills and leadership abilities were showcased as <strong>she quickly made executive level decisions based on team feedback for overall product success.</strong> She was a limited resource, and we made sure to openly and expressively fight for her attentions. She will delight anyone that hires her with her creative abilities and fast approach to art and design."</p>
             <Link href="https://www.linkedin.com/in/april-walczak" target="_blank" rel="noopener noreferrer" className="mt-auto -m-2 p-2 flex items-center gap-3 rounded-md transition-colors hover:bg-white/5 group">
               <Image src="/images/april.png" alt="April Walczak" width={50} height={50} className="rounded-full object-cover transition-transform duration-200 group-hover:scale-105" />
               <div>
@@ -504,9 +504,9 @@ export default function Home() {
             </Link>
             </div>
             <div className="p-6 md:p-8 bg-white/10 border border-white/30 rounded-lg h-full flex flex-col">
-            <p className="text-white/80 mb-4">“I had the pleasure of working with Molly at Hilton, where she jumped right in and became a key part of the team from day one. She picked things up fast, brought a can-do attitude, and always contributed thoughtful, well-reasoned ideas.”
+            <p className="text-white/80 mb-4 [&_strong]:text-white">“I had the pleasure of working with Molly at Hilton, where she jumped right in and <strong>became a key part of the team from day one.</strong> She picked things up fast, brought a can-do attitude, and always contributed thoughtful, well-reasoned ideas.”
 </p>
-            <p className="text-white/80 mb-8">“If you’re looking for a smart, dependable designer who makes an impact and is a joy to work with, you’ll be lucky to have her on your team.”</p>
+            <p className="text-white/80 mb-8 [&_strong]:text-white"><strong>“If you’re looking for a smart, dependable designer who makes an impact and is a joy to work with, you’ll be lucky to have her on your team.”</strong></p>
             
             <Link href="https://www.linkedin.com/in/ilke-vn" target="_blank" rel="noopener noreferrer" className="mt-auto -m-2 p-2 flex items-center gap-3 rounded-md transition-colors hover:bg-white/5 group">
               <Image src="/images/ilke.png" alt="Ilke Ingram" width={50} height={50} className="rounded-full object-cover transition-transform duration-200 group-hover:scale-105" />

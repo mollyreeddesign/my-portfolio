@@ -148,7 +148,7 @@ export default function CaseStudyTwoPage() {
             <div className="space-y-2">
               <h2 className="custom-h2">Team</h2>
               <p className="p">
-              Illustrator • UI Lead
+              UI Design (me) • Illustrator • UI Lead
               </p>
             </div>
           </div>
@@ -453,8 +453,8 @@ export default function CaseStudyTwoPage() {
                     <p className="p-secondary mb-4">
                     “...Not only is this a convenient way for our customers to transact, but it also allows us to reposition labor to further service customers and drive conversion on the selling floor. Given its success, we are currently working on plans to rollout self checkout to additional Urban Outfitters stores.’”
                     </p>
-                                         <p className="p-secondary mb-4">
-                     Urban Outfitters Group CEO Trish Donnelly <br/> <a href="https://www.barrons.com/articles/urban-outfitters-self-checkout-is-exceeding-expectations-1534970120" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 underline inline-flex items-center gap-1"><b>www.barrons.com</b> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                                         <p className="p-secondary mb-4 [&_strong]:text-black">
+                     <strong>Urban Outfitters Group CEO Trish Donnelly</strong> <br/> <a href="https://www.barrons.com/articles/urban-outfitters-self-checkout-is-exceeding-expectations-1534970120" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 underline inline-flex items-center gap-1"><b>www.barrons.com</b> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
                       </p>
                   </div>
                   

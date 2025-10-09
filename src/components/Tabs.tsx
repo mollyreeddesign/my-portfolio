@@ -24,6 +24,7 @@ export default function Tabs({ items, initialActiveKey, className }: TabsProps) 
     ? initialActiveKey
     : (keys[0] ?? "");
   const [activeKey, setActiveKey] = useState<string>(defaultKey);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const tabButtonRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useEffect(() => {
@@ -32,7 +33,23 @@ export default function Tabs({ items, initialActiveKey, className }: TabsProps) 
     }
   }, [activeKey, keys]);
 
+  // Auto-carousel effect
+  useEffect(() => {
+    if (!isAutoPlaying || keys.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setActiveKey((currentKey) => {
+        const currentIndex = keys.indexOf(currentKey);
+        const nextIndex = (currentIndex + 1) % keys.length;
+        return keys[nextIndex];
+      });
+    }, 1000); // Change tab every 1 seconds
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, keys]);
+
   const focusTabByIndex = useCallback((index: number) => {
+    setIsAutoPlaying(false);
     const clamped = ((index % keys.length) + keys.length) % keys.length;
     const key = keys[clamped];
     setActiveKey(key);
@@ -93,12 +110,15 @@ export default function Tabs({ items, initialActiveKey, className }: TabsProps) 
               tabIndex={isActive ? 0 : -1}
               aria-label={item.label}
               className={
-                "flex flex-col items-center justify-center rounded-lg transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 " +
+                "flex flex-col items-center justify-center rounded-lg transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 min-h-[80px] border-2 " +
                 (isActive
-                  ? "border-2 border-gray-400 bg-gray-100 text-gray-900"
-                  : "border border-gray-200 bg-white text-gray-800 opacity-80 hover:opacity-100 focus-visible:opacity-100 hover:bg-gray-50 hover:border-gray-300")
+                  ? "border-gray-400 bg-gray-100 text-gray-900"
+                  : "border-gray-200 bg-white text-gray-800 opacity-80 hover:opacity-100 focus-visible:opacity-100 hover:bg-gray-50 hover:border-gray-300")
               }
-              onClick={() => setActiveKey(item.key)}
+              onClick={() => {
+                setIsAutoPlaying(false);
+                setActiveKey(item.key);
+              }}
             >
               {item.titleNode ? (
                 <div className="p-3 w-full">
@@ -134,7 +154,7 @@ export default function Tabs({ items, initialActiveKey, className }: TabsProps) 
             role="tabpanel"
             aria-labelledby={tabId}
             hidden={!isActive}
-            className="rounded-lg bg-gray-100 border border-[#D9D9D9]"
+            className="rounded-lg bg-gray-100 border-2 border-[#D9D9D9]"
           >
             <div className="p-4 sm:p-6">
               {item.content}
