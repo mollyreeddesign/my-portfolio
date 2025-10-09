@@ -19,10 +19,10 @@ export default function ArtPage() {
     { src: "/images/art/art-handball_2.png", alt: "Hand Holding Ball 2" },
   ];
   return (
-    <main className="min-h-[60vh] py-8 sm:py-12">
+    <main className="min-h-[60vh] py-8 sm:py-12 bg-[#0b0b0b]">
       <PageContainer>
       <h1 className="custom-h1 text-white">Art</h1>
-      <p className="text-base/7 text-foreground/80">
+      <p className="text-base/7 text-white/80">
         Work I've done for fun, school and for clients.
       </p>
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">

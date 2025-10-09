@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Tag, { TagProps } from "@/components/Tag";
+import { ChevronDown } from "lucide-react";
 
 type CardProps = {
   image: string;
@@ -131,23 +132,33 @@ export default function Card({
           {description ? (
             <div className="mt-2">
               <p
-                className={`!text-sm text-foreground/80 transition-[max-height] duration-300 ease-in-out overflow-hidden ${
-                  isExpanded ? "max-h-[40rem]" : "max-h-[3.25rem] md:max-h-[3.5rem]"
+                className={`!text-sm text-foreground/80 transition-[max-height] duration-300 ease-in-out ${
+                  isExpanded ? "max-h-[40rem]" : "max-h-[3.25rem] md:max-h-[3.5rem] overflow-hidden"
                 }`}
+                style={!isExpanded ? {
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden'
+                } as React.CSSProperties : undefined}
               >
                 {description}
               </p>
               {hasLongDescription ? (
                 <button
                   type="button"
-                  className="mt-2 underline underline-offset-2 hover:opacity-80"
+                  className="mt-1 flex items-center gap-1 underline underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer"
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
                     setIsExpanded((v) => !v);
                   }}
                 >
-                  {isExpanded ? "Show less" : "Read more"}
+                  <ChevronDown 
+                    size={16} 
+                    className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : 'rotate-0'}`}
+                  />
+                  {isExpanded ? "Less" : "More"}
                 </button>
               ) : null}
             </div>

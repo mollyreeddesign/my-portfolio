@@ -7,9 +7,10 @@ export type MetricProps = {
   success?: boolean; // Optional flag for external usage
   className?: string;
   icon?: "arrow-up-right" | "arrow-down-right" | "check" | "default";
+  ariaLabel?: string; // Optional aria-label for accessibility when metric is ReactNode
 };
 
-export default function Metric({ metric, measure, success, className, icon = "default" }: MetricProps) {
+export default function Metric({ metric, measure, success, className, icon = "default", ariaLabel }: MetricProps) {
   const renderIcon = () => {
     switch (icon) {
       case "arrow-up-right":
@@ -23,12 +24,21 @@ export default function Metric({ metric, measure, success, className, icon = "de
     }
   };
 
+  // Generate aria-label for accessibility
+  const getAriaLabel = () => {
+    if (ariaLabel) return ariaLabel;
+    if (typeof metric === 'string') {
+      return measure ? `${metric} ${measure}` : metric;
+    }
+    return undefined;
+  };
+
   return (
     <div
       className={`relative overflow-hidden group flex w-full md:inline-flex md:w-auto items-center gap-2.5 border border-gray-200 bg-gray-50 rounded px-3 py-1.5 text-gray-800 ${className || ""}`}
       data-success={success}
       role="group"
-      aria-label={measure ? `${metric} ${measure}` : metric}
+      aria-label={getAriaLabel()}
     >
       <span className="glisten-overlay" aria-hidden="true" />
       {renderIcon()}
