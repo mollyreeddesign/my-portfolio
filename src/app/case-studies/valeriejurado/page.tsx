@@ -117,7 +117,7 @@ export default function ValerieJuradoPage() {
             </CaseSection>
 
             <CaseSection id="howmightwe" title="How might we" headingLevel="h4">
-              <Statement><h2 className="custom-h2">How might we create a sustainable digital experience for a botanical designer that converts visitors into leads and showcases business value?</h2></Statement>
+              <Statement><h2 className="custom-h2">How might we create a website for a botanical designer that converts visitors into leads and showcases business value?</h2></Statement>
               
             </CaseSection>
 
@@ -139,7 +139,7 @@ export default function ValerieJuradoPage() {
               I set up a remote workshop with Valerie and her business partner, Allan, to define the goals and values guiding the website refresh. From that conversation, a few priorities emerged:
               </p>
               <ul className="list-disc list-outside pl-4 space-y-4 mb-12">
-                <li className="p"><strong>Attracting the Right Audience</strong> The few leads from her existing site weren't the right type of clientele.</li>
+                <li className="p"><strong>Attracting the Right Audience</strong> The existing site was generating very few leads, and most were either spam or customers seeking casual floral services (weddings and Mother’s Day deliveries). Valerie wanted to attract high-end clients such as art galleries, fashion photographers, and luxury brands.</li>
                 <li className="p"><strong>Streamlined Engagement</strong> She wanted an easy way to direct people to her site, where they could quickly contact her or sign up for email newsletters.</li>
                 <li className="p"><strong>Defining a Unique Brand</strong> She wanted the brand to emphasize uniqueness and bespoke botanical experiences, rather than just weddings or events.</li>
               </ul>
@@ -153,7 +153,7 @@ export default function ValerieJuradoPage() {
                 />
                 </MediaFrame>
                     <p className="caption mb-12 text-center">
-                    Valerie, Allan and I's Figjam brainstorm.
+                    Valerie, Allan and I's Figjam workshop.
                     </p>
                     <h2 className="custom-h2">Roadmap and scope</h2>
               <p className="p mb-4">

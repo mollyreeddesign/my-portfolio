@@ -2,7 +2,7 @@ import React from "react";
 import { ArrowUpRight, ArrowDownRight, CheckCircle } from "lucide-react";
 
 export type MetricProps = {
-  metric: string; // Primary text, e.g., "Conversion rate"
+  metric: React.ReactNode; // Primary text, e.g., "Conversion rate"
   measure?: string; // Secondary detail, e.g., "+12%"
   success?: boolean; // Optional flag for external usage
   className?: string;

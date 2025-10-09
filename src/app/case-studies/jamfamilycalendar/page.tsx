@@ -69,9 +69,9 @@ export default function JamFamilyCalendarPage() {
           <div className="space-y-2">
             <h2 className="custom-h2">Result</h2>
             <div className="space-y-3 mb-6">
-              <Metric metric="5K+ downloads on Google Play" />
-              <Metric metric="Created 400+ High Fi mockup screens" />
-              <Metric metric="Designed 5 complex user flows" />
+              <Metric metric={<>Grew from 0 to 5K+ downloads in<br />first year on Google Play</>} icon="arrow-up-right" />
+              <Metric metric="4.5★ average rating on iOS" />
+              <Metric metric="Featured in Mashable and Motherly" />
             </div>
             <div className="flex gap-2 mb-12 md:mb-0">
               <a
@@ -366,9 +366,9 @@ I looked at shared calendar setups from Apple and Google, along with task manage
                 
                 {/* Mobile: Order 1, Desktop: Right column */}
                 <div className="order-1 md:order-2 col-span-1 space-y-3 md:flex md:flex-col md:h-full">
-                <Metric className="md:flex md:w-full" metric="5K+ downloads on Google Play" />
-              <Metric className="md:flex md:w-full" metric="Created 400+ High Fi mockup screens" />
-              <Metric className="md:flex md:w-full" metric="Designed 5 complex user flows" />
+                <Metric metric={<>Grew from 0 to 5K+ downloads in<br />first year on Google Play</>} icon="arrow-up-right" />
+              <Metric metric="4.5★ average rating on iOS" />
+              <Metric metric="Featured in Mashable, Motherly" />
                   
                   {/* Desktop: Buttons below metrics */}
                   <div className="hidden md:block space-y-3 pt-4">
