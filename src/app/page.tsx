@@ -76,9 +76,9 @@ export default function Home() {
       <PageContainer>
       
        <div ref={pinWrapperRef} className="relative overflow-x-hidden">
-        <section ref={sectionRef} className="fixed left-0 right-0 top-40 h-[50vh] md:h-[50vh] flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
+        <section ref={sectionRef} className="fixed left-0 right-0 top-1/2 -translate-y-[90%] md:-translate-y-[80%] flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
           
-        <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[500px] -translate-y-[67px] md:-translate-y-[180px] w-[720px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms ease" }}>
+        <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[500px] -translate-y-[78px] md:-translate-y-[115px] w-[720px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms ease" }}>
           <Image
             src="/images/home-skylight.png"
             alt=""
@@ -89,7 +89,7 @@ export default function Home() {
           />
         </div>
        
-        <div className="text-center my-2 md:-my-16">
+        <div className="text-center">
         <div className="mx-auto mb-6 w-40 h-20 md:w-60 md:h-30 relative">
           <video
             className="home-sky-mask w-full h-full object-cover"
@@ -114,12 +114,12 @@ export default function Home() {
         <h1 className="text-2xl text-white md:text-3xl mb-2">Product Designer</h1>
         <p className="text-gray-400 text-base md:!text-sm">I design distinct digital experiences<br />{" "}that clarify and convert.</p>
         </div>
-         <div className="mt-auto -mb-30 md:-mb-30 self-center text-center">
+      </section>
+       <div className="fixed bottom-[50px] left-1/2 -translate-x-1/2 text-center z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
         <p className="text-gray-400 text-base md:!text-sm">Based in Zurich, CH 🇨🇭</p>
-        <p className="text-gray-400 text-base md:!text-sm mb-1">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
+        <p className="text-gray-400 text-base md:!text-sm mb-1 whitespace-nowrap">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
         <ChevronDown className="mx-auto text-gray-400 animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
-      </section>
       <div className="h-[100vh] md:h-[100vh]"></div>
       </div>
 
@@ -129,7 +129,47 @@ export default function Home() {
           <Reveal>
           <div className="mx-2 md:-mx-8 lg:-mx-16" id="cases">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
-            <div className="order-2 md:order-none">
+            <div className="order-1 md:order-none">
+              <Card
+                href="/case-studies/hiltonpropertypages"
+                image="/images/hilton-after.png"
+                title="Increased conversion and engagement on 7,000+ hotel property pages"
+                logo="/images/hilton-logo.svg"
+                logoWidth={90}
+                tags={[{ tag: "eCommerce" }, { tag: "Design Systems" }, { tag: "User Testing" }]}
+                renderImageContent={(hovered) => (
+                  <div className="w-full rounded-md h-full" style={{ backgroundColor: "#D3E7F5" }}>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex items-end justify-center w-[86%] h-[80%]">
+                        <img
+                          src="/images/hilton-hamptoninn.png"
+                          alt=""
+                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -mr-5 md:-mr-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "-translate-x-[25px] -translate-y-4 scale-105" : ""}`}
+                          loading="lazy"
+                        />
+                        <img
+                          src="/images/hilton-doubletree.png"
+                          alt=""
+                          className={`relative z-10 h-[100%] md:h-[100%] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-105" : ""}`}
+                          loading="lazy"
+                        />
+                        <img
+                          src="/images/hilton-embassysuites.png"
+                          alt=""
+                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "translate-x-[25px] -translate-y-4 scale-105" : ""}`}
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                    {/* White overlay that fades from 20% to 0% on hover */}
+                    <div
+                      className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
+                    />
+                  </div>
+                )}
+              />
+              </div>
+              <div className="order-2 md:order-none">
             <Card
                 href="/case-studies/uoselfcheckout"
                 image="/images/uo-after.png"
@@ -186,46 +226,6 @@ export default function Home() {
                   </div>
                 )}
                 
-              />
-              </div>
-              <div className="order-1 md:order-none">
-              <Card
-                href="/case-studies/hiltonpropertypages"
-                image="/images/hilton-after.png"
-                title="Increased conversion and engagement on 7,000+ hotel property pages"
-                logo="/images/hilton-logo.svg"
-                logoWidth={90}
-                tags={[{ tag: "eCommerce" }, { tag: "Design Systems" }, { tag: "User Testing" }]}
-                renderImageContent={(hovered) => (
-                  <div className="w-full rounded-md h-full" style={{ backgroundColor: "#D3E7F5" }}>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="flex items-end justify-center w-[86%] h-[80%]">
-                        <img
-                          src="/images/hilton-hamptoninn.png"
-                          alt=""
-                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -mr-5 md:-mr-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "-translate-x-[25px] -translate-y-4 scale-105" : ""}`}
-                          loading="lazy"
-                        />
-                        <img
-                          src="/images/hilton-doubletree.png"
-                          alt=""
-                          className={`relative z-10 h-[100%] md:h-[100%] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-105" : ""}`}
-                          loading="lazy"
-                        />
-                        <img
-                          src="/images/hilton-embassysuites.png"
-                          alt=""
-                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "translate-x-[25px] -translate-y-4 scale-105" : ""}`}
-                          loading="lazy"
-                        />
-                      </div>
-                    </div>
-                    {/* White overlay that fades from 20% to 0% on hover */}
-                    <div
-                      className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
-                    />
-                  </div>
-                )}
               />
               </div>
               
