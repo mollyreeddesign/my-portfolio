@@ -112,7 +112,7 @@ export default function Home() {
         </div>
       </section>
        <div className="fixed bottom-[50px] left-1/2 -translate-x-1/2 text-center z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
-        <p className="text-gray-400 text-base md:!text-sm">Based in Zurich, CH 🇨🇭</p>
+        <p className="text-gray-400 text-base md:!text-sm">U.S. Citizen 🇺🇸 | Based in Zurich, CH 🇨🇭</p>
         <p className="text-gray-400 text-base md:!text-sm mb-1 whitespace-nowrap">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
         <ChevronDown className="mx-auto text-gray-400 animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
