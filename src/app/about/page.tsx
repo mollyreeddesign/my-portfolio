@@ -29,7 +29,7 @@ export default function AboutPage() {
         sectionClassName="h-[67vh] md:h-[85vh] -mt-[72px] md:-mt-[88px] flex items-center justify-center"
       >
         <Reveal>
-          <h1 className="custom-h1 max-w-[28rem] md:max-w-[41rem] mb-0 mx-auto text-white text-center">I’m a Product Designer crafting solutions that bring real business impact. Advocate for accessibility and sustainable product design.</h1>
+          <h1 className="custom-h1 max-w-[28rem] md:max-w-[41rem] mb-0 mx-auto text-white text-center">I’m a Product Designer crafting solutions that drive results. Advocate for accessibility and sustainable product design.</h1>
         </Reveal>
       </FullWidthSection>
       {/* About Me as a Designer Paragraph */}

@@ -40,7 +40,7 @@ export default function Footer() {
           The typefaces on this site are set in Americana by Richard Isbell and Work Sans by Wei Huang.
         </p>
         <p className="!text-sm !line-height-[32px]">
-          This site was written and built by me using Cursor, Lottie and Jitter.
+          This site was written and built by me using Cursor AI, LottieFiles, Shotcut and Jitter.
         </p>
       </div>
       </PageContainer>

@@ -108,7 +108,7 @@ export default function Home() {
           />
         </div>
         <h1 className="text-2xl text-white md:text-3xl mb-2">Product Designer</h1>
-        <p className="text-gray-400 text-base md:!text-sm">I design distinct digital experiences<br />{" "}that clarify and convert.</p>
+        <p className="text-gray-400 text-base md:!text-sm">Converting design decisions<br />{" "}into real business impact.</p>
         </div>
       </section>
        <div className="fixed bottom-[50px] left-1/2 -translate-x-1/2 text-center z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
@@ -308,7 +308,7 @@ export default function Home() {
           </Reveal>
           <Reveal delayMs={120}>
           <p className="mb-8 text-white/80 max-w-[18rem] md:max-w-none mx-auto">
-          Employing a foundation in visual design, a career in user experience and a gritty work ethic.
+          Employing a foundation in visual design, a career in user experience, <br /> an AI powered workflow and a gritty work ethic.
           </p>
           </Reveal>
           <div className="flex flex-col md:flex-row justify-center gap-6">
@@ -410,7 +410,7 @@ export default function Home() {
           >
             <h3 className="custom-h3 text-black mb-2">Create</h3>
             <p className="text-black/80">
-            I build working prototypes and validate with testing often. 
+            I build working prototypes with Figma and AI, validating with testing often. 
             I don't design in a silo, I bring stakeholders along.</p>
           </div>
           </Reveal>
