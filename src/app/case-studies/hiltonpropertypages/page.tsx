@@ -222,7 +222,7 @@ export default function CaseStudyOnePage() {
               
 
               <p className="p mb-4">
-                Many users frequently toggled through Property pages during the booking flow, but were abandoning the process shortly after. Business evaluation, design reviews, and user feedback revealed several issues: The pages lacked clear information architecture, didn’t reflect each Hilton brand consistently, and often felt like external hotel websites. Many users reported they couldn’t find the details they needed to make a decision like hotel email and check in/out times. These problems led to user frustration and drop-off. 
+                Many users frequently toggled through Property pages during the booking flow, but were abandoning the process shortly after. Business evaluation, design reviews, and user feedback revealed several issues: The pages lacked clear information architecture, didn’t reflect each Hilton brand consistently, and often felt like external hotel websites. Many users reported they couldn’t find the details they needed like hotel email and check in/out times. These problems led to user frustration and drop-off. 
               </p>
               <p className="p mb-12">
               This prompted Hilton to focus on improving property pages’ structure and brand presence to increase conversion, engagement, and loyalty sign-ups.
@@ -239,7 +239,7 @@ export default function CaseStudyOnePage() {
                 />
               </div>
               <p className="p mb-12">
-              An added complexity was the scale of the project. Hilton had over 7,000 Property pages, each populated from a CMS where hotels entered their own information. This content was automatically pushed into the property page. Any design improvements had to accommodate variable amounts of content, work consistently across all 12 Hilton portfolio brands, and integrate seamlessly with existing hotel data.
+              An added complexity was the scale of the project. Hilton had over 7,000 Property pages, each populated from a CMS where hotels entered their own information. This content was automatically pushed into each hotel's property page. Any design improvements had to accommodate variable amounts of content, work across all 12 Hilton portfolio brands, and integrate with existing hotel data.
               </p>
             </CaseSection>
 
@@ -308,7 +308,7 @@ export default function CaseStudyOnePage() {
               
               </p>
               <p className="p mb-12">
-              One of the challenges we had with Hilton’s property pages was that they lacked high- quality imagery. Pictures of the rooms, particularly in budget brands like DoubleTree and Hampton Inn, were not attractive or high resolution. This meant it was important for product design to carry the experience. We had to surface business value without turning to the easy answer of premium photography. One example where we achieved this was with room tiles:
+              One of the challenges we had with Hilton’s property pages was that they lacked high quality imagery. Pictures of the rooms, particularly in budget brands like DoubleTree and Hampton Inn, were not attractive or high resolution. This meant it was important for product design to carry the experience. We had to surface business value without turning to the easy answer of premium photography. One example where we achieved this was with room tiles:
               </p>
               {/* Hilton Room Crop Comparison */}
               <MediaFrame aspectRatio="3 / 2" enableModal caption="User click through rate increased 2% after changing the crop of the room image from 2:3 to 3:2, removing the black overlay and bringing the room title below the image.">
@@ -545,7 +545,7 @@ export default function CaseStudyOnePage() {
                   <p className="p mb-12 md:mb-4">
                   A teammate and I created a library of over 100 proprietary icons for Hilton. We used a keyline grid and a comprehensive icon creation guide to keep the library consistent.
                   
-The icons were published company- wide using the Hilton shared codebase. They were adopted across the entire Hilton website, the Hilton app, Marketing, Legal, and Hotel signage.
+The icons were published company-wide using the Hilton shared codebase. They were adopted across the entire Hilton website, the Hilton app, Marketing, Legal, and Hotel signage.
                   </p>
                 </div>
               </div>

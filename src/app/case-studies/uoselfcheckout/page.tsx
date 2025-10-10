@@ -314,10 +314,10 @@ export default function CaseStudyTwoPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-12">
               
                 {/* Left column - gif animation */}
-                <div className="order-2 lg:order-1">
+                <div className="order-1">
                   <div className="w-full bg-white rounded-lg md:rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] relative overflow-hidden" style={{ aspectRatio: '2/3' }}>
                     <Image src="/videos/uo-selfcheckout.gif" alt="UO flat self checkout screen 1" fill unoptimized className="object-contain object-center" sizes="(min-width: 768px) 33vw, 100vw" />
-                    <div className="hidden lg:block absolute inset-0 pointer-events-none">
+                    <div className="absolute inset-0 pointer-events-none">
                       <button
                         type="button"
                         aria-label="Annotation 1"
@@ -353,13 +353,13 @@ export default function CaseStudyTwoPage() {
                 </div>
                 
                 {/* Right column - text content */}
-                <div className="order-1 lg:order-2 mb-0 md:mb-12">
+                <div className="order-2 mb-0 md:mb-12">
                 <div 
                     className={`flex items-start gap-3 rounded-md p-0 md:p-3 mb-4 transition-colors pointer-events-auto ${isDesktop && hoveredAnnotation === 1 ? 'bg-gray-100' : ''}`}
                     onMouseEnter={() => setHoveredAnnotation(1)}
                     onMouseLeave={() => setHoveredAnnotation(null)}
                 >
-                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5 hidden md:flex">
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5">
                         1
                     </div>
                     <p className="p"> 
@@ -371,7 +371,7 @@ export default function CaseStudyTwoPage() {
                     onMouseEnter={() => setHoveredAnnotation(2)}
                     onMouseLeave={() => setHoveredAnnotation(null)}
                 >
-                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5 hidden md:flex">
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5">
                         2
                     </div>
                     <p className="p">
@@ -383,7 +383,7 @@ export default function CaseStudyTwoPage() {
                     onMouseEnter={() => setHoveredAnnotation(3)}
                     onMouseLeave={() => setHoveredAnnotation(null)}
                 >
-                    <div className="items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5 hidden md:flex">
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5">
                         3
                     </div>
                     <p className="p">

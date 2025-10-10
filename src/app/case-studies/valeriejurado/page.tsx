@@ -146,7 +146,7 @@ export default function ValerieJuradoPage() {
               <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
               <Image 
                   src="/images/val-brainstorm.png"
-                  alt="Valerie, Allan and I's Figjam brainstorm"
+                  alt="Valerie, Allan and I's Figjam workshop"
                   fill
                   className="object-contain rounded-lg"
                   sizes="(min-width: 1024px) 100vw, 100vw"
@@ -157,7 +157,7 @@ export default function ValerieJuradoPage() {
                     </p>
                     <h2 className="custom-h2">Roadmap and scope</h2>
               <p className="p mb-4">
-              After the brainstorm, I created a rough Now-Next-Later roadmap to define scope and keep the project on track.
+              After the workshop, I created a rough Now-Next-Later roadmap to define scope and keep the project on track.
               </p>
               <p className="p mb-12">
               I set the goal to launch the refreshed site within the year, with a plan to add new content quarterly and complete additional enhancements by the end of 2024.
@@ -165,21 +165,21 @@ export default function ValerieJuradoPage() {
               <MediaFrame aspectRatio="3 / 2" enableModal>
               <Image 
                   src="/images/val-nownextlater.png"
-                  alt="Valerie, Allan and I's Figjam brainstorm"
+                  alt="Now Next Later roadmap"
                   fill
                   className="object-contain rounded-lg"
                   sizes="(min-width: 1024px) 100vw, 100vw"
                 />
                 </MediaFrame>
                     <p className="caption mb-12 text-center">
-                    The Now-Next-Later roadmap I created from our remote brainstorm session.
+                    The Now-Next-Later roadmap I created from our remote workshop.
                     </p>
                     <h2 className="custom-h2">Competitive research and identifying business values</h2>
               <p className="p mb-4">
               A key part of this project was analyzing competitors in the high-end florist and botanical designer market. We observed that many luxury florists didn’t reference flowers or plants in their logo. The brand sounded more editorial and high fashion when we just used a name. We simplified Valerie's logo by removing ‘Botanical Design’ and used just ‘Valerie Jurado’.
               </p>
               <p className="p mb-4">
-              Valerie's favorite designers emphasized minimal UI with large, striking photography. I knew her work photography was a major brand strength, so I designed the site with minimal typography, buttons and text. This let her work take center stage.
+              Valerie's favorite designers emphasized minimal UI with large, striking photography. I knew her work photography was a major brand strength, so I designed the site with minimal typography, buttons and text. This let her business value take center stage.
               
               </p>
             </CaseSection>
@@ -190,7 +190,7 @@ export default function ValerieJuradoPage() {
               I mapped out the site structure to support Valerie's business goals and new brand direction. We decided the homepage would be a long-form, Tumblr-inspired experience, with custom sections to showcase her projects. This would form the bulk of the design and development effort.
               </p>
               <p className="p mb-12">
-              One of Valerie's business goals from our initial brainstorm was growing the ‘Greens’ portion of her business, where she designed and maintained living plant displays for her clients. This informed the decision to surface supporting pages like Greens and Floral early on the homepage with About and Contact.
+              One of Valerie's business goals from our initial workshop was growing the ‘Greens’ portion of her business, where she designed and maintained living plant displays for her clients. This informed the decision to surface supporting pages like Greens and Floral early on the homepage with About and Contact.
               </p>
               
               <MediaFrame aspectRatio="3 / 2" className="mb-4" enableModal>
@@ -233,7 +233,7 @@ export default function ValerieJuradoPage() {
                     </p>
               <h2 className="custom-h2">I overhauled the contact form</h2>
                     <p className="p mb-4">
-                    I improved the user experience of the contact form by removing a bulk of the fields, minimizing what was required and simplifying the design. I added Mailchimp integrations so Valerie's leads were pulled directly into her mailing list audience when they filled out the contact form. In addition,I added a spam filter to improve lead quality.
+                    I improved the user experience of the contact form by removing a bulk of the fields, minimizing what was required and simplifying the design. I added Mailchimp integrations so Valerie's leads were pulled directly into her mailing list audience when they filled out the contact form. In addition, I added a spam filter to improve lead quality.
               
               </p>
               <p className="p mb-12">
@@ -273,7 +273,7 @@ export default function ValerieJuradoPage() {
               On the backend, I connected Prismic’s editor to the custom code, so any updates made in the CMS (like swapping photos, changing text, or reordering sections) instantly appeared on the live site. This setup gave Valerie the freedom to update her content independently while keeping the fully custom design we created.
               </p>
               <p className="p mb-4">
-              Finally, I set up hosting on Vercel, connected Valerie’s existing domain and provided her team with a walkthrough of the CMS. I wanted to make sure they could confidently use Prismic to update content as her business evolved.
+              Finally, I set up hosting on Vercel, connected Valerie’s existing domain and provided her team with a walkthrough of Prismic. I wanted to make sure they could confidently use the CMS to update content as her business evolved.
               </p>
               
             </CaseSection>
