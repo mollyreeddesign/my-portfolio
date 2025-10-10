@@ -444,7 +444,7 @@ export default function Home() {
           </Reveal>
           <Reveal delayMs={120}>
           <p className="mb-4 text-white/80">
-          I’ve been designing experiences in technology for people and businesses for over a decade.
+          I've been designing experiences in technology for people and businesses for over {new Date().getFullYear() - 2017} years.
           </p>
           <p className="mb-4 text-white/80">
           With a background in visual design and career in UI/UX, I design products that drive engagement, increase conversions and cut costs.
