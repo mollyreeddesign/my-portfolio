@@ -112,7 +112,7 @@ export default function Home() {
         </div>
       </section>
        <div className="fixed bottom-[50px] left-1/2 -translate-x-1/2 text-center z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
-        <p className="text-gray-400 text-base md:!text-sm">U.S. Citizen 🇺🇸 | Based in Zurich, CH 🇨🇭</p>
+        <p className="text-gray-400 text-base md:!text-sm whitespace-nowrap">U.S. Citizen 🇺🇸&nbsp;Based in Zurich, CH 🇨🇭</p>
         <p className="text-gray-400 text-base md:!text-sm mb-1 whitespace-nowrap">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
         <ChevronDown className="mx-auto text-gray-400 animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
@@ -418,10 +418,9 @@ export default function Home() {
           <div
             className="bg-[#f5f5f4] rounded-lg p-4 relative"
           >
-            <h3 className="custom-h3 text-black mb-2">Execute</h3>
+            <h3 className="custom-h3 text-black mb-2">Execute & Iterate</h3>
             <p className="text-black/80">
-            I synthesize research, strategy, and design into a final product.
-           I maintain my craft from start to finish.</p>
+            I bring research, strategy, and design together into a cohesive product. I observe how it performs by tracking metrics and user feedback, then repeat the process.</p>
           </div>
           </Reveal>
           </div>
