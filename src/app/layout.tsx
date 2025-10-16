@@ -46,6 +46,9 @@ export default function RootLayout({
                 autocapture: true,
                 record_sessions_percent: 0,
               });
+              
+              // Debug logging (remove in production)
+              // console.log('Mixpanel initialized successfully');
             `,
           }}
         />
