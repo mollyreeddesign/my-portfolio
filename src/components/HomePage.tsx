@@ -28,6 +28,11 @@ export default function HomePage() {
   const [selectedVideo] = useState(() => videoSources[Math.floor(Math.random() * videoSources.length)]);
 
   useEffect(() => {
+    // Ensure we're on the client side before accessing window/document
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return;
+    }
+
     // Store the initial viewport height to prevent Safari UI changes from affecting positioning
     const initialHeight = window.innerHeight;
     setInitialViewportHeight(initialHeight);
@@ -37,7 +42,7 @@ export default function HomePage() {
     
     const updateOpacity = () => {
       const section = sectionRef.current;
-      if (!section) return;
+      if (!section || typeof window === 'undefined') return;
       const sectionTop = section.offsetTop;
       // Use initial viewport height to prevent Safari UI changes from affecting calculations
       const sectionHeight = section.offsetHeight || initialHeight * 0.50;
@@ -59,6 +64,7 @@ export default function HomePage() {
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
+        if (typeof window === 'undefined' || typeof document === 'undefined') return;
         // Only update initial height on significant resize (not Safari UI collapse)
         const currentHeight = window.innerHeight;
         const heightDifference = Math.abs(currentHeight - initialHeight);
@@ -71,13 +77,20 @@ export default function HomePage() {
     };
     window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener("scroll", updateOpacity);
-      window.removeEventListener("resize", handleResize);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener("scroll", updateOpacity);
+        window.removeEventListener("resize", handleResize);
+      }
       clearTimeout(resizeTimeout);
     };
   }, []);
 
   useEffect(() => {
+    // Ensure we're on the client side before accessing window
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     const updateHeroVisibility = () => {
       const wrapper = pinWrapperRef.current;
       if (!wrapper) return;
@@ -88,8 +101,10 @@ export default function HomePage() {
     window.addEventListener("scroll", updateHeroVisibility, { passive: true });
     window.addEventListener("resize", updateHeroVisibility);
     return () => {
-      window.removeEventListener("scroll", updateHeroVisibility);
-      window.removeEventListener("resize", updateHeroVisibility);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener("scroll", updateHeroVisibility);
+        window.removeEventListener("resize", updateHeroVisibility);
+      }
     };
   }, []);
   return (
