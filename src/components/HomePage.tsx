@@ -17,6 +17,7 @@ export default function HomePage() {
   const [skyLightOpacity, setSkyLightOpacity] = useState(0.2);
   const pinWrapperRef = useRef<HTMLDivElement | null>(null);
   const [heroHidden, setHeroHidden] = useState(false);
+  const [initialViewportHeight, setInitialViewportHeight] = useState(0);
   
   const videoSources = [
     "/videos/home-skyvideo.mp4",
@@ -27,12 +28,20 @@ export default function HomePage() {
   const [selectedVideo] = useState(() => videoSources[Math.floor(Math.random() * videoSources.length)]);
 
   useEffect(() => {
+    // Store the initial viewport height to prevent Safari UI changes from affecting positioning
+    const initialHeight = window.innerHeight;
+    setInitialViewportHeight(initialHeight);
+    
+    // Set CSS custom property for the initial viewport height
+    document.documentElement.style.setProperty('--initial-vh', `${initialHeight}px`);
+    
     const updateOpacity = () => {
       const section = sectionRef.current;
       if (!section) return;
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight || window.innerHeight * 0.50;
-      const viewportHeight = window.innerHeight;
+      // Use initial viewport height to prevent Safari UI changes from affecting calculations
+      const sectionHeight = section.offsetHeight || initialHeight * 0.50;
+      const viewportHeight = initialHeight;
       const scrollTop = window.scrollY;
       // Start the effect immediately when user scrolls
       const start = 0; // begin at top of page
@@ -45,10 +54,26 @@ export default function HomePage() {
 
     updateOpacity();
     window.addEventListener("scroll", updateOpacity, { passive: true });
-    window.addEventListener("resize", updateOpacity);
+    // Only update on actual resize, not Safari UI changes
+    let resizeTimeout: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        // Only update initial height on significant resize (not Safari UI collapse)
+        const currentHeight = window.innerHeight;
+        const heightDifference = Math.abs(currentHeight - initialHeight);
+        if (heightDifference > 50) { // Only if difference is significant (likely device rotation)
+          setInitialViewportHeight(currentHeight);
+          document.documentElement.style.setProperty('--initial-vh', `${currentHeight}px`);
+        }
+        updateOpacity();
+      }, 150);
+    };
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("scroll", updateOpacity);
-      window.removeEventListener("resize", updateOpacity);
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(resizeTimeout);
     };
   }, []);
 
@@ -72,7 +97,7 @@ export default function HomePage() {
       <PageContainer>
       
        <div ref={pinWrapperRef} className="relative overflow-x-hidden">
-        <section ref={sectionRef} className="fixed left-0 right-0 top-1/2 -translate-y-[90%] md:-translate-y-[80%] flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
+        <section ref={sectionRef} className="hero-fixed-position flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
           
         <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[500px] -translate-y-[74px] md:-translate-y-[114px] w-[720px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms" }}>
           <Image
@@ -116,7 +141,7 @@ export default function HomePage() {
         <p className="text-gray-400 text-base md:!text-sm mb-1 whitespace-nowrap">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
         <ChevronDown className="mx-auto text-gray-400 animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
-      <div className="h-[100vh] md:h-[100vh]"></div>
+      <div className="hero-section-stable"></div>
       </div>
 
       </PageContainer>

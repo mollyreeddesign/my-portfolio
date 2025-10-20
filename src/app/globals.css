@@ -559,3 +559,31 @@ p,
   }
 }
 
+/* Fix for Safari mobile viewport height changes */
+.hero-fixed-position {
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-90%);
+}
+
+@media (min-width: 768px) {
+  .hero-fixed-position {
+    transform: translateY(-80%);
+  }
+}
+
+/* Prevent content jumping when Safari UI collapses */
+.hero-section-stable {
+  /* Use CSS custom property for initial viewport height when available, fallback to 100vh */
+  height: var(--initial-vh, 100vh);
+}
+
+/* Alternative approach using CSS viewport units that account for mobile browser UI */
+@supports (height: 100dvh) {
+  .hero-section-stable {
+    height: var(--initial-vh, 100dvh);
+  }
+}
+
