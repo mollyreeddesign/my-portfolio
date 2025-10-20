@@ -17,7 +17,7 @@ export default function HomePage() {
   const [skyLightOpacity, setSkyLightOpacity] = useState(0.2);
   const pinWrapperRef = useRef<HTMLDivElement | null>(null);
   const [heroHidden, setHeroHidden] = useState(false);
-  const [initialViewportHeight, setInitialViewportHeight] = useState(0);
+  const initialViewportHeightRef = useRef<number>(0);
   
   const videoSources = [
     "/videos/home-skyvideo.mp4",
@@ -33,20 +33,24 @@ export default function HomePage() {
       return;
     }
 
-    // Store the initial viewport height to prevent Safari UI changes from affecting positioning
-    const initialHeight = window.innerHeight;
-    setInitialViewportHeight(initialHeight);
+    // Store the initial viewport height in a ref to prevent Safari UI changes from affecting positioning
+    initialViewportHeightRef.current = window.innerHeight;
     
     // Set CSS custom property for the initial viewport height
-    document.documentElement.style.setProperty('--initial-vh', `${initialHeight}px`);
+    try {
+      document.documentElement.style.setProperty('--initial-vh', `${initialViewportHeightRef.current}px`);
+    } catch (error) {
+      // Fallback if CSS custom property setting fails
+      console.warn('Failed to set CSS custom property:', error);
+    }
     
     const updateOpacity = () => {
       const section = sectionRef.current;
       if (!section || typeof window === 'undefined') return;
+      
       const sectionTop = section.offsetTop;
       // Use initial viewport height to prevent Safari UI changes from affecting calculations
-      const sectionHeight = section.offsetHeight || initialHeight * 0.50;
-      const viewportHeight = initialHeight;
+      const sectionHeight = section.offsetHeight || initialViewportHeightRef.current * 0.50;
       const scrollTop = window.scrollY;
       // Start the effect immediately when user scrolls
       const start = 0; // begin at top of page
@@ -59,29 +63,40 @@ export default function HomePage() {
 
     updateOpacity();
     window.addEventListener("scroll", updateOpacity, { passive: true });
+    
     // Only update on actual resize, not Safari UI changes
-    let resizeTimeout: NodeJS.Timeout;
+    let resizeTimeout: ReturnType<typeof setTimeout> | null = null;
     const handleResize = () => {
-      clearTimeout(resizeTimeout);
+      if (resizeTimeout) {
+        clearTimeout(resizeTimeout);
+      }
       resizeTimeout = setTimeout(() => {
         if (typeof window === 'undefined' || typeof document === 'undefined') return;
         // Only update initial height on significant resize (not Safari UI collapse)
         const currentHeight = window.innerHeight;
-        const heightDifference = Math.abs(currentHeight - initialHeight);
+        const heightDifference = Math.abs(currentHeight - initialViewportHeightRef.current);
         if (heightDifference > 50) { // Only if difference is significant (likely device rotation)
-          setInitialViewportHeight(currentHeight);
-          document.documentElement.style.setProperty('--initial-vh', `${currentHeight}px`);
+          initialViewportHeightRef.current = currentHeight;
+          try {
+            document.documentElement.style.setProperty('--initial-vh', `${currentHeight}px`);
+          } catch (error) {
+            console.warn('Failed to update CSS custom property:', error);
+          }
         }
         updateOpacity();
       }, 150);
     };
+    
     window.addEventListener("resize", handleResize);
+    
     return () => {
       if (typeof window !== 'undefined') {
         window.removeEventListener("scroll", updateOpacity);
         window.removeEventListener("resize", handleResize);
       }
-      clearTimeout(resizeTimeout);
+      if (resizeTimeout) {
+        clearTimeout(resizeTimeout);
+      }
     };
   }, []);
 
