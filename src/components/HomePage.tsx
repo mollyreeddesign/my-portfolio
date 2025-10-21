@@ -10,7 +10,7 @@ import { ChevronDown, ArrowUpRight, Download, Copy } from "lucide-react";
 import BackToTopButton from "@/components/BackToTopButton";
 import Image from "next/image";
 import LottieCover from "@/components/LottieCover";
-import Reveal from "@/components/Reveal";
+import Reveal from "@/components/Reveal"; 
 
 export default function HomePage() {
   const sectionRef = useRef<HTMLElement | null>(null);
