@@ -140,7 +140,7 @@ export default function AboutPage() {
                 disableHover
                 disablePointer
                 description="I’ve always been fascinated by telling stories through art and technology. Since I was little, I’ve been drawing and writing books, usually several at a time. My earliest memories of using our family computer was using Photoshop to color my own graphic novels and Windows Media Player to make my own short movies and animations.
-Naturally, I gravitated toward graphic design where I discovered a love for building websites. I could tell a story that combined all my interests: writing, drawing, animation, and interaction. I graduated in 2017 from the University of the Arts in Philadelphia with a BFA in Graphic Design, with a strong focus on web."
+Naturally, I gravitated toward graphic design where I discovered a love for building websites. I could tell a story that combined all my interests: writing, drawing, animation, and interaction. I graduated in 2017 from the University of the Arts in Philadelphia with a BFA in Graphic Design and a strong focus on web."
               />
               </Reveal>
               <Reveal delayMs={120}>
@@ -153,7 +153,7 @@ Naturally, I gravitated toward graphic design where I discovered a love for buil
                 disableHover
                 disablePointer
                 title="Career"
-                description="I launched my career in UI Design at Urban Outfitters HQ in Philadelphia, where I honed my skills in user experience. In 2018, I moved to LA to design for a boutique telecom company, learning how to build B2B products that met real business goals and thinking beyond just UI. In 2022, I returned to my hometown in Vermont and worked remotely for Hilton Hotels across five agile web product teams, pulling in user research, business goals, and visual design to deliver measurable results. Throughout these roles, I’ve worked closely with engineers, product managers, and stakeholders to build apps, websites, and design systems."
+                description="I launched my career in UI Design at Urban Outfitters HQ in Philadelphia, where I honed my skills in responsive web/mobile design and user experience. In 2018, I moved to LA to design for a boutique telecom company, learning how to build B2B products that solved real business needs beyond just UI. In 2022, I returned to my hometown in Vermont and worked remotely for Hilton Hotels across five agile web product teams, pulling in user research, business goals, and visual design to deliver measurable results. Throughout these roles, I’ve worked closely with engineers, product managers, and stakeholders to build apps, websites, and design systems."
                 titleClassName="text-white"
               />
               </Reveal>
