@@ -217,8 +217,8 @@ Explore my work, or reach out if you'd like to connect!"
           <div>
         <h3 className="custom-h3 text-black mb-2">Sustainability</h3>
         <p className="text-black/80">
-        I practice sustainable product design. This means <span className="font-bold">I front load a lot of research and effort up front to get things right the first time,</span> so they don’t need to be updated 6 months later.
-If a product is meant to be updated, I design with this in mind so it can be adapted by others.</p>
+        I practice sustainable product design. This means <span className="font-bold">I front load a lot of research and effort to get things right the first time,</span> so they don’t need to be updated 6 months later.
+If a product is meant to be updated, I design with this in mind.</p>
           </div>
           </Reveal>
           </div>
