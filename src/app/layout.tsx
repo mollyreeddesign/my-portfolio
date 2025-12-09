@@ -18,7 +18,7 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   title: "Molly Reed | Product Designer",
-  description: "Personal portfolio site",
+  description: "Product designer portfolio showcasing case studies in UX design, AI interfaces, and digital product design",
   icons: {
     icon: '/favicon.ico', // Default favicon
   },
