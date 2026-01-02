@@ -12,6 +12,7 @@ import { ArrowUpRight, ChevronDown, Compass } from "lucide-react";
 import { useEffect, useState } from "react";
 import BackToTopButton from "@/components/BackToTopButton";
 import MediaFrame from "@/components/MediaFrame";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 export default function CaseStudyOnePage() {
   const [scrollY, setScrollY] = useState(0);
@@ -185,7 +186,7 @@ export default function CaseStudyOnePage() {
               Low AI engagement was preventing users from realizing the full value of Leads.new.
               </h2>
               <p className="p mb-4">
-              Leads.new helps marketers create AI-powered lead magnets. When I joined, only 38% of users were interacting with the AI agent in the workspace. As a result, many users never experienced the product’s full value and reduced the likelihood of publishing or converting to a paid plan.
+              Leads.new helps marketers create AI-powered lead magnets. When I joined, only 38% of users were interacting with the AI agent in the workspace. As a result, many users never experienced the product’s full value which reduced the likelihood of publishing or converting to a paid plan.
               </p>
               <p className="p mb-12">
               I partnered with the founders to redesign the workspace, focusing on increasing AI engagement. The goal was to leverage the value of the AI to build a workspace flow that felt effortless from start to finish.
@@ -193,11 +194,15 @@ export default function CaseStudyOnePage() {
               
               
               {/* Slider with Original and New Experience */}
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>       
+              <div className="w-full mb-12">
+                <BeforeAfterSlider
+                  beforeSrc="/images/leadsdotnew-after.png"
+                  afterSrc="/images/leadsdotnew-before.png"
+                  aspectRatio="3/2"
+                  contentInset="0%"
+                  objectFit="contain"
+                />
               </div>
-              <p className="caption mb-12 text-center">
-              Slider showing original experience and new experience of Leads.new workspace (this caption will be deleted later)
-              </p>
               
             </CaseSection>
 
@@ -226,7 +231,15 @@ export default function CaseStudyOnePage() {
               This audit helped me focus on the highest-impact issues and gave me a clear direction for improving AI engagement in the workspace.
               </p>
               {/* Loom Video */}
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>       
+              <div className="w-full bg-black rounded-lg mb-4 overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                <video 
+                  src="/videos/leadsdotnew-audit.mp4" 
+                  className="w-full h-full object-contain"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
               </div>
               <p className="caption mb-12 text-center">
               It was extremely helpful to do a UX audit early in the project. Since I knew nothing about the creation flow or Leads.new at the time, I could use it as unbiased user feedback and reference it throughout the project.
@@ -244,10 +257,15 @@ export default function CaseStudyOnePage() {
               <span className="font-semibold">2. The user's experience with the AI as part of the creation flow:</span> This focused on how users interacted with the AI as part of the overall workflow, including research insights, UI design, and information architecture. 
               </p>
               {/* Loom Video */}
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>       
-              </div>
+              <MediaFrame aspectRatio="3 / 2" enableModal>
+                <img 
+                  src="/images/leadsdotnew-workshop.png" 
+                  alt="My Figjam workshop outlining both problem spaces" 
+                  className="w-full h-full object-contain"
+                />
+              </MediaFrame>
               <p className="caption mb-12 text-center">
-              My figjam workshop outlining both problem spaces.
+              My Figjam workshop outlining both problem spaces.
               </p>
               <p className="p mb-4">
               The founder and I agree that the second choice aligned best with what was currently needed by Leads.new. After workshopping ideas, we landed on the project’s goal:
@@ -305,8 +323,13 @@ export default function CaseStudyOnePage() {
               </ul>
               <p className="p mb-12">There was a clear opportunity to borrow patterns from these tools in a way that still felt like Leads.new, while speaking more directly to marketers.</p>
               {/* Slider with AI creation tools */}
-                <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                </div>
+              <MediaFrame aspectRatio="3 / 2" enableModal>
+                <img 
+                  src="/images/leadsdotnew-compresearch.png" 
+                  alt="Competitive research for Leads.new showing AI agent best practices" 
+                  className="w-full h-full object-cover object-top"
+                />
+              </MediaFrame>
               <p className="caption mb-12 text-center">
               Conducting competitive research for Leads.new presented me with current AI agent best practices  and opportunities to improve them.
               </p>
@@ -326,9 +349,11 @@ export default function CaseStudyOnePage() {
               </p>
               {/* Hilton Hero Test Results */}
               <MediaFrame aspectRatio="3 / 2" enableModal caption="The current and proposed user flows I created for Leads.new.">
-                <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '3/2' }}>
-                    
-                </div>
+                <img 
+                  src="/images/leadsdotnew-userjourney.png" 
+                  alt="The current and proposed user flows I created for Leads.new" 
+                  className="w-full h-full object-contain"
+                />
               </MediaFrame>
               <p className="caption mb-12 text-center">
               The current and proposed user flows I created for Leads.new.
@@ -360,9 +385,13 @@ export default function CaseStudyOnePage() {
                 
                 
              
-              <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                    
-                  </div>
+              <MediaFrame aspectRatio="3 / 2" enableModal>
+                <img 
+                  src="/images/leadsdotnew-phases.png" 
+                  alt="I prioritized my solutions from highest to lowest impact and effort. Then, I arranged these solutions into 3 phases." 
+                  className="w-full h-full object-contain"
+                />
+              </MediaFrame>
                   <p className="caption mb-8 md:mb-12 text-center">I prioritized my solutions from highest to lowest impact and effort. Then, I arranged these solutions into 3 phases.</p>
                 
                 <div>
@@ -380,8 +409,11 @@ export default function CaseStudyOnePage() {
               </p>
               {/* Revised workspace design */}
               <MediaFrame aspectRatio="3 / 2" enableModal caption="My revised design of the Leads.new workspace">
-                <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '3/2' }}>
-                </div>
+                <img 
+                  src="/images/leadsdotnew-firstdesign.png" 
+                  alt="My revised design of the Leads.new workspace" 
+                  className="w-full h-full object-contain"
+                />
               </MediaFrame>
               <p className="caption mb-12 text-center">
               My revised design of the Leads.new workspace
