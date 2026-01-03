@@ -13,12 +13,14 @@ import { useEffect, useState } from "react";
 import BackToTopButton from "@/components/BackToTopButton";
 import MediaFrame from "@/components/MediaFrame";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import Image from "next/image";
 
 export default function CaseStudyOnePage() {
   const [scrollY, setScrollY] = useState(0);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [isSidequestOpen, setIsSidequestOpen] = useState(false);
+  const [openToolSection, setOpenToolSection] = useState<string>("design");
   
 
   useEffect(() => {
@@ -409,10 +411,12 @@ export default function CaseStudyOnePage() {
               </p>
               {/* Revised workspace design */}
               <MediaFrame aspectRatio="3 / 2" enableModal caption="My revised design of the Leads.new workspace">
-                <img 
+                <Image 
                   src="/images/leadsdotnew-firstdesign.png" 
                   alt="My revised design of the Leads.new workspace" 
-                  className="w-full h-full object-contain"
+                  fill
+                  className="object-contain"
+                  unoptimized
                 />
               </MediaFrame>
               <p className="caption mb-12 text-center">
@@ -425,8 +429,15 @@ export default function CaseStudyOnePage() {
                   Once the visual UI was in a good place, I incorporated the solutions from my phased approach and earlier discussions with the founder. I moved the AI and edit tools into a left vertical menu, rewrote the helper text, and redesigned the chat input controls, including the Design and Edit/Ask modes. After refining responsiveness with auto-layout, I used Figma MCP to bring the design into Cursor so I could start building my prototype.
                   </p>              
                 </div>
-                  <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
-                  </div>
+                  <MediaFrame aspectRatio="3 / 2" enableModal>
+                    <Image 
+                      src="/images/leadsdotnew-figmamcpbuild.png" 
+                      alt="Building live code from my mockup with Figma MCP" 
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </MediaFrame>
                   <p className="caption mb-12 text-center">
                   Building live code from my mockup with Figma MCP.
               </p>
@@ -441,8 +452,13 @@ export default function CaseStudyOnePage() {
                 </ul>
                {/* Original Figma MCP prototype */}
               <MediaFrame aspectRatio="3 / 2" enableModal caption="The original prototype, built directly from my design.">
-                <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '3/2' }}>
-                </div>
+                <Image 
+                  src="/images/leadsdotnew-cursorbuild.png" 
+                  alt="The original prototype, built directly from my design" 
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
               </MediaFrame>
               <p className="caption mb-12 text-center">
               The original prototype, built directly from my design.
@@ -459,16 +475,79 @@ export default function CaseStudyOnePage() {
                   <p className="p mb-4">
                   I broke down each tool to clarify its purpose, what it controlled, and what it should achieve in the workspace.
                   </p> 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-                    <div className="bg-gray-400 rounded-lg min-h-[200px] md:min-h-0 md:row-span-3 order-1"></div>
-                    <div className="md:col-span-2 order-2">
-                      <p className="p mb-4"><span className="font-semibold">Design</span> This tool let users select text, icons, or images in Design mode, then edit or swap those elements using the left panel. The options in the panel updated based on what was selected. Previously, this capability lived as a small button in the chat input. I proposed elevating it to a full mode accessible from the vertical menu so it felt more discoverable and intentional.</p>
+                  <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-4 mb-12">
+                    <div className="hidden md:block bg-gray-400 rounded-lg md:h-[600px] md:w-[350px] order-1 relative overflow-hidden">
+                      <Image 
+                        src="/images/leadsdotnew-design.png" 
+                        alt="Design panel" 
+                        fill
+                        className={`object-contain transition-opacity duration-500 ease-in-out ${openToolSection === "design" ? "opacity-100" : "opacity-0 absolute"}`}
+                        unoptimized
+                      />
+                      <Image 
+                        src="/images/leadsdotnew-brand.png" 
+                        alt="Brand panel" 
+                        fill
+                        className={`object-contain transition-opacity duration-500 ease-in-out ${openToolSection === "brand" ? "opacity-100" : "opacity-0 absolute"}`}
+                        unoptimized
+                      />
+                      <Image 
+                        src="/images/leadsdotnew-controls.png" 
+                        alt="Controls panel" 
+                        fill
+                        className={`object-contain transition-opacity duration-500 ease-in-out ${openToolSection === "controls" ? "opacity-100" : "opacity-0 absolute"}`}
+                        unoptimized
+                      />
                     </div>
-                    <div className="md:col-span-2 order-3">
-                      <p className="p mb-4"><span className="font-semibold">Brand</span> Brand gave users the ability to make broader changes across the magnet, such as colors, typography, and button styles. In the original version, these options lived on a dedicated page accessed through the top navigation. In my redesign, Brand became a tool within the left panel. Because of the reduced space, I simplified the toolset to prioritize what marketers would use most.</p>
-                    </div>
-                    <div className="md:col-span-2 order-4">
-                      <p className="p"><span className="font-semibold"><span className="line-through">Prompts</span> → Controls </span>The original name, Prompts, didn't clearly communicate what the tool was for. Even though magnets' results were powered by prompts under the hood, marketers needed a more straightforward term. I renamed the tool Controls to convey that it controlled the logic behind the magnet's output.</p>
+                    <div className="order-2 flex flex-col">
+                      <div 
+                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "design" ? "md:max-h-[500px]" : ""}`}
+                        onClick={(e) => {
+                          if (window.innerWidth >= 768) {
+                            if (openToolSection === "design") {
+                              setOpenToolSection("brand");
+                            } else {
+                              setOpenToolSection("design");
+                            }
+                          }
+                        }}
+                      >
+                        <p className={`p ${openToolSection === "design" ? "" : "md:line-clamp-3"}`}>
+                          <span className="font-semibold">Design</span> This tool let users select text, icons, or images in Design mode, then edit or swap those elements using the left panel. The options in the panel updated based on what was selected. Previously, this capability lived as a small button in the chat input. I proposed elevating it to a full mode accessible from the vertical menu so it felt more discoverable and intentional.
+                        </p>
+                      </div>
+                      <div 
+                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "brand" ? "md:max-h-[500px]" : ""}`}
+                        onClick={(e) => {
+                          if (window.innerWidth >= 768) {
+                            if (openToolSection === "brand") {
+                              setOpenToolSection("design");
+                            } else {
+                              setOpenToolSection("brand");
+                            }
+                          }
+                        }}
+                      >
+                        <p className={`p ${openToolSection === "brand" ? "" : "md:line-clamp-3"}`}>
+                          <span className="font-semibold">Brand</span> Brand gave users the ability to make broader changes across the magnet, such as colors, typography, and button styles. In the original version, these options lived on a dedicated page accessed through the top navigation. In my redesign, Brand became a tool within the left panel. Because of the reduced space, I simplified the toolset to prioritize what marketers would use most.
+                        </p>
+                      </div>
+                      <div 
+                        className={`md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "controls" ? "md:max-h-[500px]" : ""}`}
+                        onClick={(e) => {
+                          if (window.innerWidth >= 768) {
+                            if (openToolSection === "controls") {
+                              setOpenToolSection("brand");
+                            } else {
+                              setOpenToolSection("controls");
+                            }
+                          }
+                        }}
+                      >
+                        <p className={`p ${openToolSection === "controls" ? "" : "md:line-clamp-3"}`}>
+                          <span className="font-semibold"><span className="line-through">Prompts</span> → Controls </span>The original name, Prompts, didn't clearly communicate what the tool was for. Even though magnets' results were powered by prompts under the hood, marketers needed a more straightforward term. I renamed the tool Controls to convey that it controlled the logic behind the magnet's output.
+                        </p>
+                      </div>
                     </div>
                   </div>
                   
@@ -514,8 +593,15 @@ export default function CaseStudyOnePage() {
                         </p>
                         {/* Controls prototype */}
                     <MediaFrame aspectRatio="3 / 2" enableModal caption="Seeing the experience in the prototype made it clear that giving users full control would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit, and my stakeholder agreed after reviewing the prototype.">
-                      <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '3/2' }}>
-                      </div>
+                      <video 
+                        src="/videos/leadsdotnew-controlsvideo.mp4" 
+                        className="w-full h-full object-cover"
+                        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
                     </MediaFrame>
                     <p className="caption mb-12 text-center">
                     Seeing the Controls experience live in the prototype made it clear that giving users direct edit access would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit.
@@ -540,8 +626,15 @@ export default function CaseStudyOnePage() {
               <h2 className="custom-h2">I ran a no-budget round of user testing</h2>
                   {/* Controls prototype */}
               <MediaFrame aspectRatio="3 / 2" enableModal caption="Seeing the experience in the prototype made it clear that giving users full control would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit, and my stakeholder agreed after reviewing the prototype.">
-                <div className="w-full bg-gray-100 rounded-lg" style={{ aspectRatio: '3/2' }}>
-                </div>
+                <video 
+                  src="/videos/leadsdotnew-natalie.mp4" 
+                  className="w-full h-full object-cover"
+                  style={{ objectFit: 'cover', objectPosition: 'left center', width: '100%', height: '100%', transform: 'scale(1.1)' }}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
               </MediaFrame>
               <p className="caption mb-12 text-center">
               I showed the prototype to several people and recorded their responses. X% of users preferred the new design I proposed over the current Leads.new experience.
