@@ -121,11 +121,11 @@ export default function CaseStudyOnePage() {
       </PageContainer>
 
       {/* Custom Full Width Section - bypasses PageContainer */}
-      <section className="w-full py-8 sm:py-12 bg-[#D3E7F5] overflow-hidden mb-6 md:mb-0">
+      <section className="w-full py-8 sm:py-12 bg-[#DFE3FC] overflow-hidden mb-6 md:mb-0">
         <div className="relative overflow-hidden">
           {/* Mobile: Homepage-style layout with three overlapping images */}
           <div className="block md:hidden">
-            <div className="w-full rounded-md h-64 sm:h-80" style={{ backgroundColor: "#D3E7F5" }}>
+            <div className="w-full rounded-md h-64 sm:h-80" style={{ backgroundColor: "#DFE3FC" }}>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex items-end justify-center w-[86%] h-[80%]">
                   <div className="relative z-0 h-[80%] rounded-md w-auto bg-gray-400 drop-shadow-md -mr-5 -translate-y-3" style={{ width: '200px' }} />
@@ -143,21 +143,39 @@ export default function CaseStudyOnePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0 opacity-90 w-full px-8 sm:px-12 md:px-16 lg:px-30 overflow-hidden">
                 <div className="relative overflow-hidden" style={{ width: 'calc(100% + 140px)', marginLeft: '-140px' }}>
                   <div 
-                    className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out bg-gray-400"
+                    className="relative w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out"
                     style={{
-                      aspectRatio: '4/3',
+                      aspectRatio: '8/5',
                       transform: `translateX(-${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
                     }}
-                  />
+                  >
+                    <Image 
+                      src="/images/leadsdotnew-brandshot.png"
+                      alt="Leads.new brand shot"
+                      fill
+                      className="object-cover rounded-lg"
+                      unoptimized
+                    />
+                    <div className="absolute inset-0 bg-[#C4CEF0] opacity-40 rounded-lg" />
+                  </div>
                 </div>
                 <div className="relative overflow-hidden" style={{ width: 'calc(100% + 140px)', marginRight: '-70px' }}>
                   <div 
-                    className="w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out bg-gray-400"
+                    className="relative w-full h-auto rounded-lg border border-[#D9D9D9] transition-transform duration-1000 ease-out"
                     style={{
-                      aspectRatio: '4/3',
+                      aspectRatio: '8/5',
                       transform: `translateX(${isScrollingDown ? Math.min(scrollY * 0.2, 70) : Math.max(scrollY * 0.1, 0)}px)`
                     }}
-                  />
+                  >
+                    <Image 
+                      src="/images/leadsdotnew-datacapture.png"
+                      alt="Leads.new data capture"
+                      fill
+                      className="object-cover rounded-lg"
+                      unoptimized
+                    />
+                    <div className="absolute inset-0 bg-[#C4CEF0] opacity-40 rounded-lg" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -165,9 +183,18 @@ export default function CaseStudyOnePage() {
             {/* Front image positioned on top */}
             <div className="relative z-10 flex justify-center">
               <div 
-                className="w-full h-auto rounded-lg border border-[#D9D9D9] max-w-3xl bg-gray-400"
-                style={{ aspectRatio: '4/3' }}
-              />
+                className="w-full h-auto rounded-lg border border-[#D9D9D9] max-w-4xl overflow-hidden"
+                style={{ aspectRatio: '8/5' }}
+              >
+                <video 
+                  src="/videos/leadsdotnew-AI.mp4" 
+                  className="w-full h-full object-cover rounded-lg"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -651,7 +678,7 @@ export default function CaseStudyOnePage() {
             </CaseSection>
 
             <CaseSection id="results" title="Results">
-            <div className="w-full bg-white rounded-lg mb-4 border border-gray-200 overflow-hidden" style={{ aspectRatio: '3/2' }}>
+            <div className="w-full bg-white rounded-lg mb-4 border border-gray-200 overflow-hidden">
                 <video 
                   src="/videos/leadsdotnew-results-2.mp4" 
                   className="w-full h-full object-contain"
