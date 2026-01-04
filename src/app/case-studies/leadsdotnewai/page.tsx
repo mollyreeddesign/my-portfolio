@@ -651,7 +651,7 @@ export default function CaseStudyOnePage() {
             </CaseSection>
 
             <CaseSection id="results" title="Results">
-            <div className="w-full bg-white rounded-lg mb-4 border border-gray-200 overflow-hidden">
+            <div className="w-full bg-white rounded-lg mb-4 border border-gray-200 overflow-hidden" style={{ aspectRatio: '3/2' }}>
                 <video 
                   src="/videos/leadsdotnew-results-2.mp4" 
                   className="w-full h-full object-contain"
