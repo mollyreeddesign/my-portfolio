@@ -501,7 +501,7 @@ export default function CaseStudyOnePage() {
                     </div>
                     <div className="order-2 flex flex-col">
                       <div 
-                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "design" ? "md:max-h-[500px]" : ""}`}
+                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "design" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
                         onClick={(e) => {
                           if (window.innerWidth >= 768) {
                             if (openToolSection === "design") {
@@ -517,7 +517,7 @@ export default function CaseStudyOnePage() {
                         </p>
                       </div>
                       <div 
-                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "brand" ? "md:max-h-[500px]" : ""}`}
+                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "brand" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
                         onClick={(e) => {
                           if (window.innerWidth >= 768) {
                             if (openToolSection === "brand") {
@@ -533,7 +533,7 @@ export default function CaseStudyOnePage() {
                         </p>
                       </div>
                       <div 
-                        className={`md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "controls" ? "md:max-h-[500px]" : ""}`}
+                        className={`md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "controls" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
                         onClick={(e) => {
                           if (window.innerWidth >= 768) {
                             if (openToolSection === "controls") {
@@ -651,10 +651,18 @@ export default function CaseStudyOnePage() {
             </CaseSection>
 
             <CaseSection id="results" title="Results">
-            <div className="w-full bg-gray-100 rounded-lg mb-4" style={{ aspectRatio: '3/2' }}>
+            <div className="w-full bg-white rounded-lg mb-4 border border-gray-200 overflow-hidden">
+                <video 
+                  src="/videos/leadsdotnew-results-2.mp4" 
+                  className="w-full h-full object-contain"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
                 </div>
               <p className="caption mb-12 text-center">
-              The Before and After of the Leads.new workspace experiences
+              The new proposed workspace experience for Leads.new, focusing on AI collaboration and engagement.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                 {/* Mobile: Order 2, Desktop: Left column */}
