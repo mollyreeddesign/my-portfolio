@@ -8,7 +8,7 @@ import FullWidthSection from "@/components/FullWidthSection";
 import StickyNavigation from "@/components/StickyNavigation";
 import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
-import { ArrowUpRight, ChevronDown, Compass } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import BackToTopButton from "@/components/BackToTopButton";
 import MediaFrame from "@/components/MediaFrame";
@@ -19,9 +19,9 @@ export default function CaseStudyOnePage() {
   const [scrollY, setScrollY] = useState(0);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
-  const [isSidequestOpen, setIsSidequestOpen] = useState(false);
   const [openToolSection, setOpenToolSection] = useState<string>("chat");
   const [isAutoCycling, setIsAutoCycling] = useState(true);
+  const [showLeadMagnetTooltip, setShowLeadMagnetTooltip] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const cycleIntervalRef = useRef<NodeJS.Timeout | null>(null);
   
@@ -101,6 +101,7 @@ export default function CaseStudyOnePage() {
     { id: "design", label: "Process Overview" },
     { id: "insights", label: "Research" },
     { id: "whatidid", label: "What I Did" },
+    { id: "sidequest", label: "Sidequest" },
     { id: "results", label: "Results" }
   ];
 
@@ -249,10 +250,23 @@ export default function CaseStudyOnePage() {
           <div className="w-full lg:w-3/4 space-y-16 lg:space-y-26">
             <CaseSection id="theproblem" title="The Problem" headingLevel="h4">
               <h2 className="custom-h2">
-              Low AI engagement was preventing users from realizing the full value of Leads.new.
+              Low AI engagement was limiting user activation and conversion on Leads.new.
               </h2>
               <p className="p mb-4">
-              Leads.new helps marketers create AI-powered lead magnets. When I joined, only 38% of users were interacting with the AI agent in the workspace. As a result, many users never experienced the product’s full value which reduced the likelihood of publishing or converting to a paid plan.
+              Leads.new helps marketers create AI-powered <span 
+                className="relative inline-block cursor-help border-b border-dotted border-gray-400 font-semibold"
+                onMouseEnter={() => setShowLeadMagnetTooltip(true)}
+                onMouseLeave={() => setShowLeadMagnetTooltip(false)}
+              >
+                lead magnets
+                {showLeadMagnetTooltip && (
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg p-3 text-sm z-50 pointer-events-none">
+                    <span className="block text-left">A lead magnet is a digital incentive exchanged for a user's contact information. Historically this was often a PDF or ebook download, but modern lead magnets include AI-powered quizzes, predictors, and planners.</span>
+                    <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-200"></span>
+                    <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-0.5 border-4 border-transparent border-t-white"></span>
+                  </span>
+                )}
+              </span>. When I joined, only 38% of users were interacting with the AI agent in the workspace. As a result, many users never experienced the product's full value which reduced the likelihood of publishing or converting to a paid plan.
               </p>
               <p className="p mb-12">
               I partnered with the founders to redesign the workspace, focusing on increasing AI engagement. The goal was to leverage the value of the AI to build a workspace flow that felt effortless from start to finish.
@@ -273,15 +287,6 @@ export default function CaseStudyOnePage() {
             </CaseSection>
 
             <CaseSection id="exploration" title="Exploration" headingLevel="h4">
-            <h2 className="custom-h2">
-            What is a lead magnet?
-              </h2>
-              <p className="p mb-4">
-              A lead magnet is a digital incentive offered in exchange for a user’s contact information, commonly used by marketing teams. It could be a quiz, predictor, or planner. Understanding who uses lead magnets and why helped clarify the value the editor needed to deliver and the target user's point of view.
-              </p>
-              <p className="p mb-12">
-              Throughout the project, I leaned on my previous experience working with marketing teams. I thought from their perspective what would make an AI editor genuinely useful and easy to use.
-              </p>
               <h2 className="custom-h2">
               Auditing the current AI experience
               </h2>
@@ -294,22 +299,9 @@ export default function CaseStudyOnePage() {
                 <li className="p">Switching to direct edit mode was unclear due to an unlabeled button</li>
               </ul>
               <p className="p mb-12">
-              This audit helped me focus on the highest-impact issues and gave me a clear direction for improving AI engagement in the workspace.
+              This audit helped me focus on the highest-impact issues and gave me a clear direction for improving AI engagement in the workspace. It also gave me unbiased insight that I referenced throughout the project.
               </p>
-              {/* Loom Video */}
-              <div className="w-full bg-black rounded-lg mb-4 overflow-hidden" style={{ aspectRatio: '3/2' }}>
-                <video 
-                  src="/videos/leadsdotnew-audit.mp4" 
-                  className="w-full h-full object-contain"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              </div>
-              <p className="caption mb-12 text-center">
-              It was extremely helpful to do a UX audit early in the project. Since I knew nothing about the creation flow or Leads.new at the time, I could use it as unbiased user feedback and reference it throughout the project.
-              </p>
+              
               <h2 className="custom-h2">
               Defining the problem and success metrics
               </h2>
@@ -337,7 +329,7 @@ export default function CaseStudyOnePage() {
               The founder and I agree that the second choice aligned best with what was currently needed by Leads.new. After workshopping ideas, we landed on the project’s goal:
               </p>
               <p className="p mb-4">
-              How might AI make creating a lead magnet feel effortless?
+              How might we make creating a lead magnet with AI feel effortless?
               </p>
               <p className="p mb-4">
               Success would be measured by:
@@ -352,7 +344,7 @@ export default function CaseStudyOnePage() {
             <CaseSection id="businessgoal" title="Business Goal" headingLevel="h4">
               <Statement>
                 <h2 className="custom-h2">
-                How might AI make creating a lead magnet feel effortless?
+                How might we make creating a lead magnet<span className="hidden md:inline"><br /></span> with AI feel effortless?
                 </h2>
               </Statement>
             </CaseSection>
@@ -433,7 +425,7 @@ export default function CaseStudyOnePage() {
               
                 
                 <div className="mb-12">
-                  <h2 className="custom-h2">I created a phased approach</h2>
+                  <h2 className="custom-h2">I translated insights into clear solutions</h2>
                   <p className="p mb-4">
                   I knew the founding software engineer would need a clear plan to execute my solutions, so I proposed three phases ordered by effort and impact:
                   </p>
@@ -461,75 +453,7 @@ export default function CaseStudyOnePage() {
                   <p className="caption mb-8 md:mb-12 text-center">I prioritized my solutions from highest to lowest impact and effort. Then, I arranged these solutions into 3 phases.</p>
                 
                 <div>
-                <h2 className="custom-h2">I reimagined the AI workspace</h2>
-              <p className="p mb-4">
-              After sharing the phased plan with the founder, we made several pivotal decisions: 
-              </p>
-              <ul className="list-disc list-outside pl-6 space-y-1 mb-4">
-                <li className="p">Implementing next buttons did feel very dated, but putting edit and AI tools in a vertical side panels brought a lot of clarity to the workspace</li>
-                <li className="p">It was more valuable to the business for me to create a “blue-sky” redesigned prototype rather than iterate on the current experience, since Leads.new was still in an exploratory phase.</li>
-                <li className="p">Instead of building Figma mockups, I would build a working prototype with Figma MCP and Cursor to test and then present to the founding developer.</li>
-              </ul>
-              <p className="p mb-12">
-              I took a step back to rethink the AI workspace interface. I created a cleaner, more modern layout referencing my competitive research and core UI principles. I removed distracting borders and patterns, gave the AI more space, improved contrast with color selection, and simplified the navigation.
-              </p>
-              {/* Revised workspace design */}
-              <MediaFrame aspectRatio="3 / 2" enableModal caption="My revised design of the Leads.new workspace">
-                <Image 
-                  src="/images/leadsdotnew-firstdesign.png" 
-                  alt="My revised design of the Leads.new workspace" 
-                  fill
-                  className="object-contain"
-                  unoptimized
-                />
-              </MediaFrame>
-              <p className="caption mb-12 text-center">
-              My revised design of the Leads.new workspace
-              </p>
-              
-             
-                  <h2 className="custom-h2">I brought the new design into Cursor with Figma MCP</h2>
-                  <p className="p mb-12">
-                  Once the visual UI was in a good place, I incorporated the solutions from my phased approach and earlier discussions with the founder. I moved the AI and edit tools into a left vertical menu, rewrote the helper text, and redesigned the chat input controls, including the Design and Edit/Ask modes. After refining responsiveness with auto-layout, I used Figma MCP to bring the design into Cursor so I could start building my prototype.
-                  </p>              
-                </div>
-                  <MediaFrame aspectRatio="3 / 2" enableModal>
-                    <Image 
-                      src="/images/leadsdotnew-figmamcpbuild.png" 
-                      alt="Building live code from my mockup with Figma MCP" 
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </MediaFrame>
-                  <p className="caption mb-12 text-center">
-                  Building live code from my mockup with Figma MCP.
-              </p>
-              <p className="p mb-4">
-              It was a pretty exciting (and funny) to see Figma MCP and Cursor build my design. A few discoveries stood out: 
-              </p>
-              <ul className="list-disc list-outside pl-6 space-y-1 mb-12">
-                <li className="p">Vertical spacing in Figma did not map well to real screens</li>
-                  <li className="p">The chat area needed way less space than I originally designed</li>
-                  <li className="p">The coded result wasn't too much more exciting or useful than my original Figma mockup</li>
-                  <li className="p">The icons in the mockup didn’t map over at all </li>
-                </ul>
-               {/* Original Figma MCP prototype */}
-              <MediaFrame aspectRatio="3 / 2" enableModal caption="The original prototype, built directly from my design.">
-                <Image 
-                  src="/images/leadsdotnew-cursorbuild.png" 
-                  alt="The original prototype, built directly from my design" 
-                  fill
-                  className="object-contain"
-                  unoptimized
-                />
-              </MediaFrame>
-              <p className="caption mb-12 text-center">
-              The original prototype, built directly from my design.
-              </p>
-              <p className="p mb-12">I used Cursor to refine the prototype based on my original design, adding hover states, animations, and small interaction details. I also built a lightweight AI simulation that let me design input, prompt, and response patterns without building out real AI logic.</p>
-              
-              <h2 className="custom-h2">I defined each tool's purpose and flow</h2>
+                <h2 className="custom-h2">I defined each tool's purpose and flow</h2>
                   <p className="p mb-4">
                   After sharing my rough prototype with the founder, the next step was to define the flows for the Design and Brand tools. 
                   </p>  
@@ -634,78 +558,62 @@ export default function CaseStudyOnePage() {
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Collapsible Sidequest Section */}
-                  <div className={`mb-12 relative ${!isSidequestOpen ? "glisten-hover" : ""} bg-gradient-to-r from-blue-50 to-sky-100 rounded-lg border border-blue-200 transition-all duration-300 ${!isSidequestOpen ? "hover:scale-[1.005]" : ""}`}>
-                    {!isSidequestOpen && <span className="glisten-overlay-on-hover" aria-hidden="true" />}
-                    <button
-                      type="button"
-                      onClick={() => setIsSidequestOpen(!isSidequestOpen)}
-                      className="w-full flex flex-col p-4 cursor-pointer"
-                      aria-expanded={isSidequestOpen}
-                    >
-                      <div className="flex items-baseline justify-center gap-2 mb-2">
-                        <Compass className="w-5 h-5 text-blue-900 flex-shrink-0 translate-y-[3px]" />
-                        <h4 className="custom-h4 mb-0 !text-blue-900">Sidequest</h4>
-                      </div>
-                      <h2 className="custom-h2 mb-0">Managing LLM Variability with Controls</h2>
-                      <div className="flex items-center justify-center gap-1 mt-1">
-                        <ChevronDown
-                          className={`w-5 h-5 text-gray-600 transition-transform duration-200 ${
-                            isSidequestOpen ? "rotate-180" : ""
-                          }`}
-                        />
-                        <span className="text-gray-600 text-sm !font-semibold">
-                          {isSidequestOpen ? "Collapse" : "Expand"}
-                        </span>
-                      </div>
-                    </button>
-                    {isSidequestOpen && (
-                      <div className="px-4 pb-4">
-                        <div className="border-t border-blue-200 mt-4 mb-6"></div>
-                        <h2 className="custom-h2">I rethought Controls</h2>
-                        <p className="p mb-4">
-                        Controls became the most complex out of all Leads.new's tools. It allowed users to adjust the logic powering the results page through chat inputs. As I explored it further, more questions surfaced about its purpose, how it should function, and how to present it in a way that felt clear and valuable to users. Key questions I began exploring:
-                        </p>  
-                        <ul className="list-disc list-outside pl-6 space-y-1 mb-4">
-                          <li className="p">Why rely on LLM variability for lead magnet results instead of generating a fixed set of outputs like a traditional quiz?</li>
-                          <li className="p">Would Controls only manage the Results page, or could it change other parts of the magnet?</li>
-                          <li className="p">Was giving users access to this tool actually valuable, or would it create unnecessary complexity?</li>
-                        </ul>
-                        <p className="p mb-12">
-                        After realigning with the founders of Leads.new, it became clear that AI generated results were a core value they wanted users to benefit from, not something to hide behind the scenes. This shifted my focus toward designing Controls in a way that explained the feature simply, made its value obvious, and kept the experience from feeling overwhelming.
-                        </p>
-                        {/* Controls prototype */}
-                    <MediaFrame aspectRatio="3 / 2" enableModal caption="Seeing the experience in the prototype made it clear that giving users full control would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit, and my stakeholder agreed after reviewing the prototype.">
-                      <video 
-                        src="/videos/leadsdotnew-controlsvideo.mp4" 
-                        className="w-full h-full object-cover"
-                        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                      />
-                    </MediaFrame>
-                    <p className="caption mb-12 text-center">
-                    Seeing the Controls experience live in the prototype made it clear that giving users direct edit access would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit.
-                    </p>
-                    <p className="p mb-12">
-                    Building the Controls functionality would allow for better control of LLM outputs. Other opportunities to better manage LLM output included using a secondary agent to perform quality control on the primary model's responses (LLM orchestration). AI agents like v0, Replit already use this multi-agent system. We thought about how this might be an emerging best practice for AI agents, especially based on the varied results we were seeing from the current Leads.new model.
-                    </p>
-                    <div className="flex items-center justify-center gap-1 mt-6 pt-4 border-t border-blue-200">
-                      <button
-                        type="button"
-                        onClick={() => setIsSidequestOpen(false)}
-                        className="flex items-center gap-1 text-gray-600 hover:text-gray-800 transition-colors cursor-pointer"
-                      >
-                        <ChevronDown className="w-5 h-5 rotate-180 transition-transform duration-200" />
-                        <span className="text-sm !font-semibold">Collapse</span>
-                      </button>
-                    </div>
-                      </div>
-                    )}
-                  </div>
+                <h2 className="custom-h2">I reimagined the AI workspace</h2>
+              <p className="p mb-4">
+              After sharing the phased plan with the founder, we made several pivotal decisions: 
+              </p>
+              <ul className="list-disc list-outside pl-6 space-y-1 mb-4">
+                <li className="p">Implementing next buttons did feel very dated, but putting edit and AI tools in a vertical side panels brought a lot of clarity to the workspace</li>
+                <li className="p">It was more valuable to the business for me to create a “blue-sky” redesigned prototype rather than iterate on the current experience, since Leads.new was still in an exploratory phase.</li>
+                <li className="p">Instead of building Figma mockups, I would build a working prototype with Figma MCP and Cursor to test and then present to the founding developer.</li>
+              </ul>
+              <p className="p mb-12">
+              I took a step back to rethink the AI workspace interface. I created a cleaner, more modern layout referencing my competitive research and core UI principles. I removed distracting borders and patterns, gave the AI more space, improved contrast with color selection, and simplified the navigation.
+              </p>
+              {/* Revised workspace design */}
+              <MediaFrame aspectRatio="3 / 2" enableModal caption="My revised design of the Leads.new workspace">
+                <Image 
+                  src="/images/leadsdotnew-firstdesign.png" 
+                  alt="My revised design of the Leads.new workspace" 
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
+              </MediaFrame>
+              <p className="caption mb-12 text-center">
+              My revised design of the Leads.new workspace
+              </p>
+              
+             
+                  <h2 className="custom-h2">I brought the new design into Cursor with Figma MCP</h2>
+                  <p className="p mb-12">
+                  Once the visual UI was in a good place, I incorporated the solutions from my phased approach and earlier discussions with the founder. I moved the AI and edit tools into a left vertical menu, rewrote the helper text, and redesigned the chat input controls, including the Design and Edit/Ask modes. After refining responsiveness with auto-layout, I used Figma MCP to bring the design into Cursor so I could start building my prototype.
+                  </p>              
+                </div>
+                  <MediaFrame aspectRatio="3 / 2" enableModal>
+                    <Image 
+                      src="/images/leadsdotnew-figmamcpbuild.png" 
+                      alt="Building live code from my mockup with Figma MCP" 
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </MediaFrame>
+                  <p className="caption mb-12 text-center">
+                  Building live code from my mockup with Figma MCP.
+              </p>
+              <p className="p mb-4">
+              It was a pretty exciting (and funny) to see Figma MCP and Cursor build my design. A few discoveries stood out: 
+              </p>
+              <ul className="list-disc list-outside pl-6 space-y-1 mb-4">
+                <li className="p">Vertical spacing in Figma did not map well to real screens</li>
+                  <li className="p">The chat area needed way less space than I originally designed</li>
+                  <li className="p">The coded result wasn't too much more exciting or useful than my original Figma mockup</li>
+                  <li className="p">The icons in the mockup didn’t map over at all </li>
+                </ul>
+               
+              <p className="p mb-12">I used Cursor to refine the prototype based on my original design, adding hover states, animations, and small interaction details. I also built a lightweight AI simulation that let me design input, prompt, and response patterns without building out real AI logic.</p>
+              
 
               <h2 className="custom-h2">I ran a no-budget round of user testing</h2>
                   {/* Controls prototype */}
@@ -734,6 +642,39 @@ export default function CaseStudyOnePage() {
               </ul>
             </CaseSection>
 
+            <CaseSection id="sidequest" title="Sidequest" headingLevel="h4">
+              <h2 className="custom-h2">I rethought Controls</h2>
+              <p className="p mb-4">
+              Controls became the most complex out of all Leads.new's tools. It allowed users to adjust the logic powering the results page through chat inputs. As I explored it further, more questions surfaced about its purpose, how it should function, and how to present it in a way that felt clear and valuable to users. Key questions I began exploring:
+              </p>  
+              <ul className="list-disc list-outside pl-6 space-y-1 mb-4">
+                <li className="p">Why rely on LLM variability for lead magnet results instead of generating a fixed set of outputs like a traditional quiz?</li>
+                <li className="p">Would Controls only manage the Results page, or could it change other parts of the magnet?</li>
+                <li className="p">Was giving users access to this tool actually valuable, or would it create unnecessary complexity?</li>
+              </ul>
+              <p className="p mb-12">
+              After realigning with the founders of Leads.new, it became clear that AI generated results were a core value they wanted users to benefit from, not something to hide behind the scenes. This shifted my focus toward designing Controls in a way that explained the feature simply, made its value obvious, and kept the experience from feeling overwhelming.
+              </p>
+              {/* Controls prototype */}
+              <MediaFrame aspectRatio="3 / 2" enableModal caption="Seeing the experience in the prototype made it clear that giving users full control would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit, and my stakeholder agreed after reviewing the prototype.">
+                <video 
+                  src="/videos/leadsdotnew-controlsvideo.mp4" 
+                  className="w-full h-full object-cover"
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </MediaFrame>
+              <p className="caption mb-12 text-center">
+              Seeing the Controls experience live in the prototype made it clear that giving users direct edit access would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit.
+              </p>
+              <p className="p mb-12">
+              Building the Controls functionality would allow for better control of LLM outputs. Other opportunities to better manage LLM output included using a secondary agent to perform quality control on the primary model's responses (LLM orchestration). AI agents like v0, Replit already use this multi-agent system. We thought about how this might be an emerging best practice for AI agents, especially based on the varied results we were seeing from the current Leads.new model.
+              </p>
+            </CaseSection>
+
             <CaseSection id="results" title="Results">
             <div className="w-full bg-white rounded-lg mb-4 border border-gray-200 overflow-hidden">
                 <video 
@@ -748,22 +689,20 @@ export default function CaseStudyOnePage() {
               <p className="caption mb-12 text-center">
               The new proposed workspace experience for Leads.new, focusing on AI collaboration and engagement.
               </p>
+              <p className="p !font-semibold mb-4">
+              Takeaways: 
+              </p>
+              <ul className="list-disc list-outside pl-6 space-y-1 mb-12">
+                <li className="p">Working on agentic AI UX was really exciting. The space has matured enough to provide strong reference points, yet is still young enough to explore new interaction patterns and ideas.</li>
+                <li className="p">Live prototyping is my preferred way to communicate product ideas. Building an interactive prototype gave the team a much clearer understanding of my solutions than static designs ever could.</li>
+                <li className="p">Time constraints = tradeoffs. I had to decide whether refining UI details and animations added value, or if 80% there was enough to clearly communicate the core idea.</li>
+              </ul>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                 {/* Mobile: Order 2, Desktop: Left column */}
                 <div className="order-2 md:order-1 col-span-1">
                   <p className="p mb-4">
                   The solution I proposed was implemented early December 2025. Metrics that were measured a month before and after revealed that we did/did not achieve our goal of making editing a lead magnet with AI feel effortless. Elaborate a bit...
                   </p>
-                  <p className="p !font-semibold mb-4">
-                  Takeaways: 
-                  </p>
-                  <ul className="list-disc list-outside pl-6 space-y-1 mb-4">
-                    <li className="p">Working on agentic AI UX was really exciting. The space has matured enough to provide strong reference points, yet is still young enough to explore new interaction patterns and ideas.</li>
-                    <li className="p">Live prototyping is my preferred way to communicate product ideas. Building an interactive prototype gave the team a much clearer understanding of my solutions than static designs ever could.</li>
-                    <li className="p">Time constraints = tradeoffs. I had to decide whether refining UI details and animations added value, or if 80% there was enough to clearly communicate the core idea.</li>
-                    
-                  </ul>
-                  
                   
                   {/* Mobile: Buttons below paragraph */}
                   <div className="md:hidden space-y-6 pt-4">
