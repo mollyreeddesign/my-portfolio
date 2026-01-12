@@ -9,7 +9,7 @@ import StickyNavigation from "@/components/StickyNavigation";
 import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
 import { ArrowUpRight, ChevronDown, Compass } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import BackToTopButton from "@/components/BackToTopButton";
 import MediaFrame from "@/components/MediaFrame";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
@@ -20,7 +20,10 @@ export default function CaseStudyOnePage() {
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [isSidequestOpen, setIsSidequestOpen] = useState(false);
-  const [openToolSection, setOpenToolSection] = useState<string>("design");
+  const [openToolSection, setOpenToolSection] = useState<string>("chat");
+  const [isAutoCycling, setIsAutoCycling] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const cycleIntervalRef = useRef<NodeJS.Timeout | null>(null);
   
 
   useEffect(() => {
@@ -60,6 +63,36 @@ export default function CaseStudyOnePage() {
     videos.forEach((v) => observer.observe(v));
     return () => observer.disconnect();
   }, []);
+
+  // Auto-cycle through tool sections
+  useEffect(() => {
+    if (!isAutoCycling) {
+      // Clear interval if auto-cycling is disabled
+      if (cycleIntervalRef.current) {
+        clearInterval(cycleIntervalRef.current);
+        cycleIntervalRef.current = null;
+      }
+      return;
+    }
+
+    const sections = ["chat", "design", "brand", "controls"];
+    const currentIndexRef = { current: sections.indexOf(openToolSection) };
+    if (currentIndexRef.current === -1) currentIndexRef.current = 0;
+
+    const cycle = () => {
+      currentIndexRef.current = (currentIndexRef.current + 1) % sections.length;
+      setOpenToolSection(sections[currentIndexRef.current]);
+    };
+
+    cycleIntervalRef.current = setInterval(cycle, 3000);
+
+    return () => {
+      if (cycleIntervalRef.current) {
+        clearInterval(cycleIntervalRef.current);
+        cycleIntervalRef.current = null;
+      }
+    };
+  }, [isAutoCycling]);
 
   const sections = [
     { id: "theproblem", label: "The Problem" },
@@ -187,12 +220,16 @@ export default function CaseStudyOnePage() {
                 style={{ aspectRatio: '8/5' }}
               >
                 <video 
+                  ref={videoRef}
                   src="/videos/leadsdotnew-AI.mp4" 
                   className="w-full h-full object-cover rounded-lg"
                   autoPlay
                   loop
                   muted
                   playsInline
+                  onLoadedMetadata={(e) => {
+                    e.currentTarget.playbackRate = 1.3;
+                  }}
                 />
               </div>
             </div>
@@ -505,6 +542,13 @@ export default function CaseStudyOnePage() {
                   <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-4 mb-12">
                     <div className="hidden md:block bg-gray-400 rounded-lg md:h-[600px] md:w-[350px] order-1 relative overflow-hidden">
                       <Image 
+                        src="/images/leadsdotnew-ai.png" 
+                        alt="Chat panel" 
+                        fill
+                        className={`object-contain transition-opacity duration-500 ease-in-out ${openToolSection === "chat" ? "opacity-100" : "opacity-0 absolute"}`}
+                        unoptimized
+                      />
+                      <Image 
                         src="/images/leadsdotnew-design.png" 
                         alt="Design panel" 
                         fill
@@ -527,6 +571,19 @@ export default function CaseStudyOnePage() {
                       />
                     </div>
                     <div className="order-2 flex flex-col">
+                      <div 
+                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "chat" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
+                        onClick={(e) => {
+                          if (window.innerWidth >= 768) {
+                            setIsAutoCycling(false);
+                            setOpenToolSection("chat");
+                          }
+                        }}
+                      >
+                        <p className={`p ${openToolSection === "chat" ? "" : "md:line-clamp-3"}`}>
+                          <span className="font-semibold">Chat</span> - INFO TBD
+                        </p>
+                      </div>
                       <div 
                         className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "design" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
                         onClick={(e) => {
@@ -560,7 +617,7 @@ export default function CaseStudyOnePage() {
                         </p>
                       </div>
                       <div 
-                        className={`md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "controls" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
+                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "controls" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
                         onClick={(e) => {
                           if (window.innerWidth >= 768) {
                             if (openToolSection === "controls") {
