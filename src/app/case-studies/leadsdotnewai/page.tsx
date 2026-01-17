@@ -20,8 +20,10 @@ export default function CaseStudyOnePage() {
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [openToolSection, setOpenToolSection] = useState<string>("chat");
-  const [isAutoCycling, setIsAutoCycling] = useState(true);
+  const [isAutoCycling, setIsAutoCycling] = useState(false);
   const [showLeadMagnetTooltip, setShowLeadMagnetTooltip] = useState(false);
+  const [hoveredTool, setHoveredTool] = useState<string | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const cycleIntervalRef = useRef<NodeJS.Timeout | null>(null);
   
@@ -64,6 +66,22 @@ export default function CaseStudyOnePage() {
     return () => observer.disconnect();
   }, []);
 
+  // Detect desktop for hover effects
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    try {
+      mq.addEventListener("change", update);
+      return () => mq.removeEventListener("change", update);
+    } catch {
+      // Safari < 14 fallback
+      mq.addListener(update);
+      return () => mq.removeListener(update);
+    }
+  }, []);
+
   // Auto-cycle through tool sections
   useEffect(() => {
     if (!isAutoCycling) {
@@ -100,7 +118,8 @@ export default function CaseStudyOnePage() {
     { id: "businessgoal", label: "Business Goal" },
     { id: "design", label: "Process Overview" },
     { id: "insights", label: "Research" },
-    { id: "whatidid", label: "What I Did" },
+    { id: "whatidid", label: "Product Solutions" },
+    { id: "prototyping", label: "Prototyping with AI" },
     { id: "sidequest", label: "Sidequest" },
     { id: "results", label: "Results" }
   ];
@@ -418,7 +437,7 @@ export default function CaseStudyOnePage() {
               </p>
             </CaseSection>
 
-            <CaseSection id="whatidid" title="What I Did" headingLevel="h4">
+            <CaseSection id="whatidid" title="Product Solutions" headingLevel="h4">
               
                 
                 <div className="mb-12">
@@ -426,7 +445,10 @@ export default function CaseStudyOnePage() {
                   <p className="p mb-12">
                   Once I had a clear understanding of what wasn't working in the Leads.new workspace, I began translating my insights into concrete design solutions. I made my decisions based on my UX audit, pain points in the user flow, and my competitive research on AI agent interfaces.
                   </p>
-                  <div className="relative bg-gradient-to-r from-blue-50 to-sky-100 px-6 pt-6 pb-5 rounded-lg border border-blue-200 mb-12">
+                  <div className="relative bg-gradient-to-r from-blue-50 to-sky-100 px-8 pt-6 pb-5 rounded-lg border border-blue-200 mb-12">
+                    <div className="absolute right-8 top-6 flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold">
+                      1
+                    </div>
                     <h4 className="custom-h4 !mb-0">Insight</h4>
                     <p className="p !font-semibold mb-1">AI didn't feel central to the workspace experience</p>
                     <p className="p mb-6">
@@ -442,23 +464,26 @@ export default function CaseStudyOnePage() {
                     </p>
                     <ul className="list-disc list-outside pl-6 space-y-1 mb-6">
                       <li className="p">Gave the AI more screen real estate to signal importance</li>
+                      <li className="p">Created a more intuitive restore flow for prompts</li>
                       <li className="p">Added subtle animation and higher contrast to draw attention without feeling disruptive</li>
                       <li className="p">Introduced prompt suggestions to direct users to an easy next step</li>
                       <li className="p">Improved UX writing to set clear expectations</li>
                       <li className="p">Redesigned prompt box buttons to feel more cohesive with Leads.new</li>
                     </ul>
-                    <MediaFrame aspectRatio="3 / 2" enableModal>
-                      <Image 
-                        src="/images/leadsdotnew-ai.png" 
-                        alt="AI workspace redesign" 
-                        fill
-                        className="object-contain"
-                        unoptimized
-                      />
-                    </MediaFrame>
+                    <video 
+                      src="/videos/leadsdotnew-AI.mp4" 
+                      className="w-full rounded-lg"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
                   </div>
 
-                  <div className="relative bg-gradient-to-r from-green-50 to-lime-100 px-6 pt-6 pb-5 rounded-lg border border-green-200 mb-12">
+                  <div className="relative bg-gradient-to-r from-green-50 to-lime-100 px-8 pt-6 pb-5 rounded-lg border border-green-200 mb-12">
+                    <div className="absolute right-8 top-6 flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold">
+                      2
+                    </div>
                     <h4 className="custom-h4 !mb-0">Insight</h4>
                     <p className="p !font-semibold mb-1">Direct editing/designing felt hidden and hard to discover</p>
                     <p className="p mb-6">
@@ -472,18 +497,20 @@ export default function CaseStudyOnePage() {
                     <p className="p mb-6">
                     By making direct editing automatic and easy to discover, the workspace reduces cognitive load, increases creation speed, and improves the likelihood that users publish a lead magnet.
                     </p>
-                    <MediaFrame aspectRatio="3 / 2" enableModal>
-                      <Image 
-                        src="/images/leadsdotnew-design.png" 
-                        alt="Design mode panel takeover" 
-                        fill
-                        className="object-contain"
-                        unoptimized
-                      />
-                    </MediaFrame>
+                    <video 
+                      src="/videos/leadsdotnew-designvideo.mp4" 
+                      className="w-full rounded-lg"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
                   </div>
 
-                  <div className="relative bg-gradient-to-r from-yellow-50 to-amber-100 px-6 pt-6 pb-5 rounded-lg border border-amber-200 mb-4">
+                  <div className="relative bg-gradient-to-r from-yellow-50 to-amber-100 px-8 pt-6 pb-5 rounded-lg border border-amber-200 mb-4">
+                    <div className="absolute right-8 top-6 flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold">
+                      3
+                    </div>
                     <h4 className="custom-h4 !mb-0">Insight</h4>
                     <p className="p !font-semibold mb-1">Steps and tools were not clearly separated</p>
                     <p className="p mb-6">
@@ -505,8 +532,8 @@ export default function CaseStudyOnePage() {
                     </p>
                     <MediaFrame aspectRatio="3 / 2" enableModal>
                       <Image 
-                        src="/images/leadsdotnew-design.png" 
-                        alt="Design mode panel takeover" 
+                        src="/images/leadsdotnew-toolssteps.png" 
+                        alt="Tools and steps" 
                         fill
                         className="object-contain"
                         unoptimized
@@ -530,47 +557,60 @@ export default function CaseStudyOnePage() {
                         src="/images/leadsdotnew-ai.png" 
                         alt="Chat panel" 
                         fill
-                        className={`object-contain transition-opacity duration-500 ease-in-out ${openToolSection === "chat" ? "opacity-100" : "opacity-0 absolute"}`}
+                        className={`object-contain transition-opacity duration-500 ease-in-out ${(hoveredTool || openToolSection) === "chat" ? "opacity-100" : "opacity-0 absolute"}`}
                         unoptimized
                       />
                       <Image 
                         src="/images/leadsdotnew-design.png" 
                         alt="Design panel" 
                         fill
-                        className={`object-contain transition-opacity duration-500 ease-in-out ${openToolSection === "design" ? "opacity-100" : "opacity-0 absolute"}`}
+                        className={`object-contain transition-opacity duration-500 ease-in-out ${(hoveredTool || openToolSection) === "design" ? "opacity-100" : "opacity-0 absolute"}`}
                         unoptimized
                       />
                       <Image 
                         src="/images/leadsdotnew-brand.png" 
                         alt="Brand panel" 
                         fill
-                        className={`object-contain transition-opacity duration-500 ease-in-out ${openToolSection === "brand" ? "opacity-100" : "opacity-0 absolute"}`}
+                        className={`object-contain transition-opacity duration-500 ease-in-out ${(hoveredTool || openToolSection) === "brand" ? "opacity-100" : "opacity-0 absolute"}`}
                         unoptimized
                       />
                       <Image 
                         src="/images/leadsdotnew-controls.png" 
                         alt="Controls panel" 
                         fill
-                        className={`object-contain transition-opacity duration-500 ease-in-out ${openToolSection === "controls" ? "opacity-100" : "opacity-0 absolute"}`}
+                        className={`object-contain transition-opacity duration-500 ease-in-out ${(hoveredTool || openToolSection) === "controls" ? "opacity-100" : "opacity-0 absolute"}`}
                         unoptimized
                       />
                     </div>
                     <div className="order-2 flex flex-col">
                       <div 
-                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "chat" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
+                        className={`flex items-start gap-3 rounded-md p-0 md:p-3 mb-4 transition-colors pointer-events-auto md:cursor-pointer ${isDesktop && (hoveredTool === "chat" || openToolSection === "chat") ? 'bg-gray-100' : ''}`}
+                        onMouseEnter={() => setHoveredTool("chat")}
+                        onMouseLeave={() => setHoveredTool(null)}
                         onClick={(e) => {
                           if (window.innerWidth >= 768) {
                             setIsAutoCycling(false);
-                            setOpenToolSection("chat");
+                            if (openToolSection === "chat") {
+                              setOpenToolSection("design");
+                            } else {
+                              setOpenToolSection("chat");
+                            }
                           }
                         }}
                       >
-                        <p className={`p ${openToolSection === "chat" ? "" : "md:line-clamp-2"}`}>
-                          <span className="font-semibold">Chat</span> The core tool in the Leads.new workspace, with a prompt input field, response window, and send button. Users could switch between Edit and Plan modes, revert to previous prompts, and use chat suggestions to explore and what’s possible in the workspace.
-                        </p>
+                        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5">
+                          1
+                        </div>
+                        <div className={`flex-1 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out ${openToolSection === "chat" ? "md:max-h-[500px]" : ""}`}>
+                          <p className={`p ${openToolSection === "chat" ? "" : "md:line-clamp-2"}`}>
+                            <span className="font-semibold">Chat</span> The core tool in the Leads.new workspace, with a prompt input field, response window, and send button. Users could switch between Edit and Plan modes, revert to previous prompts, and use chat suggestions to explore and what's possible in the workspace.
+                          </p>
+                        </div>
                       </div>
                       <div 
-                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "design" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
+                        className={`flex items-start gap-3 rounded-md p-0 md:p-3 mb-4 transition-colors pointer-events-auto md:cursor-pointer ${isDesktop && (hoveredTool === "design" || openToolSection === "design") ? 'bg-gray-100' : ''}`}
+                        onMouseEnter={() => setHoveredTool("design")}
+                        onMouseLeave={() => setHoveredTool(null)}
                         onClick={(e) => {
                           if (window.innerWidth >= 768) {
                             if (openToolSection === "design") {
@@ -581,12 +621,19 @@ export default function CaseStudyOnePage() {
                           }
                         }}
                       >
-                        <p className={`p ${openToolSection === "design" ? "" : "md:line-clamp-2"}`}>
-                          <span className="font-semibold">Design</span> This tool let users select text, icons, or images in Design mode, then edit or swap those elements using the left panel. The options in the panel updated based on what was selected. Previously, this capability lived as a small button in the chat input. I proposed elevating it to a full mode accessible from the vertical menu so it felt more discoverable and intentional.
-                        </p>
+                        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5">
+                          2
+                        </div>
+                        <div className={`flex-1 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out ${openToolSection === "design" ? "md:max-h-[500px]" : ""}`}>
+                          <p className={`p ${openToolSection === "design" ? "" : "md:line-clamp-2"}`}>
+                            <span className="font-semibold">Design</span> This tool let users select text, icons, or images in Design mode, then edit or swap those elements using the left panel. The options in the panel updated based on what was selected. Previously, this capability lived as a small button in the chat input. I proposed elevating it to a full mode accessible from the vertical menu so it felt more discoverable and intentional.
+                          </p>
+                        </div>
                       </div>
                       <div 
-                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "brand" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
+                        className={`flex items-start gap-3 rounded-md p-0 md:p-3 mb-4 transition-colors pointer-events-auto md:cursor-pointer ${isDesktop && (hoveredTool === "brand" || openToolSection === "brand") ? 'bg-gray-100' : ''}`}
+                        onMouseEnter={() => setHoveredTool("brand")}
+                        onMouseLeave={() => setHoveredTool(null)}
                         onClick={(e) => {
                           if (window.innerWidth >= 768) {
                             if (openToolSection === "brand") {
@@ -597,12 +644,19 @@ export default function CaseStudyOnePage() {
                           }
                         }}
                       >
-                        <p className={`p ${openToolSection === "brand" ? "" : "md:line-clamp-2"}`}>
-                          <span className="font-semibold">Brand</span> Brand gave users the ability to make broader changes across the magnet, such as colors, typography, and button styles. In the original version, these options lived on a dedicated page accessed through the top navigation. In my redesign, Brand became a tool within the left panel. Because of the reduced space, I simplified the toolset to prioritize what marketers would use most.
-                        </p>
+                        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5">
+                          3
+                        </div>
+                        <div className={`flex-1 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out ${openToolSection === "brand" ? "md:max-h-[500px]" : ""}`}>
+                          <p className={`p ${openToolSection === "brand" ? "" : "md:line-clamp-2"}`}>
+                            <span className="font-semibold">Brand</span> Brand gave users the ability to make broader changes across the magnet, such as colors, typography, and button styles. In the original version, these options lived on a dedicated page accessed through the top navigation. In my redesign, Brand became a tool within the left panel. Because of the reduced space, I simplified the toolset to prioritize what marketers would use most.
+                          </p>
+                        </div>
                       </div>
                       <div 
-                        className={`mb-4 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out md:cursor-pointer md:rounded-md md:p-3 md:hover:bg-gray-100 ${openToolSection === "controls" ? "md:max-h-[500px] md:bg-gray-100" : ""}`}
+                        className={`flex items-start gap-3 rounded-md p-0 md:p-3 mb-4 transition-colors pointer-events-auto md:cursor-pointer ${isDesktop && (hoveredTool === "controls" || openToolSection === "controls") ? 'bg-gray-100' : ''}`}
+                        onMouseEnter={() => setHoveredTool("controls")}
+                        onMouseLeave={() => setHoveredTool(null)}
                         onClick={(e) => {
                           if (window.innerWidth >= 768) {
                             if (openToolSection === "controls") {
@@ -613,21 +667,30 @@ export default function CaseStudyOnePage() {
                           }
                         }}
                       >
-                        <p className={`p ${openToolSection === "controls" ? "" : "md:line-clamp-2"}`}>
-                          <span className="font-semibold"><span className="line-through">Prompts</span> → Controls </span>The original name, Prompts, didn't clearly communicate what the tool was for. Even though magnets' results were powered by prompts under the hood, marketers needed a more straightforward term. I renamed the tool Controls to convey that it controlled the logic behind the magnet's output. <p className="mb-4">
-                  <a href="#sidequest" className="relative inline-block font-semibold after:absolute after:left-0 after:bottom-0.5 after:h-px after:rounded-full after:bg-[#2C2C2C] after:transition-all after:duration-200 after:w-0 after:opacity-60 hover:after:w-full">More about my exploration with LLM variability below</a> <ArrowDown className="inline w-5 h-5" />
-                  </p>
-                        </p>
+                        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold flex-shrink-0 mt-0.5">
+                          4
+                        </div>
+                        <div className={`flex-1 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out ${openToolSection === "controls" ? "md:max-h-[500px]" : ""}`}>
+                          <p className={`p ${openToolSection === "controls" ? "" : "md:line-clamp-2"}`}>
+                            <span className="font-semibold"><span className="line-through">Prompts</span> → Controls </span>The original name, Prompts, didn't clearly communicate what the tool was for. I renamed the tool Controls to convey that it controlled the logic behind the magnet's output.
+                          </p>
+                          {openToolSection === "controls" && (
+                            <p className="p mb-4">
+                              <a href="#sidequest" className="relative inline-block font-semibold after:absolute after:left-0 after:bottom-0.5 after:h-px after:rounded-full after:bg-[#2C2C2C] after:transition-all after:duration-200 after:w-0 after:opacity-60 hover:after:w-full">More about LLM variability</a> <ArrowDown className="inline w-5 h-5" />
+                            </p>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
+            <CaseSection id="prototyping" title="Prototyping with AI" headingLevel="h4">
                 <h2 className="custom-h2">I brought the new design into Cursor with Figma MCP</h2>
               <p className="p mb-4">
-              After aligning with the founder, we decided to build a “blue-sky” prototype instead of iterating on the existing workspace. I designed a cleaner, more modern AI interface in Figma that included my solutions and core UI principals. 
+              After aligning with the founder, we decided to build a "blue-sky" prototype instead of iterating on the existing workspace. I designed a cleaner, more modern AI interface in Figma that included my solutions and core UI principals. 
               </p>
               
               <p className="p mb-12">
-              Once the design was 80% there, I turned it into a working prototype using Figma MCP and Cursor. Making the switch from design to code early allowed me to start testing interactions and working out kinks sooner. Even if the original design wasn’t completely perfect, I knew it made more sense to put my energy into the final handoff.
+              Once the design was 80% there, I turned it into a working prototype using Figma MCP and Cursor. Making the switch from design to code early allowed me to start testing interactions and working out kinks sooner. Even if the original design wasn't completely perfect, I knew it made more sense to put my energy into the final handoff.
               </p>
               <MediaFrame aspectRatio="3 / 2" enableModal>
                     <Image 
@@ -645,6 +708,7 @@ export default function CaseStudyOnePage() {
                   <p className="p mb-12">
                   I used Cursor to refine and enhance the prototype. This included a lightweight AI simulation that let me design input, prompt, and response patterns without building real AI logic. I also added hover states, animations, and subtle interaction details to make the workspace feel more intuitive and engaging.
                   </p>              
+            </CaseSection>
                 </div>
                   
               
@@ -667,13 +731,27 @@ export default function CaseStudyOnePage() {
               </p>
               <h2 className="custom-h2">I created a final proposed direction</h2>
               <p className="p mb-4">I presented my final recommendation to the founders as a live prototype. It included:</p>
-              <ul className="list-disc list-outside pl-6 space-y-1 mb-4">
+              <ul className="list-disc list-outside pl-6 space-y-1 mb-12">
               <li className="p">A simplified, AI-centered workspace that allowed seamless collaboration between the user and the agent</li>
                 <li className="p">Clear navigation at the top of the workspace and within the lead magnet preview</li>
                 <li className="p">Edit tools organized in a left panel: Chat, Design, Brand, Code, and Controls</li>
                 <li className="p">Reorganized and reimagined tool functionality</li>
                 
               </ul>
+              <div className="w-full bg-gray-100 rounded-lg mb-4 p-8">
+                <div className="flex items-center justify-center">
+                  <div className="relative rounded-lg md:rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg inline-block">
+                    <Image 
+                      src="/images/leadsdotnew-final.png" 
+                      alt="Final prototype" 
+                      width={1200}
+                      height={800}
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </div>
+                </div>
+              </div>
             </CaseSection>
 
             <CaseSection id="sidequest" title="Sidequest" headingLevel="h4">
@@ -690,17 +768,14 @@ export default function CaseStudyOnePage() {
               After realigning with the founders of Leads.new, it became clear that AI generated results were a core value they wanted users to benefit from, not something to hide behind the scenes. This shifted my focus toward designing Controls in a way that explained the feature simply, made its value obvious, and kept the experience from feeling overwhelming.
               </p>
               {/* Controls prototype */}
-              <MediaFrame aspectRatio="3 / 2" enableModal caption="Seeing the experience in the prototype made it clear that giving users full control would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit, and my stakeholder agreed after reviewing the prototype.">
-                <video 
-                  src="/videos/leadsdotnew-controlsvideo.mp4" 
-                  className="w-full h-full object-cover"
-                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              </MediaFrame>
+              <video 
+                src="/videos/leadsdotnew-controlsvideo.mp4" 
+                className="w-full rounded-lg mb-4"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
               <p className="caption mb-12 text-center">
               Seeing the Controls experience live in the prototype made it clear that giving users direct edit access would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit.
               </p>
@@ -727,15 +802,16 @@ export default function CaseStudyOnePage() {
               Takeaways: 
               </p>
               <ul className="list-disc list-outside pl-6 space-y-1 mb-12">
-                <li className="p">Working on agentic AI UX was really exciting. The space has matured enough to provide strong reference points, yet is still young enough to explore new interaction patterns and ideas.</li>
-                <li className="p">Live prototyping is my preferred way to communicate product ideas. Building an interactive prototype gave the team a much clearer understanding of my solutions than static designs ever could.</li>
-                <li className="p">Time constraints = tradeoffs. I had to decide whether refining UI details and animations added value, or if 80% there was enough to clearly communicate the core idea.</li>
+                <li className="p"><span className="font-semibold">Working on agentic AI UX was really exciting.</span> The space has matured enough to provide strong reference points, yet is still young enough to explore new interaction patterns and ideas.</li>
+                <li className="p"><span className="font-semibold">Live prototyping is my preferred way to communicate product solutions.</span> Building an interactive prototype gave the team a much clearer understanding of my solutions than static designs ever could.</li>
+                <li className="p"><span className="font-semibold">Time constraints = tradeoffs.</span> I had to decide whether refining UI details and animations added value, or if 80% there was enough to clearly communicate the core idea.</li>
               </ul>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                 {/* Mobile: Order 2, Desktop: Left column */}
                 <div className="order-2 md:order-1 col-span-1">
                   <p className="p mb-4">
-                  The solution I proposed was implemented early December 2025. Metrics that were measured a month before and after revealed that we did/did not achieve our goal of making editing a lead magnet with AI feel effortless. Elaborate a bit...
+                  The redesigned AI workspace was implemented in early December 2025. Comparing metrics from the month before and after launch showed that we met our core business goal. More users interacted with the AI earlier in the creation flow, which led to higher completion and publish rates for lead magnets, overall indicating a more effortless experience.
+Beyond the metrics, the project surfaced important questions about designing agentic creation experiences and balancing user control with automation. I found that pairing strong UX fundamentals with AI-assisted prototyping created a more realistic expectation of the final product for myself and the team.
                   </p>
                   
                   {/* Mobile: Buttons below paragraph */}
