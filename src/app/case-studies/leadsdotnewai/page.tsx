@@ -811,7 +811,7 @@ export default function CaseStudyOnePage() {
                 <div className="order-2 md:order-1 col-span-1">
                   <p className="p mb-4">
                   The redesigned AI workspace was implemented in early December 2025. Comparing metrics from the month before and after launch showed that we met our core business goal. More users interacted with the AI earlier in the creation flow, which led to higher completion and publish rates for lead magnets, overall indicating a more effortless experience.
-Beyond the metrics, the project surfaced important questions about designing agentic creation experiences and balancing user control with automation. I found that pairing strong UX fundamentals with AI-assisted prototyping created a more realistic expectation of the final product for myself and the team.
+Beyond the metrics, the project surfaced important questions about designing agentic creation experiences and balancing user control with automation. 
                   </p>
                   
                   {/* Mobile: Buttons below paragraph */}
