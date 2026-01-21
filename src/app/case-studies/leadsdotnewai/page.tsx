@@ -8,7 +8,7 @@ import FullWidthSection from "@/components/FullWidthSection";
 import StickyNavigation from "@/components/StickyNavigation";
 import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
-import { ArrowUpRight, ArrowDown } from "lucide-react";
+import { ArrowUpRight, ArrowDown, MoveRight, Lightbulb, CircleCheckBig } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import BackToTopButton from "@/components/BackToTopButton";
 import MediaFrame from "@/components/MediaFrame";
@@ -118,9 +118,10 @@ export default function CaseStudyOnePage() {
     { id: "businessgoal", label: "Business Goal" },
     { id: "design", label: "Process Overview" },
     { id: "insights", label: "Research" },
-    { id: "whatidid", label: "Product Solutions" },
     { id: "prototyping", label: "Prototyping with AI" },
+    { id: "whatidid", label: "Product Solutions" },
     { id: "sidequest", label: "Sidequest" },
+    { id: "validation", label: "Validation" },
     { id: "results", label: "Results" }
   ];
 
@@ -128,7 +129,7 @@ export default function CaseStudyOnePage() {
     <main className="min-h-screen -mt-[72px] md:-mt-[88px] pt-[72px] md:pt-[88px] pt-8 sm:pt-12 bg-white text-gray-800">
       <PageContainer>
         <h1 className="custom-h1 mb-6">
-        Increased AI feature adoption by X%
+        Increased AI feature adoption by 63%
           <span className="hidden md:inline"><br /></span>{" "}
            for a B2B SaaS startup
         </h1>
@@ -165,9 +166,9 @@ export default function CaseStudyOnePage() {
           <div className="space-y-2">
             <h2 className="custom-h2">Result</h2>
             <div className="space-y-3">
-              <Metric metric="xx% increase in AI feature adoption" icon="arrow-up-right" />
-              <Metric metric="xx% increase in published lead magnets" icon="arrow-up-right" />
-              <Metric metric="xx% decrease in time to publish" icon="arrow-down-right" />
+              <Metric metric="63% increase in AI feature adoption" icon="arrow-up-right" />
+              <Metric metric="31% increase in published lead magnets" icon="arrow-up-right" />
+              <Metric metric="6% decrease in time to publish" icon="arrow-down-right" />
             </div>
           </div>
         </div>
@@ -292,10 +293,10 @@ export default function CaseStudyOnePage() {
                     <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-0.5 border-4 border-transparent border-t-white"></span>
                   </span>
                 )}
-              </span>. When I joined, only 38% of users were interacting with the AI agent in the workspace. As a result, many users never experienced the product's full value which reduced the likelihood of publishing or converting to a paid plan.
+              </span>. When I joined, only 38% of users were interacting with the AI chat agent in the workspace. As a result, many users never experienced the product's full value which reduced the likelihood of publishing or converting to a paid plan.
               </p>
               <p className="p mb-12">
-              I partnered with the founders to redesign the workspace, focusing on increasing AI engagement. The goal was to leverage the value of the AI to build a workspace flow that felt effortless from start to finish.
+              I partnered with the founders to redesign the workspace, focusing on increasing AI chat engagement. The goal was to leverage the value of the AI chat agent to build a workspace flow that felt effortless from start to finish.
               </p>
               
               
@@ -321,8 +322,8 @@ export default function CaseStudyOnePage() {
               </p>
               <ul className="list-disc list-outside pl-6 space-y-1 mb-4">
                 <li className="p">The AI was hard to find when first landing in the workspace</li>
-                <li className="p">The design of the AI inputs, outputs and controls didn’t feel like Leads.new</li>
-                <li className="p">Switching to direct edit mode was unclear due to an unlabeled button</li>
+                <li className="p">The design of the AI inputs, outputs and controls didn’t feel cohesive with Leads.new branding</li>
+                <li className="p">How to directly edit the lead magnet's text or imagery was unclear</li>
               </ul>
               <p className="p mb-12">
               This audit helped me focus on the highest-impact issues and gave me a clear direction for improving AI engagement in the workspace. It also gave me unbiased insight that I referenced throughout the project.
@@ -338,7 +339,7 @@ export default function CaseStudyOnePage() {
               <span className="font-semibold">1. The user's experience of the AI itself: </span> This focused on the performance of the AI such as output quality, hallucinations, and response times.
               </p>
               <p className="p mb-12">
-              <span className="font-semibold">2. The user's experience with the AI as part of the creation flow:</span> This focused on how users interacted with the AI as part of the overall workflow, including research insights, UI design, and information architecture. 
+              <span className="font-semibold">2. The user's experience with the AI as part of the creation flow:</span> This focused on how our target users (marketers) interacted with the AI as part of the overall workflow, including research insights, UI design, and information architecture. 
               </p>
               {/* Loom Video */}
               <MediaFrame aspectRatio="3 / 2" enableModal>
@@ -352,7 +353,7 @@ export default function CaseStudyOnePage() {
               My Figjam workshop outlining both problem spaces.
               </p>
               <p className="p mb-4">
-              The founder and I agree that the second choice aligned best with what was currently needed by Leads.new. After workshopping ideas, we landed on the project’s goal:
+              The founder and I agreed that the second choice aligned best with what was currently needed by Leads.new. After workshopping ideas, we landed on the project’s goal:
               </p>
               <p className="p mb-4">
               How might we make creating a lead magnet with AI feel effortless?
@@ -361,14 +362,14 @@ export default function CaseStudyOnePage() {
               Success would be measured by:
               </p>
               <ul className="list-disc list-outside pl-6 space-y-1">
+              <li className="p">Increasing percent of users who interact with the AI  (<span className="font-semibold">Feature adoption rate</span>)</li>
+              <li className="p">Increasing percent of published magnets (<span className="font-semibold">Engagement rate</span>)</li>
                 <li className="p">Reducing time from magnet creation to publish (<span className="font-semibold">Time to Value</span>)</li>
-                <li className="p">Increasing percent of published magnets (<span className="font-semibold">Engagement rate</span>)</li>
-                <li className="p">Increasing percent of users who interact with the AI  (<span className="font-semibold">Feature adoption rate</span>)</li>
               </ul>
             </CaseSection>
 
             <CaseSection id="businessgoal" title="Business Goal" headingLevel="h4">
-              <Statement>
+              <Statement className="pb-[15px]">
                 <h2 className="custom-h2">
                 How might we make creating a lead magnet<span className="hidden md:inline"><br /></span> with AI feel effortless?
                 </h2>
@@ -401,9 +402,9 @@ export default function CaseStudyOnePage() {
               </p>
               <ul className="list-disc list-outside pl-6 space-y-1 mb-4">
                 <li className="p">None offered a clear step-by-step creation flow</li>
-                <li className="p">Most gave significant real estate to the AI and prompt area</li>
+                <li className="p">Most gave significant real estate to the AI agent and prompt area</li>
                 <li className="p">Direct editing and prompting were clearly separated</li>
-                <li className="p">Many AI agent tools were built for developers or technical designers, not marketers</li>
+                <li className="p">Many AI agent tools were built for developers or technical designers, not marketers (our target users)</li>
               </ul>
               <p className="p mb-12">There was a clear opportunity to borrow patterns from these tools in a way that still felt like Leads.new, while speaking more directly to marketers.</p>
               {/* Slider with AI creation tools */}
@@ -432,7 +433,7 @@ export default function CaseStudyOnePage() {
               Mapping the current journey highlighted these issues but also presented solutions where I needed to focus my energy.  
               </p>
               {/* Hilton Hero Test Results */}
-              <MediaFrame aspectRatio="3 / 2" enableModal caption="The current and proposed user flows I created for Leads.new.">
+              <MediaFrame aspectRatio="3 / 2" enableModal caption="The current and optimized user flows I created for Leads.new.">
                 <img 
                   src="/images/leadsdotnew-userjourney.png" 
                   alt="The current and proposed user flows I created for Leads.new" 
@@ -440,8 +441,37 @@ export default function CaseStudyOnePage() {
                 />
               </MediaFrame>
               <p className="caption mb-12 text-center">
-              The current and proposed user flows I created for Leads.new.
+              The current and optimized user flows I created for Leads.new.
               </p>
+            </CaseSection>
+
+            <CaseSection id="prototyping" title="Prototyping with AI" headingLevel="h4">
+                <h2 className="custom-h2">I brought my design into Cursor with Figma MCP</h2>
+              
+                <p className="p mb-4">
+                After aligning with the founder, we decided that building a “blue-sky” workspace would be more valuable than iterating on the existing experience. This approach gave us room to rethink the workspace without being constrained by previous decisions. I created an initial draft of the Leads.new landing page in Figma complete with auto layout and and key design elements to build from.
+              </p>
+              <p className="p mb-12">
+              Once the design was 60% there, I turned it into a working prototype using Figma MCP and Cursor. Making the switch from design to code early allowed me to start testing interactions and solving problems before it went into development.
+              </p>
+              <MediaFrame aspectRatio="3 / 2" enableModal>
+                    <Image 
+                      src="/images/leadsdotnew-figmamcpbuild.png" 
+                      alt="Building live code from my mockup with Figma MCP" 
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </MediaFrame>
+                  <p className="caption mb-12 text-center">
+                  Building live code from my mockup with Figma MCP.
+              </p>
+              
+                  <p className="p mb-12">
+                  I used Cursor to refine and enhance the prototype. This included a lightweight AI simulation that let me design input, prompt, and response patterns without building out real AI backend. I also added hover states, animations, and subtle interaction details to make the workspace more intuitive and engaging.
+                  </p>   
+                   
+
             </CaseSection>
 
             <CaseSection id="whatidid" title="Product Solutions" headingLevel="h4">
@@ -450,20 +480,31 @@ export default function CaseStudyOnePage() {
                 <div className="mb-12">
                   <h2 className="custom-h2">I translated insights into solutions</h2>
                   <p className="p mb-12">
-                  Once I had a clear understanding of what wasn't working in the Leads.new workspace, I began translating my insights into concrete design solutions. I made my decisions based on my UX audit, pain points in the user flow, and my competitive research on AI agent interfaces.
+                  Using insights from my UX audit, user flow pain points, competitive research on AI agents, and prototype feedback, I made informed decisions about how to improve the Leads.new workspace.
                   </p>
-                  <div className="relative bg-gradient-to-r from-blue-50 to-sky-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-blue-200 mb-12">
-                    <h4 className="custom-h4 !mb-0">Insight</h4>
-                    <p className="p !font-semibold mb-1">AI didn't feel central to the workspace experience</p>
-                    <p className="p mb-6">
+                    <div className="mb-12">
+                    <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] md:items-stretch gap-4 md:gap-6">
+                      <div className="bg-gradient-to-r from-blue-50 to-sky-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-blue-200 md:flex md:flex-col md:h-full md:w-full text-center">
+                        <Lightbulb className="mx-auto mb-2 h-7 w-7 text-gray-700" />
+                        <p className="custom-h4 !mb-1">Insight</p>
+                        <p className="p !font-semibold">AI didn't feel central to the workspace experience</p>
+                      </div>
+                      <div className="text-gray-500 flex items-center justify-center md:w-10">
+                        <MoveRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+                      </div>
+                      <div className="bg-gradient-to-r from-green-50 to-lime-50 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-green-200 md:flex md:flex-col md:h-full md:w-full text-center">
+                        <CircleCheckBig className="mx-auto mb-2 h-6 w-6 text-gray-700" />
+                        <p className="custom-h4 !mb-1">Solution </p>
+                        <p className="p !font-semibold">Surface and highlight the AI chat immediately on first land</p>
+                      </div>
+                    </div>
+                    <p className="p mt-4 mb-4">
                     If we wanted to increase AI feature adoption, the AI couldn't feel hidden or optional. It needed to be clearly positioned as the starting point of the workspace flow. It needed to be easy to find, easy to understand, and inviting to interact with.
                     </p>
-                    <h4 className="custom-h4 !mb-0">Solution</h4>
-                    <p className="p !font-semibold mb-1">Surface and highlight the AI immediately on first land</p>
-                    <p className="p mb-1">
+                    <p className="p mb-4">
                     I redesigned the first landing page of the workspace to make the AI the most prominent element on the page. This ensured users immediately understood where to begin and reinforced the AI as the primary driver of value.
                     </p>
-                    <p className="p mb-1">
+                    <p className="p mb-4">
                     To support this, I introduced several supporting design decisions:
                     </p>
                     <ul className="list-disc list-outside pl-6 space-y-1 mb-6">
@@ -484,15 +525,26 @@ export default function CaseStudyOnePage() {
                     />
                   </div>
 
-                  <div className="relative bg-gradient-to-r from-green-50 to-lime-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-green-200 mb-12">
-                    <h4 className="custom-h4 !mb-0">Insight</h4>
-                    <p className="p !font-semibold mb-1">Direct editing/designing felt hidden and hard to discover</p>
-                    <p className="p mb-6">
-                    A major friction point during my UX audit was not immediately understanding how to directly edit text, icons and images within the lead magnet. The edit/design action was represented by a single icon button which allowed the user to direct select items on the preview. This is a common pattern in other AI agents, but it wasn’t self explanatory or intuitive in this context. 
+                  <div className="mb-12">
+                    <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] md:items-stretch gap-4 md:gap-6">
+                      <div className="bg-gradient-to-r from-blue-50 to-sky-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-blue-200 md:flex md:flex-col md:h-full md:w-full md:min-h-[160px] text-center">
+                        <Lightbulb className="mx-auto mb-2 h-7 w-7 text-gray-700" />
+                        <p className="custom-h4 !mb-1">Insight</p>
+                        <p className="p !font-semibold">Direct editing/designing felt hidden and hard to discover</p>
+                      </div>
+                      <div className="text-gray-500 flex items-center justify-center md:w-10">
+                        <MoveRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+                      </div>
+                      <div className="bg-gradient-to-r from-green-50 to-lime-50 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-green-200 md:flex md:flex-col md:h-full md:w-full md:min-h-[160px] text-center">
+                        <CircleCheckBig className="mx-auto mb-2 h-6 w-6 text-gray-700" />
+                        <p className="custom-h4 !mb-1">Solution</p>
+                        <p className="p !font-semibold">Clearly separate Chat and Design modes to improve speed and clarity</p>
+                      </div>
+                    </div>
+                    <p className="p mt-4 mb-4">
+                    A major friction point during my UX audit was not immediately understanding how to directly edit text, icons and images within the lead magnet. The edit/design action was represented by a single icon button which allowed the user to direct select items on the preview. This is a common pattern in other AI agents, but wasn’t intuitive in this context. 
                     </p>
-                    <h4 className="custom-h4 !mb-0">Solution</h4>
-                    <p className="p !font-semibold mb-1">Clearly separate Chat and Design modes to improve speed and clarity</p>
-                    <p className="p mb-1">
+                    <p className="p mb-4">
                     I proposed a clearer distinction between AI chat and direct editing to reduce confusion and increase creation speed. When a user selects text, icons, or images in the lead magnet preview, the interface shifts into a focused Design mode which triggers a panel takeover. This temporarily hides the AI chat, allowing the user to concentrate on the task at hand. The Design panel stays context aware, showing only the tools relevant to the selected element. 
                     </p>
                     <p className="p mb-6">
@@ -508,45 +560,53 @@ export default function CaseStudyOnePage() {
                     />
                   </div>
 
-                  <div className="relative bg-gradient-to-r from-yellow-50 to-amber-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-amber-200 mb-4">
-                    <h4 className="custom-h4 !mb-0">Insight</h4>
-                    <p className="p !font-semibold mb-1">Steps and tools were mixed together</p>
-                    <p className="p mb-6">
+                  <div className="mb-12">
+                    <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] md:items-stretch gap-4 md:gap-6">
+                      <div className="bg-gradient-to-r from-blue-50 to-sky-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-blue-200 md:flex md:flex-col md:h-full md:w-full md:min-h-[160px] text-center">
+                        <Lightbulb className="mx-auto mb-2 h-7 w-7 text-gray-700" />
+                        <p className="custom-h4 !mb-1">Insight</p>
+                        <p className="p !font-semibold">Steps and tools were mixed together</p>
+                      </div>
+                      <div className="text-gray-500 flex items-center justify-center md:w-10">
+                        <MoveRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+                      </div>
+                      <div className="bg-gradient-to-r from-green-50 to-lime-50 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-green-200 md:flex md:flex-col md:h-full md:w-full md:min-h-[160px] text-center">
+                        <CircleCheckBig className="mx-auto mb-2 h-6 w-6 text-gray-700" />
+                        <p className="custom-h4 !mb-1">Solution</p>
+                        <p className="p !font-semibold">Group steps with steps and tools with tools in intuitive locations</p>
+                      </div>
+                    </div>
+                    <p className="p mt-4 mb-4">
                     To increase creation speed and publish rate, the workspace needed to be easier to understand at a glance. Editing tools like Design, Brand, and Code were scattered across the interface, adding decision friction and slowing users down. 
                     </p>
-                    <h4 className="custom-h4 !mb-0">Solution</h4>
-                    <p className="p !font-semibold mb-1">Group steps with steps and tools with tools in intuitive locations</p>
-                    <p className="p mb-1">
-                    I reorganized the workspace into two clear groups: Tools and Steps.
+                    <p className="p mb-4">
+                    I reorganized the workspace into two clear groups: <span className="font-semibold">Tools</span> and <span className="font-semibold">Steps</span>.
                     </p>
-                    <p className="p mb-1">
-                    Tools allow users to directly edit the lead magnet and remain available at all times. I grouped the existing tools, Chat, Design, Brand, and Code, into a fixed left-hand panel so users could easily switch between them while editing.
+                    <p className="p mb-4">
+                    <span className="font-semibold">Tools</span> allow users to directly edit the lead magnet and remain available at all times. I grouped the existing tools, Chat, Design, Brand, and Code, into a fixed left-hand panel so users could easily switch between them while editing.
                     </p>
-                    <p className="p mb-1">
-                    Steps guide users through the creation process, from building to publishing and sharing. I placed these in the top navigation to make next steps clear and intuitive.
+                    <p className="p mb-4">
+                    <span className="font-semibold">Steps</span> guide users through the creation process, from building to publishing and sharing. I placed these in the top navigation to make next steps clear and intuitive.
                     </p>
                     <p className="p mb-6">
                     By grouping similar elements, the workspace became easier to learn and faster to use.
                     </p>
                     <MediaFrame aspectRatio="3 / 2" enableModal>
-                      <Image 
-                        src="/images/leadsdotnew-toolssteps.png" 
-                        alt="Tools and steps" 
-                        fill
-                        className="object-contain"
-                        unoptimized
+                      <video 
+                        src="/videos/leadsdotnew-toolssteps.mp4"
+                        className="w-full h-full object-contain"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                       />
                     </MediaFrame>
                   </div>
-                </div>
-                
+
                 <div>
-                <h2 className="custom-h2">I designed how each tool works</h2>
-                  <p className="p mb-4">
-                  After sharing my rough prototype with the founder, we decided the next step was to define the behavior and options for each tool in the workspace.
-                  </p>  
+                <h2 className="custom-h2">The tool panel</h2>  
                   <p className="p mb-12">
-                  Around this time, the founder introduced Prompts, a tool designed to give more control over AI-generated results. Because the lead magnet itself used AI, two users could have the same inputs and receive different outcomes. I added the Prompts tool to my prototype and explored how it could add value to the Leads.new workspace without creating confusion.
+                  Along with organizing tools and steps, I designed focused panel views for each tool. I  introduced new options where they added value, and removed others that didn’t support the core creation flow.
                   </p> 
                   
                   <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-4 mb-12">
@@ -670,7 +730,7 @@ export default function CaseStudyOnePage() {
                         </div>
                         <div className={`flex-1 md:overflow-hidden md:transition-all md:duration-500 md:ease-in-out ${openToolSection === "controls" ? "md:max-h-[500px]" : ""}`}>
                           <p className={`p ${openToolSection === "controls" ? "" : "md:line-clamp-2"}`}>
-                            <span className="font-semibold"><span className="line-through">Prompts</span> → Controls </span>The original name, Prompts, didn't clearly communicate what the tool was for. I renamed the tool Controls to convey that it controlled the logic behind the magnet's output.
+                            <span className="font-semibold">Controls </span>Because the lead magnet itself used AI, two users could have the same inputs and receive different outcomes. Controls was built to give more control over these AI-generated results. The user could select a component in lead magnet preview, then use AI to edit the logic behind magnet’s output.
                           </p>
                           {openToolSection === "controls" && (
                             <p className="p mb-4">
@@ -681,59 +741,18 @@ export default function CaseStudyOnePage() {
                       </div>
                     </div>
                   </div>
-            <CaseSection id="prototyping" title="Prototyping with AI" headingLevel="h4">
-                <h2 className="custom-h2">I brought the new design into Cursor with Figma MCP</h2>
-              <p className="p mb-4">
-              After aligning with the founder, we decided to build a "blue-sky" prototype instead of iterating on the existing workspace. I designed a cleaner, more modern AI interface in Figma that included my solutions and core UI principals. 
-              </p>
-              
-              <p className="p mb-12">
-              Once the design was 80% there, I turned it into a working prototype using Figma MCP and Cursor. Making the switch from design to code early allowed me to start testing interactions and solving problems before it went into development.
-              </p>
-              <MediaFrame aspectRatio="3 / 2" enableModal>
-                    <Image 
-                      src="/images/leadsdotnew-figmamcpbuild.png" 
-                      alt="Building live code from my mockup with Figma MCP" 
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </MediaFrame>
-                  <p className="caption mb-12 text-center">
-                  Building live code from my mockup with Figma MCP.
-              </p>
-              
-                  <p className="p mb-4">
-                  I used Cursor to refine and enhance the prototype. This included a lightweight AI simulation that let me design input, prompt, and response patterns without building real AI logic. I also added hover states, animations, and subtle interaction details to make the workspace feel more intuitive and engaging.
-                  </p>   
-                  <p className="p mb-12">
-                  It was so exciting to see how much faster this handoff process became. In the past, presenting hover states or flow logic to a developer using static mockups took a long time to set up and was often imprecise. With Cursor, I could describe product behavior in natural language and immediately translate it into something interactive. This allowed developers to click through the prototype themselves and clearly understand how the experience was meant to work, reducing a lot of initial back and forth.
-                  </p>   
-            </CaseSection>
                 </div>
+                </div>
+                
                   
               
-
-              <h2 className="custom-h2">I ran a no-budget round of user testing</h2>
-                  {/* Controls prototype */}
-              <MediaFrame aspectRatio="3 / 2" enableModal caption="Seeing the experience in the prototype made it clear that giving users full control would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit, and my stakeholder agreed after reviewing the prototype.">
-                <video 
-                  src="/videos/leadsdotnew-natalie.mp4" 
-                  className="w-full h-full object-cover"
-                  style={{ objectFit: 'cover', objectPosition: 'left center', width: '100%', height: '100%', transform: 'scale(1.1)' }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              </MediaFrame>
-              <p className="caption mb-12 text-center">
-              I showed the prototype to several people and recorded their responses. 72% of users preferred the new design I proposed over the current Leads.new experience.
-              </p>
             </CaseSection>
 
             <CaseSection id="sidequest" title="Sidequest" headingLevel="h4">
               <h2 className="custom-h2">Designing Controls to manage LLM variability</h2>
+              <p className="p mb-4">
+              As we tested the lead magnets created by our AI agent, we noticed that AI-generated results varied significantly. This did give a 'magic' effect to the lead magnet, but made it harder for marketers to predict, trust, and refine the outcomes. To address this we designed Controls, a powerful, user-friendly tool that gave marketers more influence over how results were generated.
+              </p>  
               <p className="p mb-4">
               Controls became the most complex out of all Leads.new's tools. It allowed users to adjust the logic powering the results page through chat inputs. As I explored it further, more questions surfaced about its purpose, how it should function, and how to present it in a way that felt clear and valuable to users. Key questions I began exploring:
               </p>  
@@ -762,10 +781,37 @@ export default function CaseStudyOnePage() {
               </p>
             </CaseSection>
 
+            <CaseSection id="validation" title="Validation" headingLevel="h4">
+              <h2 className="custom-h2">I ran a no-budget round of user testing</h2>
+                  {/* Controls prototype */}
+              <MediaFrame aspectRatio="3 / 2" enableModal caption="Seeing the experience in the prototype made it clear that giving users full control would introduce too many failure points in results generation. I recommended shaping the prompt with AI instead of allowing a user direct edit, and my stakeholder agreed after reviewing the prototype.">
+                <video 
+                  src="/videos/leadsdotnew-natalie.mp4" 
+                  className="w-full h-full object-cover"
+                  style={{ objectFit: 'cover', objectPosition: 'left center', width: '100%', height: '100%', transform: 'scale(1.1)' }}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </MediaFrame>
+              <p className="caption mb-12 text-center">
+              I showed the prototype to several people and recorded their responses. 72% of users preferred the new design I proposed over the current Leads.new experience.
+              </p>
+            </CaseSection>
+
             <CaseSection id="results" title="Results">
+            <p className="p mb-4">
+              I presented my final solutions to the founders as a live prototype. The core solutions focused on:
+              </p>
+              <ol className="list-decimal list-outside pl-6 space-y-1 mb-4 marker:font-semibold">
+                <li className="p"><span className="font-semibold">AI-centered workspace:</span> Supports seamless collaboration between user and agent</li>
+                <li className="p"><span className="font-semibold">Seperated Chat and Design tools:</span> Reduces confusion and cognitive load by making it obvious when users were collaborating with the AI versus directly editing the lead magnet</li>
+                <li className="p"><span className="font-semibold">LLM Variability Control:</span> Gives users structured control over AI-generated results, helping them understand and trust how outcomes were produced without overwhelming them with complexity</li>
+              </ol>
             <div className="w-full bg-white rounded-lg mb-4 border border-gray-200 overflow-hidden">
                 <video 
-                  src="/videos/leadsdotnew-results-2.mp4" 
+                  src="/videos/leadsdotnew-results-3.mp4" 
                   className="w-full h-full object-contain"
                   autoPlay
                   loop
@@ -788,7 +834,7 @@ export default function CaseStudyOnePage() {
                 {/* Mobile: Order 2, Desktop: Left column */}
                 <div className="order-2 md:order-1 col-span-1">
                   <p className="p mb-4">
-                  The redesigned AI workspace was implemented in early December 2025. Comparing metrics from the month before and after launch showed that we met our core business goal. More users interacted with the AI earlier in the creation flow, which led to higher completion and publish rates for lead magnets, overall indicating a more effortless experience.
+                  The redesigned AI workspace was implemented in early December 2025. Comparing metrics from the month before and after launch showed that we met our core business goal. More users interacted with the AI chat in the creation flow, which led to higher completion and publish rates for lead magnets, overall indicating a more effortless experience.
 Beyond the metrics, the project surfaced important questions about designing agentic creation experiences, balancing user control with automation and managing LLM variability. 
                   </p>
                   
@@ -804,9 +850,9 @@ Beyond the metrics, the project surfaced important questions about designing age
                 
                 {/* Mobile: Order 1, Desktop: Right column */}
                 <div className="order-1 md:order-2 col-span-1 space-y-3">
-                  <Metric className="md:flex md:w-full" metric="xx% increase in AI feature adoption" icon="arrow-up-right" />
-                  <Metric className="md:flex md:w-full" metric="xx% increase in published lead magnets" icon="arrow-up-right" />
-                  <Metric className="md:flex md:w-full" metric="xx% decrease in time to publish" icon="arrow-down-right" />
+                  <Metric className="md:flex md:w-full" metric="63% increase in AI feature adoption" icon="arrow-up-right" />
+                  <Metric className="md:flex md:w-full" metric="31% increase in published lead magnets" icon="arrow-up-right" />
+                  <Metric className="md:flex md:w-full" metric="6% decrease in time to publish" icon="arrow-down-right" />
                   
                   {/* Desktop: Buttons below metrics */}
                   <div className="hidden md:block space-y-3 pt-4">
