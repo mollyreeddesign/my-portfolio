@@ -134,11 +134,11 @@ export default function CaseStudyOnePage() {
         </h1>
         
         <div className="flex flex-wrap gap-2 mb-8">
-        <Tag tag="AI agent" />
-        <Tag tag="SaaS" />
-          <Tag tag="B2B" />
-          <Tag tag="Figma MCP" />
+        <Tag tag="Agentic AI" />
+        <Tag tag="AI Product Design" />
           <Tag tag="Cursor" />
+          <Tag tag="B2B SaaS" />
+          <Tag tag="UX Strategy" />
         </div>
         
         {/* Responsive Grid Container */}
@@ -147,9 +147,9 @@ export default function CaseStudyOnePage() {
             <div className="space-y-2 mb-6">
               <h2 className="custom-h2">My Role</h2>
               <ul className="list-disc list-outside pl-6 space-y-1">
-                <li className="p">Audited AI agent experience</li>
-                <li className="p">Defined new user flows</li>
-                <li className="p">Built live AI prototype</li>
+                <li className="p">Audited agentic AI UX</li>
+                <li className="p">Defined core creation flows</li>
+                <li className="p">Prototyped live AI workspace</li>
               </ul>
             </div>
             <div className="space-y-2">
@@ -176,16 +176,23 @@ export default function CaseStudyOnePage() {
       {/* Custom Full Width Section - bypasses PageContainer */}
       <section className="w-full py-8 sm:py-12 bg-[#DFE3FC] overflow-hidden mb-6 md:mb-0">
         <div className="relative overflow-hidden">
-          {/* Mobile: Homepage-style layout with three overlapping images */}
+          {/* Mobile: Full-width center video */}
           <div className="block md:hidden">
-            <div className="w-full rounded-md h-64 sm:h-80" style={{ backgroundColor: "#DFE3FC" }}>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex items-end justify-center w-[86%] h-[80%]">
-                  <div className="relative z-0 h-[80%] rounded-md w-auto bg-gray-400 drop-shadow-md -mr-5 -translate-y-3" style={{ width: '200px' }} />
-                  <div className="relative z-10 h-[100%] rounded-md w-auto bg-gray-400 drop-shadow-md" style={{ width: '200px' }} />
-                  <div className="relative z-0 h-[80%] rounded-md w-auto bg-gray-400 drop-shadow-md -ml-5 -translate-y-3" style={{ width: '200px' }} />
-                </div>
-              </div>
+            <div
+              className="w-full h-auto rounded-lg border border-[#D9D9D9] overflow-hidden"
+              style={{ aspectRatio: "8 / 5" }}
+            >
+              <video 
+                src="/videos/leadsdotnew-AI.mp4" 
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                onLoadedMetadata={(e) => {
+                  e.currentTarget.playbackRate = 1.3;
+                }}
+              />
             </div>
           </div>
 
@@ -373,7 +380,7 @@ export default function CaseStudyOnePage() {
                 steps={[
                   "Audit current UX",
                   "Research + map user journey",
-                  "Create + prioritize solutions",
+                  "Turn insights into solutions",
                   "Build + test prototypes",
                   "Launch + track success"
                 ]}
@@ -441,14 +448,11 @@ export default function CaseStudyOnePage() {
               
                 
                 <div className="mb-12">
-                  <h2 className="custom-h2">I translated insights into clear solutions</h2>
+                  <h2 className="custom-h2">I translated insights into solutions</h2>
                   <p className="p mb-12">
                   Once I had a clear understanding of what wasn't working in the Leads.new workspace, I began translating my insights into concrete design solutions. I made my decisions based on my UX audit, pain points in the user flow, and my competitive research on AI agent interfaces.
                   </p>
-                  <div className="relative bg-gradient-to-r from-blue-50 to-sky-100 px-8 pt-6 pb-5 rounded-lg border border-blue-200 mb-12">
-                    <div className="absolute right-8 top-6 flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold">
-                      1
-                    </div>
+                  <div className="relative bg-gradient-to-r from-blue-50 to-sky-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-blue-200 mb-12">
                     <h4 className="custom-h4 !mb-0">Insight</h4>
                     <p className="p !font-semibold mb-1">AI didn't feel central to the workspace experience</p>
                     <p className="p mb-6">
@@ -480,10 +484,7 @@ export default function CaseStudyOnePage() {
                     />
                   </div>
 
-                  <div className="relative bg-gradient-to-r from-green-50 to-lime-100 px-8 pt-6 pb-5 rounded-lg border border-green-200 mb-12">
-                    <div className="absolute right-8 top-6 flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold">
-                      2
-                    </div>
+                  <div className="relative bg-gradient-to-r from-green-50 to-lime-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-green-200 mb-12">
                     <h4 className="custom-h4 !mb-0">Insight</h4>
                     <p className="p !font-semibold mb-1">Direct editing/designing felt hidden and hard to discover</p>
                     <p className="p mb-6">
@@ -495,7 +496,7 @@ export default function CaseStudyOnePage() {
                     I proposed a clearer distinction between AI chat and direct editing to reduce confusion and increase creation speed. When a user selects text, icons, or images in the lead magnet preview, the interface shifts into a focused Design mode which triggers a panel takeover. This temporarily hides the AI chat, allowing the user to concentrate on the task at hand. The Design panel stays context aware, showing only the tools relevant to the selected element. 
                     </p>
                     <p className="p mb-6">
-                    By making direct editing automatic and easy to discover, the workspace reduces cognitive load, increases creation speed, and improves the likelihood that users publish a lead magnet.
+                    By making direct editing automatic on click and easy to discover, the workspace reduces cognitive load, increases creation speed, and improves the likelihood that users publish a lead magnet.
                     </p>
                     <video 
                       src="/videos/leadsdotnew-designvideo.mp4" 
@@ -507,14 +508,11 @@ export default function CaseStudyOnePage() {
                     />
                   </div>
 
-                  <div className="relative bg-gradient-to-r from-yellow-50 to-amber-100 px-8 pt-6 pb-5 rounded-lg border border-amber-200 mb-4">
-                    <div className="absolute right-8 top-6 flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-semibold">
-                      3
-                    </div>
+                  <div className="relative bg-gradient-to-r from-yellow-50 to-amber-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-amber-200 mb-4">
                     <h4 className="custom-h4 !mb-0">Insight</h4>
-                    <p className="p !font-semibold mb-1">Steps and tools were not clearly separated</p>
+                    <p className="p !font-semibold mb-1">Steps and tools were mixed together</p>
                     <p className="p mb-6">
-                    A major friction point during my UX audit was not immediately understanding how to directly edit text, icons and images within the lead magnet. The edit/design action was represented by a single icon button which allowed the user to direct select items on the preview. This is a common pattern in other AI agents, but it wasn’t self explanatory or intuitive in this context. 
+                    To increase creation speed and publish rate, the workspace needed to be easier to understand at a glance. Editing tools like Design, Brand, and Code were scattered across the interface, adding decision friction and slowing users down. 
                     </p>
                     <h4 className="custom-h4 !mb-0">Solution</h4>
                     <p className="p !font-semibold mb-1">Group steps with steps and tools with tools in intuitive locations</p>
@@ -690,7 +688,7 @@ export default function CaseStudyOnePage() {
               </p>
               
               <p className="p mb-12">
-              Once the design was 80% there, I turned it into a working prototype using Figma MCP and Cursor. Making the switch from design to code early allowed me to start testing interactions and working out kinks sooner. Even if the original design wasn't completely perfect, I knew it made more sense to put my energy into the final handoff.
+              Once the design was 80% there, I turned it into a working prototype using Figma MCP and Cursor. Making the switch from design to code early allowed me to start testing interactions and solving problems before it went into development.
               </p>
               <MediaFrame aspectRatio="3 / 2" enableModal>
                     <Image 
@@ -705,9 +703,12 @@ export default function CaseStudyOnePage() {
                   Building live code from my mockup with Figma MCP.
               </p>
               
-                  <p className="p mb-12">
+                  <p className="p mb-4">
                   I used Cursor to refine and enhance the prototype. This included a lightweight AI simulation that let me design input, prompt, and response patterns without building real AI logic. I also added hover states, animations, and subtle interaction details to make the workspace feel more intuitive and engaging.
-                  </p>              
+                  </p>   
+                  <p className="p mb-12">
+                  It was so exciting to see how much faster this handoff process became. In the past, presenting hover states or flow logic to a developer using static mockups took a long time to set up and was often imprecise. With Cursor, I could describe product behavior in natural language and immediately translate it into something interactive. This allowed developers to click through the prototype themselves and clearly understand how the experience was meant to work, reducing a lot of initial back and forth.
+                  </p>   
             </CaseSection>
                 </div>
                   
@@ -729,29 +730,6 @@ export default function CaseStudyOnePage() {
               <p className="caption mb-12 text-center">
               I showed the prototype to several people and recorded their responses. 72% of users preferred the new design I proposed over the current Leads.new experience.
               </p>
-              <h2 className="custom-h2">I created a final proposed direction</h2>
-              <p className="p mb-4">I presented my final recommendation to the founders as a live prototype. It included:</p>
-              <ul className="list-disc list-outside pl-6 space-y-1 mb-12">
-              <li className="p">A simplified, AI-centered workspace that allowed seamless collaboration between the user and the agent</li>
-                <li className="p">Clear navigation at the top of the workspace and within the lead magnet preview</li>
-                <li className="p">Edit tools organized in a left panel: Chat, Design, Brand, Code, and Controls</li>
-                <li className="p">Reorganized and reimagined tool functionality</li>
-                
-              </ul>
-              <div className="w-full bg-gray-100 rounded-lg mb-4 p-8">
-                <div className="flex items-center justify-center">
-                  <div className="relative rounded-lg md:rounded-2xl border-[5px] md:border-[7px] border-[#4D4D4D] overflow-hidden shadow-lg inline-block">
-                    <Image 
-                      src="/images/leadsdotnew-final.png" 
-                      alt="Final prototype" 
-                      width={1200}
-                      height={800}
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                </div>
-              </div>
             </CaseSection>
 
             <CaseSection id="sidequest" title="Sidequest" headingLevel="h4">
@@ -802,23 +780,23 @@ export default function CaseStudyOnePage() {
               Takeaways: 
               </p>
               <ul className="list-disc list-outside pl-6 space-y-1 mb-12">
-                <li className="p"><span className="font-semibold">Working on agentic AI UX was really exciting.</span> The space has matured enough to provide strong reference points, yet is still young enough to explore new interaction patterns and ideas.</li>
-                <li className="p"><span className="font-semibold">Live prototyping is my preferred way to communicate product solutions.</span> Building an interactive prototype gave the team a much clearer understanding of my solutions than static designs ever could.</li>
-                <li className="p"><span className="font-semibold">Time constraints = tradeoffs.</span> I had to decide whether refining UI details and animations added value, or if 80% there was enough to clearly communicate the core idea.</li>
+                <li className="p"><span className="font-semibold">Working on agentic AI UX was really exciting.</span> The space was mature enough to provide me with strong reference points for the project, but still young enough to feel cutting edge when exploring new interaction patterns and ideas.</li>
+                <li className="p"><span className="font-semibold">Live prototyping is a clear winner for communicating product solutions.</span> Building an interactive prototype gave the team a much clearer understanding of my solutions, particularly when showing hover states and more complex tool interaction flows.</li>
+                <li className="p"><span className="font-semibold">Time constraints = tradeoffs.</span>  I found that 80% perfect visuals with a working prototype was enough to clearly communicate my core idea. This directed my energy from pushing pixels to asking myself <em>Is this actually solving the problem?</em></li>
               </ul>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                 {/* Mobile: Order 2, Desktop: Left column */}
                 <div className="order-2 md:order-1 col-span-1">
                   <p className="p mb-4">
                   The redesigned AI workspace was implemented in early December 2025. Comparing metrics from the month before and after launch showed that we met our core business goal. More users interacted with the AI earlier in the creation flow, which led to higher completion and publish rates for lead magnets, overall indicating a more effortless experience.
-Beyond the metrics, the project surfaced important questions about designing agentic creation experiences and balancing user control with automation. 
+Beyond the metrics, the project surfaced important questions about designing agentic creation experiences, balancing user control with automation and managing LLM variability. 
                   </p>
                   
                   {/* Mobile: Buttons below paragraph */}
                   <div className="md:hidden space-y-6 pt-4">
                   <BackToTopButton className="btn btn--primary w-full" />
-                  <a href="https://www.hilton.com/en/hotels/oggmkhx-hampton-suites-maui-north-shore/" target="_blank" rel="noopener noreferrer" className="btn btn--secondary w-full">
-                      <span>View Live Project</span>
+                  <a href="https://leads-new.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn--secondary w-full">
+                      <span>View Live Prototype</span>
                       <ArrowUpRight size={20} />
                     </a>
                   </div>
@@ -834,8 +812,8 @@ Beyond the metrics, the project surfaced important questions about designing age
                   <div className="hidden md:block space-y-3 pt-4">
                     
                     <BackToTopButton className="btn btn--primary w-full" />
-                    <a href="https://www.hilton.com/en/hotels/oggmkhx-hampton-suites-maui-north-shore/" target="_blank" rel="noopener noreferrer" className="btn btn--secondary w-full">
-                      <span>View Live Project</span>
+                    <a href="https://leads-new.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn--secondary w-full">
+                      <span>View Live Prototype</span>
                       <ArrowUpRight size={20} />
                     </a>
                   </div>
