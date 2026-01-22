@@ -167,7 +167,7 @@ export default function HomePage() {
         </div>
       </section>
        <div className="fixed bottom-[50px] left-1/2 -translate-x-1/2 text-center z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
-        <p className="text-gray-400 text-base md:!text-sm whitespace-nowrap">U.S. Citizen 🇺🇸&nbsp;Based in Zurich, CH 🇨🇭</p>
+        <p className="text-gray-400 text-base md:!text-sm whitespace-nowrap">Based in Zurich, Switzerland 🇨🇭</p>
         <p className="text-gray-400 text-base md:!text-sm mb-1 whitespace-nowrap">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
         <ChevronDown className="mx-auto text-gray-400 animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
@@ -181,6 +181,27 @@ export default function HomePage() {
           <div className="mx-2 md:-mx-8 lg:-mx-16" id="cases">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
             <div className="order-1 md:order-none">
+              <Card
+                href="/case-studies/leadsdotnewai"
+                image="/images/leadsdotnew-final.png"
+                title="Increased AI feature adoption by 63% for a B2B SaaS startup"
+                logo="/images/leadsdotnew-logo.svg"
+                logoWidth={200}
+                tags={[{ tag: "Agentic AI" }, { tag: "B2B SaaS" }, { tag: "Prototype" }]}
+                renderImageContent={(hovered) => (
+                  <div className="w-full h-full" style={{ backgroundColor: "#211D53" }}>
+                    <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.15] overflow-none" : "scale-100"}`}>
+                      <LottieCover src="/animations/home-leads-card.json" className="rounded-md" fit="cover" />
+                      {/* White overlay that fades from 20% to 0% on hover */}
+                      <div
+                        className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
+                      />
+                    </div>
+                  </div>
+                )}
+              />
+              </div>
+            <div className="order-2 md:order-none">
               <Card
                 href="/case-studies/hiltonpropertypages"
                 image="/images/hilton-after.png"
@@ -220,7 +241,7 @@ export default function HomePage() {
                 )}
               />
               </div>
-              <div className="order-2 md:order-none">
+              <div className="order-4 md:order-none">
             <Card
                 href="/case-studies/uoselfcheckout"
                 image="/images/uo-after.png"
@@ -286,7 +307,8 @@ export default function HomePage() {
                 image="/images/jam-dashexploration.png"
                 title="Simplified family scheduling with a responsive calendar"
                 logo="/images/jam-logo.png"
-                tags={[{ tag: "SaaS" }, { tag: "User Flows" }, { tag: "Dashboards" }]}
+                logoWidth={100}
+                tags={[{ tag: "SaaS" }, { tag: "Mobile" }, { tag: "Dashboards" }]}
                 renderImageContent={(hovered) => (
                   <div className="w-full h-full" style={{ backgroundColor: "#EAF0FF" }}>
                     <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.2] overflow-none" : "scale-100"}`}>
@@ -302,13 +324,14 @@ export default function HomePage() {
                 )}
               />
               </div>
-              <div className="order-4 md:order-none">
+              <div className="order-5 md:order-none sm:col-span-2 lg:col-span-2">
               <Card
                 href="/case-studies/valeriejurado"
                 image="/images/val-nownextlater.png"
                 title="Drove 7x increase in contact form conversions for a high-end botanical designer"
                 logo="/images/val-logo.svg"
                 tags={[{ tag: "Responsive Web" }, { tag: "Growth Design" }, { tag: "Branding" }]}
+                className="mx-auto w-full max-w-[620px]"
                 renderImageContent={(hovered) => (
                   <div className="w-full h-full" style={{ backgroundColor: "#000000" }}>
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -465,7 +488,7 @@ export default function HomePage() {
           >
             <h3 className="custom-h3 text-black mb-2">Create</h3>
             <p className="text-black/80">
-            I build working prototypes with Figma and AI, validating with testing often. 
+            I build working prototypes with Cursor and Figma, validating with testing often. 
             I don't design in a silo, I bring stakeholders along.</p>
           </div>
           </Reveal>
@@ -507,7 +530,7 @@ export default function HomePage() {
           Born and raised in Vermont, USA. Based in
           </p>
           <p className="mb-4 text-white/80">
-          <span className="line-through">Philadelphia</span> <span className="line-through">Los Angeles</span> Zurich, CH 🇨🇭
+          Zurich, Switzerland 🇨🇭
           </p>
           <p className="mb-14 md:mb-10 text-white/80">
           Painter, gardener, hiker and motorcyclist.

@@ -8,7 +8,7 @@ import FullWidthSection from "@/components/FullWidthSection";
 import StickyNavigation from "@/components/StickyNavigation";
 import CaseSection from "@/components/case-studies/CaseSection";
 import Statement from "@/components/Statement";
-import { ArrowUpRight, ArrowDown, MoveRight, Lightbulb, CircleCheckBig } from "lucide-react";
+import { ArrowUpRight, ArrowDown, MoveRight, MoveDown, Lightbulb, CircleCheckBig } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import BackToTopButton from "@/components/BackToTopButton";
 import MediaFrame from "@/components/MediaFrame";
@@ -490,7 +490,8 @@ export default function CaseStudyOnePage() {
                         <p className="p !font-semibold">AI didn't feel central to the workspace experience</p>
                       </div>
                       <div className="text-gray-500 flex items-center justify-center md:w-10">
-                        <MoveRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+                        <MoveDown className="w-5 h-5 sm:w-6 sm:h-6 md:hidden" />
+                        <MoveRight className="hidden md:block md:w-7 md:h-7" />
                       </div>
                       <div className="bg-gradient-to-r from-green-50 to-lime-50 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-green-200 md:flex md:flex-col md:h-full md:w-full text-center">
                         <CircleCheckBig className="mx-auto mb-2 h-6 w-6 text-gray-700" />
@@ -533,7 +534,8 @@ export default function CaseStudyOnePage() {
                         <p className="p !font-semibold">Direct editing/designing felt hidden and hard to discover</p>
                       </div>
                       <div className="text-gray-500 flex items-center justify-center md:w-10">
-                        <MoveRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+                        <MoveDown className="w-5 h-5 sm:w-6 sm:h-6 md:hidden" />
+                        <MoveRight className="hidden md:block md:w-7 md:h-7" />
                       </div>
                       <div className="bg-gradient-to-r from-green-50 to-lime-50 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-green-200 md:flex md:flex-col md:h-full md:w-full md:min-h-[160px] text-center">
                         <CircleCheckBig className="mx-auto mb-2 h-6 w-6 text-gray-700" />
@@ -568,7 +570,8 @@ export default function CaseStudyOnePage() {
                         <p className="p !font-semibold">Steps and tools were mixed together</p>
                       </div>
                       <div className="text-gray-500 flex items-center justify-center md:w-10">
-                        <MoveRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+                        <MoveDown className="w-5 h-5 sm:w-6 sm:h-6 md:hidden" />
+                        <MoveRight className="hidden md:block md:w-7 md:h-7" />
                       </div>
                       <div className="bg-gradient-to-r from-green-50 to-lime-50 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-green-200 md:flex md:flex-col md:h-full md:w-full md:min-h-[160px] text-center">
                         <CircleCheckBig className="mx-auto mb-2 h-6 w-6 text-gray-700" />
@@ -805,9 +808,9 @@ export default function CaseStudyOnePage() {
               I presented my final solutions to the founders as a live prototype. The core solutions focused on:
               </p>
               <ol className="list-decimal list-outside pl-6 space-y-1 mb-4 marker:font-semibold">
-                <li className="p"><span className="font-semibold">AI-centered workspace:</span> Supports seamless collaboration between user and agent</li>
-                <li className="p"><span className="font-semibold">Seperated Chat and Design tools:</span> Reduces confusion and cognitive load by making it obvious when users were collaborating with the AI versus directly editing the lead magnet</li>
-                <li className="p"><span className="font-semibold">LLM Variability Control:</span> Gives users structured control over AI-generated results, helping them understand and trust how outcomes were produced without overwhelming them with complexity</li>
+                <li className="p"><span className="font-semibold">AI-centered workspace:</span> Supports seamless collaboration between user and agent with higher contrast, more screen real estate and branded design elements</li>
+                <li className="p"><span className="font-semibold">Seperated Chat and Design tools:</span> Reduces confusion and cognitive load by implimenting a fixed left hand panel with distinct design and chat mode</li>
+                <li className="p"><span className="font-semibold">LLM Variability Control:</span> Gives users a tool to control the variability of AI-generated results, allowing them to further customize and refine the lead magnet outputs</li>
               </ol>
             <div className="w-full bg-white rounded-lg mb-4 border border-gray-200 overflow-hidden">
                 <video 

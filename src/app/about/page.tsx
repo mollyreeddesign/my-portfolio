@@ -46,7 +46,7 @@ export default function AboutPage() {
       </Reveal>
       <Reveal delayMs={120}>
       <p className="p text-black max-w-[40rem] mb-4 mx-auto">
-      I’ve been designing digital experiences for people and businesses for over {new Date().getFullYear() - 2017} years. From designing B2B telecom products to ecommerce apps, I’ve grown into a multidisciplinary product designer with a versatile toolkit and strong work ethic.</p>
+      I’ve been designing digital experiences for people and businesses for over {new Date().getFullYear() - 2017} years. From designing B2B SaaS AI products to ecommerce apps, I’ve grown into a multidisciplinary product designer with a versatile toolkit and strong work ethic.</p>
       </Reveal>
       <Reveal delayMs={240}>
 <p className="p text-black max-w-[40rem] mb-4 mx-auto">Along the way, I’ve built design systems, launched apps, and taken products from concept to reality. I’ve learned not only how to make good design decisions, but also how to target specific business goals.</p> 
@@ -71,8 +71,8 @@ export default function AboutPage() {
           <div className="pb-3 md:pb-5 border-b border-gray-200">
           <p className="p text-black">May 2024 - ✷</p>
           <div className="flex flex-col md:flex-row md:gap-2 gap-0">
-          <h3 className="custom-h3 !text-xl md:!text-2xl text-black mb-0">Freelance Product Designer </h3>
-          <h3 className="custom-h3 !text-xl md:!text-2xl !font-normal text-gray-400">BitcoinOS, Valerie Jurado...</h3>
+          <h3 className="custom-h3 !text-xl md:!text-2xl text-black mb-0">Senior Product Designer </h3>
+          <h3 className="custom-h3 !text-xl md:!text-2xl !font-normal text-gray-400">Leads.new, BitcoinOS...</h3>
           </div>
           </div>
 
