@@ -176,7 +176,7 @@ export default function HomePage() {
             engage, convert, and scale.
           </span>
         </h1>
-        <p className="text-gray-400 !text-sm md:!text-base mb-3 leading-relaxed">Helping <Link href="/case-studies/leadsdotnewai" className="text-gray-200 underline underline-offset-3 hover:text-white hover:underline-offset-4 transition-all duration-200 cursor-pointer pointer-events-auto">B2B</Link> and <Link href="/case-studies/hiltonpropertypages" className="text-gray-200 underline underline-offset-3 hover:text-white hover:underline-offset-4 transition-all duration-200 cursor-pointer pointer-events-auto">eCommerce</Link> teams turn complex  <br />  problems into impactful websites, apps and software solutions.</p>
+        <p className="text-gray-400 !text-sm md:!text-base mb-3 leading-relaxed">Helping <Link href="/case-studies/leadsdotnewai" className="text-gray-200 underline underline-offset-3 hover:text-white hover:underline-offset-4 transition-all duration-200 cursor-pointer pointer-events-auto">B2B</Link> and <Link href="/case-studies/hiltonpropertypages" className="text-gray-200 underline underline-offset-3 hover:text-white hover:underline-offset-4 transition-all duration-200 cursor-pointer pointer-events-auto">eCommerce</Link> teams turn complex  <br />  problems into impactful web, app and software solutions.</p>
         </div>
       </section>
        <div className="fixed bottom-[50px] left-1/2 -translate-x-1/2 text-center z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
