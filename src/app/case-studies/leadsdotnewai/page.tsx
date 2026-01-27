@@ -524,6 +524,8 @@ export default function CaseStudyOnePage() {
                         aspectRatio="3/2"
                         contentInset="0%"
                         objectFit="contain"
+                        afterImageBackground="#D9D9D9"
+                        afterImageMatchBefore={true}
                       />
                     </div>
                     <p className="caption mb-12 text-center">

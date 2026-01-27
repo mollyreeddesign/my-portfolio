@@ -14,9 +14,11 @@ export type BeforeAfterSliderProps = {
   aspectRatio?: string; // e.g. "3/2"
   contentInset?: string; // e.g. "6%" or "24px" to shrink images inside the frame
   objectFit?: "cover" | "contain";
+  afterImageBackground?: string; // Background color for after image wrapper
+  afterImageMatchBefore?: boolean; // If true, match the before video's size and border styling
 };
 
-export default function BeforeAfterSlider({ beforeSrc, beforeVideo, afterSrc, afterVideo, alt = "Before and after comparison", className, aspectRatio = "3/2", contentInset = "0%", objectFit = "contain" }: BeforeAfterSliderProps) {
+export default function BeforeAfterSlider({ beforeSrc, beforeVideo, afterSrc, afterVideo, alt = "Before and after comparison", className, aspectRatio = "3/2", contentInset = "0%", objectFit = "contain", afterImageBackground, afterImageMatchBefore }: BeforeAfterSliderProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [positionPct, setPositionPct] = useState<number>(50);
   const isDraggingRef = useRef<boolean>(false);
@@ -85,7 +87,7 @@ export default function BeforeAfterSlider({ beforeSrc, beforeVideo, afterSrc, af
         </div>
       </div>
 
-      <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - positionPct}% 0 0)` }}>
+      <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - positionPct}% 0 0)`, backgroundColor: afterImageBackground || undefined }}>
         <div className="absolute inset-0 flex items-center justify-center" style={{ top: contentInset, right: contentInset, bottom: contentInset, left: contentInset }}>
           {afterVideo ? (
             <div className="relative rounded-lg border-[5px] md:border-[7px] overflow-hidden" style={{ width: "590px", height: "355px", maxWidth: "100%", maxHeight: "100%", borderColor: "#4d4d4d" }}>
@@ -100,7 +102,13 @@ export default function BeforeAfterSlider({ beforeSrc, beforeVideo, afterSrc, af
               />
             </div>
           ) : afterSrc ? (
-            <Image src={afterSrc} alt={alt} fill className={objectFit === "contain" ? "object-contain" : "object-cover"} sizes="(min-width: 768px) 50vw, 100vw" unoptimized />
+            afterImageMatchBefore && beforeVideo ? (
+              <div className="relative rounded-[16px] border-[5px] md:border-[6px] overflow-hidden" style={{ width: "600px", height: "384px", maxWidth: "100%", maxHeight: "100%", borderColor: "#4d4d4d", backgroundColor: afterImageBackground || "transparent" }}>
+                <Image src={afterSrc} alt={alt} fill className={objectFit === "contain" ? "object-contain" : "object-cover"} sizes="(min-width: 768px) 50vw, 100vw" unoptimized />
+              </div>
+            ) : (
+              <Image src={afterSrc} alt={alt} fill className={objectFit === "contain" ? "object-contain" : "object-cover"} sizes="(min-width: 768px) 50vw, 100vw" unoptimized />
+            )
           ) : null}
         </div>
       </div>

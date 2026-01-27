@@ -127,21 +127,21 @@ export default function HomePage() {
       <PageContainer>
       
        <div ref={pinWrapperRef} className="relative overflow-x-hidden">
-        <section ref={sectionRef} className="hero-fixed-position flex flex-col z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
-          
-        <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[500px] -translate-y-[74px] md:-translate-y-[114px] w-[720px] md:w-[1100px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms" }}>
+        <section ref={sectionRef} className="hero-fixed-position flex flex-col z-10 pointer-events-none pt-10" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
+
+        <div className="absolute left-1/2 -translate-x-[325px] md:-translate-x-[405px] -translate-y-[34px] md:-translate-y-[66px] w-[720px] md:w-[900px] pointer-events-none z-30" style={{ opacity: skyLightOpacity, transition: "opacity 100ms" }}>
           <Image
             src="/images/home-skylight.png"
             alt=""
             width={1000}
             height={1000}
-            className="w-[720px] md:w-[1100px] h-auto"
+            className="w-[720px] md:w-[900px] h-auto"
             priority
           />
         </div>
        
-        <div className="text-center">
-        <div className="mx-auto mb-6 w-40 h-20 md:w-60 md:h-30 relative">
+        <div className="text-center translate-y-[40px] md:translate-y-[30px]">
+        <div className="mx-auto mb-6 w-40 h-20 md:w-52 md:h-24 relative">
           <video
             className="home-sky-mask w-full h-full object-cover"
             src={selectedVideo}
@@ -162,13 +162,32 @@ export default function HomePage() {
             priority
           />
         </div>
-        <h1 className="text-2xl text-white md:text-3xl mb-2">Product Designer</h1>
-        <p className="text-gray-400 text-base md:!text-sm">Converting design decisions<br />{" "}into real business impact.</p>
+        <h1 className="text-[24px] leading-[30px] md:text-5xl md:leading-[55px] mb-3">
+          <span className="md:hidden">
+            I design digital solutions
+            <br />
+            that engage, convert,
+            <br />
+            and scale.
+          </span>
+          <span className="hidden md:inline">
+            I design digital products that
+            <br />
+            engage, convert, and scale.
+          </span>
+        </h1>
+        <p className="text-gray-400 !text-sm md:!text-base mb-3 leading-relaxed">Helping <Link href="/case-studies/leadsdotnewai" className="text-gray-200 underline underline-offset-3 hover:text-white hover:underline-offset-4 transition-all duration-200 cursor-pointer pointer-events-auto">B2B</Link> and <Link href="/case-studies/hiltonpropertypages" className="text-gray-200 underline underline-offset-3 hover:text-white hover:underline-offset-4 transition-all duration-200 cursor-pointer pointer-events-auto">eCommerce</Link> teams turn complex  <br />  problems into impactful websites, apps and software solutions.</p>
         </div>
       </section>
        <div className="fixed bottom-[50px] left-1/2 -translate-x-1/2 text-center z-10 pointer-events-none" style={{ opacity: heroHidden ? 0 : 1 }} aria-hidden={heroHidden}>
-        <p className="text-gray-400 text-base md:!text-sm whitespace-nowrap">Based in Zurich, Switzerland 🇨🇭</p>
-        <p className="text-gray-400 text-base md:!text-sm mb-1 whitespace-nowrap">Open to on-site and remote <span className="text-[9px] align-middle">🟢</span></p>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-3">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gray-800/50 border border-gray-600/50">
+            <p className="text-gray-300 text-sm md:!text-sm whitespace-nowrap">Based in Zurich, Switzerland 🇨🇭</p>
+          </div>
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gray-800/50 border border-gray-600/50">
+            <p className="text-gray-300 text-sm md:!text-sm whitespace-nowrap">Open to on-site and remote 🟢</p>
+          </div>
+        </div>
         <ChevronDown className="mx-auto text-gray-400 animated-chevron-down" size={35} strokeWidth={1.75} />
         </div>
       <div className="hero-section-stable"></div>
