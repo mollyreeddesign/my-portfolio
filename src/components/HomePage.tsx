@@ -187,10 +187,10 @@ export default function HomePage() {
                 title="Increased AI feature adoption by 63% for a B2B SaaS startup"
                 logo="/images/leadsdotnew-logo.svg"
                 logoWidth={200}
-                tags={[{ tag: "Agentic AI" }, { tag: "B2B SaaS" }, { tag: "Prototype" }]}
+                tags={[{ tag: "Agentic AI" }, { tag: "B2B SaaS" }, { tag: "Coded Prototype" }]}
                 renderImageContent={(hovered) => (
                   <div className="w-full h-full" style={{ backgroundColor: "#211D53" }}>
-                    <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.15] overflow-none" : "scale-100"}`}>
+                    <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.05] overflow-none" : "scale-100"}`}>
                       <LottieCover src="/animations/home-leads-card.json" className="rounded-md" fit="cover" />
                       {/* White overlay that fades from 20% to 0% on hover */}
                       <div
@@ -330,7 +330,7 @@ export default function HomePage() {
                 image="/images/val-nownextlater.png"
                 title="Drove 7x increase in contact form conversions for a high-end botanical designer"
                 logo="/images/val-logo.svg"
-                tags={[{ tag: "Responsive Web" }, { tag: "Growth Design" }, { tag: "Branding" }]}
+                tags={[{ tag: "Responsive Web" }, { tag: "Growth Design" }, { tag: "Frontend Dev" }]}
                 className="mx-auto w-full max-w-[620px]"
                 renderImageContent={(hovered) => (
                   <div className="w-full h-full" style={{ backgroundColor: "#000000" }}>
@@ -517,7 +517,7 @@ export default function HomePage() {
             </Reveal>
             <div>
               <Reveal>
-          <h1 className="custom-h1 text-white mb-4 md:mb-6">I'm a product designer, web designer and artist.</h1>
+          <h1 className="custom-h1 text-white mb-4 md:mb-6">I'm a product designer, UI expert and artist.</h1>
           </Reveal>
           <Reveal delayMs={120}>
           <p className="mb-4 text-white/80">

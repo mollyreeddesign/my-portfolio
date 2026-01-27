@@ -5,8 +5,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Tag from "@/components/Tag";
 
 export type BeforeAfterSliderProps = {
-  beforeSrc: string;
-  afterSrc: string;
+  beforeSrc?: string;
+  beforeVideo?: string;
+  afterSrc?: string;
+  afterVideo?: string;
   alt?: string;
   className?: string;
   aspectRatio?: string; // e.g. "3/2"
@@ -14,7 +16,7 @@ export type BeforeAfterSliderProps = {
   objectFit?: "cover" | "contain";
 };
 
-export default function BeforeAfterSlider({ beforeSrc, afterSrc, alt = "Before and after comparison", className, aspectRatio = "3/2", contentInset = "0%", objectFit = "contain" }: BeforeAfterSliderProps) {
+export default function BeforeAfterSlider({ beforeSrc, beforeVideo, afterSrc, afterVideo, alt = "Before and after comparison", className, aspectRatio = "3/2", contentInset = "0%", objectFit = "contain" }: BeforeAfterSliderProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [positionPct, setPositionPct] = useState<number>(50);
   const isDraggingRef = useRef<boolean>(false);
@@ -64,14 +66,42 @@ export default function BeforeAfterSlider({ beforeSrc, afterSrc, alt = "Before a
       onPointerUp={onPointerUp}
     >
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute" style={{ top: contentInset, right: contentInset, bottom: contentInset, left: contentInset }}>
-          <Image src={beforeSrc} alt={alt} fill className={objectFit === "contain" ? "object-contain" : "object-cover"} sizes="(min-width: 768px) 50vw, 100vw" unoptimized />
+        <div className="absolute inset-0 flex items-center justify-center" style={{ top: contentInset, right: contentInset, bottom: contentInset, left: contentInset }}>
+          {beforeVideo ? (
+            <div className="relative rounded-[16px] border-[5px] md:border-[6px] overflow-hidden" style={{ width: "600px", height: "384px", maxWidth: "100%", maxHeight: "100%", borderColor: "#4d4d4d" }}>
+              <video
+                src={beforeVideo}
+                className="absolute inset-0 w-full h-full"
+                style={{ objectFit: objectFit === "contain" ? "contain" : "cover" }}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            </div>
+          ) : beforeSrc ? (
+            <Image src={beforeSrc} alt={alt} fill className={objectFit === "contain" ? "object-contain" : "object-cover"} sizes="(min-width: 768px) 50vw, 100vw" unoptimized />
+          ) : null}
         </div>
       </div>
 
       <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - positionPct}% 0 0)` }}>
-        <div className="absolute" style={{ top: contentInset, right: contentInset, bottom: contentInset, left: contentInset }}>
-          <Image src={afterSrc} alt={alt} fill className={objectFit === "contain" ? "object-contain" : "object-cover"} sizes="(min-width: 768px) 50vw, 100vw" unoptimized />
+        <div className="absolute inset-0 flex items-center justify-center" style={{ top: contentInset, right: contentInset, bottom: contentInset, left: contentInset }}>
+          {afterVideo ? (
+            <div className="relative rounded-lg border-[5px] md:border-[7px] overflow-hidden" style={{ width: "590px", height: "355px", maxWidth: "100%", maxHeight: "100%", borderColor: "#4d4d4d" }}>
+              <video
+                src={afterVideo}
+                className="absolute inset-0 w-full h-full"
+                style={{ objectFit: objectFit === "contain" ? "contain" : "cover" }}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            </div>
+          ) : afterSrc ? (
+            <Image src={afterSrc} alt={alt} fill className={objectFit === "contain" ? "object-contain" : "object-cover"} sizes="(min-width: 768px) 50vw, 100vw" unoptimized />
+          ) : null}
         </div>
       </div>
 

@@ -140,6 +140,7 @@ export default function CaseStudyOnePage() {
           <Tag tag="Cursor" />
           <Tag tag="B2B SaaS" />
           <Tag tag="UX Strategy" />
+          <Tag tag="Coded Prototype" />
         </div>
         
         {/* Responsive Grid Container */}
@@ -516,14 +517,18 @@ export default function CaseStudyOnePage() {
                       <li className="p">Improved UX writing to set clear expectations</li>
                       <li className="p">Redesigned prompt box buttons to feel more cohesive with Leads.new</li>
                     </ul>
-                    <video 
-                      src="/videos/leadsdotnew-AI.mp4" 
-                      className="w-full rounded-lg"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    />
+                    <div className="w-full mb-4">
+                      <BeforeAfterSlider
+                        beforeVideo="/videos/leadsdotnew-AI.mp4"
+                        afterSrc="/images/leadsdotnew-beforefirstland.png"
+                        aspectRatio="3/2"
+                        contentInset="0%"
+                        objectFit="contain"
+                      />
+                    </div>
+                    <p className="caption mb-12 text-center">
+                      The original and redesigned first landing page of the AI workspace.
+                    </p>
                   </div>
 
                   <div className="mb-12">
@@ -809,7 +814,7 @@ export default function CaseStudyOnePage() {
               </p>
               <ol className="list-decimal list-outside pl-6 space-y-1 mb-4 marker:font-semibold">
                 <li className="p"><span className="font-semibold">AI-centered workspace:</span> Supports seamless collaboration between user and agent with higher contrast, more screen real estate and branded design elements</li>
-                <li className="p"><span className="font-semibold">Seperated Chat and Design tools:</span> Reduces confusion and cognitive load by implimenting a fixed left hand panel with distinct design and chat mode</li>
+                <li className="p"><span className="font-semibold">Separated Chat and Design tools:</span> Reduces confusion and cognitive load by implimenting a fixed left hand panel with distinct design and chat mode</li>
                 <li className="p"><span className="font-semibold">LLM Variability Control:</span> Gives users a tool to control the variability of AI-generated results, allowing them to further customize and refine the lead magnet outputs</li>
               </ol>
             <div className="w-full bg-white rounded-lg mb-4 border border-gray-200 overflow-hidden">
