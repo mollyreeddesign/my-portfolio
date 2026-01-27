@@ -806,7 +806,7 @@ export default function CaseStudyOnePage() {
                 />
               </MediaFrame>
               <p className="caption mb-12 text-center">
-              I showed the prototype to several people and recorded their responses. 72% of users preferred the new design I proposed over the current Leads.new experience.
+              I showed the prototype to several people and recorded their responses. 75% of users preferred the new design I proposed over the current Leads.new experience.
               </p>
             </CaseSection>
 
