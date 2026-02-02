@@ -162,9 +162,9 @@ export default function HomePage() {
             priority
           />
         </div>
-        <h1 className="text-gray-200 text-[24px] leading-[30px] md:text-4xl md:leading-[47px] mb-3 mt-4 md:mt-10">
+        <h1 className="text-gray-200 text-[24px] leading-[32px] md:text-4xl md:leading-[47px] mb-3 mt-4 md:mt-10">
           <span className="md:hidden">
-            I design digital solutions
+            I design digital products
             <br />
             that engage, convert,
             <br />
