@@ -483,7 +483,7 @@ export default function CaseStudyOnePage() {
                   <p className="p mb-12">
                   Using insights from my UX audit, user flow pain points, competitive research on AI agents, and prototype feedback, I made informed decisions about how to improve the Leads.new workspace.
                   </p>
-                    <div className="mb-12">
+                    <div className="mb-24">
                     <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] md:items-stretch gap-4 md:gap-6">
                       <div className="bg-gradient-to-r from-blue-50 to-sky-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-blue-200 md:flex md:flex-col md:h-full md:w-full text-center">
                         <Lightbulb className="mx-auto mb-2 h-7 w-7 text-gray-700" />
@@ -533,12 +533,12 @@ export default function CaseStudyOnePage() {
                     </p>
                   </div>
 
-                  <div className="mb-12">
+                  <div className="mb-24">
                     <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] md:items-stretch gap-4 md:gap-6">
                       <div className="bg-gradient-to-r from-blue-50 to-sky-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-blue-200 md:flex md:flex-col md:h-full md:w-full md:min-h-[160px] text-center">
                         <Lightbulb className="mx-auto mb-2 h-7 w-7 text-gray-700" />
                         <p className="custom-h4 !mb-1">Insight</p>
-                        <p className="p !font-semibold">Direct editing/designing felt hidden and hard to discover</p>
+                        <p className="p !font-semibold">The Design tool was hidden in the prompt box as an unlabled icon button</p>
                       </div>
                       <div className="text-gray-500 flex items-center justify-center md:w-10">
                         <MoveDown className="w-5 h-5 sm:w-6 sm:h-6 md:hidden" />
@@ -561,20 +561,23 @@ export default function CaseStudyOnePage() {
                     </p>
                     <video 
                       src="/videos/leadsdotnew-designvideo.mp4" 
-                      className="w-full rounded-lg"
+                      className="w-full rounded-lg mb-4"
                       autoPlay
                       loop
                       muted
                       playsInline
                     />
+                    <p className="caption mb-12 text-center">
+                      The new workflow of the Design tool, seperated as its own mode in the left hand panel.
+                    </p>
                   </div>
 
-                  <div className="mb-12">
+                  <div className="mb-24">
                     <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] md:items-stretch gap-4 md:gap-6">
                       <div className="bg-gradient-to-r from-blue-50 to-sky-100 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-blue-200 md:flex md:flex-col md:h-full md:w-full md:min-h-[160px] text-center">
                         <Lightbulb className="mx-auto mb-2 h-7 w-7 text-gray-700" />
                         <p className="custom-h4 !mb-1">Insight</p>
-                        <p className="p !font-semibold">Steps and tools were mixed together</p>
+                        <p className="p !font-semibold">Tools and steps were not organized or grouped together</p>
                       </div>
                       <div className="text-gray-500 flex items-center justify-center md:w-10">
                         <MoveDown className="w-5 h-5 sm:w-6 sm:h-6 md:hidden" />
@@ -583,7 +586,7 @@ export default function CaseStudyOnePage() {
                       <div className="bg-gradient-to-r from-green-50 to-lime-50 px-5 md:px-8 pt-4 pb-4 md:pt-6 md:pb-5 rounded-lg border border-green-200 md:flex md:flex-col md:h-full md:w-full md:min-h-[160px] text-center">
                         <CircleCheckBig className="mx-auto mb-2 h-6 w-6 text-gray-700" />
                         <p className="custom-h4 !mb-1">Solution</p>
-                        <p className="p !font-semibold">Group steps with steps and tools with tools in intuitive locations</p>
+                        <p className="p !font-semibold">Group tools and steps in seperate menus for easier access and quicker discovery</p>
                       </div>
                     </div>
                     <p className="p mt-4 mb-4">
@@ -611,10 +614,13 @@ export default function CaseStudyOnePage() {
                         playsInline
                       />
                     </MediaFrame>
+                    <p className="caption mb-12 text-center">
+                      Steps and Tools grouped as seperate menus in the workspace.
+                    </p>
                   </div>
 
                 <div>
-                <h2 className="custom-h2">The tool panel</h2>  
+                <h2 className="custom-h2">Designing an AI tool panel</h2>  
                   <p className="p mb-12">
                   Along with organizing tools and steps, I designed focused panel views for each tool. I  introduced new options where they added value, and removed others that didn’t support the core creation flow.
                   </p> 
@@ -806,7 +812,7 @@ export default function CaseStudyOnePage() {
                 />
               </MediaFrame>
               <p className="caption mb-12 text-center">
-              I showed the prototype to several people and recorded their responses. 75% of users preferred the new design I proposed over the current Leads.new experience.
+              I showed the prototype to a test group and recorded their responses. 75% of users preferred the new design I proposed over the current Leads.new experience.
               </p>
             </CaseSection>
 

@@ -205,15 +205,16 @@ export default function HomePage() {
                 image="/images/leadsdotnew-final.png"
                 title="Increased AI feature adoption by 63% for a B2B SaaS startup"
                 logo="/images/leadsdotnew-logo.svg"
-                logoWidth={200}
+                logoWidth={170}
                 tags={[{ tag: "Agentic AI" }, { tag: "B2B SaaS" }, { tag: "Coded Prototype" }]}
+                clipContentOnHover
                 renderImageContent={(hovered) => (
                   <div className="w-full h-full" style={{ backgroundColor: "#211D53" }}>
-                    <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.05] overflow-none" : "scale-100"}`}>
-                      <LottieCover src="/animations/home-leads-card.json" className="rounded-md" fit="cover" />
+                    <div className={`relative w-full h-full rounded-lg overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.05]" : "scale-100"}`}>
+                      <LottieCover src="/animations/home-leads-card.json" className="rounded-lg" fit="cover" />
                       {/* White overlay that fades from 20% to 0% on hover */}
                       <div
-                        className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-20 opacity-0"}`}
+                        className={`absolute z-20 inset-0 bg-[#D3E7F5] pointer-events-none transition-opacity duration-300 ease-out ${hovered ? "opacity-0" : "md:opacity-10 opacity-0"}`}
                       />
                     </div>
                   </div>
@@ -229,25 +230,25 @@ export default function HomePage() {
                 logoWidth={90}
                 tags={[{ tag: "eCommerce" }, { tag: "Design Systems" }, { tag: "User Testing" }]}
                 renderImageContent={(hovered) => (
-                  <div className="w-full rounded-md h-full" style={{ backgroundColor: "#D3E7F5" }}>
+                  <div className="w-full rounded-lg h-full" style={{ backgroundColor: "#D3E7F5" }}>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="flex items-end justify-center w-[86%] h-[80%]">
                         <img
                           src="/images/hilton-hamptoninn.png"
                           alt=""
-                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -mr-5 md:-mr-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "-translate-x-[25px] -translate-y-4 scale-105" : ""}`}
+                          className={`relative z-0 h-[80%] md:h-[80%] rounded-lg w-auto object-contain drop-shadow-md -mr-5 md:-mr-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "-translate-x-[25px] -translate-y-4 scale-105" : ""}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/hilton-doubletree.png"
                           alt=""
-                          className={`relative z-10 h-[100%] md:h-[100%] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-105" : ""}`}
+                          className={`relative z-10 h-[100%] md:h-[100%] rounded-lg w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-105" : ""}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/hilton-embassysuites.png"
                           alt=""
-                          className={`relative z-0 h-[80%] md:h-[80%] rounded-md w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "translate-x-[25px] -translate-y-4 scale-105" : ""}`}
+                          className={`relative z-0 h-[80%] md:h-[80%] rounded-lg w-auto object-contain drop-shadow-md -ml-5 md:-ml-44 -translate-y-3 transition-transform duration-300 ease-out ${hovered ? "translate-x-[25px] -translate-y-4 scale-105" : ""}`}
                           loading="lazy"
                         />
                       </div>
@@ -281,31 +282,31 @@ export default function HomePage() {
                       <img
                           src="/images/home-uo-homecard5.png"
                           alt=""
-                          className={`relative z-0 h-[80%] md:h-[80%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 -translate-y-4 ${hovered ? "translate-x-[85px] -translate-y-5 scale-101" : "translate-x-[127px]"}`}
+                          className={`relative z-0 h-[80%] md:h-[80%] w-auto rounded-lg object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 -translate-y-4 ${hovered ? "translate-x-[85px] -translate-y-5 scale-101" : "translate-x-[127px]"}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/home-uo-homecard4.png"
                           alt=""
-                          className={`relative z-5 h-[100%] md:h-[100%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -mr-5 md:-mr-44 translate-y-2 ${hovered ? "-translate-x-[70px] -translate-y-4 scale-105" : "-translate-x-[50px]"}`}
+                          className={`relative z-5 h-[100%] md:h-[100%] w-auto rounded-lg object-contain drop-shadow-md transition-transform duration-300 ease-out -mr-5 md:-mr-44 translate-y-2 ${hovered ? "-translate-x-[70px] -translate-y-4 scale-105" : "-translate-x-[50px]"}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/home-uo-homecard1.gif"
                           alt=""
-                          className={`relative z-10 h-[120%] md:h-[120%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out translate-y-7 translate-x-[22px] ${hovered ? "-translate-y-1 scale-105" : ""}`}
+                          className={`relative z-10 h-[120%] md:h-[120%] w-auto rounded-lg object-contain drop-shadow-md transition-transform duration-300 ease-out translate-y-7 translate-x-[22px] ${hovered ? "-translate-y-1 scale-105" : ""}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/home-uo-homecard2-1.png"
                           alt=""
-                          className={`relative z-5 h-[100%] md:h-[100%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 translate-y-2 translate-x-[50px] ${hovered ? "translate-x-[70px] -translate-y-4 scale-105" : ""}`}
+                          className={`relative z-5 h-[100%] md:h-[100%] w-auto rounded-lg object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 translate-y-2 translate-x-[50px] ${hovered ? "translate-x-[70px] -translate-y-4 scale-105" : ""}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/home-uo-homecard6.png"
                           alt=""
-                          className={`relative z-0 h-[80%] md:h-[80%] w-auto rounded-md object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 -translate-y-4 translate-x-[50px] ${hovered ? "translate-x-[90px] -translate-y-5 scale-101" : ""}`}
+                          className={`relative z-0 h-[80%] md:h-[80%] w-auto rounded-lg object-contain drop-shadow-md transition-transform duration-300 ease-out -ml-5 md:-ml-44 -translate-y-4 translate-x-[50px] ${hovered ? "translate-x-[90px] -translate-y-5 scale-101" : ""}`}
                           loading="lazy"
                         />
                       </div>
@@ -330,9 +331,9 @@ export default function HomePage() {
                 tags={[{ tag: "SaaS" }, { tag: "Mobile" }, { tag: "Dashboards" }]}
                 renderImageContent={(hovered) => (
                   <div className="w-full h-full" style={{ backgroundColor: "#EAF0FF" }}>
-                    <div className={`relative w-full h-full rounded-md overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.2] overflow-none" : "scale-100"}`}>
+                    <div className={`relative w-full h-full rounded-lg overflow-hidden transition-transform duration-300 ease-out ${hovered ? "scale-[1.2] overflow-none" : "scale-100"}`}>
                       
-                      <LottieCover src="/animations/home-jam-card.json" className="rounded-md" fit="cover" />
+                      <LottieCover src="/animations/home-jam-card.json" className="rounded-lg" fit="cover" />
                       
                       {/* White overlay that fades from 20% to 0% on hover */}
                       <div
@@ -358,19 +359,19 @@ export default function HomePage() {
                         <img
                           src="/images/ValFlowers-test.png"
                           alt=""
-                          className={`relative z-0 h-[110%] md:h-[110%] rounded-md w-auto object-contain -mr-5 md:-mr-80 -translate-y-3 transition-transform duration-500 ease-out ${hovered ? "-translate-x-[40px] -translate-y-4 scale-120" : ""}`}
+                          className={`relative z-0 h-[110%] md:h-[110%] rounded-lg w-auto object-contain -mr-5 md:-mr-80 -translate-y-3 transition-transform duration-500 ease-out ${hovered ? "-translate-x-[40px] -translate-y-4 scale-120" : ""}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/home-val-form.png"
                           alt=""
-                           className={`absolute left-1/2 -translate-x-1/2 bottom-2 z-10 h-[90%] md:h-[90%] rounded-md w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-105" : ""}`}
+                           className={`absolute left-1/2 -translate-x-1/2 bottom-2 z-10 h-[90%] md:h-[90%] rounded-lg w-auto object-contain drop-shadow-md transition-transform duration-300 ease-out ${hovered ? "-translate-y-1 scale-105" : ""}`}
                           loading="lazy"
                         />
                         <img
                           src="/images/ValFruit-test.png"
                           alt=""
-                          className={`relative z-0 h-[120%] md:h-[120%] rounded-md w-auto object-contain -ml-20 md:ml-100 -translate-y-3 transition-transform duration-500 ease-out ${hovered ? "translate-x-[40px] -translate-y-4 scale-120" : ""}`}
+                          className={`relative z-0 h-[120%] md:h-[120%] rounded-lg w-auto object-contain -ml-20 md:ml-100 -translate-y-3 transition-transform duration-500 ease-out ${hovered ? "translate-x-[40px] -translate-y-4 scale-120" : ""}`}
                           loading="lazy"
                         />
                       </div>
@@ -591,7 +592,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 mb-22 md:grid-cols-2 gap-12">
           <div className="p-6 md:p-8 bg-white/10 border border-white/30 rounded-lg h-full flex flex-col">
             <p className="text-white/80 mb-8 [&_strong]:text-white">"<strong>Molly was my absolute favorite UI design partner at Hilton.</strong> She was quick and receptive to feedback, adapting quickly to stakeholder demands. When in doubt, her own skills and leadership abilities were showcased as <strong>she quickly made executive level decisions based on team feedback for overall product success.</strong> She was a limited resource, and we made sure to openly and expressively fight for her attentions. She will delight anyone that hires her with her creative abilities and fast approach to art and design."</p>
-            <Link href="https://www.linkedin.com/in/april-walczak" target="_blank" rel="noopener noreferrer" className="mt-auto -m-2 p-2 flex items-center gap-3 rounded-md transition-colors hover:bg-white/5 group">
+            <Link href="https://www.linkedin.com/in/april-walczak" target="_blank" rel="noopener noreferrer" className="mt-auto -m-2 p-2 flex items-center gap-3 rounded-lg transition-colors hover:bg-white/5 group">
               <Image src="/images/april.png" alt="April Walczak" width={50} height={50} className="rounded-full object-cover transition-transform duration-200 group-hover:scale-105" />
               <div>
                 <h3 className="custom-h3 text-white transition-colors group-hover:text-white group-hover:underline">April Walczak</h3>
@@ -604,7 +605,7 @@ export default function HomePage() {
 </p>
             <p className="text-white/80 mb-8 [&_strong]:text-white"><strong>"If you're looking for a smart, dependable designer who makes an impact and is a joy to work with, you'll be lucky to have her on your team."</strong></p>
             
-            <Link href="https://www.linkedin.com/in/ilke-vn" target="_blank" rel="noopener noreferrer" className="mt-auto -m-2 p-2 flex items-center gap-3 rounded-md transition-colors hover:bg-white/5 group">
+            <Link href="https://www.linkedin.com/in/ilke-vn" target="_blank" rel="noopener noreferrer" className="mt-auto -m-2 p-2 flex items-center gap-3 rounded-lg transition-colors hover:bg-white/5 group">
               <Image src="/images/ilke.png" alt="Ilke Ingram" width={50} height={50} className="rounded-full object-cover transition-transform duration-200 group-hover:scale-105" />
               <div>
                 <h3 className="custom-h3 text-white transition-colors group-hover:text-white group-hover:underline">Ilke Ingram</h3>

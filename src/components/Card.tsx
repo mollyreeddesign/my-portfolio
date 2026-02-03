@@ -22,6 +22,8 @@ type CardProps = {
   noFrameBorder?: boolean;
   /** Disable hover animations (scale, shadow, overflow changes) */
   disableHover?: boolean;
+  /** Keep image frame overflow hidden on hover so content is clipped to rounded corners (avoids pointed corners when content scales) */
+  clipContentOnHover?: boolean;
   /** Disable pointer cursor and prevent navigation on click */
   disablePointer?: boolean;
   /**
@@ -52,6 +54,7 @@ export default function Card({
   imageContainerClassName,
   noFrameBorder,
   disableHover,
+  clipContentOnHover,
   disablePointer,
   renderImageOverlay,
   renderImageContent,
@@ -95,7 +98,7 @@ export default function Card({
       <div className="flex h-full flex-col">
         <div className={`relative w-full aspect-[3/2] ${imageContainerClassName ?? ""}`}>
           {/* Cropped image frame */}
-          <div className={`relative h-full w-full ${noFrameBorder ? "" : "border"} rounded-md overflow-hidden ${hoverEnabled ? "md:group-hover:overflow-visible" : ""} z-0 transition-shadow duration-300 ease-out ${hoverEnabled ? "group-hover:shadow-md" : ""}`}>
+          <div className={`relative h-full w-full ${noFrameBorder ? "" : "border"} rounded-lg overflow-hidden ${hoverEnabled && !clipContentOnHover ? "md:group-hover:overflow-visible" : ""} z-0 transition-shadow duration-300 ease-out ${hoverEnabled ? "group-hover:shadow-md" : ""}`}>
             {typeof renderImageContent === "function" ? (
               <div className="absolute inset-0">
                 {renderImageContent(effectiveHovered)}
