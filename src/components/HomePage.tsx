@@ -269,7 +269,7 @@ export default function HomePage() {
                 logo="/images/uo-logo.svg"
                 logoWidth={200}
                 logoClassName="md:py-1"
-                tags={[{ tag: "eCommerce" }, { tag: "Loyalty" }, { tag: "Point of Sale" }]}
+                tags={[{ tag: "eCommerce" }, { tag: "Device Interface" }, { tag: "Point of Sale" }]}
                 renderImageContent={(hovered) => (
                   <div className="w-full h-full" style={{ backgroundColor: "#FFFFFF" }}>
                     {/* Mobile: static cover image only */}
