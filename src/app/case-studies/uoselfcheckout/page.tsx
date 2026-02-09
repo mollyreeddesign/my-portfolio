@@ -129,9 +129,10 @@ export default function CaseStudyTwoPage() {
         
         <div className="flex flex-wrap gap-2 mb-8">
           <Tag tag="eCommerce" />
-          <Tag tag="Loyalty" />
+          <Tag tag="Device Interface" />
           <Tag tag="Point of Sale" />
           <Tag tag="Agile" />
+          <Tag tag="Loyalty" />
         </div>
         
         {/* Responsive Grid Container */}
